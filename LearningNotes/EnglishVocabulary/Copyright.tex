@@ -1,0 +1,105 @@
+% !TEX root = EnglishVocabulary.tex %指定主文件。
+\ifx\collections\undefined
+% !TEX program = xelatex %指定编译方式xelatex。
+% !BIB program = biber %指定bib数据后台处理程序biber。
+\documentclass[11pt,a4paper,UTF8,titlepage]{ctexart} %指定ctexart文档类，设置基本字号为11pt，a4大小，使用UTF-8编码保存，指定\maketitle生成单独的标题页。
+
+\usepackage{syntonly}
+%\syntaxonly %用来快速编译以排查错误，不生成DVI或PDF。
+\usepackage[style=gb7714-2015]{biblatex} %调用biblatex宏包，设置参考文献样式（符合中文文献著录标准GB/T 7714-2015的样式）,使用默认的后端程序biber（其支持更好，包括UTF-8等）放弃使用[backend=bibtex]（只支持ascii编码）。
+\addbibresource{resources/reference.bib} %加载参考文献数据库。
+\usepackage{makeidx}
+\makeindex %开启索引收集
+\usepackage[margin=1in]{geometry} %调用geometry宏包，设置周围页边距为1英寸（为电子档设计，非打印）。
+\usepackage{xcolor} %调用xcolor宏包，以支持扩展生成颜色。
+\usepackage{fontspec} %调用fontspec宏包以更改西文字体族。
+\setmainfont{Source Serif Pro}
+\setsansfont{Source Sans Pro}
+\setmonofont{Source Code Pro}
+\usepackage{xeCJK} %调用xeCJK宏包以更改中文字体族。
+\xeCJKsetup{AutoFakeSlant=true}  %设置xeCJK选项-伪斜体（需置于字体设置之前）。
+\setCJKmainfont{思源宋体}
+\setCJKsansfont{思源黑体}
+\setCJKmonofont{思源等宽}
+\usepackage{graphicx} %调用graphicx宏包，以支持插图。
+\graphicspath{{resources/images/},{resources/images/follow/}} %加载图片路径。
+\usepackage{caption} %调用caption，支持不带编号的标题。
+\usepackage{wrapfig} %调用wrapfig，支持图文排版。
+\usepackage{subfigure} %调用subfigure宏包进行图片图片排版。
+\usepackage{tikz,tikz-qtree} %调用tikz及其扩展宏包，以支持画图。
+\usepackage[subfigure]{tocloft} %tocloft与subfigure宏包冲突，不能简单调用，tocloft需设置参数。
+\usepackage{tocbibind} %调用宏包以添加目录本身和参考文献进目录中。
+\usepackage{multicol} %调用multicol宏包以支持多栏排版。
+\usepackage[toc]{multitoc} %调用multitoc宏包，设置toc目录页，默认双栏排版。
+\usepackage{enumitem} %调用emuitem，以设置列表环境。
+%重订制目录命令。
+\renewcommand{\tableofcontents}%
+  {\chapter{\contentsname}%
+  \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
+  \@makeschapterhead{\sourcecodename}%
+  \@starttoc{toc}%
+}
+\usepackage{fancyhdr} %调用宏包，以设置页眉，统一格式：标题在左，页码在右。
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\sffamily \rightmark}
+\fancyhead[LE]{\sffamily \leftmark}
+\fancyhead[ROE]{\bfseries \thepage}
+%定义intro环境。
+\newenvironment{intro}{\narrower\sffamily}{\par\vspace*{2ex plus 2.5ex minus 1.5ex}}
+\usepackage{hyperref} %调用hyperref宏包
+\hypersetup{
+    colorlinks=true, %设置超链接文件带颜色
+    bookmarks=true, %生成书签
+    bookmarksopen=true, %书签展开
+    bookmarksnumbered=true, %书签带章节编号
+    CJKbookmarks=true, %cjk必设参数
+    unicode, %utf-8编码必设参数
+    pdftitle=标题, %设置PDF文件属性标题
+    pdfauthor=Mr. Kin, %设置PDF文件属性作者
+    pdfstartview=FitH %默认适合宽度显示
+}
+
+    \title{\hypertarget{title}{\textbf{标题}}}
+    \addcontentsline{toc}{section}{标题页}
+    \author{Written by Mr. Kin}
+    \date{创建于2020.1.28，修改于\number\year.\number\month.\number\day}
+
+\begin{document}
+    \phantomsection %确保目录中的超链接指向正确的页码
+    \pdfbookmark[1]{标题页}{title}
+    \maketitle %生成标题页
+    {\centering \tableofcontents} %生成目录页
+    \clearpage
+    \fi
+
+    \phantomsection
+    \section*{\bfseries \sffamily 版权声明}
+    \addcontentsline{toc}{section}{版权声明}
+    \markright{版权声明}
+    \noindent 本作品作者：Mr. Kin \\
+    本作品博客链接：\href{}{跳转请点}\\
+    Tex源码Github地址：\href{}{跳转请点}\\
+    本作品许可协议：本作品的所有内容，除特别声明外，均采用\href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh}{知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议}进行发布。\includegraphics[scale=.4]{CC-BY-NC-SA}\\*[1.3ex]
+    \begin{tabular}{|*{3}{p{0.306\textwidth}|}}
+        \hline
+        \textsf{\bfseries 允许} & \textsf{\bfseries 限制} & \textsf{\bfseries 条件} \\
+        \hline
+        \vspace{-8pt}{\color{green}√} 修改 & \vspace{-8pt}{\color{red}×} 商标使用 & \vspace{-8pt}{\color{blue}$\odot$} 保留原署名 \\[-12pt]
+        {\color{green}√} 分发 & {\color{red}×} 专利使用 & {\color{blue}$\odot$} 状态变更说明 \\[-12pt]
+        {\color{green}√} 个人使用 & {\color{red}×} 商业使用 & {\color{blue}$\odot$} 相同的许可和版权声明 \\
+        \hline
+    \end{tabular}
+    \\*[1.3ex]
+    \emph{注：若想对本作品进行转载、引用亦或是进行二次创作时，请详细阅读上述相关协议内容（若不理解，请点击链接跳转阅读）。为保障本人权利，对于违反者，本人将依法予以处理！望周知！——Mr. Kin}
+    \section*{\bfseries \sffamily 勘误声明}
+    虽本人写作时已尽力保证其内容的正确性，但因个人知识面和经验的局限性以及计算机技术等相关技术日新月异，本作品内容或存在一些错误之处。还望诸君发现错误后能够联系我来更改错误，不胜感激！——Mr. Kin
+
+    \section*{\bfseries \sffamily 侵权声明}
+    若本作品采用的第三方内容侵犯了你的版权，请与我联系进行处理，谢谢！——Mr. Kin
+
+    \ifx\collections\undefined
+    \printbibliography %生成参考文献排版。
+    \printindex %生成索引排版。
+\end{document}
+    \fi

@@ -1,0 +1,117 @@
+% !TEX root = EnglishVocabulary.tex %指定主文件
+\ifx\collections\undefined
+% !TEX program = xelatex %指定编译方式xelatex。
+% !BIB program = biber %指定bib数据后台处理程序biber。
+\documentclass[11pt,a4paper,UTF8,titlepage]{ctexart} %指定ctex的文档类，设置基本字号为11pt，a4大小，使用UTF-8编码保存，指定\maketitle生成单独的标题页。
+
+\usepackage{syntonly}
+%\syntaxonly %用来快速编译以排查错误，不生成DVI或PDF。
+\usepackage[style=gb7714-2015]{biblatex} %调用biblatex宏包，设置参考文献样式（符合中文文献著录标准GB/T 7714-2015的样式）,使用默认的后端程序biber（其支持更好，包括UTF-8等）放弃使用[backend=bibtex]（只支持ascii编码）。
+\addbibresource{resources/reference.bib} %加载参考文献数据库。
+\usepackage{makeidx}
+\makeindex %开启索引收集
+\usepackage[margin=1in]{geometry} %调用geometry宏包，设置周围页边距为1英寸（为电子档设计，非打印）。
+\usepackage{xcolor} %调用xcolor宏包，以支持扩展生成颜色。
+\usepackage{fontspec} %调用fontspec宏包以更改西文字体族。
+\setmainfont{Source Serif Pro}
+\setsansfont{Source Sans Pro}
+\setmonofont{Source Code Pro}
+\usepackage{xeCJK} %调用xeCJK宏包以更改中文字体族。
+\xeCJKsetup{AutoFakeSlant=true}  %设置xeCJK选项-伪斜体（需置于字体设置之前）。
+\setCJKmainfont{思源宋体}
+\setCJKsansfont{思源黑体}
+\setCJKmonofont{思源等宽}
+\usepackage{graphicx} %调用graphicx宏包，以支持插图。
+\graphicspath{{resources/images/},{resources/images/follow/}} %加载图片路径。
+\usepackage{caption} %调用caption，支持不带编号的标题。
+\usepackage{wrapfig} %调用wrapfig，支持图文排版。
+\usepackage{subfigure} %调用subfigure宏包进行图片图片排版。
+\usepackage{tikz,tikz-qtree} %调用tikz及其扩展宏包，以支持画图。
+\usepackage[subfigure]{tocloft} %tocloft与subfigure宏包冲突，不能简单调用，tocloft需设置参数。
+\usepackage{tocbibind} %调用宏包以添加目录本身和参考文献进目录中。
+\usepackage{multicol} %调用multicol宏包以支持多栏排版。
+\usepackage[toc]{multitoc} %调用multitoc宏包，设置toc目录页，默认双栏排版。
+\usepackage{enumitem} %调用emuitem，以设置列表环境。
+%重订制目录命令。
+\renewcommand{\tableofcontents}%
+  {\chapter{\contentsname}%
+  \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
+  \@makeschapterhead{\sourcecodename}%
+  \@starttoc{toc}%
+}
+\usepackage{fancyhdr} %调用宏包，以设置页眉，统一格式：标题在左，页码在右。
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\sffamily \rightmark}
+\fancyhead[LE]{\sffamily \leftmark}
+\fancyhead[ROE]{\bfseries \thepage}
+%定义intro环境。
+\newenvironment{intro}{\narrower\sffamily}{\par\vspace*{2ex plus 2.5ex minus 1.5ex}}
+\usepackage{hyperref} %调用hyperref宏包
+\hypersetup{
+    colorlinks=true, %设置超链接文件带颜色
+    bookmarks=true, %生成书签
+    bookmarksopen=true, %书签展开
+    bookmarksnumbered=true, %书签带章节编号
+    CJKbookmarks=true, %cjk必设参数
+    unicode, %utf-8编码必设参数
+    pdftitle=标题, %设置PDF文件属性标题
+    pdfauthor=Mr. Kin, %设置PDF文件属性作者
+    pdfstartview=FitH %默认适合宽度显示
+}
+
+    \title{\hypertarget{title}{\textbf{标题}}}
+    \addcontentsline{toc}{section}{标题页}
+    \author{Written by Mr. Kin}
+    \date{创建于2020.1.28，修改于\number\year.\number\month.\number\day}
+
+\begin{document}
+    \phantomsection %确保目录中的超链接指向正确的页码
+    \pdfbookmark[1]{标题页}{title}
+    \maketitle %生成标题页
+    {\centering \tableofcontents} %生成目录页
+    \clearpage
+    \fi
+
+    \pagenumbering{arabic} %阿拉伯样式页码，非第一个分文件请注释此行。
+
+    \section*{词典常用缩写}
+    \addcontentsline{toc}{section}{词典常用缩写}
+    \markright{词典常用缩写}
+    \begin{multicols}{2}
+        \begin{itemize}[left=0em]
+            \item v. verb 动词
+            \item n. noun 名词
+            \item adj. adjective 形容词
+            \item adv. adverb 副词
+            \item prep. preposition 介词
+            \item pron. pronoun 代词
+            \item conj. conjunction 连词
+            \item abbr. abbreviation 缩写
+            \item det. determiner 限定词
+            \item sing. singular 单数
+            \item pl. plural 复数
+            \item symb. symbol 符号
+            \item opp. opposite 反义词
+            \item syn. synonym 同义词
+            \item fig. figurative 比喻的
+            \item derog. derogatie 贬义的
+            \item fml. formal 用于正式文体
+            \item infml. informal 用于非正式文体
+            \item BrE 英国英语
+            \item AmE 美国英语
+            \item C countable 可数名词
+            \item U uncountable 不可数名词
+            \item sb somebody 某人
+            \item sth something 某事物
+            \item pt past tense 过去时
+            \item pp past participle 过去分词
+        \end{itemize}
+    \end{multicols}
+
+
+    \ifx\collections\undefined
+    \printbibliography %生成参考文献排版。
+    \printindex %生成索引排版。
+\end{document}
+    \fi
