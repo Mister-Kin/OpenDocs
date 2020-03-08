@@ -67,13 +67,14 @@
 
 \begin{document}
     \phantomsection %确保目录中的超链接指向正确的页码
-    \pdfbookmark[1]{标题页}{title}
+    \pdfbookmark[1]{标题页}{title} %添加标题页书签
+    \pagenumbering{Roman} %大写罗马样式页码
     \maketitle %生成标题页
+    \pagenumbering{roman} %小写罗马样式页码
     {\centering \tableofcontents} %生成目录页
-    \clearpage
+    \clearpage %新建页，分离上下两个样式页码的效果
+    \pagenumbering{arabic} %阿拉伯样式页码
     \fi
-
-    %\pagenumbering{arabic} %阿拉伯样式页码，非第一个分文件请注释此行。
     
     \section{IELTS雅思词汇圣经}
     \subsection{6分词汇}
@@ -81,31 +82,31 @@
     \begin{multicols}{2}
     \begin{itemize}
         \item abstract adj.抽象的 n.摘要，概要\\thinking in abstract terms 抽象思维\\同 theoretical 反 concrete
-        \item abundance n.大量,充足\\an abundance of sth.\\同 sufficiency 反lack
-        \item abuse v.滥用 n.虐待\\; child abuse\\同 misapply, make ill use of; ill-treat
+        \item abundance n.大量,充足\\an abundance of sth. 大量的xx\\同 sufficiency 反lack
+        \item abuse v.滥用，妄用；虐待（尤指性）n.滥用，虐待[U,pl.]\\abuse sb./sth. 虐待xx/滥用xx\\ abuse of power 滥用职权\\ child abuse 儿童虐待\\同 misapply, make ill use of; ill-treat
         \item baggage n.(AmE)行李 \\同 luggage
-        \item candidate n.候选人，申请人（竞选/求职）\\同 applicant, seeker
+        \item candidate n.候选人，申请人（竞选/求职）\\candidate for sth. xx的候选人\\同 applicant, seeker
         \item canteen n.食堂，餐厅
-        \item capable adj.有能力的，有才能的\\同 able,competent 反 incapable
-        \item capacity n.容量；能力\\同 ability
+        \item capable adj.有能力的，有才能的\\be capable of doing 有能力做xx\\同 able,competent 反 incapable
+        \item capacity n.容量；能力\\a capacity of num+单位 有xx的容量\\同 ability
         \item capital n.资本，资金；首都；大写字母
         \item data n.资料，数据
-        \item date n.日期，日子；年份 v.存在，追溯\\
+        \item date n.日期，日子；年份 v.存在，追溯\\date back to medieval times 始于中世纪\\date back hundreds of years 追溯到几百年前\\date from the 17th century 自17世纪起
         \item economy n.经济
         \item edition n.版本（出版）\\同 version
         \item facilitate v.促进，促使，使便利\\同 ease
-        \item facilities n.设施，设备
-        \item gamble v.赌博（用钱）\\同 bet, try one's luck
+        \item facilities n.设施，设备\\sporting facilities 运动设施
+        \item gamble v.赌博（用钱）\\gamble sth away 赌掉xx\\gamble on sth./on doing sth. 冒xx的风险/碰xx的运气\\同 bet, try one's luck
         \item gang n.一群，一伙（闹事青少年）
         \item hairdresser n.理发师
         \item identification n.身份证明\\同 recognition
-        \item identify v.确认、证明sb./sth.；鉴别出sb./sth.\\同 determine
+        \item identify v.确认、证明\\identify sb./sth. 鉴别出xx\\identify sb. with sth. 把某人视为xx\\同 determine
         \item idiom n.习语，成语，惯用语
-        \item idle adj.闲散的，无工作的 v.无所事事；闲荡\\近 inactive,lazy 反 busy（adj./n.）\\idle和busy/load也常用于计算机
+        \item idle adj.闲散的，无工作的 v.无所事事；闲荡\\idle sb./sth. (暂时性)关闭工厂，使工人闲着\\近 inactive,lazy 反 busy（adj./n.）\\idle和busy/load也常用于计算机
         \item jar n.广口瓶
-        \item jealous adj.嫉羡的，羡慕的\\近 envious
-        \item labour n.劳动，劳力\\近 work
-        \item lack v.没有（sth），缺乏，缺少，不足\\近 need（provide assistance in need）
+        \item jealous adj.嫉羡的，羡慕的\\be jealous of sb./sth. 妒忌xx\\近 envious
+        \item labour n.劳动，劳力 v.努力做（困难的事）；干苦力活\\labour to do sth. 努力做xx\\近 work
+        \item lack v.没有（某事物），缺乏，缺少，不足\\近 need（provide assistance in need 提供帮助）（need指缺乏，食物、钱、生活来源）
         \item magnify v.放大；夸张，夸大\\同 enlarge 反 minify
         \item naive adj.缺乏经验的，幼稚无知的；天真的\\同 innocent, simple
         \item overview n.(fml.)综览，概观，概述
@@ -140,11 +141,22 @@
             \item damage n./v.损失，损害，损毁\\同 ingury/ingure
             \item damp n.不完全干燥的，潮湿的\\反 dry
             \item dash v.猛冲，突进\\同 rush
+            \item ease n.容易，不费劲\\反 burden
+            \item ecology n.生态关系，生态学
+            \item fabric n.织物，布料\\同 material
+            \item fabulous adj.极好的，绝妙的\\同 wonderful
+            \item gallery n.走廊，柱廊
+            \item habitat n.自然环境（动/植物的），栖息地
+            \item ideal adj.理想的，完美的；最合适的 n.完美的人或事物\\同 flawless,perfect
+            \item idealism n.理想主义者，唯心论
         \end{itemize}
     \end{multicols}
 
     \ifx\collections\undefined
     \printbibliography %生成参考文献排版。
+    \addcontentsline{toc}{section}{参考文献} %添加参考文献进目录
+    \clearpage %新建页，确保超链接跳转正确
+    \phantomsection %确保目录中的超链接指向正确的页码
     \printindex %生成索引排版。
 \end{document}
     \fi

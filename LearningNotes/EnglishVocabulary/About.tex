@@ -67,10 +67,13 @@
 
 \begin{document}
     \phantomsection %确保目录中的超链接指向正确的页码
-    \pdfbookmark[1]{标题页}{title}
+    \pdfbookmark[1]{标题页}{title} %添加标题页书签
+    \pagenumbering{Roman} %大写罗马样式页码
     \maketitle %生成标题页
+    \pagenumbering{roman} %小写罗马样式页码
     {\centering \tableofcontents} %生成目录页
-    \clearpage
+    \clearpage %新建页，分离上下两个样式页码的效果
+    \pagenumbering{arabic} %阿拉伯样式页码
     \fi
 
     \phantomsection
@@ -109,7 +112,7 @@
         \item \href{https://www.blendercn.org/5812.html?tdsourcetag=s_pctim_aiomsg}{Blender手册}：2019.7.20 - 2019.9.4 - 至今（翻译维护）
     \end{itemize}
 
-    \subsection*{\bfseries \sffamily 联系方式}
+    \subsection*{\bfseries \sffamily \hypertarget{contact}{联系方式}}
 
     \noindent {\small\emph{\color{red}注：联系时请注明身份，谢谢！}}
 
@@ -169,12 +172,13 @@
             \includegraphics[scale=0.06]{follow-youtube}
         \end{minipage}
         \qquad
-        
     \end{figure}
-    
 
     \ifx\collections\undefined
     \printbibliography %生成参考文献排版。
+    \addcontentsline{toc}{section}{参考文献} %添加参考文献进目录
+    \clearpage %新建页，确保超链接跳转正确
+    \phantomsection %确保目录中的超链接指向正确的页码
     \printindex %生成索引排版。
 \end{document}
     \fi

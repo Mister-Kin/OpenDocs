@@ -67,10 +67,13 @@
 
 \begin{document}
     \phantomsection %确保目录中的超链接指向正确的页码
-    \pdfbookmark[1]{标题页}{title}
+    \pdfbookmark[1]{标题页}{title} %添加标题页书签
+    \pagenumbering{Roman} %大写罗马样式页码
     \maketitle %生成标题页
+    \pagenumbering{roman} %小写罗马样式页码
     {\centering \tableofcontents} %生成目录页
-    \clearpage
+    \clearpage %新建页，分离上下两个样式页码的效果
+    \pagenumbering{arabic} %阿拉伯样式页码
     \fi
 
     \phantomsection
@@ -79,8 +82,9 @@
     \markright{版权声明}
     \noindent 本作品作者：Mr. Kin \\
     本作品博客链接：\href{}{跳转博客链接页}\\
-    Tex源码Github地址：\href{}{跳转Tex源码页}\\
-    本作品许可协议：本作品的所有内容，除特别声明外，均采用\href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh}{知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议}进行发布。\includegraphics[scale=.4]{CC-BY-NC-SA}\\*[1.3ex]
+    %本作品配套视频：\href{}{跳转视频页}\\ %无视频则注释掉此行
+    Tex源码Github地址：\href{https://github.com/Mister-Kin/OpenDocs/tree/master/LearningNotes/EnglishVocabulary}{跳转Tex源码页}\\
+    本作品许可协议：本作品的所有内容，除个人设计创作的图像（如logo等）和相关的视频创作及其他特别声明外，均采用\href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh}{知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议}进行发布。\includegraphics[scale=.4]{CC-BY-NC-SA}\\*[1.3ex]
     \begin{tabular}{|*{3}{p{0.306\textwidth}|}}
         \hline
         \textsf{\bfseries 允许} & \textsf{\bfseries 限制} & \textsf{\bfseries 条件} \\
@@ -93,13 +97,16 @@
     \\*[1.3ex]
     \emph{注：若想对本作品进行转载、引用亦或是进行二次创作时，请详细阅读上述相关协议内容（若不理解，请点击链接跳转阅读）。为保障本人权利，对于违反者，本人将依法予以处理！望周知！——Mr. Kin}
     \section*{\bfseries \sffamily 勘误声明}
-    虽本人写作时已尽力保证其内容的正确性，但因个人知识面和经验的局限性以及计算机技术等相关技术日新月异，本作品内容或存在一些错误之处。还望诸君发现错误后能够联系我来更改错误，不胜感激！——Mr. Kin
+    虽本人写作时已尽力保证其内容的正确性，但因个人知识面和经验的局限性以及计算机技术等相关技术日新月异，本作品内容或存在一些错误之处。还望诸君发现错误后能够\hyperlink{contact}{联系我}来更改错误，不胜感激！——Mr. Kin
 
     \section*{\bfseries \sffamily 侵权声明}
-    若本作品采用的第三方内容侵犯了你的版权，请与我联系进行处理，谢谢！——Mr. Kin
+    若本作品采用的第三方内容侵犯了你的版权，请与我\hyperlink{contact}{联系}进行处理，谢谢！——Mr. Kin
 
     \ifx\collections\undefined
     \printbibliography %生成参考文献排版。
+    \addcontentsline{toc}{section}{参考文献} %添加参考文献进目录
+    \clearpage %新建页，确保超链接跳转正确
+    \phantomsection %确保目录中的超链接指向正确的页码
     \printindex %生成索引排版。
 \end{document}
     \fi

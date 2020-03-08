@@ -67,13 +67,15 @@
 
 \begin{document}
     \phantomsection %确保目录中的超链接指向正确的页码
-    \pdfbookmark[1]{标题页}{title}
+    \pdfbookmark[1]{标题页}{title} %添加标题页书签
+    \pagenumbering{Roman} %大写罗马样式页码
     \maketitle %生成标题页
+    \pagenumbering{roman} %小写罗马样式页码
     {\centering \tableofcontents} %生成目录页
-    \clearpage
+    \clearpage %新建页，分离上下两个样式页码的效果
+    \pagenumbering{arabic} %阿拉伯样式页码
     \fi
 
-    %\pagenumbering{arabic} %阿拉伯样式页码，非第一个分文件请注释此行。
     \section{电力专业英语}
     \subsection{Fundamentals of Electronic Circuits}
     \subsubsection{Circuit Theory}
@@ -96,8 +98,98 @@
         \end{itemize}
     \end{multicols}
 
+    \subsubsection{Analog and Digital Circuits}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item analog n.(AmE)类似物；模拟 adj.(AmE)模拟的，指针式的\\analogue n./adj.(BrE)同上
+            \item digital n.数字，数字式 adj.数字的，数位的
+            \item thermometer n.温度计，体温计
+            \item Fahrenheit n.华氏温度计 adj.华氏温度计的
+            \item drum n.鼓，鼓声，鼓形圆筒 vt.打鼓奏 vi.击鼓，做鼓声
+            \item discrete adj.不连续的，离散的
+            \item original adj.最初的，原始的，独创的，新颖的 n.原物，原作
+            \item remote adj.遥远的，偏僻的，细微的
+            \item bulb n.鳞茎，球形物
+            \item Morse code 莫尔斯电码
+            \item pulse n.脉搏，脉冲
+            \item buzzer n.蜂鸣器，信号手，嗡嗡作声的东西
+            \item manipulate vt.(熟练地)操作，使用（机器），操纵（人或市场、市场），利用，应付
+            \item destination n.目的地，[计]目的文件，目的单元格
+            \item humidity n.湿气，潮湿，湿度
+            \item comparator n.比较仪
+            \item trigger vt.引发，引起，触发 vi.转义，换车 n.扳机
+            \item sequence n.次序，顺序，序列
+            \item parallel n.平行的，相同的，类似的，并联的 n.平行线，平行面，相似物 v.相应，平行
+            \item serial adj.连续的，串行的，顺次
+            \item decoder n.解码器
+            \item reassemble vt.重新召集 vi.重新集合
+        \end{itemize}
+    \end{multicols}
+
+    \subsubsection{Three-Phase Circuits}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item transformer n.变压器
+            \item single-phase 单相
+            \item pulsate vi.脉动
+            \item three-phase power 三相电源
+            \item three-phase circiut 三相电路
+            \item the parallelogram method 平行四边形法则
+            \item wye connection 星形连接
+            \item delta connection 三角形连接
+            \item phase voltage 相电压
+            \item line voltage 线电压
+            \item confuse vt.使混乱，使更难于理解，使困窘，使困惑 vi.使糊涂
+            \item voltmeter n.电压表
+            \item ammeter n.电流表
+            \item clamp-on ammeter 钳式安培表
+        \end{itemize}
+    \end{multicols}
+
+    \subsubsection{Further Reading}
+
+    \subsection{Power Electronics}
+    \subsubsection{Introduction}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item solid-state adj.固态的
+            \item computation n.计算，估计
+            \item integration n.结合，整合，一体化
+            \item dynamic adj.动态的，充满活力的，不断变化的 n.动态，动力学，活力
+            \item mercury-arc [医]汞弧 \\Mercury n.水星
+            \item valve n.阀，真空管，活栓 vt.装阀（于），以活门调节
+            \item semiconductor n.[物理]半导体
+            \item switching n.开关，转换，交换，配电 v.转换
+            \item diode n.二极管
+            \item inverter n.逆变器（反用换流器），变极器
+            \item thyristor n.半导体闸流管，硅可控整流器
+            \item inverter thyristor 晶体管逆变器，可控硅环流器，可控硅逆变器
+            \item transistor n.晶体管，晶体管收音机，半导体收音机
+            \item transmission n.播送，传送，信息，传动装置
+            \item substantial adj.结实的，牢固的，重大的 n.本质，重要材料
+            \item fluorescent lamp ballast 荧光灯镇流器
+            \item mercury n.水银，汞
+            \item therminoic adj.[物]热电子的，热离子的
+            \item HVDC transmission system 高压直流输电系统
+            \item induction motor 感应电动机
+            \item vacuum n.真空，空间 adj.真空的 vt.用真空吸尘器打扫
+            \item dissipate v.驱散，使（云/雾/疑虑)消散
+            \item rectifier n.纠正者，整顿者，整流器
+            \item triggered adj.触发的
+            \item thyratron n.[电]闸流管
+            \item ignitron n.引燃管，放电管
+            \item cycloconverter n.周波变换器，循环换流器，双向离子变频器
+            \item traic n.[电]三端双向可控硅开关元件
+            \item a scope of 一个范围
+            \item spectrum n.谱，光谱，范围，系列，幅度
+        \end{itemize}
+    \end{multicols}
+
     \ifx\collections\undefined
     \printbibliography %生成参考文献排版。
+    \addcontentsline{toc}{section}{参考文献} %添加参考文献进目录
+    \clearpage %新建页，确保超链接跳转正确
+    \phantomsection %确保目录中的超链接指向正确的页码
     \printindex %生成索引排版。
 \end{document}
     \fi
