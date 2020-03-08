@@ -6,7 +6,7 @@ EN
 
 # OpenDocs
 
-> ⛛ An all-inclusive (maybe (ಡ ω ಡ)) document repository.
+> ⛛ An all-inclusive (maybe(ಡωಡ)) document repository.
 
 [![tex](https://img.shields.io/ctan/v/tex)](https://tug.org/texlive/)
 
@@ -46,7 +46,7 @@ PDF electronic documents are stored directly in the root directory of each docum
 
 Obtain the required document project folder from the repo, and compile it with a program that could compile Tex source code to generate PDF or others electronic formats, such as [Texlive][] or [Pandoc][]. Please refer to the software manual for detailed compilation and conversion operations. My workflow is [VS Code][] + [LaTexWorkshop][] + [Texlive][].
 
-Tex format description: Tex under each document projects in this repo generally uses the method of separate file compilation, which splits file to write documents. The effect is just similar to conditional compilation in C language. Each sub-file can be compiled independently, but the setting of *table of content* in the sub-file source code have not been optimized well, and the typographic effect of its *table of content* may be different from the main file. If you want to generate the electronic documents of the entire document project, please find the main file for compilation (the name of main file is generally the same as the name of document project). (There is such a line of code "%! TEX root = Main.tex% specifies the main file" in the first line of the sub-file source code. If you couldn't find the main file, you may use this method to exclude the sub-file.)
+Tex format description: Tex under each document projects in this repo generally uses the method of separate file compilation, which splits file to write documents. The effect is just similar to conditional compilation in C language. Each sub-file can be compiled independently. However, if you want to generate the electronic documents of the entire document project, please find the main file for compilation (the name of main file is generally the same as the name of document project). (There is such a line of code "%! TEX root = Main.tex% specifies the main file" in the first line of the sub-file source code. If you couldn't find the main file, you may use this method to exclude the sub-file.)
 
 **(Important) Note: since each document will have pages for copyright and author, there will be some common resources between each project, such as the quoted images in the copyright page. To reduce the size of project, I store the same resources in the public resources folder - [resources][], instead of each project. So before compiling a document using the Tex source code, please download the files of common resources folder, and merge it with the resources folder in the document project, and then compile the document.**
 
@@ -76,6 +76,7 @@ This category has the documents translated by me. For a detailed list of documen
 
 ## Author
 **OpenDocs** © Mr. Kin, Released under the [CC BY-NC-SA 4.0](/LICESNSE) license.
+
 Authored and maintained by Mr. Kin.
 
 *Note: If you want to reprint, quote or make a second creation of this work, please read the content of the relevant agreement above (if you couldn't understand, please click the link to read further). In order to protect my rights, I will deal with the violators in accordance with the law! Please Note That! —— Mr. Kin*
@@ -85,7 +86,7 @@ Authored and maintained by Mr. Kin.
 [Texlive]: https://tug.org/texlive/
 [Pandoc]: https://pandoc.org/
 [VS Code]: https://code.visualstudio.com/
-[LatexWorkshop]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop#review-details
+[LaTexWorkshop]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop#review-details
 [resources]: https://github.com/Mister-Kin/OpenDocs/resources/
 [Jump Page *Articles*]: https://github.com/Mister-Kin/OpenDocs/Articles/
 [Jump Page *Books*]: https://github.com/Mister-Kin/OpenDocs/Books/
