@@ -30,6 +30,7 @@
 \usepackage{multicol} %调用multicol宏包以支持多栏排版。
 \usepackage[toc]{multitoc} %调用multitoc宏包，设置toc目录页，默认双栏排版。
 \usepackage{enumitem} %调用emuitem，以设置列表环境。
+\usepackage{multirow} %调用multirow，以支持纵向合并列表。
 \setlist{left=0em}
 %重订制目录命令。
 \renewcommand{\tableofcontents}%
@@ -44,8 +45,25 @@
 \fancyhead[LO]{\sffamily \rightmark}
 \fancyhead[LE]{\sffamily \leftmark}
 \fancyhead[ROE]{\bfseries \thepage}
+\fancyfoot[COE]{\ttfamily \href{https://mister-kin.github.io}{个人博客：https://mister-kin.github.io}}
 %定义intro环境。
 \newenvironment{intro}{\narrower\sffamily}{\par\vspace*{2ex plus 2.5ex minus 1.5ex}}
+\usepackage{listings} % 指定listings，订制代码排版环境
+\lstset{
+    basicstyle      = \ttfamily,                          % 基本代码指定等宽字体
+    keywordstyle    = \bfseries,                          % 关键字指定加粗
+    commentstyle    = \ttfamily\slshape\color{gray},      % 注释指定灰色等宽斜体
+    stringstyle     = \ttfamily,                          % 字符串指定等宽字体
+    %numbers        = left,                               % 行号的位置在左边，启用后不方便复制代码
+    %numberstyle    = \ttfamily,                          % 行号等宽字体
+    %xleftmargin    = \parindent,                         % 代码左边框起始位置（启用行号时建议启用这个）
+    %frame          = trBL,                               % 代码框类型，t下，r右，b下，l左，大写时为两条线。
+    %frameround     = fttt,                               % 控制代码框是否为圆角
+    frameshape      = {{ryrynyyyy}{yny}{yny}{ryrynyyyy}}, % 控制边框样式，上下边是每三个字母段控制一条边框。
+    backgroundcolor = \color{gray!5},                     % 代码框背景颜色：5%的灰色
+    breaklines      = true,                               % 代码过长时则换行
+    gobble          = 8,                                  % 去掉代码前的缩进
+}
 \usepackage{hyperref} %调用hyperref宏包
 \hypersetup{
     colorlinks=true, %设置超链接文件带颜色
@@ -80,10 +98,10 @@
 
     \include{Abbr}
     \part{词汇量积累篇}
-    \input{IELTS}
+    \include{IELTS}
     \part{软件篇}
     \part{电力专业篇}
-    \input{ElectricalProEnglish}
+    \include{ElectricalProEnglish}
 
     \printbibliography %生成参考文献排版。
     \addcontentsline{toc}{section}{参考文献} %添加参考文献进目录
