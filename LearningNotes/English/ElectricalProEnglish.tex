@@ -1,8 +1,8 @@
-% !TEX root = main.tex %指定主文件
+% !TEX root = English.tex %指定主文件
 \ifx\collections\undefined
 % !TEX program = xelatex %指定编译方式xelatex。
 % !BIB program = biber %指定bib数据后台处理程序biber。
-\documentclass[11pt,a4paper,UTF8,titlepage]{ctexart} %指定ctex的文档类，设置基本字号为11pt，a4大小，使用UTF-8编码保存，指定\maketitle生成单独的标题页。
+\documentclass[11pt,a4paper,UTF8,titlepage]{ctexrep} %指定ctex的文档类，设置基本字号为11pt，a4大小，使用UTF-8编码保存，指定\maketitle生成单独的标题页。
 
 \usepackage{syntonly}
 %\syntaxonly %用来快速编译以排查错误，不生成DVI或PDF。
@@ -79,7 +79,7 @@
 }
 
     \title{\hypertarget{title}{\textbf{标题}}}
-    \addcontentsline{toc}{section}{标题页}
+    \addcontentsline{toc}{chapter}{标题页}
     \author{Written by Mr. Kin}
     \date{创建于2020.1.28，修改于\number\year.\number\month.\number\day}
 
@@ -94,9 +94,9 @@
     \pagenumbering{arabic} %阿拉伯样式页码
     \fi
 
-    \section{电力专业英语}
-    \subsection{Fundamentals of Electronic Circuits}
-    \subsubsection{Circuit Theory}
+    \chapter{电力专业英语}
+    \section{Fundamentals of Electronic Circuits}
+    \subsection{Circuit Theory}
     \begin{multicols}{2}
         \begin{itemize}
             \item element n.成分，元件
@@ -116,7 +116,7 @@
         \end{itemize}
     \end{multicols}
 
-    \subsubsection{Analog and Digital Circuits}
+    \subsection{Analog and Digital Circuits}
     \begin{multicols}{2}
         \begin{itemize}
             \item analog n.(AmE)类似物；模拟 adj.(AmE)模拟的，指针式的\\analogue n./adj.(BrE)同上
@@ -144,7 +144,7 @@
         \end{itemize}
     \end{multicols}
 
-    \subsubsection{Three-Phase Circuits}
+    \subsection{Three-Phase Circuits}
     \begin{multicols}{2}
         \begin{itemize}
             \item transformer n.变压器
@@ -164,10 +164,10 @@
         \end{itemize}
     \end{multicols}
 
-    \subsubsection{Further Reading}
+    \subsection{Further Reading}
 
-    \subsection{Power Electronics}
-    \subsubsection{Introduction}
+    \section{Power Electronics}
+    \subsection{Introduction}
     \begin{multicols}{2}
         \begin{itemize}
             \item solid-state adj.固态的
@@ -205,7 +205,7 @@
 
     \ifx\collections\undefined
     \printbibliography %生成参考文献排版。
-    \addcontentsline{toc}{section}{参考文献} %添加参考文献进目录
+    \addcontentsline{toc}{chapter}{参考文献} %添加参考文献进目录
     \clearpage %新建页，确保超链接跳转正确
     \phantomsection %确保目录中的超链接指向正确的页码
     \printindex %生成索引排版。

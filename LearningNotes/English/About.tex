@@ -1,8 +1,8 @@
-% !TEX root = EnglishVocabulary.tex %指定主文件。
+% !TEX root = English.tex %指定主文件。
 \ifx\collections\undefined
 % !TEX program = xelatex %指定编译方式xelatex。
 % !BIB program = biber %指定bib数据后台处理程序biber。
-\documentclass[11pt,a4paper,UTF8,titlepage]{ctexart} %指定ctexart文档类，设置基本字号为11pt，a4大小，使用UTF-8编码保存，指定\maketitle生成单独的标题页。
+\documentclass[11pt,a4paper,UTF8,titlepage]{ctexrep} %指定ctexart文档类，设置基本字号为11pt，a4大小，使用UTF-8编码保存，指定\maketitle生成单独的标题页。
 
 \usepackage{syntonly}
 %\syntaxonly %用来快速编译以排查错误，不生成DVI或PDF。
@@ -79,7 +79,7 @@
 }
 
     \title{\hypertarget{title}{\textbf{标题}}}
-    \addcontentsline{toc}{section}{标题页}
+    \addcontentsline{toc}{chapter}{标题页}
     \author{Written by Mr. Kin}
     \date{创建于2020.1.28，修改于\number\year.\number\month.\number\day}
 
@@ -95,51 +95,106 @@
     \fi
 
     \phantomsection
-    \section*{\bfseries \sffamily 版权声明}
-    \addcontentsline{toc}{section}{版权声明}
-    \markright{版权声明}
-    \noindent 本作品作者：Mr. Kin \\
-    本作品博客链接：\href{}{跳转博客链接页}\\
-    %本作品配套视频：\href{}{跳转视频页}\\ %无视频则注释掉此行
-    Tex源码Github地址：\href{https://github.com/Mister-Kin/OpenDocs/tree/master/LearningNotes/EnglishVocabulary}{跳转Tex源码页}\\
-    本作品许可协议：本作品的所有内容，除个人设计创作的图像（如logo等）和相关的视频创作及其他特别声明外，均采用\href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh}{知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议}进行发布。版权 © Mr. Kin，保留所有权利。\includegraphics[scale=.4]{CC-BY-NC-SA}\\*[1.3ex]
-    \begin{tabular}{|*{3}{p{0.306\textwidth}|}}
-        \hline
-        \textsf{\bfseries 允许} & \textsf{\bfseries 限制} & \textsf{\bfseries 条件} \\
-        \hline
-        \vspace{-8pt}{\color{green}√} 修改 & \vspace{-8pt}{\color{red}×} 商标使用 & \vspace{-8pt}{\color{blue}$\odot$} 保留原署名 \\[-12pt]
-        {\color{green}√} 分发 & {\color{red}×} 专利使用 & {\color{blue}$\odot$} 状态变更说明 \\[-12pt]
-        {\color{green}√} 个人使用 & {\color{red}×} 商业使用 & {\color{blue}$\odot$} 相同的许可和版权声明 \\
-        \hline
-    \end{tabular}
-    \\*[1.3ex]
-    \emph{注：若想对本作品进行转载、引用亦或是进行二次创作时，请详细阅读上述相关协议内容（若不理解，请点击链接跳转阅读）。为保障本人权利，对于违反者，本人将依法予以处理！望周知！——Mr. Kin}
-    \section*{\bfseries \sffamily 勘误声明}
-    虽本人写作时已尽力保证其内容的正确性，但因个人知识面和经验的局限性以及计算机技术等相关技术日新月异，本作品内容或存在一些错误之处。还望诸君发现错误后能够\hyperlink{contact}{联系我}来更改错误，不胜感激！——Mr. Kin
+    \section*{\bfseries \sffamily 关于作者}
+    \addcontentsline{toc}{chapter}{关于作者}
+    \markright{关于作者}
 
-    \section*{\bfseries \sffamily 侵权声明}
-    若本作品采用的第三方内容侵犯了你的版权，请与我\hyperlink{contact}{联系}进行处理，谢谢！——Mr. Kin
+    \subsection*{\bfseries \sffamily 关于我}
+    \begin{wrapfigure}[3]{L}{60pt}
+       \vspace*{-20pt}
+       \centering
+       \includegraphics{kin-logo}
+    \end{wrapfigure}
+    Mr. Kin，广东客家仁，程序猿，CG和游戏爱好者，一枚极客学生党。B站翻译up，个人up。不定时在B站直播日常：码代码，码博客，翻译，做视频，做教程。 ($\vartheta$$\bullet$\_$\bullet$)$\vartheta$ \hyperlink{follow}{\emph{（点击关注我！）}}
 
-    \section*{\bfseries \sffamily 第三方开源许可声明}
-    本作品使用的第三方开源产品有：
-    \begin{multicols}{2}
+    \subsection*{\bfseries \sffamily 技能树}
+
+    \begin{tikzpicture}[level distance=60pt]
+        \Tree [.编程 [.C ] [.汇编 ] [.批处理 ] ]
+    \end{tikzpicture}
+    \qquad
+    \begin{tikzpicture}[level distance=30pt]
+        \Tree [.后期处理 [.开源类 [.Blender ] [.Audactiy ] [.Krita ] ] [.闭源类 [.Ps ] [.Au ] [.Pr ] ] ]
+    \end{tikzpicture}
+    \qquad
+    \begin{tikzpicture}[level distance=60pt]
+        \Tree [.其它 [.WinOS维护 ] [.计算机拆机 ] ]
+    \end{tikzpicture}
+
+    \subsection*{\bfseries \sffamily 开源建设}
+
+    \noindent 参与的开源软件中文化翻译
+
     \begin{itemize}
-        \item \href{https://github.com/adobe-fonts}{Adobe Fonts}: \href{http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL}{OFL v1.1}
-        \item \href{https://tug.org/texlive/}{Tex Live}: \href{https://tug.org/texlive/copying.html}{TeX Live Licensing}
-        \item \href{https://code.visualstudio.com/}{Visual Studio Code}: \href{https://www.mit-license.org/}{MIT}
-        \item \href{http://ffmpeg.org/}{FFmpeg}: \href{http://ffmpeg.org/legal.html}{LGPL v2.1}
-        \item \href{https://krita.org/en/}{Krita}: \href{https://docs.krita.org/en/KritaFAQ.html?highlight=license#license-rights-and-the-krita-foundation}{Krita's GPL license}
-        \item \href{https://inkscape.org/}{Inkscape}: \href{https://inkscape.org/about/license/}{GPL}
-        \item \href{https://www.gimp.org}{GIMP}: \href{https://www.gimp.org/about/COPYING}{GPL}
-        \item \href{https://www.blender.org}{Blender}: \href{https://www.blender.org/about/license/}{GPL}
-        \item \href{https://www.audacityteam.org/}{Audacity}: \href{https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html}{GPL v2}
-        \item \href{https://handbrake.fr}{Handbrake}: \href{https://github.com/HandBrake/HandBrake/blob/master/LICENSE}{GPL v2}
+        \item krita文档：2018.8.5 - 2019.4.23
+        \item \href{https://www.blendercn.org/5812.html?tdsourcetag=s_pctim_aiomsg}{Blender手册}：2019.7.20 - 2019.9.4 - 至今（翻译维护）
     \end{itemize}
-    \end{multicols}
+
+    \subsection*{\bfseries \sffamily \hypertarget{contact}{联系方式}}
+
+    \noindent {\small\emph{\color{red}注：联系时请注明身份，谢谢！}}
+
+    \begin{itemize}
+        \item QQ：\href{tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2312463626&website=www.oicqzone.com}{2312463626}\emph{\color{red}（点击号码即加好友）}
+        \item 邮箱：2312463626@qq.com ；moyu1355@gmail.com
+    \end{itemize}
+
+    \subsection*{\bfseries \sffamily \hypertarget{follow}{关注渠道}}
+    \noindent {\small\emph{\color{red}注：点击即可跳转关注！}}
+
+    \begin{figure}[htbp]
+        \centering
+        \begin{minipage}[t]{0.21\textwidth}
+            \centering
+            \setlength{\abovecaptionskip}{1pt}
+            \caption*{\href{https://mister-kin.github.io/}{个人博客}}
+            \includegraphics[scale=0.06]{follow-blog}
+        \end{minipage}
+        \qquad
+        \begin{minipage}[t]{0.21\textwidth}
+            \centering
+            \setlength{\abovecaptionskip}{1pt}
+            \caption*{\href{https://github.com/mister-kin}{Github}}
+            \includegraphics[scale=0.06]{follow-github}
+        \end{minipage}
+        \qquad
+        \begin{minipage}[t]{0.21\textwidth}
+            \centering
+            \setlength{\abovecaptionskip}{1pt}
+            \caption*{\href{https://weibo.com/6270111192/profile?topnav=1&wvr=6&is_all=1}{微博}}
+            \includegraphics[scale=0.06]{follow-weibo}
+        \end{minipage}
+        \qquad
+
+        \begin{minipage}[t]{0.21\textwidth}
+            \centering
+            \setlength{\abovecaptionskip}{1pt}
+            \setlength{\belowcaptionskip}{10pt}
+            \caption*{\href{http://space.bilibili.com/17025250?}{B站 - Bilibili}}
+            \includegraphics[scale=0.06]{follow-bilibili}
+        \end{minipage}
+        \qquad
+        \begin{minipage}[t]{0.21\textwidth}
+            \centering
+            \setlength{\abovecaptionskip}{1pt}
+            \setlength{\belowcaptionskip}{10pt}
+            \caption*{\href{http://i.youku.com/i/UNjA3MTk5Mjgw?spm=a2hzp.8253869.0.0}{优酷}}
+            \includegraphics[scale=0.06]{follow-youku}
+        \end{minipage}
+        \qquad
+        \begin{minipage}[t]{0.21\textwidth}
+            \centering
+            \setlength{\abovecaptionskip}{1pt}
+            \setlength{\belowcaptionskip}{10pt}
+            \caption*{\href{https://www.youtube.com/channel/UCNhtdG6whC5mlRDkrhQ0wLA?view_as=public}{油管 - Youtube}}
+            \includegraphics[scale=0.06]{follow-youtube}
+        \end{minipage}
+        \qquad
+    \end{figure}
 
     \ifx\collections\undefined
     \printbibliography %生成参考文献排版。
-    \addcontentsline{toc}{section}{参考文献} %添加参考文献进目录
+    \addcontentsline{toc}{chapter}{参考文献} %添加参考文献进目录
     \clearpage %新建页，确保超链接跳转正确
     \phantomsection %确保目录中的超链接指向正确的页码
     \printindex %生成索引排版。
