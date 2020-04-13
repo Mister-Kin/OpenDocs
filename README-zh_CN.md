@@ -1,14 +1,14 @@
 <div align="right">
 语言:
-<a href="https://github.com/Mister-Kin/OpenDocs/blob/master/README.md">EN</a>
-ZH
+<a href="https://github.com/Mister-Kin/OpenDocs/blob/master/README.md">英</a>
+中
 </div>
 
 # 开放文档
 
 > ⛛ 包罗万象（误(ಡωಡ)）的文档仓库。
 
-[![tex](https://img.shields.io/ctan/v/tex)](https://tug.org/texlive/)
+[![Texlive](https://img.shields.io/badge/Texlive-2019-blue)](https://tug.org/texlive/) [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue)](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
 
 ## 介绍
 一个关于我本人写作、学习笔记和翻译文档的仓库。
@@ -46,7 +46,7 @@ PDF电子文档直接存放在每个文档项目文件夹根目录下，直接�
 
 从仓库中获取所需的文档项目文件夹，使用可以编译Tex源码的程序进行编译生成PDF等电子格式，例如[Texlive][]或者[Pandoc][]。相关编译及转换操作请详细查看软件手册。本人的工作流是[VS Code][] + [LaTexWorkshop][] + [Texlive][]。
 
-Tex格式说明：本仓库下的每个文档项目下的Tex一般都是采用分文件编译法，即拆分文件编写文档，这个效果有点类似C语言的条件编译。每个分文件均可独立进行编译，但需要生成完整文档项目的电子文档，请找到主文件进行编译（主文件名一般与文档项目名一致）。（子文件源码中首行均有这么一行代码"% !TEX root = Main.tex %指定主文件"，若找不到主文件则可用此法排除子文件。）
+Tex格式说明：本仓库下的每个文档项目下的Tex一般都是采用分文件编译法，即拆分文件编写文档，这个效果有点类似C语言的条件编译。每个分文件均可独立进行编译，但需要生成完整文档项目的电子文档时，请找到主文件进行编译（主文件名一般与文档项目名一致）。（子文件源码中首行均有这么一行代码"% !TEX root = Main.tex %指定主文件"，若找不到主文件则可用此法排除子文件。）
 
 **（很重要）注：因每个文档都会有版权和作者页面，则每个项目之间都会有一些相同的资源，例如“版权页面”中引用的图片。为减小本项目的体积，将这部份相同的资源存放至公共资源文件夹 - [resources][] 中，而不重复存放在每个项目中。因此使用Tex源码编译文档前，请下载好共用资源文件夹的内容，并将其与文档项目下的resources文件夹合并，之后再编译文档。**
 
