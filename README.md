@@ -75,13 +75,13 @@ This category has my undergraduate study notes. For a detailed list of documents
 This category has the documents translated by me. For a detailed list of documents, please see the category introduction. [Jump Page *Translations*][]
 
 ## Author
-**OpenDocs** © Mr. Kin, Released under the [CC BY-NC-SA 4.0](/LICESNSE) license.
+**OpenDocs** © Mr. Kin, Released under the [CC BY-NC-SA 4.0][] license.
 
 Authored and maintained by Mr. Kin.
 
 *Note: If you want to reprint, quote or make a second creation of this work, please read the content of the relevant agreement above (if you couldn't understand, please click the link to read further). In order to protect my rights, I will deal with the violators in accordance with the law! Please Note That! —— Mr. Kin*
 
-> [Blog][] · [GitHub][] · [Weibo][] · [Bilibili][] · [Youku][] · [Youtube][]
+> [Blog][] · [GitHub][] · [Weibo][] · [Zhihu][] · [Bilibili][] · [Youku][] · [Headline][] · [Youtube][]
 
 [Texlive]: https://tug.org/texlive/
 [Pandoc]: https://pandoc.org/
@@ -93,10 +93,12 @@ Authored and maintained by Mr. Kin.
 [Jump Page *LearningNotes*]: https://github.com/Mister-Kin/OpenDocs/LearningNotes/
 [Jump Page *UndergraduateLearning*]: https://github.com/Mister-Kin/OpenDocs/UndergraduateLearning/
 [Jump Page *Translations*]: https://github.com/Mister-Kin/OpenDocs/Translations/
-[CC BY-NC-SA 4.0]: /LICESNSE
+[CC BY-NC-SA 4.0]: ./LICESNSE
 [Blog]: https://mister-kin.github.io/
 [Github]: https://github.com/mister-kin
 [Weibo]: https://weibo.com/6270111192/profile?topnav=1&wvr=6&is_all=1
 [Bilibili]: http://space.bilibili.com/17025250?
 [Youku]: http://i.youku.com/i/UNjA3MTk5Mjgw?spm=a2hzp.8253869.0.0
 [Youtube]: https://www.youtube.com/channel/UCNhtdG6whC5mlRDkrhQ0wLA?view_as=public
+[Headline]: https://www.toutiao.com/c/user/835254071079053/#mid=1663279303982091
+[Zhihu]: https://www.zhihu.com/people/drwu-94
