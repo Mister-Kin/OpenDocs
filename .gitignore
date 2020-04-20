@@ -1,0 +1,14 @@
+*.gz
+*.pdf
+# ignore duplicate image files except public resources
+images/
+!/resources/*
+
+# Temporary ignore project
+!English/
+
+GraduateSchoolExam/
+Guideline/
+UndergraduateLearning/
+LearningNotes/
+

@@ -1,7 +1,7 @@
 <div align="right">
 Language:
 EN
-<a href="https://github.com/Mister-Kin/OpenDocs/blob/master/README-zh_CN.md">ZH</a>
+<a href="./README-zh_CN.md">ZH</a>
 </div>
 
 # OpenDocs
@@ -81,20 +81,22 @@ Authored and maintained by Mr. Kin.
 
 *Note: If you want to reprint, quote or make a second creation of this work, please read the content of the relevant agreement above (if you couldn't understand, please click the link to read further). In order to protect my rights, I will deal with the violators in accordance with the law! Please Note That! —— Mr. Kin*
 
-> [Blog][] · [GitHub][] · [Weibo][] · [Zhihu][] · [Bilibili][] · [Youku][] · [Headline][] · [Youtube][]
+![WechatOfficialAccounts](./resources/images/follow/WechatOfficialAccounts-En.png)
 
-[Texlive]: https://tug.org/texlive/
-[Pandoc]: https://pandoc.org/
-[VS Code]: https://code.visualstudio.com/
+> [Blog][] · [Github][] · [Weibo][] · [Zhihu][] · [Bilibili][] · [Youku][] · [Headline][] · [Youtube][]
+
+[Texlive]: https://tug.org/texlive
+[Pandoc]: https://pandoc.org
+[VS Code]: https://code.visualstudio.com
 [LaTexWorkshop]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop#review-details
-[resources]: https://github.com/Mister-Kin/OpenDocs/resources/
-[Jump Page *Articles*]: https://github.com/Mister-Kin/OpenDocs/Articles/
-[Jump Page *Books*]: https://github.com/Mister-Kin/OpenDocs/Books/
-[Jump Page *LearningNotes*]: https://github.com/Mister-Kin/OpenDocs/LearningNotes/
-[Jump Page *UndergraduateLearning*]: https://github.com/Mister-Kin/OpenDocs/UndergraduateLearning/
-[Jump Page *Translations*]: https://github.com/Mister-Kin/OpenDocs/Translations/
-[CC BY-NC-SA 4.0]: ./LICESNSE
-[Blog]: https://mister-kin.github.io/
+[resources]: ./resources
+[Jump Page *Articles*]: ./Articles
+[Jump Page *Books*]: ./Books
+[Jump Page *LearningNotes*]: ./LearningNotes
+[Jump Page *UndergraduateLearning*]: ./UndergraduateLearning
+[Jump Page *Translations*]: ./Translations
+[CC BY-NC-SA 4.0]: ./LICENSE
+[Blog]: https://mister-kin.github.io
 [Github]: https://github.com/mister-kin
 [Weibo]: https://weibo.com/6270111192/profile?topnav=1&wvr=6&is_all=1
 [Bilibili]: http://space.bilibili.com/17025250?

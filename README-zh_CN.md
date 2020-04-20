@@ -1,6 +1,6 @@
 <div align="right">
 语言:
-<a href="https://github.com/Mister-Kin/OpenDocs/blob/master/README.md">英</a>
+<a href="./README.md">英</a>
 中
 </div>
 
@@ -73,28 +73,32 @@ Tex格式说明：本仓库下的每个文档项目下的Tex一般都是采用�
 此分类集合了本人翻译的文档。详细文档列表请看分类介绍。[跳转翻译页][]
 
 ## 作者
-**开放文档** © Mr. Kin，采用 [CC BY-NC-SA 4.0][] 许可协议进行发布。
+**开放文档** © Mr. Kin，采用 [知识共享 署名—非商业性使用—相同方式共享 4.0][] 许可协议进行发布。
 
 由 Mr. Kin 著作并维护。
 
 *注：若想对本作品进行转载、引用亦或是进行二次创作时，请详细阅读上述相关协议内容（若不理解，请点击链接跳转阅读）。为保障本人权利，对于违反者，本人将依法予以处理！望周知！ —— Mr. Kin*
 
-> [博客][] · [Github][] · [微博][] · [B站][] · [优酷][] · [油管][]
+![微信公众号](./resources/images/follow/WechatOfficialAccounts.png)
 
-[Texlive]: https://tug.org/texlive/
-[Pandoc]: https://pandoc.org/
-[VS Code]: https://code.visualstudio.com/
+> [博客][] · [Github][] · [微博][] · [知乎][] · [B站][] · [优酷][] · [头条][] · [油管][]
+
+[Texlive]: https://tug.org/texlive
+[Pandoc]: https://pandoc.org
+[VS Code]: https://code.visualstudio.com
 [LaTexWorkshop]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop#review-details
-[resources]: https://github.com/Mister-Kin/OpenDocs/resources/
-[跳转文章页]: https://github.com/Mister-Kin/OpenDocs/Articles/
-[跳转书籍页]: https://github.com/Mister-Kin/OpenDocs/Books/
-[跳转学习笔记页]: https://github.com/Mister-Kin/OpenDocs/LearningNotes/
-[跳转本科学习页]: https://github.com/Mister-Kin/OpenDocs/UndergraduateLearning/
-[跳转翻译页]: https://github.com/Mister-Kin/OpenDocs/Translations/
-[CC BY-NC-SA 4.0]: /LICESNSE
-[博客]: https://mister-kin.github.io/
+[resources]: ./resources
+[跳转文章页]: ./Articles
+[跳转书籍页]: ./Books
+[跳转学习笔记页]: ./LearningNotes
+[跳转本科学习页]: ./UndergraduateLearning
+[跳转翻译页]: ./Translations
+[知识共享 署名—非商业性使用—相同方式共享 4.0]: ./LICENSE-zh_CN
+[博客]: https://mister-kin.github.io
 [Github]: https://github.com/mister-kin
 [微博]: https://weibo.com/6270111192/profile?topnav=1&wvr=6&is_all=1
 [B站]: http://space.bilibili.com/17025250?
 [优酷]: http://i.youku.com/i/UNjA3MTk5Mjgw?spm=a2hzp.8253869.0.0
 [油管]: https://www.youtube.com/channel/UCNhtdG6whC5mlRDkrhQ0wLA?view_as=public
+[头条]: https://www.toutiao.com/c/user/835254071079053/#mid=1663279303982091
+[知乎]: https://www.zhihu.com/people/drwu-94
