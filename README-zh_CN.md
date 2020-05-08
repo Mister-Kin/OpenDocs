@@ -79,7 +79,7 @@ Tex格式说明：本仓库下的每个文档项目下的Tex一般都是采用�
 
 *注：若想对本作品进行转载、引用亦或是进行二次创作时，请详细阅读上述相关协议内容（若不理解，请点击链接跳转阅读）。为保障本人权利，对于违反者，本人将依法予以处理！望周知！ —— Mr. Kin*
 
-![微信公众号](./resources/images/follow/WechatOfficialAccounts.png)
+![微信公众号](./resources/images/FollowMe/WechatOfficialAccounts.png)
 
 > [博客][] · [Github][] · [微博][] · [知乎][] · [B站][] · [优酷][] · [头条][] · [油管][]
 
