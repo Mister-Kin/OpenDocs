@@ -75,7 +75,7 @@ This category has my undergraduate study notes. For a detailed list of documents
 This category has the documents translated by me. For a detailed list of documents, please see the category introduction. [Jump Page *Translations*][]
 
 ## Author
-**OpenDocs** © Mr. Kin, Released under the [CC BY-NC-SA 4.0][] license.
+**OpenDocs** © Mr. Kin, All files released under the [CC BY-NC-SA 4.0][] license, except the image designed and created by myself (for example, the logo), the relevant created videos and other special claims.
 
 Authored and maintained by Mr. Kin.
 
