@@ -1,4 +1,4 @@
-<div style="text-align: right;">
+<div align="right">
 Language:
 EN
 <a href="./README-zh_CN.md">ZH</a>

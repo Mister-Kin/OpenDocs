@@ -1,5 +1,4 @@
 *.gz
-*.pdf
 # ignore duplicate image files except public resources
 images/
 !/resources/*

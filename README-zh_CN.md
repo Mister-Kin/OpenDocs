@@ -1,4 +1,4 @@
-<div style="text-align: right;">
+<div align="right">
 语言:
 <a href="./README.md">英</a>
 中
