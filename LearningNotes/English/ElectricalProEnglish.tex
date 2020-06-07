@@ -204,6 +204,7 @@
     \end{multicols}
 
     \ifx\collections\undefined
+    \nocite{*} %不使用cite也能生成参考文献
     \printbibliography %生成参考文献排版。
     \addcontentsline{toc}{chapter}{参考文献} %添加参考文献进目录
     \clearpage %新建页，确保超链接跳转正确
