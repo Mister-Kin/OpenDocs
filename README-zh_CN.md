@@ -1,4 +1,4 @@
-<div align="right">
+<div style="text-align: right;">
 语言:
 <a href="./README.md">英</a>
 中
@@ -8,7 +8,7 @@
 
 > ⛛ 包罗万象（误(ಡωಡ)）的文档仓库。
 
-[![Texlive](https://img.shields.io/badge/Texlive-2019-blue)](https://tug.org/texlive/) [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue)](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
+[![Texlive Version](https://img.shields.io/badge/Texlive-v2020-blue)](https://tug.org/texlive/) [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue)](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
 
 ## 介绍
 一个关于我本人写作、学习笔记和翻译文档的仓库。

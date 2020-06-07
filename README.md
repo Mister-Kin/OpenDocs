@@ -1,4 +1,4 @@
-<div align="right">
+<div style="text-align: right;">
 Language:
 EN
 <a href="./README-zh_CN.md">ZH</a>
@@ -8,7 +8,7 @@ EN
 
 > ⛛ An all-inclusive (maybe(ಡωಡ)) document repository.
 
-[![Texlive](https://img.shields.io/badge/Texlive-2019-blue)](https://tug.org/texlive/) [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue)](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
+[![Texlive Version](https://img.shields.io/badge/Texlive-v2020-blue)](https://tug.org/texlive/) [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue)](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
 
 ## Introduction
 A repository for my personal writing, learning notes and translated documents.
