@@ -1,0 +1,216 @@
+% !TEX program = xelatex %指定编译方式xelatex。
+% !BIB program = biber %指定bib数据后台处理程序biber。
+\documentclass[11pt,a4paper,UTF8,titlepage]{ctexart} %指定ctex的文档类，设置基本字号为11pt，a4大小，使用UTF-8编码保存，指定\maketitle生成单独的标题页。
+
+\usepackage{syntonly}
+%\syntaxonly %用来快速编译以排查错误，不生成DVI或PDF。
+\usepackage[style=gb7714-2015]{biblatex} %调用biblatex宏包，设置参考文献样式（符合中文文献著录标准GB/T 7714-2015的样式）,使用默认的后端程序biber（其支持更好，包括UTF-8等）放弃使用[backend=bibtex]（只支持ascii编码）。
+\addbibresource{resources/reference.bib} %加载参考文献数据库。
+\usepackage{makeidx}
+\makeindex %开启索引收集
+\usepackage[margin=1in]{geometry} %调用geometry宏包，设置周围页边距为1英寸（为电子档设计，非打印）。
+\usepackage{xcolor} %调用xcolor宏包，以支持扩展生成颜色。
+\usepackage{fontspec} %调用fontspec宏包以更改西文字体族。
+\setmainfont{Source Serif Pro}
+\setsansfont{Source Sans Pro}
+\setmonofont{Source Code Pro}
+\usepackage{xeCJK} %调用xeCJK宏包以更改中文字体族。
+\xeCJKsetup{AutoFakeSlant=true}  %设置xeCJK选项-伪斜体（需置于字体设置之前）。
+\setCJKmainfont{思源宋体}
+\setCJKsansfont{思源黑体}
+\setCJKmonofont{思源等宽}
+\usepackage{graphicx} %调用graphicx宏包，以支持插图。
+\graphicspath{{resources/images/},{resources/images/follow/}} %加载图片路径。
+\usepackage{caption} %调用caption，支持不带编号的标题。
+\usepackage{wrapfig} %调用wrapfig，支持图文排版。
+\usepackage{subfigure} %调用subfigure宏包进行图片图片排版。
+\usepackage{tikz,tikz-qtree} %调用tikz及其扩展宏包，以支持画图。
+\usepackage[subfigure]{tocloft} %tocloft与subfigure宏包冲突，不能简单调用，tocloft需设置参数。
+\usepackage{tocbibind} %调用宏包以添加目录本身和参考文献进目录中。
+\usepackage{multicol} %调用multicol宏包以支持多栏排版。
+\usepackage[toc]{multitoc} %调用multitoc宏包，设置toc目录页，默认双栏排版。
+\usepackage{enumitem} %调用emuitem，以设置列表环境。
+\usepackage{multirow} %调用multirow，以支持纵向合并列表。
+\usepackage{ulem} %调用ulem，以支持删除线等。
+\usepackage{amsmath} %调用amsmath，以支持复杂的数学公式排版。
+%重订制目录命令。
+\renewcommand{\tableofcontents}%
+  {\chapter{\contentsname}%
+  \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
+  \@makeschapterhead{\sourcecodename}%
+  \@starttoc{toc}%
+}
+\usepackage{fancyhdr} %调用宏包，以设置页眉，统一格式：标题在左，页码在右。
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\sffamily \rightmark}
+\fancyhead[LE]{\sffamily \leftmark}
+\fancyhead[ROE]{\bfseries \thepage}
+%定义intro环境。
+\newenvironment{intro}{\narrower\sffamily}{\par\vspace*{2ex plus 2.5ex minus 1.5ex}}
+\usepackage{hyperref} %调用hyperref宏包
+\hypersetup{
+    colorlinks=true, %设置超链接文件带颜色
+    bookmarks=true, %生成书签
+    bookmarksopen=true, %书签展开
+    bookmarksnumbered=true, %书签带章节编号
+    CJKbookmarks=true, %cjk必设参数
+    unicode, %utf-8编码必设参数
+    pdftitle=免费商用字体, %设置PDF文件属性标题
+    pdfauthor=Mr. Kin, %设置PDF文件属性作者
+    pdfstartview=FitH %默认适合宽度显示
+}
+
+\newcommand{\collections} % 定义汇总文件命令，以方便拆分源文件进行编写。
+
+    \title{\hypertarget{title}{\textbf{免费商用字体}}}
+    \addcontentsline{toc}{section}{标题页}
+    \author{Written by Mr. Kin}
+    \date{创建于2019.8.6，修改于\number\year.\number\month.\number\day}
+
+\begin{document}
+    \phantomsection %确保目录中的超链接指向正确的页码
+    \pdfbookmark[1]{标题页}{title} %添加标题页书签
+    \pagenumbering{Roman} %大写罗马样式页码
+    \maketitle %生成标题页
+    \pagenumbering{roman} %小写罗马样式页码
+    \include{About} %关于页面
+    \include{Copyright} %版权声明
+    {\centering \tableofcontents} %生成目录页
+    \clearpage %新建页，分离上下两个样式页码的效果
+    \pagenumbering{arabic} %阿拉伯样式页码
+
+    \section{安装方法}
+    注：在win多用户平台上直接点击“安装”选项可能会使某些软件无法检测到该字体，例如Blender，故要“为所有用户安装”。部分软件不识别字体的中文名称，请找字族(Font Family)中对应的英文名称；若字族里无英文名称，那软件应该便会显示其中文名称。
+    \subsection{单个字体安装}
+    选择字体文件，右键点击选择“为所有用户安装”。
+    \subsection{批量安装字体}
+    选中多个字体文件（框选或者点击多选），右键点击选择“为所有用户安装”。
+
+    \section{字体格式说明}
+    \subsection{TTC}
+    TTC字体是TrueType字体集成文件(.TTC文件)，是在一单独文件结构中包含多种字体,以便更有效地共享轮廓数据,当多种字体共享同一笔画时,TTC技术可有效地减小字体文件的大小。TTC是几个TTF合成的字库，安装后字体列表中会看到两个以上的字体。两个字体中大部分字都一样时，可以将两种字体做成一个TTC文件，常见的TTC字体，因为共享笔划数据，所以大多这个集合中的字体区别只是字符宽度不一样，以便适应不同的版面排版要求。而TTF字体则只包含一种字型。
+
+    \subsection{OTF}
+    OpenType也叫Type 2字体，是由Microsoft和Adobe公司开发的另外一种字体格式。它也是一种轮廓字体，比TrueType更为强大，最明显的一个好处就是可以在把PostScript字体嵌入到TrueType的软件中。并且还支持多个平台，支持很大的字符集，还有版权保护。
+
+    苹果机与PC机都能很好应用的兼容字体！
+
+    \subsection{TTF}
+    ttf版本的字体支持内嵌到Office文件，因此比otf技术底层的版本更适合与前端办公。
+
+    PC机应用较好，苹果机兼容性很差！
+
+    \section{开源字体集}
+    开源不等于免费。GPL具有传染性，若GLP字体不附带「GPL 字型例外」（GPL font exception）协议进行阻断，则视为传染。因此，此列表一般不收集GPL字体。
+
+    \subsection{中文字体}
+    如何使用繁体字：使用输入法输入繁体字，不要使用输入简体就可以得到繁体的字体。这类字体被称为“伪繁体”，在简繁转换上具有致命的缺陷。一些简体字与繁体字并不是一一对应的关系，而字体中编码和字形是一一对应的，所以伪繁体字库中这类简体字编码只能在多个对应的繁体字字形里选择一个来映射。使用伪繁体字库一般会出现这样的问题：输入人体部位 “头发”，得到的是错误的 “頭發” 而非正确的 “頭髮”。
+
+    \begin{table}[h]
+        \centering \caption{开源中文字体集}
+        \begin{tabular}{|*{5}{c|}}
+            \hline
+            开发者 & 字体名称 & 英文名称 & 样式 & 授权协议 \\
+            \hline
+            \multirow{4}{*}{Adobe\&Google} & \href{https://github.com/adobe-fonts/source-han-sans/tree/release/}{思源黑体} & SourceHanSans & 简繁日韩|黑体 & \multirow{3}{*}{SIL OFL, v1.1} \\
+            \cline{2-4}
+            & \href{https://github.com/adobe-fonts/source-han-serif/tree/release/}{思源宋体} & SourceHanSerif & 简繁日韩|宋体 & \\
+            \cline{2-4}
+            & \href{https://github.com/adobe-fonts/source-han-mono}{思源等宽} & SourceHanMono & 简繁日韩|等宽 & \\
+            \cline{2-5}
+            & \multicolumn{4}{l|}{注：思源为Adobe版本的名称，google版本为NOTO(no toufo)} \\
+            \hline
+            \multirow{2}{*}{香港自由字型} & \href{https://freehkfonts.opensource.hk/download/}{自由香港楷书} & Free HK Kai 4700 & 繁|楷体 & CC-BY 4.0 \\
+            \cline{2-5}
+            & \multicolumn{4}{l|}{注：缺乏部分字型，如“国”字} \\
+            \hline
+            瀬戸のぞみ & \href{https://osdn.net/projects/setofont/}{瀨戸フォント} & setofont & 简繁日|艺术体 & SIL OFL, v1.1 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \clearpage
+    \subsection{英文字体}
+    \begin{table}[h]
+        \centering \caption{开源英文字体集}
+        \begin{tabular}{|*{4}{c|}}
+            \hline
+            开发者 & 字体名称 & 样式 & 授权协议 \\
+            \hline
+            \multirow{3}{*}{Adobe\&Google} & \href{https://github.com/adobe-fonts/source-sans-pro}{SourceSansPro} & 无衬线 & \multirow{3}{*}{SIL OFL, v1.1} \\
+            \cline{2-3}
+            & \href{https://github.com/adobe-fonts/source-serif-pro}{SourceSerifPro} & 衬线「罗马体」 & \\
+            \cline{2-3}
+            & \href{https://github.com/adobe-fonts/source-code-pro}{SourceCodePro} & 等宽「代码」 & \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \section{免费商用字体集}
+    \subsection{中文字体}
+    \begin{table}[h]
+    \centering \caption{免费商用中文字体集}
+        \begin{tabular}{|*{5}{c|}}
+            \hline
+            开发者 & 字体名称 & 英文名称 & 样式 & 授权协议 \\
+            \hline
+            8:51:22 pm & \href{https://pm85122.onamae.jp/851fontpage.html}{851手書き雑フォント} & 851tegakizatsu & 简繁日韩|艺术体 & 可商用/修改分发 \\
+            \hline
+            林芳柽 & \href{https://www.zcool.com.cn/work/ZMjE0MjQyMDg=.html}{品如手写体} & 无 & 简|楷体 & 免费商用，禁转卖 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \subsection{英文字体}
+    \begin{table}[h]
+        \centering \caption{免费商用英文字体集}
+        \begin{tabular}{|*{4}{c|}}
+            \hline
+            开发者 & 字体名称 & 样式 & 授权协议 \\
+            \hline
+            Phoenix Phonts & \href{https://www.fontspace.com/harry-p-font-f44342}{Harry P} & 艺术体「哈利波特」 & Freeware \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \subsection{附录}
+    \subsubsection{常见字体许可}
+    \begin{enumerate}
+        \item 商业字体：商业字体（Commercial）也就是正规的商业发行版，这种字体本应通过正规购买方式获得。
+
+        \item 免费字体：免费字体（Freeware）是指用户可以无限制（包括：个人使用、商业使用）免费使用字体的版本，用户可能无法享用某些高级功能。其中有一部分免费字体通过自愿性的资助或者捐献，字体开发者从而获得补酬。
+
+        \item 个人免费字体：个人免费字体是免费字体的子集，是指个人用户（不包括：商业使用）可以无限制免费使用字体的版本，用户可能无法享用某些高级功能。
+
+        \item 共享字体：共享字体（Shareware）也包括试用字体（Trailware），是以“先使用后付费”的方式销售的享有版权的字体。根据共享字体作者的授权，用户可以从各种渠道免费得到它的拷贝，也可以自由传播它。用户可以先使用或试用共享字体，认为满意后再向作者付费；如果您认为它不值得您花钱购买商业授权，可以停止使用。
+
+        \item 演示字体：演示字体（Demoware）是试用字体接近，但演示字体一般没有精减字形数量，但演示字体一般会在字形上打上特殊的标记或DEMO字样。
+
+        \item 自由字体：自由字体（Free Software）向使用者提供没有任何限制的使用权限，遵循相关的自由软件授权协议允许任何人对该字体进行二次开发或用于商业用途，甚至有时会提供字体源代码，这种也称为开源字体（Open Source）。
+
+    \end{enumerate}
+
+    \subsubsection{方正字库“商业发布”授权价格说明}
+    方正字库“商业发布”授权价格说明（2016年2月起正式施行）
+
+    计算机字库是典型的拥有著作权的作品。根据中华人民共和国著作权法，使用他人作品应当同著作权人订立许可使用合同。著作权人 未明确许可、转让的权利，未经著作权人同意，另一方当事人不得行使。
+
+    计算机字库的使用方式主要有以下三种：
+    \begin{enumerate}
+        \item 内部使用：指个人或单位在其内部使用的终端设备上安装并使用字库的行为。该使用行为包括在屏幕上显示和临时从打印机上输出两种。
+        \item 内置使用：指将字库文件整体或部分、直接或格式转换后，以嵌入的方式应用到网站、计算机程序或带有可视化显示功能的电子产品中的行为。
+        \item 商业发布：指以直接营利或者间接营利为目的，将字体作为视觉设计要素，进行复制、发行、展览、放映、信息网络传播、广播等使用字体的行为。
+    \end{enumerate}
+
+    据法律，任何使用方式都必须事先获得著作权人得授权。未经授权使用字体将面临侵权的风险。上述三种方式中 “商业发布”行为是字体应用最重要的一种方式。方正公司仅针对商业发布内容的最终所有者提供授权。 由于商业发布行为涉及的用户种类多，范围广，形式复杂。为了最大程度的满足最大多数用户最通常的使用，同时又能保障字体创作者的劳动价值，方正公司针对“商业发布”行为将方正字体分为“免费字体”、“基础字体”和“精选字体”三类：
+
+    免费字体：包括四种字体：方正黑体、方正书宋、方正仿宋、方正楷体。针对“商业发布”这种使用方式免费。
+
+    \nocite{*} %不使用cite也能生成参考文献
+    \printbibliography %生成参考文献排版。
+    \addcontentsline{toc}{section}{参考文献} %添加参考文献进目录
+    \clearpage %新建页，确保超链接跳转正确
+    \phantomsection %确保目录中的超链接指向正确的页码
+    \printindex %生成索引排版。
+\end{document}

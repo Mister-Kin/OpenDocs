@@ -32,6 +32,7 @@
 \usepackage{enumitem} %调用emuitem，以设置列表环境。
 \usepackage{multirow} %调用multirow，以支持纵向合并列表。
 \usepackage{ulem} %调用ulem，以支持删除线等。
+\usepackage{amsmath} %调用amsmath，以支持复杂的数学公式排版。
 %重订制目录命令。
 \renewcommand{\tableofcontents}%
   {\chapter{\contentsname}%
@@ -104,12 +105,20 @@
     \subsection{背景}
     因BL手册翻译需要，本人频繁地在中英文之间切换软件用户界面语言以校对相关UI内容。但每次繁琐地使用偏好设置进行语言切换令人苦不堪言，索性就开发一款插件以简化这操作。
 
+    \subsection{面向人群}
+    \begin{enumerate}
+        \item 翻译者：频繁切换软件用户界面语言以校对相关内容。
+        \item CG学习者：学习blender时的教程演示却是外语，需要频繁切换软件用户界面语言才能跟进教程。
+    \end{enumerate}
+
     \section{用法}
     \subsection{下载}
     \href{https://github.com/Mister-Kin/OneClickSwitchLanguage/releases/latest}{跳转下载页}
 
     \subsection{安装及使用插件}
     TODO
+
+    \noindent {\footnotesize \emph{注：建议在 blender v2.83 以上使用。2.83默认是启用翻译功能，以下版本的翻译都得手动启用。因为没有实际测试过，所以2.83以下版本要使用该插件，可能需要手动启用翻译功能。}
 
     \section{发展历史}
     \subsection{Roadmap}
@@ -136,6 +145,7 @@
 
     由 Mr. Kin 著作并维护。
 
+    \nocite{*} %不使用cite也能生成参考文献
     \printbibliography %生成参考文献排版。
     \addcontentsline{toc}{section}{参考文献} %添加参考文献进目录
     \clearpage %新建页，确保超链接跳转正确
