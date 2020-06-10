@@ -1,14 +1,14 @@
-<div align="right">
+<div class="align-right">
 Language:
 EN
-<a href="./README-zh_CN.md">ZH</a>
+<a href="./README_CN.md">CN</a>
 </div>
 
 # OpenDocs
 
 > ⛛ An all-inclusive (maybe(ಡωಡ)) document repository.
 
-[![Texlive Version](https://img.shields.io/badge/Texlive-v2020-blue)](https://tug.org/texlive/) [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue)](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
+[![Texlive Version](https://img.shields.io/badge/texlive-v2020-blue)](https://tug.org/texlive/) [![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue)](./LICENSE)
 
 ## Introduction
 A repository for my personal writing, learning notes and translated documents.
@@ -104,3 +104,9 @@ Authored and maintained by Mr. Kin.
 [Youtube]: https://www.youtube.com/channel/UCNhtdG6whC5mlRDkrhQ0wLA?view_as=public
 [Headline]: https://www.toutiao.com/c/user/835254071079053/#mid=1663279303982091
 [Zhihu]: https://www.zhihu.com/people/drwu-94
+
+<style type="text/css">
+.align-right{
+    text-align: right;
+}
+</style>

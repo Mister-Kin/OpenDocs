@@ -1,4 +1,4 @@
-<div align="right">
+<div class="align-right">
 语言:
 <a href="./README.md">英</a>
 中
@@ -8,7 +8,7 @@
 
 > ⛛ 包罗万象（误(ಡωಡ)）的文档仓库。
 
-[![Texlive Version](https://img.shields.io/badge/Texlive-v2020-blue)](https://tug.org/texlive/) [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue)](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
+[![Texlive Version](https://img.shields.io/badge/texlive-v2020-blue)](https://tug.org/texlive/) [![license](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue)](./LICENSE_CN)
 
 ## 介绍
 一个关于我本人写作、学习笔记和翻译文档的仓库。
@@ -93,7 +93,7 @@ Tex格式说明：本仓库下的每个文档项目下的Tex一般都是采用�
 [跳转学习笔记页]: ./LearningNotes
 [跳转本科学习页]: ./UndergraduateLearning
 [跳转翻译页]: ./Translations
-[知识共享 署名—非商业性使用—相同方式共享 4.0]: ./LICENSE-zh_CN
+[知识共享 署名—非商业性使用—相同方式共享 4.0]: ./LICENSE_CN
 [博客]: https://mister-kin.github.io
 [Github]: https://github.com/mister-kin
 [微博]: https://weibo.com/6270111192/profile?topnav=1&wvr=6&is_all=1
@@ -102,3 +102,9 @@ Tex格式说明：本仓库下的每个文档项目下的Tex一般都是采用�
 [油管]: https://www.youtube.com/channel/UCNhtdG6whC5mlRDkrhQ0wLA?view_as=public
 [头条]: https://www.toutiao.com/c/user/835254071079053/#mid=1663279303982091
 [知乎]: https://www.zhihu.com/people/drwu-94
+
+<style type="text/css">
+.align-right{
+    text-align: right;
+}
+</style>
