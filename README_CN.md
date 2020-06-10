@@ -1,4 +1,4 @@
-<div class="align-right">
+<div align="right">
 语言:
 <a href="./README.md">英</a>
 中
@@ -102,9 +102,3 @@ Tex格式说明：本仓库下的每个文档项目下的Tex一般都是采用�
 [油管]: https://www.youtube.com/channel/UCNhtdG6whC5mlRDkrhQ0wLA?view_as=public
 [头条]: https://www.toutiao.com/c/user/835254071079053/#mid=1663279303982091
 [知乎]: https://www.zhihu.com/people/drwu-94
-
-<style type="text/css">
-.align-right{
-    text-align: right;
-}
-</style>

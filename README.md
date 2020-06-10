@@ -1,4 +1,4 @@
-<div class="align-right">
+<div align="right">
 Language:
 EN
 <a href="./README_CN.md">CN</a>
@@ -104,9 +104,3 @@ Authored and maintained by Mr. Kin.
 [Youtube]: https://www.youtube.com/channel/UCNhtdG6whC5mlRDkrhQ0wLA?view_as=public
 [Headline]: https://www.toutiao.com/c/user/835254071079053/#mid=1663279303982091
 [Zhihu]: https://www.zhihu.com/people/drwu-94
-
-<style type="text/css">
-.align-right{
-    text-align: right;
-}
-</style>
