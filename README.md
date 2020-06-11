@@ -23,7 +23,6 @@ A repository for my personal writing, learning notes and translated documents.
   - [Articles](#Articles)
   - [Books](#Books)
   - [LearningNotes](#LearningNotes)
-  - [UndergraduateLearning](#UndergraduateLearning)
   - [Translates](#Translations)
 - [Author](#Author)
 
@@ -68,9 +67,6 @@ This category has my extensive work. For a detailed list of documents, please re
 ### LearningNotes
 This category has my study notes. For a detailed list of documents, please read the introduction of category. [Jump Page *LearningNotes*][]
 
-### UndergraduateLearning
-This category has my undergraduate study notes. For a detailed list of documents, please read the introduction of category. [Jump Page *UndergraduateLearning*][]
-
 ### Translations
 This category has the documents translated by me. For a detailed list of documents, please see the category introduction. [Jump Page *Translations*][]
 
@@ -93,7 +89,6 @@ Authored and maintained by Mr. Kin.
 [Jump Page *Articles*]: ./Articles
 [Jump Page *Books*]: ./Books
 [Jump Page *LearningNotes*]: ./LearningNotes
-[Jump Page *UndergraduateLearning*]: ./UndergraduateLearning
 [Jump Page *Translations*]: ./Translations
 [CC BY-NC-SA 4.0]: ./LICENSE
 [Blog]: https://mister-kin.github.io

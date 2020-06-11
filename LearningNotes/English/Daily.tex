@@ -1,6 +1,8 @@
+% !TEX root = English.tex %指定主文件
+\ifx\collections\undefined
 % !TEX program = xelatex %指定编译方式xelatex。
 % !BIB program = biber %指定bib数据后台处理程序biber。
-\documentclass[11pt,a4paper,UTF8,titlepage]{ctexart} %指定ctex的文档类，设置基本字号为11pt，a4大小，使用UTF-8编码保存，指定\maketitle生成单独的标题页。
+\documentclass[11pt,a4paper,UTF8,titlepage]{ctexrep} %指定ctex的文档类，设置基本字号为11pt，a4大小，使用UTF-8编码保存，指定\maketitle生成单独的标题页。
 
 \usepackage{syntonly}
 %\syntaxonly %用来快速编译以排查错误，不生成DVI或PDF。
@@ -73,17 +75,15 @@
     bookmarksnumbered=true, %书签带章节编号
     CJKbookmarks=true, %cjk必设参数
     unicode, %utf-8编码必设参数
-    pdftitle=BL插件-一键切换语言, %设置PDF文件属性标题
+    pdftitle=标题, %设置PDF文件属性标题
     pdfauthor=Mr. Kin, %设置PDF文件属性作者
     pdfstartview=FitH %默认适合宽度显示
 }
 
-\newcommand{\collections} % 定义汇总文件命令，以方便拆分源文件进行编写。
-
-    \title{\hypertarget{title}{\textbf{BL插件-一键切换语言}}}
-    \addcontentsline{toc}{section}{标题页}
+    \title{\hypertarget{title}{\textbf{标题}}}
+    \addcontentsline{toc}{chapter}{标题页}
     \author{Written by Mr. Kin}
-    \date{创建于2020.6.5，修改于\number\year.\number\month.\number\day}
+    \date{创建于2020.6.11，修改于\number\year.\number\month.\number\day}
 
 \begin{document}
     \phantomsection %确保目录中的超链接指向正确的页码
@@ -91,64 +91,31 @@
     \pagenumbering{Roman} %大写罗马样式页码
     \maketitle %生成标题页
     \pagenumbering{roman} %小写罗马样式页码
-    \include{About} %关于页面
-    \include{Copyright} %版权声明
     {\centering \tableofcontents} %生成目录页
     \clearpage %新建页，分离上下两个样式页码的效果
     \pagenumbering{arabic} %阿拉伯样式页码
+    \fi
 
-    \section{介绍}
+    \chapter{日常}
     \begin{intro}
-    一款blender插件，旨在通过一键快速、轻松地在两种语言之间切换用户界面，而非重复打开偏好设置。
+        记录日常遇到的生词。
     \end{intro}
 
-    \subsection{背景}
-    因BL手册翻译需要，本人频繁地在中英文之间切换软件用户界面语言以校对相关UI内容。但每次繁琐地使用偏好设置进行语言切换令人苦不堪言，索性就开发一款插件以简化这操作。
+    \begin{multicols*}{2}
+        \begin{itemize}
+            \item anode n.阳极，（电解池）正极
+            \item cathode n.阴极，（电解池）负极\\同kathode
+            \item recursive adj.递归的，循环
+        \end{itemize}
+    \end{multicols*}
 
-    \subsection{面向人群}
-    \begin{enumerate}
-        \item 翻译者：频繁切换软件用户界面语言以校对相关内容。
-        \item CG学习者：学习blender时的教程演示却是外语，需要频繁切换软件用户界面语言才能跟进教程。
-    \end{enumerate}
 
-    \section{下载}
-    \href{https://github.com/Mister-Kin/OneClickSwitchLanguage/releases/latest}{跳转下载页}
-
-    \section{用法}
-    \subsection{安装及使用插件}
-    TODO
-
-    \noindent {\footnotesize \emph{注：建议在 blender v2.83 以上使用。2.83默认是启用翻译功能，以下版本的翻译都得手动启用。因为没有实际测试过，所以2.83以下版本要使用该插件，可能需要手动启用翻译功能。}
-
-    \section{发展历史}
-    \subsection{Roadmap}
-    \href{https://mister-kin.github.io/roadmap/}{跳转蓝图规划页}
-
-    \subsection{更新及历史}
-    \begin{table}[!h]
-        \centering
-    \begin{tabular}{|*{2}{c|}p{250pt}|c|}
-        \hline
-        版权 & 更新日期 & \centering{更新内容} & 标签 \\
-        \hline
-        0.3 & 2020.6.5 & 更新至blender 2.83 api；修改部分类名；添加文档链接；修改完善许可说明 & enhancement \\
-        \hline
-        0.2 & 2020.5.21 & \centering{清除未使用属性的报错} & fix bug \\
-        \hline
-        0.1 & 2020.5.12 & \centering{完成基础的功能设计「一键切换」} & add feature \\
-        \hline
-    \end{tabular}
-    \end{table}
-
-    \section{作者}
-    \textbf{OneClickSwitchLanguage} © Mr. Kin, 项目代码采用 \href{https://github.com/Mister-Kin/OneClickSwitchLanguage/blob/master/LICENSE}{GNU GPL v3.0} 许可协议进行发布。
-
-    由 Mr. Kin 著作并维护。
-
+    \ifx\collections\undefined
     \nocite{*} %不使用cite也能生成参考文献
     \printbibliography %生成参考文献排版。
-    \addcontentsline{toc}{section}{参考文献} %添加参考文献进目录
+    \addcontentsline{toc}{chapter}{参考文献} %添加参考文献进目录
     \clearpage %新建页，确保超链接跳转正确
     \phantomsection %确保目录中的超链接指向正确的页码
     \printindex %生成索引排版。
 \end{document}
+    \fi

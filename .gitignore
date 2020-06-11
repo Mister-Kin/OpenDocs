@@ -4,9 +4,10 @@ images/
 !/resources/*
 
 # Temporary ignore project
-!English/
-
-GraduateSchoolExam/
 Guideline/
+Code/
+ComputerRepair/
+GraduateEntranceExam/
+Hardware/
+Software/
 UndergraduateLearning/
-LearningNotes/
