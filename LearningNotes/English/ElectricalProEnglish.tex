@@ -1,216 +1,108 @@
-% !TEX root = English.tex %指定主文件
-\ifx\collections\undefined
-% !TEX program = xelatex %指定编译方式xelatex。
-% !BIB program = biber %指定bib数据后台处理程序biber。
-\documentclass[11pt,a4paper,UTF8,titlepage]{ctexrep} %指定ctex的文档类，设置基本字号为11pt，a4大小，使用UTF-8编码保存，指定\maketitle生成单独的标题页。
+\chapter{电力专业英语}
+\section{Fundamentals of Electronic Circuits}
+\subsection{Circuit Theory}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item element n.成分，元件
+        \item interconnect vt.使互相连接
+        \item node n.节点
+        \item branch n.树枝，分枝，分部，支流，支脉 v.出现分岐
+        \item loop n.环，循环，线圈（绳），弯曲部分，回路，回线 vt.使成环，使成圈，以环相连 vi.打环，翻筋斗
+        \item topology n.拓扑，布局，拓扑学
+        \item configuration n.构造，结构，配置，外形
+        \item terminal n.终点站，终端，接线端
+        \item resistor n.[电]电阻器
+        \item independent n.独立自主者，无党派者 adj.独立自主的，不受约束的
+        \item series n.连续，系列，级数，串联
+        \item parallel adj.平行的，相同的，类似的，并联的 n.平行线，平行面，相似物 v.相应，平行
+        \item impedance n.[电/物]阻抗，[物]全电阻
+        \item theorem n.定理，法则（数）
+    \end{itemize}
+\end{multicols}
 
-\usepackage{syntonly}
-%\syntaxonly %用来快速编译以排查错误，不生成DVI或PDF。
-\usepackage[style=gb7714-2015]{biblatex} %调用biblatex宏包，设置参考文献样式（符合中文文献著录标准GB/T 7714-2015的样式）,使用默认的后端程序biber（其支持更好，包括UTF-8等）放弃使用[backend=bibtex]（只支持ascii编码）。
-\addbibresource{resources/reference.bib} %加载参考文献数据库。
-\usepackage{makeidx}
-\makeindex %开启索引收集
-\usepackage[margin=1in]{geometry} %调用geometry宏包，设置周围页边距为1英寸（为电子档设计，非打印）。
-\usepackage{xcolor} %调用xcolor宏包，以支持扩展生成颜色。
-\usepackage{fontspec} %调用fontspec宏包以更改西文字体族。
-\setmainfont{Source Serif Pro}
-\setsansfont{Source Sans Pro}
-\setmonofont{Source Code Pro}
-\usepackage{xeCJK} %调用xeCJK宏包以更改中文字体族。
-\xeCJKsetup{AutoFakeSlant=true}  %设置xeCJK选项-伪斜体（需置于字体设置之前）。
-\setCJKmainfont{思源宋体}
-\setCJKsansfont{思源黑体}
-\setCJKmonofont{思源等宽}
-\usepackage{graphicx} %调用graphicx宏包，以支持插图。
-\graphicspath{{resources/images/},{resources/images/FollowMe/}} %加载图片路径。
-\usepackage{caption} %调用caption，支持不带编号的标题。
-\usepackage{wrapfig} %调用wrapfig，支持图文排版。
-\usepackage{subfigure} %调用subfigure宏包进行图片图片排版。
-\usepackage{tikz,tikz-qtree} %调用tikz及其扩展宏包，以支持画图。
-\usepackage[subfigure]{tocloft} %tocloft与subfigure宏包冲突，不能简单调用，tocloft需设置参数。
-\usepackage{tocbibind} %调用宏包以添加目录本身和参考文献进目录中。
-\usepackage{multicol} %调用multicol宏包以支持多栏排版。
-\usepackage[toc]{multitoc} %调用multitoc宏包，设置toc目录页，默认双栏排版。
-\usepackage{enumitem} %调用emuitem，以设置列表环境。
-\usepackage{multirow} %调用multirow，以支持纵向合并列表。
-\usepackage{ulem} %调用ulem，以支持删除线等。
-\usepackage{amsmath} %调用amsmath，以支持复杂的数学公式排版。
-%重订制目录命令。
-\renewcommand{\tableofcontents}%
-  {\chapter{\contentsname}%
-  \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
-  \@makeschapterhead{\sourcecodename}%
-  \@starttoc{toc}%
-}
-\usepackage{fancyhdr} %调用宏包，以设置页眉，统一格式：标题在左，页码在右。
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LO]{\sffamily \rightmark}
-\fancyhead[LE]{\sffamily \leftmark}
-\fancyhead[ROE]{\bfseries \thepage}
-\fancyfoot[COE]{\ttfamily \href{https://mister-kin.github.io}{个人博客：https://mister-kin.github.io}}
-%定义intro环境。
-\newenvironment{intro}{\narrower\sffamily}{\par\vspace*{2ex plus 2.5ex minus 1.5ex}}
-\usepackage{listings} % 指定listings，订制代码排版环境
-\lstset{
-    basicstyle      = \ttfamily,                          % 基本代码指定等宽字体
-    keywordstyle    = \bfseries,                          % 关键字指定加粗
-    commentstyle    = \ttfamily\slshape\color{gray},      % 注释指定灰色等宽斜体
-    stringstyle     = \ttfamily,                          % 字符串指定等宽字体
-    %numbers        = left,                               % 行号的位置在左边，启用后不方便复制代码
-    %numberstyle    = \ttfamily,                          % 行号等宽字体
-    %xleftmargin    = \parindent,                         % 代码左边框起始位置（启用行号时建议启用这个）
-    %frame          = trBL,                               % 代码框类型，t下，r右，b下，l左，大写时为两条线。
-    %frameround     = fttt,                               % 控制代码框是否为圆角
-    frameshape      = {{ryrynyyyy}{yny}{yny}{ryrynyyyy}}, % 控制边框样式，上下边是每三个字母段控制一条边框。
-    backgroundcolor = \color{gray!5},                     % 代码框背景颜色：5%的灰色
-    breaklines      = true,                               % 代码过长时则换行
-    gobble          = 8,                                  % 去掉代码前的缩进
-}
-\usepackage{hyperref} %调用hyperref宏包
-\hypersetup{
-    colorlinks=true, %设置超链接文件带颜色
-    bookmarks=true, %生成书签
-    bookmarksopen=true, %书签展开
-    bookmarksnumbered=true, %书签带章节编号
-    CJKbookmarks=true, %cjk必设参数
-    unicode, %utf-8编码必设参数
-    pdftitle=标题, %设置PDF文件属性标题
-    pdfauthor=Mr. Kin, %设置PDF文件属性作者
-    pdfstartview=FitH %默认适合宽度显示
-}
+\subsection{Analog and Digital Circuits}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item analog n.(AmE)类似物；模拟 adj.(AmE)模拟的，指针式的\\analogue n./adj.(BrE)同上
+        \item digital n.数字，数字式 adj.数字的，数位的
+        \item thermometer n.温度计，体温计
+        \item Fahrenheit n.华氏温度计 adj.华氏温度计的
+        \item drum n.鼓，鼓声，鼓形圆筒 vt.打鼓奏 vi.击鼓，做鼓声
+        \item discrete adj.不连续的，离散的
+        \item original adj.最初的，原始的，独创的，新颖的 n.原物，原作
+        \item remote adj.遥远的，偏僻的，细微的
+        \item bulb n.鳞茎，球形物
+        \item Morse code 莫尔斯电码
+        \item pulse n.脉搏，脉冲
+        \item buzzer n.蜂鸣器，信号手，嗡嗡作声的东西
+        \item manipulate vt.(熟练地)操作，使用（机器），操纵（人或市场、市场），利用，应付
+        \item destination n.目的地，[计]目的文件，目的单元格
+        \item humidity n.湿气，潮湿，湿度
+        \item comparator n.比较仪
+        \item trigger vt.引发，引起，触发 vi.转义，换车 n.扳机
+        \item sequence n.次序，顺序，序列
+        \item parallel n.平行的，相同的，类似的，并联的 n.平行线，平行面，相似物 v.相应，平行
+        \item serial adj.连续的，串行的，顺次
+        \item decoder n.解码器
+        \item reassemble vt.重新召集 vi.重新集合
+    \end{itemize}
+\end{multicols}
 
-    \title{\hypertarget{title}{\textbf{标题}}}
-    \addcontentsline{toc}{chapter}{标题页}
-    \author{Written by Mr. Kin}
-    \date{创建于2020.1.28，修改于\number\year.\number\month.\number\day}
+\subsection{Three-Phase Circuits}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item transformer n.变压器
+        \item single-phase 单相
+        \item pulsate vi.脉动
+        \item three-phase power 三相电源
+        \item three-phase circiut 三相电路
+        \item the parallelogram method 平行四边形法则
+        \item wye connection 星形连接
+        \item delta connection 三角形连接
+        \item phase voltage 相电压
+        \item line voltage 线电压
+        \item confuse vt.使混乱，使更难于理解，使困窘，使困惑 vi.使糊涂
+        \item voltmeter n.电压表
+        \item ammeter n.电流表
+        \item clamp-on ammeter 钳式安培表
+    \end{itemize}
+\end{multicols}
 
-\begin{document}
-    \phantomsection %确保目录中的超链接指向正确的页码
-    \pdfbookmark[1]{标题页}{title} %添加标题页书签
-    \pagenumbering{Roman} %大写罗马样式页码
-    \maketitle %生成标题页
-    \pagenumbering{roman} %小写罗马样式页码
-    {\centering \tableofcontents} %生成目录页
-    \clearpage %新建页，分离上下两个样式页码的效果
-    \pagenumbering{arabic} %阿拉伯样式页码
-    \fi
+\subsection{Further Reading}
 
-    \chapter{电力专业英语}
-    \section{Fundamentals of Electronic Circuits}
-    \subsection{Circuit Theory}
-    \begin{multicols}{2}
-        \begin{itemize}
-            \item element n.成分，元件
-            \item interconnect vt.使互相连接
-            \item node n.节点
-            \item branch n.树枝，分枝，分部，支流，支脉 v.出现分岐
-            \item loop n.环，循环，线圈（绳），弯曲部分，回路，回线 vt.使成环，使成圈，以环相连 vi.打环，翻筋斗
-            \item topology n.拓扑，布局，拓扑学
-            \item configuration n.构造，结构，配置，外形
-            \item terminal n.终点站，终端，接线端
-            \item resistor n.[电]电阻器
-            \item independent n.独立自主者，无党派者 adj.独立自主的，不受约束的
-            \item series n.连续，系列，级数，串联
-            \item parallel adj.平行的，相同的，类似的，并联的 n.平行线，平行面，相似物 v.相应，平行
-            \item impedance n.[电/物]阻抗，[物]全电阻
-            \item theorem n.定理，法则（数）
-        \end{itemize}
-    \end{multicols}
-
-    \subsection{Analog and Digital Circuits}
-    \begin{multicols}{2}
-        \begin{itemize}
-            \item analog n.(AmE)类似物；模拟 adj.(AmE)模拟的，指针式的\\analogue n./adj.(BrE)同上
-            \item digital n.数字，数字式 adj.数字的，数位的
-            \item thermometer n.温度计，体温计
-            \item Fahrenheit n.华氏温度计 adj.华氏温度计的
-            \item drum n.鼓，鼓声，鼓形圆筒 vt.打鼓奏 vi.击鼓，做鼓声
-            \item discrete adj.不连续的，离散的
-            \item original adj.最初的，原始的，独创的，新颖的 n.原物，原作
-            \item remote adj.遥远的，偏僻的，细微的
-            \item bulb n.鳞茎，球形物
-            \item Morse code 莫尔斯电码
-            \item pulse n.脉搏，脉冲
-            \item buzzer n.蜂鸣器，信号手，嗡嗡作声的东西
-            \item manipulate vt.(熟练地)操作，使用（机器），操纵（人或市场、市场），利用，应付
-            \item destination n.目的地，[计]目的文件，目的单元格
-            \item humidity n.湿气，潮湿，湿度
-            \item comparator n.比较仪
-            \item trigger vt.引发，引起，触发 vi.转义，换车 n.扳机
-            \item sequence n.次序，顺序，序列
-            \item parallel n.平行的，相同的，类似的，并联的 n.平行线，平行面，相似物 v.相应，平行
-            \item serial adj.连续的，串行的，顺次
-            \item decoder n.解码器
-            \item reassemble vt.重新召集 vi.重新集合
-        \end{itemize}
-    \end{multicols}
-
-    \subsection{Three-Phase Circuits}
-    \begin{multicols}{2}
-        \begin{itemize}
-            \item transformer n.变压器
-            \item single-phase 单相
-            \item pulsate vi.脉动
-            \item three-phase power 三相电源
-            \item three-phase circiut 三相电路
-            \item the parallelogram method 平行四边形法则
-            \item wye connection 星形连接
-            \item delta connection 三角形连接
-            \item phase voltage 相电压
-            \item line voltage 线电压
-            \item confuse vt.使混乱，使更难于理解，使困窘，使困惑 vi.使糊涂
-            \item voltmeter n.电压表
-            \item ammeter n.电流表
-            \item clamp-on ammeter 钳式安培表
-        \end{itemize}
-    \end{multicols}
-
-    \subsection{Further Reading}
-
-    \section{Power Electronics}
-    \subsection{Introduction}
-    \begin{multicols}{2}
-        \begin{itemize}
-            \item solid-state adj.固态的
-            \item computation n.计算，估计
-            \item integration n.结合，整合，一体化
-            \item dynamic adj.动态的，充满活力的，不断变化的 n.动态，动力学，活力
-            \item mercury-arc [医]汞弧 \\Mercury n.水星
-            \item valve n.阀，真空管，活栓 vt.装阀（于），以活门调节
-            \item semiconductor n.[物理]半导体
-            \item switching n.开关，转换，交换，配电 v.转换
-            \item diode n.二极管
-            \item inverter n.逆变器（反用换流器），变极器
-            \item thyristor n.半导体闸流管，硅可控整流器
-            \item inverter thyristor 晶体管逆变器，可控硅环流器，可控硅逆变器
-            \item transistor n.晶体管，晶体管收音机，半导体收音机
-            \item transmission n.播送，传送，信息，传动装置
-            \item substantial adj.结实的，牢固的，重大的 n.本质，重要材料
-            \item fluorescent lamp ballast 荧光灯镇流器
-            \item mercury n.水银，汞
-            \item therminoic adj.[物]热电子的，热离子的
-            \item HVDC transmission system 高压直流输电系统
-            \item induction motor 感应电动机
-            \item vacuum n.真空，空间 adj.真空的 vt.用真空吸尘器打扫
-            \item dissipate v.驱散，使（云/雾/疑虑)消散
-            \item rectifier n.纠正者，整顿者，整流器
-            \item triggered adj.触发的
-            \item thyratron n.[电]闸流管
-            \item ignitron n.引燃管，放电管
-            \item cycloconverter n.周波变换器，循环换流器，双向离子变频器
-            \item traic n.[电]三端双向可控硅开关元件
-            \item a scope of 一个范围
-            \item spectrum n.谱，光谱，范围，系列，幅度
-        \end{itemize}
-    \end{multicols}
-
-    \ifx\collections\undefined
-    \nocite{*} %不使用cite也能生成参考文献
-    \printbibliography %生成参考文献排版。
-    \addcontentsline{toc}{chapter}{参考文献} %添加参考文献进目录
-    \clearpage %新建页，确保超链接跳转正确
-    \phantomsection %确保目录中的超链接指向正确的页码
-    \printindex %生成索引排版。
-\end{document}
-    \fi
+\section{Power Electronics}
+\subsection{Introduction}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item solid-state adj.固态的
+        \item computation n.计算，估计
+        \item integration n.结合，整合，一体化
+        \item dynamic adj.动态的，充满活力的，不断变化的 n.动态，动力学，活力
+        \item mercury-arc [医]汞弧 \\Mercury n.水星
+        \item valve n.阀，真空管，活栓 vt.装阀（于），以活门调节
+        \item semiconductor n.[物理]半导体
+        \item switching n.开关，转换，交换，配电 v.转换
+        \item diode n.二极管
+        \item inverter n.逆变器（反用换流器），变极器
+        \item thyristor n.半导体闸流管，硅可控整流器
+        \item inverter thyristor 晶体管逆变器，可控硅环流器，可控硅逆变器
+        \item transistor n.晶体管，晶体管收音机，半导体收音机
+        \item transmission n.播送，传送，信息，传动装置
+        \item substantial adj.结实的，牢固的，重大的 n.本质，重要材料
+        \item fluorescent lamp ballast 荧光灯镇流器
+        \item mercury n.水银，汞
+        \item therminoic adj.[物]热电子的，热离子的
+        \item HVDC transmission system 高压直流输电系统
+        \item induction motor 感应电动机
+        \item vacuum n.真空，空间 adj.真空的 vt.用真空吸尘器打扫
+        \item dissipate v.驱散，使（云/雾/疑虑)消散
+        \item rectifier n.纠正者，整顿者，整流器
+        \item triggered adj.触发的
+        \item thyratron n.[电]闸流管
+        \item ignitron n.引燃管，放电管
+        \item cycloconverter n.周波变换器，循环换流器，双向离子变频器
+        \item traic n.[电]三端双向可控硅开关元件
+        \item a scope of 一个范围
+        \item spectrum n.谱，光谱，范围，系列，幅度
+    \end{itemize}
+\end{multicols}

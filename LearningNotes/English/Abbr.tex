@@ -1,147 +1,39 @@
-% !TEX root = English.tex %指定主文件
-\ifx\collections\undefined
-% !TEX program = xelatex %指定编译方式xelatex。
-% !BIB program = biber %指定bib数据后台处理程序biber。
-\documentclass[11pt,a4paper,UTF8,titlepage]{ctexrep} %指定ctex的文档类，设置基本字号为11pt，a4大小，使用UTF-8编码保存，指定\maketitle生成单独的标题页。
-
-\usepackage{syntonly}
-%\syntaxonly %用来快速编译以排查错误，不生成DVI或PDF。
-\usepackage[style=gb7714-2015]{biblatex} %调用biblatex宏包，设置参考文献样式（符合中文文献著录标准GB/T 7714-2015的样式）,使用默认的后端程序biber（其支持更好，包括UTF-8等）放弃使用[backend=bibtex]（只支持ascii编码）。
-\addbibresource{resources/reference.bib} %加载参考文献数据库。
-\usepackage{makeidx}
-\makeindex %开启索引收集
-\usepackage[margin=1in]{geometry} %调用geometry宏包，设置周围页边距为1英寸（为电子档设计，非打印）。
-\usepackage{xcolor} %调用xcolor宏包，以支持扩展生成颜色。
-\usepackage{fontspec} %调用fontspec宏包以更改西文字体族。
-\setmainfont{Source Serif Pro}
-\setsansfont{Source Sans Pro}
-\setmonofont{Source Code Pro}
-\usepackage{xeCJK} %调用xeCJK宏包以更改中文字体族。
-\xeCJKsetup{AutoFakeSlant=true}  %设置xeCJK选项-伪斜体（需置于字体设置之前）。
-\setCJKmainfont{思源宋体}
-\setCJKsansfont{思源黑体}
-\setCJKmonofont{思源等宽}
-\usepackage{graphicx} %调用graphicx宏包，以支持插图。
-\graphicspath{{resources/images/},{resources/images/FollowMe/}} %加载图片路径。
-\usepackage{caption} %调用caption，支持不带编号的标题。
-\usepackage{wrapfig} %调用wrapfig，支持图文排版。
-\usepackage{subfigure} %调用subfigure宏包进行图片图片排版。
-\usepackage{tikz,tikz-qtree} %调用tikz及其扩展宏包，以支持画图。
-\usepackage[subfigure]{tocloft} %tocloft与subfigure宏包冲突，不能简单调用，tocloft需设置参数。
-\usepackage{tocbibind} %调用宏包以添加目录本身和参考文献进目录中。
-\usepackage{multicol} %调用multicol宏包以支持多栏排版。
-\usepackage[toc]{multitoc} %调用multitoc宏包，设置toc目录页，默认双栏排版。
-\usepackage{enumitem} %调用emuitem，以设置列表环境。
-\usepackage{multirow} %调用multirow，以支持纵向合并列表。
-\usepackage{ulem} %调用ulem，以支持删除线等。
-\usepackage{amsmath} %调用amsmath，以支持复杂的数学公式排版。
-%重订制目录命令。
-\renewcommand{\tableofcontents}%
-  {\chapter{\contentsname}%
-  \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
-  \@makeschapterhead{\sourcecodename}%
-  \@starttoc{toc}%
-}
-\usepackage{fancyhdr} %调用宏包，以设置页眉，统一格式：标题在左，页码在右。
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LO]{\sffamily \rightmark}
-\fancyhead[LE]{\sffamily \leftmark}
-\fancyhead[ROE]{\bfseries \thepage}
-\fancyfoot[COE]{\ttfamily \href{https://mister-kin.github.io}{个人博客：https://mister-kin.github.io}}
-%定义intro环境。
-\newenvironment{intro}{\narrower\sffamily}{\par\vspace*{2ex plus 2.5ex minus 1.5ex}}
-\usepackage{listings} % 指定listings，订制代码排版环境
-\lstset{
-    basicstyle      = \ttfamily,                          % 基本代码指定等宽字体
-    keywordstyle    = \bfseries,                          % 关键字指定加粗
-    commentstyle    = \ttfamily\slshape\color{gray},      % 注释指定灰色等宽斜体
-    stringstyle     = \ttfamily,                          % 字符串指定等宽字体
-    %numbers        = left,                               % 行号的位置在左边，启用后不方便复制代码
-    %numberstyle    = \ttfamily,                          % 行号等宽字体
-    %xleftmargin    = \parindent,                         % 代码左边框起始位置（启用行号时建议启用这个）
-    %frame          = trBL,                               % 代码框类型，t下，r右，b下，l左，大写时为两条线。
-    %frameround     = fttt,                               % 控制代码框是否为圆角
-    frameshape      = {{ryrynyyyy}{yny}{yny}{ryrynyyyy}}, % 控制边框样式，上下边是每三个字母段控制一条边框。
-    backgroundcolor = \color{gray!5},                     % 代码框背景颜色：5%的灰色
-    breaklines      = true,                               % 代码过长时则换行
-    gobble          = 8,                                  % 去掉代码前的缩进
-}
-\usepackage{hyperref} %调用hyperref宏包
-\hypersetup{
-    colorlinks=true, %设置超链接文件带颜色
-    bookmarks=true, %生成书签
-    bookmarksopen=true, %书签展开
-    bookmarksnumbered=true, %书签带章节编号
-    CJKbookmarks=true, %cjk必设参数
-    unicode, %utf-8编码必设参数
-    pdftitle=标题, %设置PDF文件属性标题
-    pdfauthor=Mr. Kin, %设置PDF文件属性作者
-    pdfstartview=FitH %默认适合宽度显示
-}
-
-    \title{\hypertarget{title}{\textbf{标题}}}
-    \addcontentsline{toc}{chapter}{标题页}
-    \author{Written by Mr. Kin}
-    \date{创建于2020.1.28，修改于\number\year.\number\month.\number\day}
-
-\begin{document}
-    \phantomsection %确保目录中的超链接指向正确的页码
-    \pdfbookmark[1]{标题页}{title} %添加标题页书签
-    \pagenumbering{Roman} %大写罗马样式页码
-    \maketitle %生成标题页
-    \pagenumbering{roman} %小写罗马样式页码
-    {\centering \tableofcontents} %生成目录页
-    \clearpage %新建页，分离上下两个样式页码的效果
-    \pagenumbering{arabic} %阿拉伯样式页码
-    \fi
-
-    \chapter*{词典常用缩写}
-    \addcontentsline{toc}{chapter}{词典常用缩写}
-    \markright{词典常用缩写}
-    \begin{multicols}{2}
-        \begin{itemize}[left=0em]
-            \item v. verb 动词
-            \item vt. transitive verb 及物动词
-            \item vi. intransitive verb 不及物动词
-            \item n. noun 名词
-            \item adj. adjective 形容词
-            \item adv. adverb 副词
-            \item prep. preposition 介词
-            \item pron. pronoun 代词
-            \item conj. conjunction 连词
-            \item abbr. abbreviation 缩写
-            \item det. determiner 限定词
-            \item sing. singular 单数
-            \item pl. plural 复数
-            \item symb. symbol 符号
-            \item opp. opposite 反义词
-            \item syn. synonym 同义词
-            \item fig. figurative 比喻的
-            \item derog. derogatie 贬义的
-            \item fml. formal 用于正式文体
-            \item infml. informal 用于非正式文体
-            \item BrE 英国英语
-            \item AmE 美国英语
-            \item C countable 可数名词
-            \item U uncountable 不可数名词
-            \item sb. somebody 某人
-            \item sth. something 某事物
-            \item pt past tense 过去时
-            \item pp past participle 过去分词
-            \item \quad[计] 计算机
-            \item \quad[物] 物理
-            \item \quad[电] 电路
-            \item \quad[医] 医学
-        \end{itemize}
-    \end{multicols}
-
-    \ifx\collections\undefined
-    \nocite{*} %不使用cite也能生成参考文献
-    \printbibliography %生成参考文献排版。
-    \addcontentsline{toc}{chapter}{参考文献} %添加参考文献进目录
-    \clearpage %新建页，确保超链接跳转正确
-    \phantomsection %确保目录中的超链接指向正确的页码
-    \printindex %生成索引排版。
-\end{document}
-    \fi
+\chapter*{词典常用缩写}
+\addcontentsline{toc}{chapter}{词典常用缩写}
+\markright{词典常用缩写}
+\begin{multicols}{2}
+    \begin{itemize}[left=0em]
+        \item v. verb 动词
+        \item vt. transitive verb 及物动词
+        \item vi. intransitive verb 不及物动词
+        \item n. noun 名词
+        \item adj. adjective 形容词
+        \item adv. adverb 副词
+        \item prep. preposition 介词
+        \item pron. pronoun 代词
+        \item conj. conjunction 连词
+        \item abbr. abbreviation 缩写
+        \item det. determiner 限定词
+        \item sing. singular 单数
+        \item pl. plural 复数
+        \item symb. symbol 符号
+        \item opp. opposite 反义词
+        \item syn. synonym 同义词
+        \item fig. figurative 比喻的
+        \item derog. derogatie 贬义的
+        \item fml. formal 用于正式文体
+        \item infml. informal 用于非正式文体
+        \item BrE 英国英语
+        \item AmE 美国英语
+        \item C countable 可数名词
+        \item U uncountable 不可数名词
+        \item sb. somebody 某人
+        \item sth. something 某事物
+        \item pt past tense 过去时
+        \item pp past participle 过去分词
+        \item \quad[计] 计算机
+        \item \quad[物] 物理
+        \item \quad[电] 电路
+        \item \quad[医] 医学
+    \end{itemize}
+\end{multicols}
