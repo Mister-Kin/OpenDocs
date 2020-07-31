@@ -1,4 +1,4 @@
-% !TEX root = main.tex %指定主文件。
+% !TEX root = main.tex % 指定主文件。
 \ifx\collections\undefined
 % !TEX program = xelatex %指定编译方式xelatex。
 % !BIB program = biber %指定bib数据后台处理程序biber。
@@ -82,7 +82,7 @@
 
     \title{\hypertarget{title}{\textbf{标题}}}
     \addcontentsline{toc}{section}{标题页}
-    \author{Written by Mr. Kin \\ Author's Blog: https://mister-kin.github.io \\ Author's Email: im.misterkin@gmail.com}
+    \author{Written by Mr. Kin \\ Author's Blog: \href{https://mister-kin.github.io}{\color{black} https://mister-kin.github.io} \\ Author's Email: im.misterkin@gmail.com}
     \date{创建于2020.1.28，修改于\number\year.\number\month.\number\day}
 
 \begin{document}
@@ -96,7 +96,19 @@
     \pagenumbering{arabic} %阿拉伯样式页码
     \fi
 
-    \part{第一部分}
+    \part{块标题测试}
+    %\chapter{章标题测试}
+    \section{节标题测试}
+    \subsection{子节标题测试}
+    \subsubsection{子子标题测试}
+    \paragraph{段标题测试}
+    测试
+    \subparagraph{子段标题测试}
+    测试
+
+    {\rmfamily 思宋：测试 \textbf{粗体：测试} \textup{直立体：测试} { \itshape 意大利斜体：测试} { \slshape 倾斜体：测试}}
+
+    {\sffamily 思黑：测试 \textbf{粗体：测试} \textup{直立体：测试} { \itshape 意大利斜体：测试} { \slshape 倾斜体：测试}}
 
     \ifx\collections\undefined
     \nocite{*} %不使用cite也能生成参考文献

@@ -1,0 +1,120 @@
+\documentclass{resources/DocClass}
+
+\usepackage{syntonly}
+%\syntaxonly % 用以快速编译以排查错误，不生成 DVI 或 PDF。
+
+    \DocumentTitle{文档标题测试}
+    \DocumentCreatedDate{2020/7/21}
+
+    \AuthorName{Mr. Kin}
+    \AuthorEmail{im.misterkin@gmail.com}
+    \AuthorBlog{https://mister-kin.github.io/}
+
+\begin{document}
+    \pagenumbering{Roman} % 大写罗马字母样式页码。
+    \maketitle
+    \addcontentsline{toc}{chapter}{封面}
+    \frontmatter
+    \include{about}
+    \include{copyright}
+    {\centering \tableofcontents} % 生成目录页。
+    \mainmatter
+
+    % 正文
+    \part{中文字体测试}
+    \chapter{章标题测试}
+    \section{节标题测试}
+    \subsection{子节标题测试}
+    \subsubsection{子子标题测试}
+    \paragraph{段标题测试}
+    测试
+    \subparagraph{子段标题测试}
+    测试
+
+    \subsection{字体样式测试}
+    {\rmfamily 思宋：测试 \textbf{粗体：测试} \textup{直立体：测试} \textit{意大利斜体：测试} \textsl{倾斜体：测试}}
+
+    {\sffamily 思黑：测试 \textbf{粗体：测试} \textup{直立体：测试} \textit{意大利斜体：测试} \textsl{倾斜体：测试}}
+
+    \subsection{字体测试}
+    {\rmfamily 思宋：滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。}
+
+    {\sffamily 思黑：滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。}
+
+    \part{English Font Test}
+    \chapter{Chapter Title Test}
+    \section{Section Title Test}
+    \subsection{Subsection Title Test}
+    \subsubsection{Subsubsection Title Test}
+    \paragraph{Paragraph Title Test}
+    Test
+    \subparagraph{Subparagraph Title Test}
+    Test
+
+    \subsection{Font Format Test}
+    {\rmfamily textrm: test \textbf{textbf：test} \textup{textup：test} \textit{textit：test} \textsl{textsl：test}}
+
+    {\sffamily textsf: test \textbf{textbf：test} \textup{textup：test} \textit{textit：test} \textsl{textsl：test}}
+
+    {\ttfamily texttt: test \textbf{textbf：test} \textup{textup：test} \textit{textit：test} \textsl{textsl：test}}
+
+    \subsection{Font Test}
+    {\rmfamily textrm: The quick brown fox jumps over the lazy dog}
+
+    {\sffamily textsf: The quick brown fox jumps over the lazy dog}
+
+    {\ttfamily texttt: The quick brown fox jumps over the lazy dog}
+
+    \chapter{各类测试}
+
+    \begin{intro}
+        intro环境测试。intro 环境，用以章节开头的文字介绍。排版上比普通正文多缩进两个文字。
+    \end{intro}
+
+    \paragraph{普通文字段} 滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。
+
+    \paragraph{有序列表}
+    \begin{enumerate}[label={Step \arabic*.}]
+        \item test
+        \item test
+        \item test
+        \item 滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。
+    \end{enumerate}
+
+    \paragraph{无序列表}
+    \begin{itemize}
+        \item test
+        \item test
+        \item test
+        \item 滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。
+    \end{itemize}
+
+    \begin{lstlisting}[language={C},title={\textsf{C语言代码段测试}}]
+        for(,1,);
+        printf("Hello World!"); // 注释测试 Test
+    \end{lstlisting}
+
+    \paragraph{\color{black}颜色测试}
+    {\color{red} 红色}
+
+    \paragraph{下划线测试}
+    \uline{下划线}
+    \uuline{双下划线}
+    \uwave{波浪线}
+    \sout{删除线}
+    \xout{斜线}
+    \dashuline{下划线-虚线}
+    \dotuline{下划线-点}
+
+    \nocite{*} % 不使用 cite 也能生成参考文献。
+    \printbibliography % 生成参考文献排版。
+    \addcontentsline{toc}{chapter}{参考文献} % 添加参考文献进目录。
+
+    \appendix
+    % 附录
+    \chapter{附录测试1}
+    \section{节测试}
+    \subsection{子节测试}
+    \chapter{附录测试2}
+
+\end{document}
