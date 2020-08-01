@@ -146,6 +146,7 @@
 \RequirePackage{multirow} % 调用 multirow 宏包，以支持纵向合并列表。
 \RequirePackage{ulem} % 调用 ulem 宏包，以支持删除线等。
 \RequirePackage{amsmath} % 调用 amsmath 宏包，以支持复杂的数学公式排版。
+\RequirePackage{syntonly} % 调用 syntonly 宏包，以支持快速 \syntaxonly 命令。
 
 % -----------------------------------------------
 % 页眉页脚设定
