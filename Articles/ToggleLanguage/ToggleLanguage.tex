@@ -1,0 +1,122 @@
+\documentclass{resources/DocClass}
+
+%\syntaxonly % 用以快速编译以排查错误，不生成 DVI 或 PDF。
+
+    \DocumentTitle{BL插件-一键切换语言}
+    \DocumentCreatedDate{2020/6/5}
+
+    \AuthorName{Mr. Kin}
+    \AuthorEmail{im.misterkin@gmail.com}
+    \AuthorBlog{https://mister-kin.github.io/}
+
+\begin{document}
+    \pagenumbering{Roman} % 大写罗马字母样式页码。
+    \maketitle
+    \addcontentsline{toc}{chapter}{封面}
+    \frontmatter
+    \include{about}
+    \include{copyright}
+    {\centering \tableofcontents} % 生成目录页。
+    \mainmatter
+
+    % 正文
+    \chapter{一键切换语言}
+    \section{介绍}
+    一款blender插件，旨在通过一键快速、轻松地在两种语言之间切换用户界面，而非重复打开偏好设置。
+
+    \subsection{背景}
+    因blender手册翻译需要，本人频繁地在中英文之间切换软件用户界面语言以校对相关UI内容。但每次繁琐地使用偏好设置进行语言切换令人苦不堪言，索性就开发一款插件以简化这操作。
+
+    \subsection{面向人群}
+    \begin{itemize}
+        \item 翻译者：需要频繁切换界面语言以校对相关内容。
+        \item CG学习者：需要频繁切换界面语言才能跟进外语教程。
+    \end{itemize}
+
+    \subsection{插件目前实现的功能}
+    \begin{itemize}
+        \item 一键切换UI语言（中/英）
+        \item 一键打开用户偏好设置
+    \end{itemize}
+    \noindent {\footnotesize \emph{注：规划中的功能请\href{https://mister-kin.github.io/roadmap/}{跳转蓝图规划页}查看。}}
+
+    \section{用法}
+
+    \subsection{下载及安装}
+    \begin{itemize}
+        \item 下载地址：\href{https://github.com/Mister-Kin/ToggleLanguage/releases/latest}{跳转下载页}
+        \item blender版本要求：\href{https://www.blender.org/download/}{v2.83+}
+    \end{itemize}
+
+    \noindent {\bfseries \sffamily 安装步骤}
+    \begin{enumerate}
+        \item 打开「Preferences/用户偏好设置」。
+        \item 选择「Add-ons/插件」选项卡。
+        \item 点击「Install.../安装」后选择插件并确定。
+        \item 启用插件
+    \end{enumerate}
+
+    \begin{figure}[htbp]
+        \begin{minipage}[t]{0.45\textwidth}
+            \includegraphics[scale=0.28]{Installation}
+            \caption*{安装方法}
+        \end{minipage}
+        \qquad
+        \begin{minipage}[t]{0.45\textwidth}
+            \includegraphics[scale=0.28]{EnableAddon}
+            \caption*{启用插件}
+        \end{minipage}
+    \end{figure}
+
+    \subsection{使用插件}
+    \noindent {\bfseries \sffamily 点击UI按钮即可实现相应功能：}
+    \begin{itemize}
+        \item 左侧是语言切换按钮，其中按钮文字会自适应于当前UI语言。
+        \item 右侧的“齿轮”按钮是用于打开「Preferences/用户偏好设置」。
+    \end{itemize}
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[scale=0.45]{UI}
+        \caption*{插件UI}
+    \end{figure}
+
+    \section{开发记录}
+
+    开发测试环境：Win10 v2004 OS和Blender v2.90 beta。
+
+    \noindent {\footnotesize \emph{注：建议在 blender v2.83 以上使用。2.83默认是启用翻译功能，以下版本的翻译都得手动启用。因为没有实际测试过，所以2.83以下版本要使用该插件，可能需要手动启用翻译功能。}
+
+    \newpage
+
+    \subsection{更新历史}
+    \begin{table}[!h]
+        \centering
+    \begin{tabular}{|*{2}{c|}p{250pt}|c|}
+        \hline
+        版本 & 更新日期 & \centering{更新内容} & 标签 \\
+        \hline
+        v0.4 & 2020/8/3 & 代码项目重命名为ToggleLanguage；按钮UI放置于最右端；添加新按钮以快速查看preferences & add feature \\
+        \hline
+        v0.3 & 2020/6/5 & 更新至blender 2.83 api；修改部分类名；添加文档链接；修改完善许可说明 & enhancement \\
+        \hline
+        v0.2 & 2020/5/21 & \centering{清除未使用属性的报错} & fix bug \\
+        \hline
+        v0.1 & 2020/5/12 & \centering{完成基础的功能设计「一键切换」} & add feature \\
+        \hline
+    \end{tabular}
+    \end{table}
+
+    \section{作者}
+    \textbf{ToggleLanguage} © Mr. Kin, 项目代码采用 \href{https://github.com/Mister-Kin/ToggleLanguage/blob/master/LICENSE}{GNU GPL v3.0} 许可协议进行发布。
+
+    由 Mr. Kin 著作并维护。
+
+    %\nocite{*} % 不使用 cite 也能生成参考文献。
+    %\printbibliography % 生成参考文献排版。
+    %\addcontentsline{toc}{chapter}{参考文献} % 添加参考文献进目录。
+
+    \appendix
+    % 附录
+
+\end{document}
