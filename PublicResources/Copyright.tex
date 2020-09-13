@@ -5,9 +5,23 @@
 \addcontentsline{toc}{chapter}{版权声明}
 
 \noindent 作者：Mr. Kin \\
-博文链接：\href{}{跳转博文页}\\
-相关视频创作链接：\href{}{跳转视频页}\\ %无视频则注释掉此行
-PDF及LaTex源码链接：\href{}{跳转PDF及LaTex源码页}\\
+\DetectToksEmpty\LinkBlogPost
+\ifToksEmpty
+博文链接：链接暂空\\
+\else
+博文链接：\href{\the\LinkBlogPost}{跳转博文页}\\
+\fi
+\DetectToksEmpty\LinkPDFSource
+\ifToksEmpty
+PDF及LaTex源码链接：链接暂空\\
+\else
+PDF及LaTex源码链接：\href{\the\LinkPDFSource}{跳转PDF及LaTex源码页}\\
+\fi
+\DetectToksEmpty\LinkVideo
+\ifToksEmpty
+\else
+相关视频创作链接：\href{\the\LinkVideo}{跳转视频页}\\
+\fi
 许可协议：本作品的所有内容，除个人设计创作的图像（如logo等）和相关的视频创作及其他特别声明外，均采用\href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh}{知识共享\ 署名-非商业性使用-相同方式共享 4.0 国际许可协议}进行发布。版权 © Mr. Kin，保留所有权利。\includegraphics[scale=.4]{CC-BY-NC-SA}\\*[1.3ex]
 \begin{tabular}{|*{3}{p{0.306\textwidth}|}}
     \hline

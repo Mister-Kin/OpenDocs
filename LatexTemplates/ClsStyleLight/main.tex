@@ -1,6 +1,4 @@
-\documentclass{resources/DocClassLight}
-
-%\syntaxonly % 用以快速编译以排查错误，不生成 DVI 或 PDF。
+\documentclass{../../PublicResources/DocClassLight}
 
     \DocumentTitle{文档标题测试}
     \DocumentCreatedDate{2020/7/21}
@@ -100,6 +98,14 @@
     \xout{斜线}
     \dashuline{下划线-虚线}
     \dotuline{下划线-点}
+
+    \newpage
+    \noindent {\bfseries \sffamily 图片测试}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.9]{SampleImage}
+        \caption{示例图片}
+    \end{figure}
 
     \nocite{*} % 不使用 cite 也能生成参考文献。
     \printbibliography % 生成参考文献排版。

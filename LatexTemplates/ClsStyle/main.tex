@@ -1,9 +1,11 @@
-\documentclass{resources/DocClass}
-
-%\syntaxonly % 用以快速编译以排查错误，不生成 DVI 或 PDF。
+\documentclass{../../PublicResources/DocClass}
 
     \DocumentTitle{文档标题测试}
     \DocumentCreatedDate{2020/7/21}
+
+    \LinkBlogPost{https://test.link1/}
+    \LinkPDFSource{https://test.link2/}
+    \LinkVideo{https://test.link3/}
 
     \AuthorName{Mr. Kin}
     \AuthorEmail{im.misterkin@gmail.com}
@@ -14,8 +16,10 @@
     \maketitle
     \addcontentsline{toc}{chapter}{封面}
     \frontmatter
-    \include{about}
-    \include{copyright}
+    \input{../../PublicResources/About} % 出于特殊的安全设置，\include 命令无法使用相对路径，因为需要读写权限以给 included file 写 aux 文件，而 \input 命令只需要读权限。
+    \clearpage
+    \input{../../PublicResources/Copyright}
+    \clearpage
     {\centering \tableofcontents} % 生成目录页。
     \mainmatter
 
@@ -104,6 +108,14 @@
     \xout{斜线}
     \dashuline{下划线-虚线}
     \dotuline{下划线-点}
+
+    \newpage
+    \noindent {\bfseries \sffamily 图片测试}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.9]{SampleImage}
+        \caption{示例图片}
+    \end{figure}
 
     \nocite{*} % 不使用 cite 也能生成参考文献。
     \printbibliography % 生成参考文献排版。

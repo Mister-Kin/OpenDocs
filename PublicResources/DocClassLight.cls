@@ -13,7 +13,7 @@
 % 版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClassLight}[2020/8/13 v1.1 General Document Template Light] %该文类的名称、发布日期、版本序号等。
+\ProvidesClass{DocClassLight}[2020/9/13 v1.2 General Document Template Light] %该文类的名称、发布日期、版本序号等。
 
 % -----------------------------------------------
 % 加载文类，并设定相关参数。
@@ -111,10 +111,10 @@
 % 参考文献和图片设定，及其相关路径设定。
 % -----------------------------------------------
 \RequirePackage[backend=biber,style=gb7714-2015]{biblatex} % 支持排版参考文献。设置文献样式为符合中文文献著录标准的 GB/T 7714-2015 样式）, 使用默认的后端程序 biber（其支持更好，包括 UTF-8 等，而 [backend=bibtex] 后端程序只支持 ascii 编码）。
-\addbibresource{resources/reference.bib} % 指定参考文献数据库文件路径。
+\addbibresource{resources/reference.bib} % 相对路径，指定参考文献数据库文件路径。
 
 \RequirePackage{graphicx} % 支持插入图片。
-\graphicspath{{resources/images/}} % 指定图片路径。
+\graphicspath{{resources/images/}} % 相对地址，指定文档路径下的图片路径。
 
 % -----------------------------------------------
 % 列表环境 list 设定
@@ -130,8 +130,8 @@
 % -----------------------------------------------
 % 图表说明文字 caption 设定
 \RequirePackage{caption} % 支持生成不带编号的图片等说明文字。
-\captionsetup[figure]{skip=3pt} % 缩小 caption 和 figure 环境中图片的距离至 3pt，默认为 10pt。
-\captionsetup[table]{skip=3pt} % 缩小 caption 和 table 环境中图表的距离至 3pt，默认为 10pt。
+\captionsetup[figure]{skip=2pt} % 缩小 caption 和 figure 环境中图片的距离至 3pt，默认为 10pt。
+\captionsetup[table]{skip=2pt} % 缩小 caption 和 table 环境中图表的距离至 3pt，默认为 10pt。
 
 \RequirePackage{wrapfig} % 支持图文并排。
 \RequirePackage{subfigure} % 支持子图表和子标题，可做瀑布流排版。
@@ -151,7 +151,6 @@
 \RequirePackage{ulem} % 支持删除线等。
 \RequirePackage{multicol} % 支持多栏排版。
 \RequirePackage{amsmath} % 支持复杂的数学公式排版。
-\RequirePackage{syntonly} % 支持 \syntaxonly 快速编译命令。
 
 % -----------------------------------------------
 % 页眉页脚设定
