@@ -1,7 +1,4 @@
 *.gz
-# ignore duplicate image files except public resources
-images/
-!/resources/*
 
 # Temporary ignore project
 Guideline/
