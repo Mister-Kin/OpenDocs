@@ -1,4 +1,5 @@
 *.gz
+/ClassifiedDocs/
 
 # Temporary ignore project
 Guideline/
