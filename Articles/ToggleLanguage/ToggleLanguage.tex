@@ -1,9 +1,11 @@
-\documentclass{resources/DocClass}
+\documentclass{../../PublicResources/DocClass}
 
-%\syntaxonly % 用以快速编译以排查错误，不生成 DVI 或 PDF。
-
-    \DocumentTitle{BL插件-切换语言}
+    \DocumentTitle{Blender插件-切换语言}
     \DocumentCreatedDate{2020/6/5}
+
+    \LinkBlogPost{https://mister-kin.github.io/ToggleLanguage}
+    \LinkPDFSource{https://github.com/Mister-Kin/OpenDocs/tree/master/Articles/ToggleLanguage}
+    \LinkVideo{}
 
     \AuthorName{Mr. Kin}
     \AuthorEmail{im.misterkin@gmail.com}
@@ -14,8 +16,10 @@
     \maketitle
     \addcontentsline{toc}{chapter}{封面}
     \frontmatter
-    \include{about}
-    \include{copyright}
+    \input{../../PublicResources/About} % 出于特殊的安全设置，\include 命令无法使用相对路径，因为需要读写权限以给 included file 写 aux 文件，而 \input 命令只需要读权限。
+    \clearpage
+    \input{../../PublicResources/Copyright}
+    \clearpage
     {\centering \tableofcontents} % 生成目录页。
     \mainmatter
 
