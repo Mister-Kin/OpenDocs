@@ -13,7 +13,7 @@
 % 版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClass}[2020/9/13 v1.2 General Document Template] %该文类的名称、发布日期、版本序号等。
+\ProvidesClass{DocClass}[2020/9/22 v1.3 General Document Template] %该文类的名称、发布日期、版本序号等。
 
 % -----------------------------------------------
 % 加载文类，并设定相关参数。
@@ -154,8 +154,9 @@
 % -----------------------------------------------
 % 图表说明文字 caption 设定
 \RequirePackage{caption} % 支持生成不带编号的图片等说明文字。
-\captionsetup[figure]{skip=2pt} % 缩小 caption 和 figure 环境中图片的距离至 3pt，默认为 10pt。
-\captionsetup[table]{skip=2pt} % 缩小 caption 和 table 环境中图表的距离至 3pt，默认为 10pt。
+\captionsetup[figure]{skip=1pt} % 缩小 caption 和 figure 环境中图片的距离至 1pt，默认为 10pt。
+\captionsetup[table]{skip=1pt} % 缩小 caption 和 table 环境中图表的距离至 1pt，默认为 10pt。
+\captionsetup{font=footnotesize} % 设置 caption 字体大小。
 
 \RequirePackage{wrapfig} % 支持图文并排。
 \RequirePackage{subfigure} % 支持子图表和子标题，可做瀑布流排版。
