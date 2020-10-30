@@ -13,7 +13,7 @@
 % 版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClass}[2020/9/22 v1.3 General Document Template] %该文类的名称、发布日期、版本序号等。
+\ProvidesClass{DocClass}[2020/10/21 v1.4 General Document Template] %该文类的名称、发布日期、版本序号等。
 
 % -----------------------------------------------
 % 加载文类，并设定相关参数。
@@ -28,6 +28,10 @@
 \setmainfont{Source Serif Pro}
 \setsansfont{Source Sans Pro}
 \setmonofont{Source Code Pro}
+%\newfontfamily\IPAFont{Doulos SIL} % 指定国际音标排版所需字体。
+%\newfontfamily\IPAFont{Charis SIL} % 指定国际音标排版所需字体。
+\newfontfamily\IPAFont{Gentium Plus} % 指定国际音标排版所需字体。
+\newcommand{\ipa}[1]{{\IPAFont /#1/}} % 定义命令\ipa，用以排版音标的命令。
 \RequirePackage{xeCJK} % 支持修改中文字体族。
 \xeCJKsetup{AutoFakeSlant=true}  % 设置伪斜体属性，以支持生成斜体中文字体（需置于中文字体设置之前）。
 \setCJKmainfont{思源宋体}
