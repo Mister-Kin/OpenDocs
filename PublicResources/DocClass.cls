@@ -1,6 +1,7 @@
 %! ----------------------------------------------
-%! 作者：Mr. Kin
+%! Author：Mr. Kin
 %! Email: im.misterkin@gmail.com
+%! Blog: https://mister-kin.github.io/
 %! License: CC BY-NC-SA 4.0
 %! ----------------------------------------------
 
@@ -13,7 +14,7 @@
 % 版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClass}[2020/10/21 v1.4 General Document Template] %该文类的名称、发布日期、版本序号等。
+\ProvidesClass{DocClass}[2020/12/18 v1.5 General Document Template] %该文类的名称、发布日期、版本序号等。
 
 % -----------------------------------------------
 % 加载文类，并设定相关参数。
@@ -65,7 +66,7 @@
 \renewcommand{\maketitle}{%
     \thispagestyle{empty}
     {\sffamily%
-    \vspace{10ex}
+    {\small © Mr. Kin ——\ All rights reserved}
     \begin{flushright}
         \begin{tabular}{rl}
             Created : & \hspace{-0.7em} \the\DocumentCreatedDate \\
@@ -116,7 +117,7 @@
 }
 % 修改目录排版样式。注意，tocloft 和 subfigure 宏包一起调用时，需指定 subfigure 参数。
 \RequirePackage[subfigure]{tocloft}
-\renewcommand{\cfttoctitlefont}{\huge\sffamily}
+\renewcommand{\cfttoctitlefont}{\huge\bfseries\sffamily}
 \renewcommand{\cftpartfont}{\bfseries\sffamily}
 \renewcommand{\cftchapfont}{\bfseries\sffamily}
 \renewcommand{\cftsecfont}{\sffamily}
@@ -124,7 +125,7 @@
 \renewcommand{\cftsubsubsecfont}{\sffamily}
 
 \RequirePackage{tocbibind} % 支持添加目录本身和参考文献进目录中。
-\RequirePackage[toc]{multitoc} % 支持排版多栏 toc 目录页，默认双栏。
+%\RequirePackage[toc]{multitoc} % 支持排版多栏 toc 目录页，默认双栏。（长标题不利于双栏目录排版，故取消）
 \setcounter{tocdepth}{3} % 目录深度设定为 3。
 \setcounter{secnumdepth}{3} % 章节编号深度设定为 3。
 
@@ -217,7 +218,7 @@
     frameshape={{ryrynyyyy}{yny}{yny}{ryrynyyyy}}, % 控制边框样式，上下边是每三个字母段控制一条边框。
     backgroundcolor=\color{gray!5}, % 代码框背景颜色：5% 的灰色。
     breaklines=true,% 代码过长时则换行。
-    gobble=8, % 去掉代码前多余的缩进。
+    gobble=4, % 去掉代码前多余的缩进，默认行头和代码的缩进距离为4。
 }
 
 % -----------------------------------------------
