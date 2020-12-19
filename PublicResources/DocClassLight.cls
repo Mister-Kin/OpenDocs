@@ -54,7 +54,7 @@
 \renewcommand{\maketitle}{%
     \thispagestyle{empty}
     {\sffamily%
-    \vspace{10ex}
+    {\small © \the\AuthorName\ ——\ All rights reserved}
     \begin{flushright}
         \begin{tabular}{rl}
             Created : & \hspace{-0.7em} \the\DocumentCreatedDate \\

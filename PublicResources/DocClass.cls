@@ -66,7 +66,7 @@
 \renewcommand{\maketitle}{%
     \thispagestyle{empty}
     {\sffamily%
-    {\small © Mr. Kin ——\ All rights reserved}
+    {\small © \the\AuthorName\ ——\ All rights reserved}
     \begin{flushright}
         \begin{tabular}{rl}
             Created : & \hspace{-0.7em} \the\DocumentCreatedDate \\
