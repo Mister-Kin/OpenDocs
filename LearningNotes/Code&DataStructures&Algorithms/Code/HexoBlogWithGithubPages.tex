@@ -1,0 +1,213 @@
+\chapter{Hexo+Github Pages搭建个人博客}
+
+\section{环境配置}
+\subsection{安装NodeJS和Yarn}
+注意nodejs不要安装默认附带的npm包管理工具。其他都是一路默认即可，包括yarn。
+
+若想使用npm来管理包，请查看yarn和npm相关对应的命令。
+\begin{lstlisting}[language={bash},title={yarn和npm对应命令}]
+    yarn add # npm install
+    yarn add [package] # npm install [package] --save
+    yarn global add [package] # npm install [package] --global
+\end{lstlisting}
+
+\noindent {\footnotesize \emph{注 ：Node版本选择v12，避免Stylus for Node v14 'Accessing non-existent property' errors。}}
+
+\subsection{Yarn源设定}
+\begin{lstlisting}[language={bash},title={\textsf{Yarn源设定命令}}]
+    yarn config get registry  // 查看yarn当前镜像源
+    yarn config set registry https://registry.npm.taobao.org/  // 设置yarn镜像源为淘宝镜像
+\end{lstlisting}
+
+\subsection{安装hexo}
+在想要安装hexo的位置建立文件夹「hexo」，右键该文件夹，选择Git Bash。然后执行下面命令（推荐全局安装）。
+
+\noindent {\footnotesize \emph{注：yarn add（hexo init之后）该条命令为可选，因为hexo init之后一般都会自动安装相关依赖。若没有自动安装时，则需要执行该条命令以手动安装依赖。}}
+
+\begin{lstlisting}[language={bash},title={全局安装hexo}]
+    yarn global add hexo-cli # 全局安装hexo-cli脚手架
+    hexo init # 初始化hexo，克隆hexo-starter和默认landscape主题仓库
+    hexo s # hexo server，启用本地服务器，见：http://localhost:4000/
+\end{lstlisting}
+
+\begin{lstlisting}[language={bash},title={本地安装hexo}]
+    yarn add hexo-cli
+    node_modules/.bin/hexo.cmd init blog # init需要空文件夹，所以另外用文件夹「blog」来初始化hexo
+    cd blog
+    yarn add
+    node_modules/.bin/hexo.cmd s
+\end{lstlisting}
+
+\subsection{清除yarn已安装的包}
+\begin{lstlisting}[language={bash},title={命令查看yarn相关路径}]
+    yarn global dir # 全局安装路径
+    yarn cache dir # 缓存路径，yarn缓存不会自动删除，省去重复下载
+    yarn cache clean # 清理缓存路径
+\end{lstlisting}
+
+\section{Config配置}
+
+\begin{intro}
+    注意：以下代码中，cd hexo含义均代表：命令执行路径为站点的根目录，即为hexo init命令初始化的路径。以hexo为开头的路径均为：站点根目录/theme/next。「新增相关代码」若无提到位置，则任意位置都可以。
+\end{intro}
+
+\subsection{站点Config}
+\subsubsection{本地实时预览 - browsersync}
+\begin{lstlisting}[language={bash},title={安装插件hexo-browsersync}]
+    cd hexo
+    yarn add hexo-browsersync
+\end{lstlisting}
+
+\subsubsection{网站设置}
+\noindent {\footnotesize \emph{注：language根据主题设置，注意新版Next主题已经没有zh-Hans语言配置文件，设置中文简体请用zh-CN参数。}}
+\begin{lstlisting}[language={PHP},title={搜索站点Config.yml相关代码并修改}]
+    # Site
+    title: Mr. Kin's Blog
+    subtitle: 健先生的博客
+    description: Since you have chosen to chase, don't give up.
+    author: Mr. Kin
+    language: zh-CN
+    timezone: Asia/Shanghai
+\end{lstlisting}
+
+\subsubsection{网址设置}
+\begin{lstlisting}[language={PHP},title={搜索站点Config.yml相关代码并修改}]
+    # URL
+    url: https://mister-kin.github.io/
+    permalink: :title/ # 仅使用title以优化seo
+\end{lstlisting}
+
+\subsubsection{使用第三方主题：Next}
+\noindent {\footnotesize \emph{注：新版Next主题主仓库已从 iissnan 名下迁移至 theme-next 组织。}}
+
+\begin{lstlisting}[language={bash},title={下载安装Next主题}]
+    cd hexo
+    git clone https://github.com/theme-next/hexo-theme-next themes/next
+\end{lstlisting}
+
+\begin{lstlisting}[language={PHP},title={搜索站点Config.yml相关代码并修改}]
+    # Extensions
+    theme: next
+\end{lstlisting}
+
+\subsubsection{Github Pages部署配置}
+\begin{lstlisting}[language={PHP},title={搜索站点Config.yml相关代码并修改}]
+    # Deployment
+    deploy:
+        type: git
+        repo: git@github.com:mister-kin/mister-kin.github.io.git
+        branch: master
+\end{lstlisting}
+
+\subsection{主题Config}
+\subsubsection{选择方案「Scheme」}
+\begin{lstlisting}[language={PHP},title={搜索主题Config.yml相关代码并修改}]
+    # Schemes
+    #scheme: Muse # 注释掉不使用的默认方案
+    scheme: Gemini
+\end{lstlisting}
+
+\subsubsection{设置「语言」「作者昵称」「站点描述」}
+见
+
+\subsubsection{设置「菜单」}
+\noindent {\footnotesize \emph{注：现阶段新版Next支持Font Awesome 5.13.0，而5.1.4旧版Next版本只支持Font Awesome 4.7.0}}
+\begin{lstlisting}[language={PHP},title={搜索主题Config.yml相关代码并修改}]
+    # Menu Settings
+    menu:
+        home: / || fa fa-home
+        about: /about/ || fa fa-user
+        tags: /tags/ || fa fa-tags
+        logs: /logs || fa fa-file-alt
+        commonweal: /404/ || fa fa-spinner
+\end{lstlisting}
+\begin{lstlisting}[language={PHP},title={搜索next/languages/zh-CN.yml相关代码并修改}]
+    menu:
+        logs: 日志
+        commonweal: '404'
+\end{lstlisting}
+
+\subsubsection{设置「头像」}
+\noindent {\bfseries \sffamily 加载头像}
+在next/source/uploads/路径下新建文件夹「uploads」，并将头像放置于内。
+\begin{lstlisting}[language={PHP},title={搜索主题Config相关代码并修改}]
+    avatar: /uploads/avatar.webp
+\end{lstlisting}
+\noindent {\bfseries \sffamily 圆形化头像并旋转}
+\begin{lstlisting}[language={PHP},title={next/source/css/main.styl底部新增相关代码}]
+    // Customized Contents
+    // 导入_custom/custom.styl
+    @import "_custom/custom";
+\end{lstlisting}
+
+在next/source/css路径下新建文件夹「\_custom」，并新建custom.styl放置于内。
+\begin{lstlisting}[language={PHP},title={next/source/css/\_custom/custom.styl新增相关代码}]
+    // Customized Contents
+    // 圆形化头像并旋转
+    @import "../../uploads/css/avatar-round-rotate.styl"
+\end{lstlisting}
+
+在next/source/uploads/路径下新建文件夹「css」，并新建avatar-round-rotate.styl放置于内。
+\begin{lstlisting}[language={PHP},title={next/source/uploads/avatar-round-rotate.styl新增相关代码}]
+    // 配置文件为\themes\next\source\css\_custom\custom.styl。
+    // 圆形化头像并旋转
+
+    // 圆形化头像
+    if (hexo-config('avatar_custom.round')) {
+        .site-author-image {
+        border-radius: 50%; // 大于50%效果都一样
+        box-shadow: inset 0 -1px 0 #000000;
+        }
+    }
+
+    // 鼠标经过头像旋转360度
+    if (hexo-config('avatar_custom.rotate')) {
+        .site-author-image {
+        transition: transform 2s ease-out;
+        }
+        .site-author-image:hover {
+        transform: rotateZ(360deg);
+        }
+    }
+\end{lstlisting}
+
+\subsubsection{设置RSS}
+\begin{lstlisting}[language={bash},title={安装插件hexo-generator-feed}]
+    cd hexo
+    yarn add hexo-generator-feed
+\end{lstlisting}
+
+\subsubsection{设置代码高亮}
+\begin{lstlisting}[language={PHP},title={搜索主题Config相关代码并修改}]
+    codeblock:
+        highlight_theme: night
+        copy_button:
+        enable: true
+\end{lstlisting}
+
+\subsubsection{设置社交链接}
+\begin{lstlisting}[language={PHP},title={搜索主题Config相关代码并修改}]
+    # Social links
+    social:
+\end{lstlisting}
+
+
+\subsubsection{添加本地搜索 - Local Search}
+\begin{lstlisting}[language={bash},title={安装插件hexo-generator-searchdb}]
+    cd hexo
+    yarn add hexo-generator-searchdb
+\end{lstlisting}
+\begin{lstlisting}[language={PHP},title={站点Config新增相关代码}]
+    search:
+        path: search.xml
+        field: post
+        format: html
+        limit: 10000
+\end{lstlisting}
+\begin{lstlisting}[language={PHP},title={搜索主题Config相关代码并修改}]
+    # Local search
+    local_search:
+        enable: true
+\end{lstlisting}
+
+去除推荐阅读（友链），开启fancybox，rss已经是放置于每篇文章背后

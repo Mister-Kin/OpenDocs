@@ -1,0 +1,16 @@
+\section{二次开发-插件}
+
+\subsection{开发技巧}
+用户偏好设置-开发额外选项+Python工具提示+工具提示
+
+开启「开发额外选项」后，右键UI组件，可以查看源代码。
+
+在寻找UI组件所在类目时，可查看Python工具提示信息。
+
+在查找一些操作命令时，可以在blender里操作后在控制台看执行的语句。活用blender控制台进行调试。
+
+\subsection{常见API总结}
+\begin{itemize}
+    \item 插件信息说明：\href{https://wiki.blender.org/wiki/Process/Addons/Guidelines/metainfo#Script_Meta_Info}{见info字典元素}
+    \item bpy.types：Header, Menu, Panel, Operator。前三个都是需要定义draw函数来实现UI，Operator一般用来定义操作的execute函数。
+\end{itemize}

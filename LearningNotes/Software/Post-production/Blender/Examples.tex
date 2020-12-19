@@ -1,0 +1,33 @@
+\section{实战篇}
+
+\subsection{SVG转3D网格}
+\begin{enumerate}
+    \item 切换到顶视图-7键。
+    \item 菜单>文件>导入>SVG
+    \item 缩放视图找到SVG。
+    \item 右键set origin，调整“原点”至物体中心。
+    \item shift+s键对齐“原点”至世界中心
+    \item 选中并缩放至合适大小。
+    \item 右键convert to，转换到Mesh。
+    \item 选中网格物体，TAB键进入“编辑模式”。
+    \item A键选中所有网格。
+    \item 切换到侧视图-3或1键。（按住Ctrl时为视图反方向）
+    \item E键挤出面。
+    \item TAB键回到“物体模式”。
+\end{enumerate}
+
+\subsection{灰尘粒子动画}
+无特殊说明，则都是在粒子标签内操作。
+\begin{enumerate}
+    \item 创建合适的立方体（粒子场）
+    \item 选择立方体，属性编辑器>粒子标签>新建粒子系统
+    \item 粒子类型>发射体；发射>源>发射源>体积
+    \item 创建灰尘物体模型
+    \item 渲染>渲染为>物体（此为单个效果，用集合来实现多个），物体>选择灰尘物体模型
+    \item 渲染>缩放>数值调整；缩放随机性>1
+    \item 1键切换到前视图，ctrl+alt+0并左击相机视角边框处以选中相机，按G调整相机视角；属性编辑器>相机属性>镜头>焦距>数值调整。
+    \item 启用旋转功能>坐标系轴向>normal；随机>数值调整；相位>数值调整；随机相位>数值调整
+    \item 选中立方体，属性编辑器>材质>表面>移除材质，材质>体积>原理化体积>密度调0.14
+    \item 属性编辑器>世界属性>颜色调至黑色（除去环境亮度）
+    \item
+\end{enumerate}
