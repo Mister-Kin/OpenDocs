@@ -4,11 +4,11 @@
 
 # 开放文档
 
-[![Texlive Version][]](https://tug.org/texlive/) [![License][]](./LICENSE_CN) [![LaTeX Version][]](https://github.com/Mister-Kin/OpenDocs/releases)
+[![Texlive Version][]](https://tug.org/texlive/) [![License][]](./LICENSE_CN) [![LaTeX Template Version][]](https://github.com/Mister-Kin/OpenDocs/releases)
 
 [Texlive Version]: https://img.shields.io/badge/texlive-v2020-blue
 [License]: https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue
-[LaTeX Version]: https://img.shields.io/github/v/release/Mister-Kin/OpenDocs?include_prereleases&color=blue
+[LaTeX Template Version]: https://img.shields.io/github/v/release/Mister-Kin/OpenDocs?include_prereleases&color=blue
 
 ## 介绍
 一个关于小生个人写作、学习笔记和翻译文档的仓库。
