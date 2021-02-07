@@ -14,7 +14,7 @@
 % 版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClassLight}[2020/12/18 v1.5 General Document Template Light] %该文类的名称、发布日期、版本序号等。
+\ProvidesClass{DocClassLight}[2021/2/7 v1.6 General Document Template Light] %该文类的名称、发布日期、版本序号等。
 
 % -----------------------------------------------
 % 加载文类，并设定相关参数。
@@ -83,6 +83,13 @@
 % -----------------------------------------------
 % intro 环境，用以章节开头的文字介绍。排版上比普通正文多缩进两个文字。
 \newenvironment{intro}{\narrower\sffamily}{\par\vspace*{2ex plus 2.5ex minus 1.5ex}}
+
+% -----------------------------------------------
+% 自定义命令设定
+% -----------------------------------------------
+% 定义由阿拉伯数字输出大小写罗马数字的命令。
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\uppercase\expandafter{\romannumeral #1}}
 
 % -----------------------------------------------
 % 标题和目录设定
