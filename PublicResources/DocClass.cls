@@ -14,7 +14,7 @@
 % 版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClass}[2021/2/7 v1.6 General Document Template] %该文类的名称、发布日期、版本序号等。
+\ProvidesClass{DocClass}[2021/02/25 v1.7 General Document Template] %该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 加载文类，并设定相关参数。
@@ -192,12 +192,13 @@
 % -----------------------------------------------
 % 页眉页脚设定
 % -----------------------------------------------
-\RequirePackage{fancyhdr} % 为避免宏包冲突，一般在最后设置。调用 fancyhdr 宏包，以设置页眉页脚，文档风格设为：页眉为标题在左，页码在右；页脚为博客地址。
+\RequirePackage{fancyhdr} % 为避免宏包冲突，一般在最后设置。调用 fancyhdr 宏包，以设置页眉页脚，文档风格设为：页眉为博客地址；页脚为页码 + 版权声明。
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[C]{\ttfamily Author's Blog: \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog}}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancyfoot[C]{— \ \thepage \ —}
+\fancyfoot[R]{\small © \the\AuthorName\ ——\ All rights reserved}
 \setlength{\headheight}{13.6pt} % 消除 headheight 值过小的警告。
 % part、chapter 首页的页眉页脚是由 plain style 决定的。
 \fancypagestyle{plain}
@@ -206,6 +207,7 @@
     \fancyhead[C]{\ttfamily Author's Blog: \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog}}
     \renewcommand{\headrulewidth}{0.4pt}
     \fancyfoot[C]{— \ \thepage \ —}
+    \fancyfoot[R]{\small © \the\AuthorName\ ——\ All rights reserved}
 }
 
 % -----------------------------------------------
