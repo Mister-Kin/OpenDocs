@@ -43,12 +43,17 @@ Every single document project consists of a folder containing a PDF E-Document a
 
 For example, a folder named ToggleLanguage has a project named ToggleLanguage and is located in a parent folder named Articles. The PDF E-Document and the main file of LaTeX source code are both named ToggleLanuage. The directory structure is as follows.
 ```
-|-- Articles
-    |-- ToggleLanguage
-        |-- resources
-            |-- images
-        |-- ToggleLanguage.pdf
-        |-- ToggleLanguage.tex
+.
+└── OpenDocs
+    └── Articles
+        └── ToggleLanguage
+            ├── resources
+            │   └── images
+            │       ├── UI.png
+            │       ├── Installation.png
+            │       └── ...
+            ├── ToggleLanguage.pdf
+            └── ToggleLanguage.tex
 ```
 
 ## Usage

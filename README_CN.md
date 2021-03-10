@@ -43,12 +43,17 @@
 
 例如名为 ToggleLanguage 文件夹所对应的项目名称就是 ToggleLanguage，位于名为 Articles 的父文件夹下。其 PDF 电子文档和 LaTeX 源码的主文件名均为 ToggleLanuage。目录结构如下：
 ```
-|-- Articles
-    |-- ToggleLanguage
-        |-- resources
-            |-- images
-        |-- ToggleLanguage.pdf
-        |-- ToggleLanguage.tex
+.
+└── OpenDocs
+    └── Articles
+        └── ToggleLanguage
+            ├── resources
+            │   └── images
+            │       ├── UI.png
+            │       ├── Installation.png
+            │       └── ...
+            ├── ToggleLanguage.pdf
+            └── ToggleLanguage.tex
 ```
 
 ## 用法
