@@ -14,7 +14,7 @@
 % 版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClass}[2021/02/25 v1.7 General Document Template] %该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{DocClass}[2021/03/25 v1.8 General Document Template] %该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 加载文类，并设定相关参数。
@@ -44,6 +44,7 @@
 % -----------------------------------------------
 % 文档信息
 \newtoks\DocumentTitle
+\newtoks\DocumentSubtitle
 \newtoks\DocumentCreatedDate
 % 文档作者信息
 \newtoks\AuthorName
@@ -53,6 +54,9 @@
 \newtoks\LinkBlogPost
 \newtoks\LinkPDFSource
 \newtoks\LinkVideo
+% 用以处理判断版权信息链接是否为空的临时变量
+\newtoks\LinkBlogPostText
+\newtoks\LinkPDFSourceText
 
 % 用以检测 Token 是否为空
 \newif\ifToksEmpty
@@ -78,6 +82,12 @@
     \begin{center}
         {\huge\bfseries \the\DocumentTitle}
 
+        \DetectToksEmpty\DocumentSubtitle
+        \ifToksEmpty
+        \else
+        ——\ \the\DocumentSubtitle
+        \fi
+
         \vspace{3ex}
         Written by \textbf{\the\AuthorName}
         \vspace{3ex}
@@ -86,6 +96,41 @@
             Author's Blog : & \hspace{-0.7em} \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog} \\
             Author's Email : & \hspace{-0.7em} \href{mailto:\the\AuthorEmail}{\color{black} \the\AuthorEmail} \\
         \end{tabular}
+
+        \DetectToksEmpty\LinkBlogPost
+        \ifToksEmpty
+        \LinkBlogPostText{链接暂空}
+        \else
+        \LinkBlogPostText{\href{\the\LinkBlogPost}{\color{black} 点击跳转}}
+        \fi
+        \DetectToksEmpty\LinkPDFSource
+        \ifToksEmpty
+        \LinkPDFSourceText{链接暂空}
+        \else
+        \LinkPDFSourceText{\href{\the\LinkPDFSource}{\color{black} 点击跳转}}
+        \fi
+
+        \vspace{10ex}
+        本文相关链接\\
+        \vspace{-2.3ex}
+        \tikz[thick]{\draw (0,0) -- (8,0);}
+
+        \DetectToksEmpty\LinkVideo
+        \ifToksEmpty
+            \hspace{-5em}
+            \begin{tabular}{rl}
+                博文链接：& \the\LinkBlogPostText \\
+                PDF及LaTeX源码链接：& \the\LinkPDFSourceText \\
+            \end{tabular}
+        \else
+            \hspace{-5em}
+            \begin{tabular}{rl}
+                博文链接：& \the\LinkBlogPostText \\
+                PDF及LaTeX源码链接：& \the\LinkPDFSourceText \\
+                视频链接：& \href{\the\LinkVideo}{\color{black} 点击跳转} \\
+            \end{tabular}
+        \fi
+
     \end{center}%
     }%
 }

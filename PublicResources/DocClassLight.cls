@@ -14,7 +14,7 @@
 % 版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClassLight}[2021/02/25 v1.7 General Document Template Light] %该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{DocClassLight}[2021/03/25 v1.8 General Document Template Light] %该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 加载文类，并设定相关参数。
@@ -44,9 +44,16 @@
 % -----------------------------------------------
 % 文档信息
 \newtoks\DocumentTitle
+\newtoks\DocumentSubtitle
 \newtoks\DocumentCreatedDate
 % 文档作者信息
 \newtoks\AuthorName
+
+% 用以检测 Token 是否为空
+\newif\ifToksEmpty
+\def\DetectToksEmpty#1{\edef\1{\the#1}%
+  \ifx \1\empty \ToksEmptytrue % from plain.tex: \def\empty{}
+  \else\ToksEmptyfalse \fi}
 
 % -----------------------------------------------
 % 封面设定
@@ -65,6 +72,12 @@
 
     \begin{center}
         {\huge\bfseries \the\DocumentTitle}
+
+        \DetectToksEmpty\DocumentSubtitle
+        \ifToksEmpty
+        \else
+        ——\ \the\DocumentSubtitle
+        \fi
 
         \vspace{3ex}
         Written by \textbf{\the\AuthorName}
