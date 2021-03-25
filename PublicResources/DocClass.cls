@@ -50,11 +50,11 @@
 \newtoks\AuthorName
 \newtoks\AuthorEmail
 \newtoks\AuthorBlog
-% 版权信息
+% 相关链接
 \newtoks\LinkBlogPost
 \newtoks\LinkPDFSource
 \newtoks\LinkVideo
-% 用以处理判断版权信息链接是否为空的临时变量
+% 用以处理判断相关链接是否为空的临时变量
 \newtoks\LinkBlogPostText
 \newtoks\LinkPDFSourceText
 
