@@ -14,7 +14,7 @@
 % 版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClass}[2021/03/25 v1.8 General Document Template] %该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{DocClass}[2021/04/09 v1.9 General Document Template] %该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 加载文类，并设定相关参数。
@@ -230,7 +230,7 @@
 % 其他宏包
 % -----------------------------------------------
 \RequirePackage{xcolor} % 支持生成颜色。
-\RequirePackage{ulem} % 支持删除线等。
+\RequirePackage[normalem]{ulem} % 支持删除线等，normalem 选项禁止 ulem 宏包重定义 \emph 命令（ulem 定义 \emph 为下划线）。
 \RequirePackage{multicol} % 支持多栏排版。
 \RequirePackage{amsmath} % 支持复杂的数学公式排版。
 
