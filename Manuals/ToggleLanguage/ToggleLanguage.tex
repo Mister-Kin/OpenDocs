@@ -1,0 +1,231 @@
+\documentclass{../../PublicResources/DocClass}
+
+    \DocumentTitle{「切换语言」使用手册}
+    \DocumentSubtitle{Blender插件}
+    \DocumentCreatedDate{2020/6/5}
+
+    \LinkBlogPost{https://mister-kin.github.io/manuals/toggle-language/}
+    \LinkPDFSource{https://github.com/Mister-Kin/OpenDocs/tree/master/Manuals/ToggleLanguage}
+    \LinkVideo{}
+
+    \AuthorName{Mr. Kin}
+    \AuthorEmail{im.misterkin@gmail.com}
+    \AuthorBlog{https://mister-kin.github.io/}
+
+\begin{document}
+    \pagenumbering{Roman} % 大写罗马字母样式页码。
+    \maketitle
+    \addcontentsline{toc}{chapter}{封面}
+    \frontmatter
+    \input{../../PublicResources/About} % 出于特殊的安全设置，\include 命令无法使用相对路径，因为需要读写权限以给 included file 写 aux 文件，而 \input 命令只需要读权限。
+    \clearpage
+    \input{../../PublicResources/Copyright}
+    \clearpage
+    {\centering \tableofcontents} % 生成目录页。
+    \mainmatter
+
+    % 正文
+    \chapter{切换语言}
+    \section{介绍}
+    一款blender插件，旨在通过一键快速、轻松地在两种语言之间切换用户界面，而非重复打开偏好设置。
+
+    \subsection{背景}
+    在早期进行blender手册翻译工作时，因需要校对相关UI内容，本人频繁地在中英文之间切换软件的用户界面语言。但每次繁琐地使用偏好设置进行语言切换令人苦不堪言，索性就开发一款插件以简化这操作。
+
+    \subsection{面向人群}
+    \begin{itemize}
+        \item 翻译者：需要频繁切换界面语言以校对相关内容。
+        \item CG学习者：需要频繁切换界面语言才能跟进外语教程。
+    \end{itemize}
+
+    \subsection{插件目前实现的功能}
+    \begin{itemize}
+        \item 一键切换UI语言（目前仅支持：简中/英）
+        \item 一键打开用户偏好设置
+        \item 插件的个性化设置菜单
+        \item 一键设置自定义的「用户偏好设置」（{\color{red}该功能还处于试验性中，慎用}）
+    \end{itemize}
+    \noindent {\footnotesize \emph{注：更多详细介绍请查看「\hyperlink{AddonFeatures}{插件功能}」小节内容，规划中的功能请\href{https://mister-kin.github.io/roadmap/}{跳转蓝图规划页}查看。}}
+
+    \section{用法}
+
+    \subsection{下载及安装}
+    \noindent {\bfseries \sffamily 下载步骤}\par
+    \begin{itemize}
+        \item 下载地址：\href{https://github.com/Mister-Kin/ToggleLanguage/releases/latest}{点击跳转}，下载ToggleLanguage.zip文件。
+        \item blender版本要求：\href{https://www.blender.org/download/}{v2.83+}
+    \end{itemize}
+
+    \noindent {\bfseries \sffamily 安装步骤}
+    \begin{enumerate}
+        \item 打开「Preferences/用户偏好设置」（Menu/菜单>Edit/编辑>Preferences/用户偏好设置）。
+        \item 选择「Add-ons/插件」选项卡。
+        \item 点击「Install.../安装」后，选择先前所下载好的ToggleLanguage.zip并点击确定。
+        \item 启用插件。
+    \end{enumerate}
+
+    \begin{figure}[htbp]
+        \begin{minipage}[t]{0.45\textwidth}
+            \includegraphics[scale=0.26]{Installation}
+            \caption{安装方法}
+        \end{minipage}
+        \qquad
+        \begin{minipage}[t]{0.45\textwidth}
+            \includegraphics[scale=0.26]{EnableAddon}
+            \caption{启用插件}
+        \end{minipage}
+    \end{figure}
+
+    \subsection{插件UI}
+    \label{插件UI小节}
+    \begin{figure}[htbp]
+        \includegraphics[scale=0.24]{UI}
+        \caption{插件UI（图示菜单已被下拉展开）}\label{插件UI}
+    \end{figure}
+
+    如图\ref{插件UI}所示，启用插件后，可看见插件位于顶端菜单栏末尾处。插件UI从左往右看，有三个元素：
+    \begin{enumerate}
+        \item 左侧是语言切换按钮。
+        \item 中间是插件的个性化设置菜单。
+        \item 右侧是用户偏好设置按钮。
+    \end{enumerate}
+
+    \subsection{插件功能}
+    \hypertarget{AddonFeatures}{}
+    \noindent {\footnotesize \em 注：以下按照UI排布位置进行功能介绍。UI排布位置详见\ref{插件UI小节}小节。}
+    \begin{enumerate}
+        \item 语言切换按钮（快捷键F5）：切换blender用户界面语言（目前仅支持：简中/英）。
+        \item 设置菜单：插件的个性化设置。
+        \begin{enumerate}
+            \item UI提示方案菜单：选择相应UI提示的方案。
+            \begin{enumerate}
+                \item 默认模式：关闭「开发选项」「Python工具提示」，如图\ref{UI提示方案菜单：默认模式}所示。
+                \item 开发者模式：启用「开发选项」「Python工具提示」，如图\ref{UI提示方案菜单：开发者模式}所示。
+            \end{enumerate}
+            \item 新建数据-翻译按钮：启用/关闭新建数据的翻译功能，默认值为关闭，如图\ref{新建数据选项}所示。在非英语界面环境中，启用该功能可使blender新建数据的名称为当前语言，如图\ref{新建数据效果}所示，新建平面的名称为「平面」，而非「plane」。
+            \item 我的偏好设置按钮（{\color{red}试验性，慎用}）：部署我个人的偏好设置。所涉及的设置选项详见\hyperlink{MyPreferences}{我的偏好设置}。（注意：使用该功能，同时会将一些设置保存进启动文件中。然而重置偏好设置按钮无法重置启动文件，\marginpar{\scriptsize 在测试中，使用插件来重置启动文件会导致blender闪退，故只保留重置偏好设置的功能。}如果需要还原所有设置，除了使用插件的重置按钮，仍需使用「Menu/菜单>File/文件>Default/默认>Load Factory Settings/加载初始设置」以重置启动文件。）
+            \item 重置偏好设置按钮：重置偏好设置。
+        \end{enumerate}
+        \item 用户偏好设置按钮（快捷键Ctrl+Alt+U）：打开用户偏好设置窗口。
+        \item PS：搜索功能增设快捷键F6（因本人有其他软件占用全局快捷键F3，故增设F6键）
+    \end{enumerate}
+
+    \begin{figure}[htbp]
+        \begin{minipage}[t]{0.45\textwidth}
+            \includegraphics[scale=0.26]{DefaultHint}
+            \caption{UI提示方案菜单：默认模式}
+            \label{UI提示方案菜单：默认模式}
+        \end{minipage}
+        \qquad
+        \begin{minipage}[t]{0.45\textwidth}
+            \includegraphics[scale=0.26]{DeveloperHint}
+            \caption{UI提示方案菜单：开发者模式}
+            \label{UI提示方案菜单：开发者模式}
+        \end{minipage}
+
+        \vspace{1ex}
+
+        \begin{minipage}[t]{0.38\textwidth}
+            \includegraphics[scale=0.20]{NewDataOption}
+            \caption{新建数据-翻译按钮启用/关闭的选项}
+            \label{新建数据选项}
+        \end{minipage}
+        \begin{minipage}[t]{0.65\textwidth}
+            \includegraphics[scale=0.18]{NewDataEffect}
+            \caption{新建数据-翻译按钮启用后的效果：图示界面语言为中文}
+            \label{新建数据效果}
+        \end{minipage}
+    \end{figure}
+
+    \newpage
+    \noindent {\bfseries \sffamily \hypertarget{MyPreferences}{我的偏好设置}（我本人的一些设置习惯）}\par
+    \begin{enumerate}
+        \item 偏好设置部分：
+        \begin{enumerate}
+            \item 界面>分辨率缩放到1.3
+            \item 主题>Blender Light
+            \item 插件>启用插件Node Wrangler、Cell Fracture、Auto Tile Size、Development: Icon Viewer。
+            \item 视图切换>启用「围绕选择物体选择」和「缩放至鼠标位置」。
+            \item 键位映射>启用「Pie Menu on Drag」和「Extra Shading Pie Menu Items」。
+            \item 系统
+            \begin{enumerate}
+                \item Cycles渲染设备>CUDA
+                \item 声音>音频设备>SDL
+            \end{enumerate}
+            \item 报错\&加载>启用「压缩文件」、关闭「自动保存」
+            \item 文件路径
+            \begin{enumerate}
+                \item 纹理：H:\textbackslash Textures\textbackslash
+                \item 临时文件：E:\textbackslash Temp\textbackslash
+                \item 渲染输出：E:\textbackslash Process\textbackslash
+                \item 渲染缓存：E:\textbackslash Temp\textbackslash
+            \end{enumerate}
+        \end{enumerate}
+        \item 启动界面部分（注意：使用「我的偏好设置」功能，会同时将以下设置保存进启动界面文件）：
+        \begin{enumerate}
+            \item 属性编辑器
+            \begin{enumerate}
+                \item 渲染属性
+                \begin{enumerate}
+                    \item 渲染引擎>Cycles
+                    \item 设备>GPU计算
+                    \item 采样>启用「自适应采样」
+                    \item 性能>Auto Tile Size>Target Tile Size>256
+                    \item 性能>线程>多线程模式>固定
+                    \item 性能>线程>线程>6
+                \end{enumerate}
+                \item 输出属性>输出路径：E:\textbackslash Process\textbackslash
+            \end{enumerate}
+        \end{enumerate}
+        \item 状态栏>启用「场景统计数据」「系统内存」「显存」
+    \end{enumerate}
+
+    \section{开发记录}
+    \subsection{开发测试环境}
+    \begin{itemize}
+        \item Win10 v20H2 OS
+        \item Blender v2.92
+    \end{itemize}
+
+    \noindent {\footnotesize \emph{注：建议在 blender v2.83 以上使用。2.83默认是启用翻译功能，2.83以下版本的翻译都得手动启用。因为没有实际测试过，所以2.83以下版本要使用该插件，可能需要手动启用翻译功能。这也是我将插件最低支持版本改为2.83的原因，当然，你也可在2.83以下的版本使用。}
+
+    \newpage
+    \subsection{更新历史}
+    \begin{table}[!h]
+        \centering
+    \begin{tabular}{|*{2}{c|}p{240pt}|c|}
+        \hline
+        版本 & 更新日期 & \centering{更新内容} & 标签 \\
+        \hline
+        v0.6 & 2021/3/10 & 添加布尔值按钮-新数据翻译；支持快捷键；代码重构，插件翻译重构…… & Features \\
+        \hline
+        v0.5 & 2020/12/8 & 支持Blender v2.91；支持从.zip文件安装插件…… & Changes \\
+        \hline
+        v0.5-beta & 2020/9/20 & 添加菜单用以选择UI提示方案 & Features\\
+        \hline
+        v0.4 & 2020/8/3 & 代码项目重命名为ToggleLanguage；按钮UI放置于最右端；添加新按钮以快速查看preferences & Features \\
+        \hline
+        v0.3 & 2020/6/5 & 更新至blender 2.83 api；修改部分类名；添加文档链接；修改完善许可说明 & Minor changes \\
+        \hline
+        v0.2 & 2020/5/21 & 清除未使用属性的报错 & Bug fixes \\
+        \hline
+        v0.1 & 2020/5/12 & 完成基础的功能设计「一键切换」 & Features \\
+        \hline
+    \end{tabular}
+    \end{table}
+
+    \noindent {\footnotesize \em 注：更多详细的信息，请查看\href{https://github.com/Mister-Kin/ToggleLanguage/releases}{Release Notes}。}
+
+    \section{作者}
+    \textbf{ToggleLanguage} © Mr. Kin, 项目代码采用 \href{https://github.com/Mister-Kin/ToggleLanguage/blob/master/LICENSE}{GNU GPL v3.0} 许可协议进行发布。
+
+    由 Mr. Kin 著作并维护。
+
+    \nocite{*} % 不使用 cite 也能生成参考文献。
+    \printbibliography % 生成参考文献排版。
+    \addcontentsline{toc}{chapter}{参考文献} % 添加参考文献进目录。
+
+    \appendix
+    % 附录
+
+\end{document}
