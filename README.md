@@ -41,17 +41,18 @@ I involve in a lot of activities, originally thinking of making learning notes f
 ## File Structure in this Repository
 Every single document project consists of a folder containing a PDF E-Document and its LaTeX source code, each with its own parent category. The folder's name is the project's name, and the main file's name is generally the same as the document project's name, i.e. the file name of the PDF E-Document and LaTeX source code‘s main file is the same as the folder's name.
 
-For example, a folder named ToggleLanguage has a project named ToggleLanguage and is located in a parent folder named Articles. The PDF E-Document and the main file of LaTeX source code are both named ToggleLanuage. The directory structure is as follows.
+For example, a folder named ToggleLanguage has a project named ToggleLanguage and is located in a parent folder named Manuals. The PDF E-Document and the main file of LaTeX source code are both named ToggleLanuage. The directory structure is as follows.
 ```
 .
 └── OpenDocs
-    └── Articles
+    └── Manuals
         └── ToggleLanguage
             ├── resources
-            │   └── images
-            │       ├── UI.png
-            │       ├── Installation.png
-            │       └── ...
+            │   ├── images
+            │   │   ├── Installation.png
+            │   │   ├── UI.png
+            │   │   └── ...
+            │   └── reference.bib
             ├── ToggleLanguage.pdf
             └── ToggleLanguage.tex
 ```

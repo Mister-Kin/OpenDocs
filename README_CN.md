@@ -41,17 +41,18 @@
 ## 本仓库的文件结构
 单个文档项目本身由一个含有 PDF 电子文档及其 LaTeX 源码的文件夹组成，均有其父分类。文件夹的名称就是该项目的名称，主文件名一般与文档项目名一致，即 PDF 电子文档和 LaTeX 源码主文件的文件名与文件夹名称相同。
 
-例如名为 ToggleLanguage 文件夹所对应的项目名称就是 ToggleLanguage，位于名为 Articles 的父文件夹下。其 PDF 电子文档和 LaTeX 源码的主文件名均为 ToggleLanuage。目录结构如下：
+例如名为 ToggleLanguage 文件夹所对应的项目名称就是 ToggleLanguage，位于名为 Manuals 的父文件夹下。其 PDF 电子文档和 LaTeX 源码的主文件名均为 ToggleLanuage。目录结构如下：
 ```
 .
 └── OpenDocs
-    └── Articles
+    └── Manuals
         └── ToggleLanguage
             ├── resources
-            │   └── images
-            │       ├── UI.png
-            │       ├── Installation.png
-            │       └── ...
+            │   ├── images
+            │   │   ├── Installation.png
+            │   │   ├── UI.png
+            │   │   └── ...
+            │   └── reference.bib
             ├── ToggleLanguage.pdf
             └── ToggleLanguage.tex
 ```
