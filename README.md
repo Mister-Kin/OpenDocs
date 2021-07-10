@@ -58,16 +58,16 @@ For example, a folder named ToggleLanguage has a project named ToggleLanguage an
 ```
 
 ## Usage
-This repository only provides documents in electronic format (PDF) and its source code (LaTeX).
+This repository only provides documents' source code (LaTeX).
+
+**Note: In order to reduce the size of the repository, this repo will no longer provide electronic format files (PDF) as from 2021/6/28. PDF files will be synchronized and shared by Baidu Cloud.**
 
 ### Get PDF E-Document
-PDF electronic documents are stored directly in the root directory of each document project folder. PDF's name is the same as the folder's name. Just download it directly.
+PDF electronic documents are synchronized and shared by Baidu Cloud. PDF's name is the same as the LaTeX source code folder's name. Just download it directly.
 
-***P.S. Install GitZip, a browser plug-in, to download a individual folder or file from the repository instead of downloading or cloning the entire repository.***
+[Baidu Cloud][Baidu Cloud Sharing] (Access Code: docs)
 
-GitZip for Firefox: [Jump to Installation Page][]
-
-[Jump to Installation Page]: https://addons.mozilla.org/zh-CN/firefox/addon/gitzip/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search
+[Baidu Cloud Sharing]: https://pan.baidu.com/s/1Tn7qIO0raqvNoesgT8SKow
 
 ### Compile and Generate E-Document from LaTeX Source Code
 **This method is not recommended if you are unfamiliar with LaTeX source code.**
@@ -93,6 +93,11 @@ Obtain the required LaTeX source code of the document project from the repositor
 3. Store file correctly based on path of document directory structure (this step is not necessary if you are cloning the entire repository).
 4. Compile the source code using the Tex engine.
 
+***P.S. Install GitZip, a browser plug-in, to download a individual folder or file from the repository instead of downloading or cloning the entire repository.***
+
+GitZip for Firefox: [Jump to Installation Page][]
+
+[Jump to Installation Page]: https://addons.mozilla.org/zh-CN/firefox/addon/gitzip/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search
 [TeX Live]: https://tug.org/texlive
 [VS Code]: https://code.visualstudio.com
 [LaTeXWorkshop]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop#review-details

@@ -58,16 +58,16 @@
 ```
 
 ## 用法
-本仓库只提供电子格式（PDF）及其源码（LaTeX）。
+本仓库只提供文章源码（LaTeX）。
+
+**注：为缩减仓库大小，本仓库自 2021/6/28 起，不再提供电子格式文件（PDF）。PDF 文件将改由百度云网盘同步分享。**
 
 ### 获取 PDF 电子文档
-PDF 电子文档直接存放在各个文档项目文件夹根目录下，PDF 和文件夹同名，直接下载即可。
+PDF 电子文档由百度云网盘同步分享。PDF 和文件夹同名，直接下载即可。
 
-***P.S. 安装浏览器插件 GitZip，可下载仓库中单个文件夹或者单个文件，而无需下载或克隆整个仓库。***
+[百度云][百度云网盘分享]（提取码：docs）
 
-GitZip 火狐版：[跳转安装页面][]
-
-[跳转安装页面]: https://addons.mozilla.org/zh-CN/firefox/addon/gitzip/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search
+[百度云网盘分享]: https://pan.baidu.com/s/1Tn7qIO0raqvNoesgT8SKow
 
 ### 由 LaTeX 源代码编译生成电子文档
 **不熟悉 LaTeX 语法的话，不推荐使用此方法**
@@ -93,6 +93,11 @@ GitZip 火狐版：[跳转安装页面][]
 3. 基于文档目录结构的路径正确存放好文件（若是克隆整个仓库，则无需此步操作）
 4. 使用 Tex 引擎编译源码。
 
+***P.S. 安装浏览器插件 GitZip，可下载仓库中单个文件夹或者单个文件，而无需下载或克隆整个仓库。***
+
+GitZip 火狐版：[跳转安装页面][]
+
+[跳转安装页面]: https://addons.mozilla.org/zh-CN/firefox/addon/gitzip/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search
 [TeX Live]: https://tug.org/texlive
 [VS Code]: https://code.visualstudio.com
 [LaTeXWorkshop]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop#review-details
