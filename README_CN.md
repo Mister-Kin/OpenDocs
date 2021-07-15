@@ -153,7 +153,7 @@ Markdown 宏包貌似不支持 TeX 命令拓展，因此暂不予考虑。并且
 
 *注：若想对本作品进行转载、引用亦或是进行二次创作时，请详细阅读上述相关协议内容（若不理解，请点击链接跳转阅读）。为保障本人权利，对于违反者，本人将依法予以处理！望周知！ —— Mr. Kin*
 
-![微信公众号](./PublicResources/images/FollowMe/WechatOfficialAccounts.png)
+![搜索关注微信公众号：MisterKin](./PublicResources/images/FollowMe/WeChatOfficialAccounts.png "扫码/搜索关注公众号：MisterKin")
 
 > [博客][] · [Github][] · [微博][] · [知乎][] · [B站][] · [优酷][] · [头条][] · [油管][]
 

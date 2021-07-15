@@ -153,7 +153,7 @@ Authored and maintained by Mr. Kin.
 
 *Note: If you want to reprint, quote or make a second creation of this work, please read the content of the relevant agreement above (if you couldn't understand, please click the link to read further). In order to protect my rights, I will deal with the violators in accordance with the law! Please Note That! —— Mr. Kin*
 
-![WechatOfficialAccounts](./PublicResources/images/FollowMe/WechatOfficialAccounts-En.png)
+![Search to Follow WeChat Official Accounts: MisterKin](./PublicResources/images/FollowMe/WeChatOfficialAccounts-En.png "Scan/Search to Follow WeChat Official Accounts: MisterKin")
 
 > [Blog][] · [Github][] · [Weibo][] · [Zhihu][] · [Bilibili][] · [Youku][] · [Headline][] · [Youtube][]
 
