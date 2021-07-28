@@ -14,7 +14,7 @@
 % 版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClassLight}[2021/07/29 v1.9 General Document Template Light] % 该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{DocClassLight}[2021/07/29 v1.9.1 General Document Template Light] % 该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -179,6 +179,14 @@
 % -----------------------------------------------
 % 自定义命令设定
 % -----------------------------------------------
+% 定义生成目录页的命令。
+\newcommand{\inputToc}{{\centering \tableofcontents}}
+% 定义生成参考文献的命令
+\newcommand{\inputBibliography}{\nocite{*} % 不使用 cite 也能生成参考文献。
+                                \printbibliography % 生成参考文献排版。
+                                \addcontentsline{toc}{chapter}{参考文献} % 添加参考文献进目录。
+                                }
+
 % 定义用以排版音标的命令。
 \newcommand{\ipa}[1]{{\IPAFont /#1/}}
 

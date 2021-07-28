@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClass}[2021/07/29 v1.9 General Document Template] % 该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{DocClass}[2021/07/29 v1.9.1 General Document Template] % 该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -211,6 +211,13 @@
 % 定义插入 About 和 Copyright 页面的命令
 % 出于特殊的安全设置，\include 命令无法使用相对路径，因为需要读写权限以给 included file 写 aux 文件，而 \input 命令只需要读权限。
 \newcommand{\inputPubulicText}{\input{\the\PathPublicResources/PublicText}}
+% 定义生成目录页的命令。
+\newcommand{\inputToc}{{\centering \tableofcontents}}
+% 定义生成参考文献的命令
+\newcommand{\inputBibliography}{\nocite{*} % 不使用 cite 也能生成参考文献。
+                                \printbibliography % 生成参考文献排版。
+                                \addcontentsline{toc}{chapter}{参考文献} % 添加参考文献进目录。
+                                }
 
 % 定义用以排版音标的命令。
 \newcommand{\ipa}[1]{{\IPAFont /#1/}}

@@ -15,7 +15,7 @@
 \begin{document}
     \maketitle
     \frontmatter
-    {\centering \tableofcontents} % 生成目录页。
+    \inputToc
     \mainmatter
 
     % 正文
@@ -217,10 +217,7 @@
 
     \redenote{测试note}
 
-    \nocite{*} % 不使用 cite 也能生成参考文献。
-    \printbibliography % 生成参考文献排版。
-    \addcontentsline{toc}{chapter}{参考文献} % 添加参考文献进目录。
-
+    \inputBibliography
     \appendix
     % 附录
     \chapter{附录测试1}
