@@ -25,6 +25,7 @@ A repository for my personal writing, learning notes and translated documents.
   - [Articles](#Articles)
   - [Books](#Books)
   - [LearningNotes](#LearningNotes)
+  - [Manuals](#Manuals)
   - [Translates](#Translations)
 - [A few Notes](#A-few-Notes)
   - [Release Notes for New Document Class](#Release-Notes-for-New-Document-Class)
@@ -75,17 +76,15 @@ PDF electronic documents are synchronized and shared by Baidu Cloud. PDF's name 
 Obtain the required LaTeX source code of the document project from the repository, and compile source code to generate PDF or others electronic formats by a compiler. My workflow is [VS Code][] + [LaTeXWorkshop][] + [TeX Live][].
 
 **Preparation before Compilation:**
-- Prepare the compiler, e.g. [TeX Live][].
+- Install the compiler, e.g. [TeX Live][].
 - Install [Adobe Source Font][] (All Source Western Fonts are in OTF format, and Source Chinese Fonts are SC version of Language-specific OTFs).
-  - Source Serif Pro
-  - Source Sans Pro
-  - Source Code Pro
-  - Source Han Serif
-  - Source Han Sans
-- Install one of the following [SIL Font][] (Current document class of LaTeX source code is using Gentium Plus Font)
-  - Doulos SIL
-  - Charis SIL
-  - Gentium Plus
+  - Source Serif Pro (v3.042)
+  - Source Sans Pro (v4.004)
+  - Source Code Pro (v2.038/v1.058)
+  - Source Han Serif (v1.001)
+  - Source Han Sans (v2.004)
+- Install [SIL Font][] (Current document class of LaTeX source code is using Doulos SIL Font)
+  - Doulos SIL (v6.001)
 
 **Compilation Process:**
 1. Download the LaTeX source code required for your document project.
@@ -116,6 +115,9 @@ This category has my long document. For a detailed list of documents, please rea
 ### LearningNotes
 This category has my study notes. For a detailed list of documents, please read the introduction of category. [Jump to LearningNotes Page][]
 
+### Manuals
+This category has manuals of my software. For a detailed list of documents, please read the introduction of category. [Jump to Manuals Page][]
+
 ### Translations
 This category has the documents translated by me. For a detailed list of documents, please see the category introduction. [Jump to Translations Page][]
 
@@ -123,6 +125,7 @@ This category has the documents translated by me. For a detailed list of documen
 [Jump to Articles Page]: ./Articles
 [Jump to Book Page]: ./Books
 [Jump to LearningNotes Page]: ./LearningNotes
+[Jump to Manuals Page]: ./Manuals
 [Jump to Translations Page]: ./Translations
 
 ## A few Notes

@@ -25,6 +25,7 @@
   - [文章](#文章)
   - [书籍](#书籍)
   - [学习笔记](#学习笔记)
+  - [手册](#手册)
   - [翻译](#翻译)
 - [几点说明](#几点说明)
   - [新文类的发布说明](#新文类的发布说明)
@@ -75,17 +76,15 @@ PDF 电子文档由百度云网盘同步分享。PDF 和文件夹同名，直接
 从仓库获取文档项目所需的 LaTeX 源码后，利用编译程序编译生成 PDF 等电子格式。本人的工作流是 [VS Code][] + [LaTeXWorkshop][] + [TeX Live][]。
 
 **编译前的准备工作：**
-- 准备好编译程序，例如 [TeX Live][]。
-- 安装好 [Adode 思源字体][]（思源西文字体均采用 OTF 格式，思源中文字体采用 Language-specific OTFs 中的 SC 版本）。
-  - Source Serif Pro
-  - Source Sans Pro
-  - Source Code Pro
-  - Source Han Serif
-  - Source Han Sans
-- 安装下列 [SIL 字体][]中的一个（当前 LaTeX 源码的文类使用的是 Gentium Plus 字体）
-  - Doulos SIL
-  - Charis SIL
-  - Gentium Plus
+- 安装编译程序，例如 [TeX Live][]。
+- 安装 [Adode 思源字体][]（思源西文字体均采用 OTF 格式，思源中文字体采用 Language-specific OTFs 中的 SC 版本）。
+  - Source Serif Pro (v3.042)
+  - Source Sans Pro (v4.004)
+  - Source Code Pro (v2.038/v1.058)
+  - Source Han Serif (v1.001)
+  - Source Han Sans (v2.004)
+- 安装 [SIL 字体][]（当前 LaTeX 源码的文类使用的是 Doulos SIL 字体）
+  - Doulos SIL (v6.001)
 
 **编译流程：**
 1. 下载文档项目所需的 LaTeX 源码。
@@ -116,6 +115,9 @@ GitZip 火狐版：[跳转安装页面][]
 ### 学习笔记
 此类别记录了小生的学习笔记。详细文档列表请看分类介绍。[跳转学习笔记仓库页][]
 
+### 手册
+此类别记录了小生软件作品的手册。详细文档列表请看分类介绍。[跳转手册仓库页][]
+
 ### 翻译
 此类别记录了小生翻译的文档。详细文档列表请看分类介绍。[跳转翻译仓库页][]
 
@@ -123,6 +125,7 @@ GitZip 火狐版：[跳转安装页面][]
 [跳转文章仓库页]: ./Articles
 [跳转书籍仓库页]: ./Books
 [跳转学习笔记仓库页]: ./LearningNotes
+[跳转手册仓库页]: ./Manuals
 [跳转翻译仓库页]: ./Translations
 
 ## 几点介绍
