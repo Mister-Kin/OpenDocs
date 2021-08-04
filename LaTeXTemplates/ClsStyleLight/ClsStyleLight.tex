@@ -1,4 +1,4 @@
-\documentclass{../../PublicResources/DocClassLight}
+\documentclass[light]{../../PublicResources/DocClass}
 
     \PathPublicResources{../../PublicResources}
 
@@ -6,9 +6,9 @@
     \DocumentSubtitle{文档副标题测试}
     \DocumentCreatedDate{2020/7/21}
 
-    \LinkPDF{https://test.LinkPDF/}
+    \LinkPDF{https://test.LinkPDF}
     \LinkPDFAccessCode{docs}
-    \LinkLaTeX{https://test.LinkLaTeX/}
+    \LinkLaTeX{https://test.LinkLaTeX}
 
     \AuthorName{Mr. Kin}
 
@@ -174,7 +174,7 @@
         \item The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
     \end{itemize}
 
-    \subsection{自定义标签有序列表（enumitem）}
+    \subsection{自定义标签有序列表（enumitem宏包）}
     \begin{enumerate}[label={Step \arabic*.}]
         \item test
         \item test测试
@@ -185,7 +185,7 @@
         \item The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
     \end{enumerate}
 
-    \section{下划线测试（ulem）}
+    \section{下划线测试（ulem宏包）}
     \uline{下划线}
     \uuline{双下划线}
     \uwave{波浪线}
@@ -194,7 +194,7 @@
     \dashuline{下划线-虚线}
     \dotuline{下划线-点}
 
-    \section{代码环境测试（listings）}
+    \section{代码环境测试（listings宏包）}
     \begin{lstlisting}[language={C},title={\textsf{C语言代码段测试}}]
         for(int i=0,i>0,i++);
             printf("Hello World!"); // 注释测试 Comment Test
@@ -209,7 +209,7 @@
     \subsection{罗马数字测试}
     \romannum{3}\ \Romannum{3} $K_{test}^{\text{\Romannum{3}}}$ $K_{test}^{\mathrm{\Romannum{3}}}$ $\Delta Q$
 
-    \subsection{颜色测试（xcolor）}
+    \subsection{颜色测试（xcolor宏包）}
     \mytextcolor{blue}{蓝色} {\mycolor{red} 红色}
 
     \note{为适配本宏包的 print 选项，颜色测试已用自定义命令。}
@@ -228,10 +228,20 @@
     % 附录
     \chapter{附录测试1}
     正文环境测试：滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。
+
     \section{节测试}
     正文环境测试：滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。
+
     \subsection{子节测试}
     正文环境测试：滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。
+
+    \section{图片测试}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.95]{SampleImage}
+        \caption{示例图片}
+    \end{figure}
+
     \chapter{附录测试2}
     正文环境测试：滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。
 

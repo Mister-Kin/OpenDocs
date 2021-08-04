@@ -1,7 +1,7 @@
 %! ----------------------------------------------
 %! Author：Mr. Kin
 %! Email: im.misterkin@gmail.com
-%! Blog: https://mister-kin.github.io/
+%! Blog: https://mister-kin.github.io
 %! License: CC BY-NC-SA 4.0
 %! ----------------------------------------------
 
@@ -14,13 +14,15 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClass}[2021/07/29 v1.9.1 General Document Template] % 该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{DocClass}[2021/08/04 v2.0 General Document Template] % 该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
 % -----------------------------------------------
 \newif\ifPrintBlack\PrintBlackfalse % 新建变量 PrintBlack 并设置其值为 false。
 \DeclareOption{print}{\PrintBlacktrue} % 声明文类新选项 print（选项启用时，设置 PrintBlack 为 true）。
+\newif\ifLightDoc\LightDocfalse % 新建变量 LightDoc 并设置其值为 false。
+\DeclareOption{light}{\LightDoctrue} % 声明文类新选项 light（选项启用时，设置 LightDoc 为 true）。
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}} % 处理未执行的选项，传递所有未知的选项到 ctexbook 文类。
 \ProcessOptions\relax % 结束所有选项处理
 
@@ -98,7 +100,7 @@
         \vspace{25ex}
 
         \begin{center}
-            {\zihao{1}\bfseries \the\DocumentTitle}
+            {\zihao{2}\bfseries \the\DocumentTitle}
 
             \DetectToksEmpty\DocumentSubtitle
             \ifToksEmpty
@@ -111,10 +113,14 @@
             Written by \textbf{\the\AuthorName}
             \vspace{3ex}
 
-            \begin{tabular}{rl}
-                Author's Blog: & \hspace{-0.8em} \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog} \\
-                Author's Email: & \hspace{-0.8em} \href{mailto:\the\AuthorEmail}{\color{black} \the\AuthorEmail} \\
-            \end{tabular}
+            \ifLightDoc
+                \relax
+            \else
+                \begin{tabular}{rl}
+                    Author's Blog: & \hspace{-0.8em} \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog} \\
+                    Author's Email: & \hspace{-0.8em} \href{mailto:\the\AuthorEmail}{\color{black} \the\AuthorEmail} \\
+                \end{tabular}
+            \fi
 
             \DetectToksEmpty\LinkBlogPost
             \ifToksEmpty
@@ -147,31 +153,49 @@
                 \LinkVideoTextRight{\href{\the\LinkVideo}{\color{black} 点击跳转}}
             \fi
 
-            \vspace{10ex}
+            \ifLightDoc
+                \vspace{5ex}
+            \else
+                \vspace{10ex}
+            \fi
             本文相关链接\\
-            \vspace{-2.4ex}
+            \vspace{-2.2ex}
 
             \DetectToksEmpty\LinkPDFAccessCode
             \ifToksEmpty
                 \tikz[thick]{\draw (0,0) -- (8,0);}
 
                 \hspace{-2.8em}
-                \begin{tabular}{rl}
-                    博文链接：& \the\LinkBlogPostText \\
-                    PDF链接：& \the\LinkPDFText \\
-                    LaTeX源码链接：& \the\LinkLaTeXText \\
-                    \the\LinkVideoTextLeft & \the\LinkVideoTextRight \\
-                \end{tabular}
+                \ifLightDoc
+                    \begin{tabular}{rl}
+                        PDF链接：& \the\LinkPDFText \\
+                        LaTeX源码链接：& \the\LinkLaTeXText \\
+                    \end{tabular}
+                \else
+                    \begin{tabular}{rl}
+                        博文链接：& \the\LinkBlogPostText \\
+                        PDF链接：& \the\LinkPDFText \\
+                        LaTeX源码链接：& \the\LinkLaTeXText \\
+                        \the\LinkVideoTextLeft & \the\LinkVideoTextRight \\
+                    \end{tabular}
+                \fi
             \else
                 \tikz[thick]{\draw (0,0) -- (10.5,0);}
 
                 \hspace{4em}
-                \begin{tabular}{rl}
-                    博文链接：& \the\LinkBlogPostText \\
-                    PDF链接：& \the\LinkPDFText \\
-                    LaTeX源码链接：& \the\LinkLaTeXText \\
-                    \the\LinkVideoTextLeft & \the\LinkVideoTextRight \\
-                \end{tabular}
+                \ifLightDoc
+                    \begin{tabular}{rl}
+                        PDF链接：& \the\LinkPDFText \\
+                        LaTeX源码链接：& \the\LinkLaTeXText \\
+                    \end{tabular}
+                \else
+                    \begin{tabular}{rl}
+                        博文链接：& \the\LinkBlogPostText \\
+                        PDF链接：& \the\LinkPDFText \\
+                        LaTeX源码链接：& \the\LinkLaTeXText \\
+                        \the\LinkVideoTextLeft & \the\LinkVideoTextRight \\
+                    \end{tabular}
+                \fi
             \fi
         \end{center}
     \end{titlepage}%
@@ -259,31 +283,31 @@
     section = {
         format     += \zihao{-3}\sffamily\raggedright,
         beforeskip  = 20pt,
-        afterskip   = 18pt,
+        afterskip   = 18pt plus 1pt minus 1pt,
         fixskip     = true,
     },
     subsection = {
         format     += \zihao{4}\sffamily,
-        beforeskip  = 18pt,
-        afterskip   = 16pt,
+        beforeskip  = 18pt plus 1pt minus 1pt,
+        afterskip   = 16pt plus 1pt minus 1pt,
         fixskip     = true,
     },
     subsubsection = {
         format     += \zihao{-4}\sffamily,
-        beforeskip  = 16pt,
-        afterskip   = 14pt,
+        beforeskip  = 16pt plus 1pt minus 1pt,
+        afterskip   = 14pt plus 1pt minus 1pt,
         fixskip     = true,
     },
     paragraph = {
         format     += \sffamily,
-        beforeskip  = 14pt,
-        afterskip   = 12pt,
+        beforeskip  = 14pt plus 1pt minus 1pt,
+        afterskip   = 12pt plus 1pt minus 1pt,
         fixskip     = true,
     },
     subparagraph = {
         format     += \sffamily,
-        beforeskip  = 12pt,
-        afterskip   = 10pt,
+        beforeskip  = 12pt plus 1pt minus 1pt,
+        afterskip   = 10pt plus 1pt minus 1pt,
         fixskip     = true,
     }
 }
@@ -297,7 +321,7 @@
 \renewcommand{\cftsubsubsecfont}{\zihao{-4}\sffamily}
 
 \RequirePackage{tocbibind} % 支持添加目录本身和参考文献进目录中。
-\RequirePackage[toc]{multitoc} % 支持排版多栏 toc 目录页，默认双栏。
+%\RequirePackage[toc]{multitoc} % 支持排版多栏 toc 目录页，默认双栏。(小四号字体不适合双栏排版)
 % 移除 subsubsection 标题编号
 %\setcounter{tocdepth}{3} % 目录深度设定为 3。
 %\setcounter{secnumdepth}{3} % 章节编号深度设定为 3。
@@ -305,9 +329,22 @@
 % -----------------------------------------------
 % 参考文献和图片设定，及其相关路径设定。
 % -----------------------------------------------
+% 参考文献设定
 \RequirePackage[backend=biber,style=gb7714-2015]{biblatex} % 支持排版参考文献。设置文献样式为现行中文文献著录标准的 GB/T 7714-2015 样式）, 使用默认的后端程序 biber（其支持更好，包括 UTF-8 等，而 [backend=bibtex] 后端程序只支持 ascii 编码）。
 \addbibresource{resources/reference.bib} % 相对路径，指定参考文献数据库文件路径。
+% -----------------------------------------------
+% biblatex.def 中相关原定义
+% \newcommand*{\bibfont}{\normalfont\normalsize}
+% \setlength{\bibhang}{\ifnumequal{\parindent}{0}{1em}{\parindent}}
+% \setlength{\biblabelsep}{2\labelsep}
+% \setlength{\bibitemsep}{\itemsep}
+% -----------------------------------------------
+\renewcommand*{\bibfont}{\normalfont\zihao{5}} % 设置字体大小为 5 号。
+\setlength{\biblabelsep}{\labelsep} % 设置 label 间距为一倍的 \labelsep。
+\setlength{\bibitemsep}{0pt} % 移除多余的垂直间距。
+\setlength{\bibhang}{\labelsep} % 修正 \biblabelse 被设置为一倍的 \labelsep 时的问题：label 向右移动 \label 间距。
 
+% 图片设定
 \RequirePackage{graphicx} % 支持插入图片。
 \graphicspath{{resources/images/},% 相对地址，指定文档路径下的图片路径。
                 {\the\PathPublicResources/images/}, % 相对地址，指定文档路径外的公共图片路径。
@@ -320,22 +357,30 @@
 \RequirePackage{fancyhdr} % 调用 fancyhdr 宏包，以设置页眉页脚，文档风格设为：页眉偶数页为博客地址，奇数页为文档名称；页脚为页码 + 版权声明。
 \pagestyle{fancy}
 \fancyhf{} % 清空页眉页脚的设置
-\fancyhead[CE]{\zihao{5}\ttfamily Author's Blog: \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog}}
-\fancyhead[CO]{\zihao{5}\ttfamily \the\DocumentTitle}
+\ifLightDoc
+    \fancyhead[C]{\zihao{5}\ttfamily \the\DocumentTitle}
+\else
+    \fancyhead[CE]{\zihao{5}\ttfamily Author's Blog: \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog}}
+    \fancyhead[CO]{\zihao{5}\ttfamily \the\DocumentTitle}
+\fi
 \renewcommand{\headrulewidth}{0.75pt} % 页眉横线粗细为 0.75 磅值
 \fancyfoot[C]{\zihao{5}— \ \thepage \ —}
-\fancyfoot[R]{\zihao{5}\sffamily © \the\AuthorName\ ——\ All rights reserved}
+\fancyfoot[R]{\zihao{-5}\sffamily © \the\AuthorName\ ——\ All rights reserved} % 字体大小设置为小五，避免作者名过长时与页码重叠
 \setlength{\headheight}{14.5pt} % 增加 headheight，以消除 headheight 值过小的警告，默认为 12pt。
 \addtolength{\topmargin}{-2.5pt} % 缩小 topmargin，作为 headheight 增加的补偿。
 % part、chapter 首页的页眉页脚是由 plain style 决定的。
 \fancypagestyle{plain}
 {
     \fancyhf{}
-    \fancyhead[CE]{\zihao{5}\ttfamily Author's Blog: \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog}}
-    \fancyhead[CO]{\zihao{5}\ttfamily \the\DocumentTitle}
+    \ifLightDoc
+        \fancyhead[C]{\zihao{5}\ttfamily \the\DocumentTitle}
+    \else
+        \fancyhead[CE]{\zihao{5}\ttfamily Author's Blog: \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog}}
+        \fancyhead[CO]{\zihao{5}\ttfamily \the\DocumentTitle}
+    \fi
     \renewcommand{\headrulewidth}{0.75pt}
     \fancyfoot[C]{\zihao{5}— \ \thepage \ —}
-    \fancyfoot[R]{\zihao{5}\sffamily © \the\AuthorName\ ——\ All rights reserved}
+    \fancyfoot[R]{\zihao{-5}\sffamily © \the\AuthorName\ ——\ All rights reserved}
 }
 
 % -----------------------------------------------
@@ -373,9 +418,9 @@
     frameshape={{ryrynyyyy}{yny}{yny}{ryrynyyyy}}, % 控制边框样式，上下边是每三个字母段控制一条边框。
     backgroundcolor=\color{gray!5}, % 代码框背景颜色：5% 的灰色。
     breaklines=true,% 代码过长时则换行。
-    gobble=8, % 去掉代码前多余的缩进，默认行头和代码的缩进距离为 0。
-    aboveskip=0pt, % listings 环境上方的垂直空间。
-    belowskip=0pt, % listings 环境下方的垂直空间。
+    gobble=8, % 移除代码前多余的缩进，默认行头和代码的缩进距离为 0。
+    aboveskip=0pt, % 移除 listings 环境上方多余的垂直空间。
+    belowskip=0pt, % 移除 listings 环境下方多余的垂直空间。
 }
 
 % -----------------------------------------------
@@ -383,8 +428,8 @@
 % -----------------------------------------------
 \RequirePackage{enumitem} % 支持设置列表环境。
 \setlist{
-    nosep, % 去除垂直空白空间。
-    left=0pt, % 去除缩进。
+    nosep, % 移除多余的垂直间距。
+    left=0pt, % 移除缩进。
 }
 
 % -----------------------------------------------
