@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClass}[2021/08/04 v2.0 General Document Template] % 该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{DocClass}[2021/08/05 v2.0.1 General Document Template] % 该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -255,10 +255,10 @@
 \newcommand{\mytextcolor}[2]{\ifPrintBlack\textcolor{black}{#2}\else\textcolor{#1}{#2}\fi}
 
 % 定义 note 命令
-\newcommand{\note}[1]{{\zihao{5}\noindent\em 注：#1}}
-\newcommand{\enote}[1]{{\zihao{5}\noindent\em P.S. #1}}
-\newcommand{\rednote}[1]{{\zihao{5}\noindent\mycolor{red}\em 注：#1}}
-\newcommand{\redenote}[1]{{\zihao{5}\noindent\mycolor{red}\em P.S. #1}}
+\newcommand{\note}[1]{{\zihao{5}\noindent\em 注：#1 \par}} % 用分段命令 \par 修正行距问题。行距只有分段时才能生效，不像字号即时生效。
+\newcommand{\enote}[1]{{\zihao{5}\noindent\em P.S. #1 \par}}
+\newcommand{\rednote}[1]{{\zihao{5}\noindent\mycolor{red}\em 注：#1 \par}}
+\newcommand{\redenote}[1]{{\zihao{5}\noindent\mycolor{red}\em P.S. #1 \par}}
 
 % -----------------------------------------------
 % 文档布局设定
