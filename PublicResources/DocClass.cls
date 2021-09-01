@@ -90,7 +90,7 @@
 
     \begin{titlepage}
         \sffamily%
-        {\zihao{5} © \the\AuthorName\ ——\ All rights reserved}
+        {\zihao{5} © \the\AuthorName\ ——\ All Rights Reserved}
         \begin{flushright}
             \begin{tabular}{rl}
                 Created: & \hspace{-0.8em} \the\DocumentCreatedDate \\
@@ -365,7 +365,7 @@
 \fi
 \renewcommand{\headrulewidth}{0.75pt} % 页眉横线粗细为 0.75 磅值
 \fancyfoot[C]{\zihao{5}— \ \thepage \ —}
-\fancyfoot[R]{\zihao{-5}\sffamily © \the\AuthorName\ ——\ All rights reserved} % 字体大小设置为小五，避免作者名过长时与页码重叠
+\fancyfoot[R]{\zihao{-5}\sffamily © \the\AuthorName\ ——\ All Rights Reserved} % 字体大小设置为小五，避免作者名过长时与页码重叠
 \setlength{\headheight}{14.5pt} % 增加 headheight，以消除 headheight 值过小的警告，默认为 12pt。
 \addtolength{\topmargin}{-2.5pt} % 缩小 topmargin，作为 headheight 增加的补偿。
 % part、chapter 首页的页眉页脚是由 plain style 决定的。
@@ -380,7 +380,7 @@
     \fi
     \renewcommand{\headrulewidth}{0.75pt}
     \fancyfoot[C]{\zihao{5}— \ \thepage \ —}
-    \fancyfoot[R]{\zihao{-5}\sffamily © \the\AuthorName\ ——\ All rights reserved}
+    \fancyfoot[R]{\zihao{-5}\sffamily © \the\AuthorName\ ——\ All Rights Reserved}
 }
 
 % -----------------------------------------------
