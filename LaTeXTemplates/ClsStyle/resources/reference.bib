@@ -1,16 +1,96 @@
-@book{引用标签1,
-    title     = {书籍名称},
-    author    = {作者名称},
-    year      = {2020},
-    address   = {出版地名称},
-    publisher = {出版社名称},
-},
-@online{引用标签2,
-    title  = {网络资料名称},
-    author = {作者名称},
-    url    = {https://link.example},
-},
-@manual{引用标签3,
-    title  = {手册名称},
-    author = {作者名称},
-}
+@book{citebook,
+  author     = {作者名称},
+  title      = {书籍名称},
+  year       = {2021},
+  location   = {出版地},
+  publisher  = {出版社},
+  edition    = {},
+  translator = {},
+  pages      = {},
+  url        = {},
+  doi        = {}
+} required author，title，year（在 gb7714-2015 样式下，location 和 publisher 缺省时会显示不详）
+@standard{citestandard,
+  author    = {作者名称},
+  title     = {标准资料名称},
+  year      = {2021},
+  location  = {},
+  publisher = {},
+  edition   = {},
+  pages     = {},
+  url       = {},
+  doi       = {}
+} required author，title，year
+@article{citearticle,
+  author  = {作者名称},
+  title   = {文章名称},
+  journal = {刊物名称},
+  year    = {2021},
+  volume  = {},
+  number  = {},
+  pages   = {},
+  url     = {},
+  doi     = {}
+} required author, title, journal, year。其他：volume/卷、number/期
+@newspaper{citenewspaper,
+  author  = {作者名称},
+  title   = {报纸文章名称},
+  journal = {报刊名称},
+  date    = {2021-09-19},
+  number  = {},
+  url     = {},
+  doi     = {}
+} required author, title, journal, date(日期格式 YYYY/MM/DD)。其他：number/版号
+@patent{citepatent,
+  author = {作者名称},
+  title  = {专利名称},
+  number = {专利号},
+  year   = {2021},
+  url    = {},
+  doi    = {}
+} required author, title, number(专利号), year
+@online{citeonline,
+  author = {作者名称},
+  title  = {在线资源名称},
+  url    = {https://test.links}
+} required author, title, url
+@report{citereport,
+  author      = {作者名称},
+  title       = {报告名称},
+  institution = {机构名称},
+  year        = {2021},
+  type        = {},
+  number      = {},
+  version     = {},
+  location    = {},
+  pages       = {},
+  translator  = {},
+  url         = {},
+  doi         = {}
+} required author, title, institution, year。其中：type/报告类型和 number/报告号的示例：AIAA 9076。
+@manual{citemanual,
+  author      = {作者名称},
+  title       = {手册名称},
+  year        = {2021},
+  url         = {},
+  location    = {},
+  institution = {},
+  translator  = {},
+  pages       = {}
+} required author, title, year
+@thesis{citethesis,
+  author      = {作者名称},
+  title       = {论文名称},
+  year        = {2021},
+  location    = {},
+  institution = {},
+  translator  = {},
+  pages       = {},
+  url         = {},
+  doi         = {}
+} required author, title, year
+@misc{citemisc,
+  author = {作者名称},
+  title  = {其他资料名称},
+  year   = {2021}
+} required author, title, year。其他：只要有 URL 项，文献类型标识会转为 EB，而非 Z，所以一般不加 url 项。

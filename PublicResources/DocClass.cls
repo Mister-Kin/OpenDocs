@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClass}[2021/08/05 v2.0.2 General Document Template] % 该文类的名称、发布日期、版本序号等。（其中日期写法，月无论位数，日必须两位，现统一写两位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{DocClass}[2021/09/20 v2.1 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -29,6 +29,7 @@
 % -----------------------------------------------
 % 加载文类，并设定相关参数
 % 字号为小四、行距为 1.5、倍纸张大小是 A4、双面排版、指定 \chapter 紧跟上一页开始、显式指定文档为 UTF-8 编码、禁用自动设定字库功能（消除 Redefining CJKfamily xxx 的警告）。
+% 请注意：此处 1.5 倍行距与 MS Word 的并不相同。LaTeX 中的行距为两基线的间距：行距（\baselineskip）= 因子（\linespread）× 基础行距（\normalbaselineskip）。基础行距在 LaTeX 中为字号（长度）的 1.2 倍。所以在 LaTeX 中设置 linespread 为 1.5 时，最终的行距应为 1.5×1.2=1.8。然而 Word 的基础行距不是字号的 1.2 倍（甚至不是一个固定值），是和字体有关的一个值。因此要使 LaTeX 的行距与 Word 一样，只能根据具体字体设置去凑。
 % -----------------------------------------------
 \LoadClass[zihao=-4,linespread=1.5,a4paper,twoside,openany,UTF8,fontset=none]{ctexbook}
 
@@ -50,7 +51,7 @@
 \setmathfont[Scale=MatchUppercase]{STIX Two Math} % 设置数学字体为 STIX Two Math，并缩放至西文字体大写字符大小。该字体与 Cambria Math 较为相似。
 
 % -----------------------------------------------
-% 一些信息的数据结构设定
+% 一些信息的数据结构设定（符号列表 - Token Lists）
 % -----------------------------------------------
 % 文档信息
 \newtoks\DocumentTitle
@@ -60,14 +61,17 @@
 \newtoks\AuthorName
 \newtoks\AuthorEmail
 \newtoks\AuthorBlog
+\newtoks\AuthorBlogMirror
 % 文档相关链接
 \newtoks\LinkBlogPost
+\newtoks\LinkBlogPostMirror
 \newtoks\LinkPDF
 \newtoks\LinkPDFAccessCode
 \newtoks\LinkLaTeX
 \newtoks\LinkVideo
 % 用以处理判断文档相关链接是否为空的临时变量
 \newtoks\LinkBlogPostText
+\newtoks\LinkBlogPostMirrorText
 \newtoks\LinkPDFText
 \newtoks\LinkLaTeXText
 \newtoks\LinkVideoTextLeft
@@ -80,6 +84,10 @@
 \def\DetectToksEmpty#1{\edef\1{\the#1}%
   \ifx \1\empty \ToksEmptytrue % from plain.tex: \def\empty{}
   \else\ToksEmptyfalse \fi}
+
+% 定义用来注释的判断语句。\ifcomment (注释内容) \fi
+% 尽量避免使用  \iftrue 和 \iffalse，因为 \iffalse（TeX 仍会检测内部是否有 \iftrue，因而可能会导致 iffalse 没有 \fi 匹配，最近原则）\fi ）
+\newif\ifcomment\commentfalse
 
 % -----------------------------------------------
 % 封面设定
@@ -117,8 +125,9 @@
                 \relax
             \else
                 \begin{tabular}{rl}
-                    Author's Blog: & \hspace{-0.8em} \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog} \\
                     Author's Email: & \hspace{-0.8em} \href{mailto:\the\AuthorEmail}{\color{black} \the\AuthorEmail} \\
+                    Author's Blog: & \hspace{-0.8em} \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog} \\
+                    Author's Blog Mirror: & \hspace{-0.8em} \href{\the\AuthorBlogMirror}{\color{black} \the\AuthorBlogMirror} \\
                 \end{tabular}
             \fi
 
@@ -127,6 +136,12 @@
                 \LinkBlogPostText{链接暂空}
             \else
                 \LinkBlogPostText{\href{\the\LinkBlogPost}{\color{black} 点击跳转}}
+            \fi
+            \DetectToksEmpty\LinkBlogPostMirror
+            \ifToksEmpty
+                \LinkBlogPostMirrorText{链接暂空}
+            \else
+                \LinkBlogPostMirrorText{\href{\the\LinkBlogPostMirror}{\color{black} 点击跳转}}
             \fi
             \DetectToksEmpty\LinkPDF
             \ifToksEmpty
@@ -174,6 +189,7 @@
                 \else
                     \begin{tabular}{rl}
                         博文链接：& \the\LinkBlogPostText \\
+                        博文镜像链接：& \the\LinkBlogPostMirrorText \\
                         PDF链接：& \the\LinkPDFText \\
                         LaTeX源码链接：& \the\LinkLaTeXText \\
                         \the\LinkVideoTextLeft & \the\LinkVideoTextRight \\
@@ -191,6 +207,7 @@
                 \else
                     \begin{tabular}{rl}
                         博文链接：& \the\LinkBlogPostText \\
+                        博文镜像链接：& \the\LinkBlogPostMirrorText \\
                         PDF链接：& \the\LinkPDFText \\
                         LaTeX源码链接：& \the\LinkLaTeXText \\
                         \the\LinkVideoTextLeft & \the\LinkVideoTextRight \\
@@ -224,10 +241,29 @@
 \fi
 
 % -----------------------------------------------
+% 脚注设定：序号用带圈的数字表示，文章正文标记时的序号为上标形式，脚注正文内的序号是和其他文字对齐（非上标）。
+% -----------------------------------------------
+% 通过 tikz 宏包将脚注的序号（计数器）绘制成带圈的数字：scale=0.8 是为了保持序号与文字大小相同；yshift 是沿 Y 轴向上移动，避免序号与脚注正文不对齐，因为 number.base 坐标系并非对齐字符的中部。
+% \newcommand 之后通过 \DeclareRobustCommand 声明， 可以不需要在使用前加 \protect（直接去掉 \protect 会导致编译卡住）。
+% 以 current bounding box 为坐标系时，想要基线对齐文字的垂直中部，需设置 baseline={([yshift=-0.7ex] current bounding box.center)}，-0.8ex 参数可能更佳，一个大写字母大概是 1.6ex。
+\newcommand*\circled[1]{\tikz[baseline={([yshift=-0.17ex]number.base)}]{%
+                \node[shape=circle,draw,inner sep=0.5pt,scale=0.8] (number) {#1};}}
+\renewcommand\thefootnote{\protect\circled{\arabic{footnote}}}
+
+% 脚注正文的设定。
+\makeatletter
+\renewcommand{\@makefntext}[1]{%
+  \noindent\@thefnmark\enskip#1 %序号和正文相隔半个汉字符的宽度，这里设置为\enskip。
+  \setlength {\hangindent}{0.8em+0.5em} % 悬挂缩进，脚注序号已经被 scale 到 0.8 倍，且 \enskip 为 0.5em。
+  \linespread{1.2}\selectfont % 脚注内容行距调整为 1.2 倍。
+}
+\makeatother
+
+% -----------------------------------------------
 % 自定义环境设定
 % -----------------------------------------------
 % intro 环境，用以章节开头的文字介绍。排版上比普通正文多缩进两个文字。
-\newenvironment{intro}{\narrower\sffamily}{\par\vspace*{2ex plus 2.5ex minus 1.5ex}}
+\newenvironment{intro}{\narrower\sffamily}{\par}
 
 % -----------------------------------------------
 % 自定义命令设定
@@ -263,6 +299,21 @@
 % 定义 myref 命令，解决当前环境下无法处理 \ref 命令前后的空格问题。
 % 已尝试过多种 patch 代码的手段，均无法实现自动添加空格，只能通过自定义新命令解决。
 \newcommand{\myref}[1]{ \ref{#1} }
+
+% 定义可重复执行命令的命令：\repeated{重复次数}{重复命令}
+\newcounter{RepeatedTimes}
+\newcommand{\repeated}[2]{%
+    \setcounter{RepeatedTimes}{0}%
+    \loop%
+    \ifnum\value{RepeatedTimes}<#1%
+    #2%
+    \stepcounter{RepeatedTimes}%
+    \repeat%
+}
+
+% 定义样例文本 - 测试排版
+\newcommand{\sampletext}{滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。}
+\newcommand{\sampletexten}{The quick brown fox jumps over the lazy dog. }
 
 % -----------------------------------------------
 % 文档布局设定
@@ -334,9 +385,10 @@
 % 参考文献和图片设定，及其相关路径设定。
 % -----------------------------------------------
 % 参考文献设定
-\RequirePackage[backend=biber,style=gb7714-2015]{biblatex} % 支持排版参考文献。设置文献样式为现行中文文献著录标准的 GB/T 7714-2015 样式）, 使用默认的后端程序 biber（其支持更好，包括 UTF-8 等，而 [backend=bibtex] 后端程序只支持 ascii 编码）。
+\RequirePackage[backend=biber, style=gb7714-2015]{biblatex} % 支持排版参考文献。设置文献样式为现行中文文献著录标准的 GB/T 7714-2015 样式）, 使用默认的后端程序 biber（其支持更好，包括 UTF-8 等，而 [backend=bibtex] 后端程序只支持 ascii 编码）。
 \addbibresource{resources/reference.bib} % 相对路径，指定参考文献数据库文件路径。
 % -----------------------------------------------
+% 修改 \printbibliography 命令的部分排版参数
 % biblatex.def 中相关原定义
 % \newcommand*{\bibfont}{\normalfont\normalsize}
 % \setlength{\bibhang}{\ifnumequal{\parindent}{0}{1em}{\parindent}}
@@ -396,9 +448,11 @@
     colorlinks=true, % 设置超链接文件带颜色。
     bookmarksopen=true, % 书签展开。
     bookmarksnumbered=true, % 书签带章节编号。
+    citecolor=red, % 设置 cite 引用颜色为红色。
+    urlcolor=red, % 设置 url 链接颜色为红色。
 }
 
-% 若 print 选项启用，将超链接颜色统一输出黑色
+% 若 print 选项启用，将超链接颜色统一输出黑色。
 \ifPrintBlack
     \hypersetup{allcolors=black}
 \else
@@ -423,8 +477,8 @@
     backgroundcolor=\color{gray!5}, % 代码框背景颜色：5% 的灰色。
     breaklines=true,% 代码过长时则换行。
     gobble=8, % 移除代码前多余的缩进，默认行头和代码的缩进距离为 0。
-    aboveskip=0pt, % 移除 listings 环境上方多余的垂直空间。
-    belowskip=0pt, % 移除 listings 环境下方多余的垂直空间。
+    aboveskip=-2pt, % 调整 listings 环境上方的垂直距离。
+    belowskip=9pt, % 调整 listings 环境下方的垂直距离。
 }
 
 % -----------------------------------------------
@@ -440,11 +494,20 @@
 % 图表环境设定
 % -----------------------------------------------
 % 图表说明文字 caption 设定
+% position 参数只是告诉 caption 宏包 \caption 命令的位置（它会根据位置自动调整一些间距，但实际测试时却无区别），并无法由该命令指定 \caption 的实际位置。
 \RequirePackage{caption} % 支持生成不带编号的图片等说明文字。
-\captionsetup[figure]{skip=1pt} % 缩小 caption 和 figure 环境中图片的距离至 1pt，默认为 10pt。
-\captionsetup[table]{skip=1pt} % 缩小 caption 和 table 环境中图表的距离至 1pt，默认为 10pt。
+\captionsetup[figure]{position=below, skip=1pt} % 缩小 caption 和 figure 环境中图片的距离至 1pt，默认为 10pt。
+\captionsetup[table]{position=above, skip=1pt} % 缩小 caption 和 table 环境中表格的距离至 1pt，默认为 10pt。
 \captionsetup{font=small} % 设置 caption 字体大小为 5 号。
 
+% 浮动体的垂直距离调整（以下设置只针对正文之间的浮动体，无法应对所有排版状况，如标题之下直接就是浮动体，排版异常请手动用 vspace 调整）。
+\setlength{\intextsep}{7pt plus 1pt minus 1pt} % 该长度涉及浮动体的 h 参数。
+\RequirePackage{etoolbox}
+\AtBeginEnvironment{figure}{\vspace*{5pt}}
+\AtEndEnvironment{figure}{\vspace*{-5pt}}
+\AtEndEnvironment{table}{\vspace*{-4pt}}
+
+% 加载其他的图表相关宏包。
 \RequirePackage{wrapfig} % 支持图文并排。
 \RequirePackage{subfigure} % 支持子图表和子标题，可做瀑布流排版。
 \RequirePackage{tikz,tikz-qtree} % 支持画图。
