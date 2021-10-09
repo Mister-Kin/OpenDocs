@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClass}[2021/09/20 v2.1 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{DocClass}[2021/10/09 v2.1.1 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -476,7 +476,7 @@
     frameshape={{ryrynyyyy}{yny}{yny}{ryrynyyyy}}, % 控制边框样式，上下边是每三个字母段控制一条边框。
     backgroundcolor=\color{gray!5}, % 代码框背景颜色：5% 的灰色。
     breaklines=true,% 代码过长时则换行。
-    gobble=8, % 移除代码前多余的缩进，默认行头和代码的缩进距离为 0。
+    gobble=4, % 移除代码前多余的缩进，默认行头和代码的缩进距离为 0。
     aboveskip=-2pt, % 调整 listings 环境上方的垂直距离。
     belowskip=9pt, % 调整 listings 环境下方的垂直距离。
 }
@@ -507,6 +507,11 @@
 \AtEndEnvironment{figure}{\vspace*{-5pt}}
 \AtEndEnvironment{table}{\vspace*{-4pt}}
 
+% 跨页表格环境的垂直距离调整。
+\RequirePackage{longtable} % 提供排版跨页长表格的 longtable 环境。
+\setlength{\LTpre}{9pt plus 1pt minus 1pt}
+\setlength{\LTpost}{3pt plus 1pt minus 1pt}
+
 % 加载其他的图表相关宏包。
 \RequirePackage{wrapfig} % 支持图文并排。
 \RequirePackage{subfigure} % 支持子图表和子标题，可做瀑布流排版。
@@ -517,7 +522,6 @@
 \RequirePackage{colortbl} % 支持修改表格的行、列、单元格的颜色。
 \RequirePackage{makecell} % 支持在单元格里排版多行内容（嵌套一个单列的小表格）。
 \RequirePackage{diagbox} % 排版斜线表头。
-\RequirePackage{longtable} % 提供排版跨页长表格的 longtable 环境。
 
 % -----------------------------------------------
 % 其他宏包
