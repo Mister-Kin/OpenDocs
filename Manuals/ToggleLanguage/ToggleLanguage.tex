@@ -103,16 +103,16 @@
 \begin{enumerate}
     \item 语言切换按钮（快捷键F5）：切换blender用户界面语言（支持17种语言）。
     \item 设置菜单：插件的个性化设置。
-          \begin{enumerate}
-              \item UI提示方案菜单：选择相应UI提示的方案。
-                    \begin{enumerate}
-                        \item 默认模式：禁用「开发选项」「Python工具提示」，如图\myref{默认提示方案}所示。
-                        \item 开发者模式：启用「开发选项」「Python工具提示」，如图\myref{开发者提示方案}所示。
-                    \end{enumerate}
-              \item 翻译新建数据块名称按钮：启用/禁用新建数据块名称的翻译功能\footnote{该功能会接管用户偏好设置中的对应功能，这意味着你将无法通过用户偏好设置来修改这个功能。}，默认值为禁用，如图\myref{插件的翻译名称选项}所示，其对应在偏好设置中的选项如图\myref{原始的翻译名称选项}所示。在非英语界面环境中，启用该功能可使blender新建数据块的名称为当前语言，如图\myref{翻译名称的效果}所示，新建平面的名称为「平面」，而非「plane」。
-              \item 加载我的设置按钮（{\color{red}试验性，慎用}）：部署我个人的偏好设置。所涉及的设置选项详见\hyperlink{MySettings}{我的设置}。该功能会覆盖你原有的blender设置（启动文件和偏好设置），请详细了解所涉及的设置项后再确认是否使用该功能。目前该功能仅支持拥有英伟达显卡的win平台（默认路径安装），其他系统平台或者其他安装路径的用户使用该功能可能会有报错。\footnote{因为涉及到blender主题文件路径和Cycles引擎渲染设备的选择，暂不支持全平台任意路径安装的情况。}
-              \item 加载初始设置按钮：加载初始的偏好设置和启动文件，即重置blender，还原成初次安装时的状态。
-          \end{enumerate}
+    \begin{enumerate}
+        \item UI提示方案菜单：选择相应UI提示的方案。
+        \begin{enumerate}
+            \item 默认模式：禁用「开发选项」「Python工具提示」，如图\myref{默认提示方案}所示。
+            \item 开发者模式：启用「开发选项」「Python工具提示」，如图\myref{开发者提示方案}所示。
+        \end{enumerate}
+        \item 翻译新建数据块名称按钮：启用/禁用新建数据块名称的翻译功能\footnote{该功能会接管用户偏好设置中的对应功能，这意味着你将无法通过用户偏好设置来修改这个功能。}，默认值为禁用，如图\myref{插件的翻译名称选项}所示，其对应在偏好设置中的选项如图\myref{原始的翻译名称选项}所示。在非英语界面环境中，启用该功能可使blender新建数据块的名称为当前语言，如图\myref{翻译名称的效果}所示，新建平面的名称为「平面」，而非「plane」。
+        \item 加载我的设置按钮（{\color{red}试验性，慎用}）：部署我个人的偏好设置。所涉及的设置选项详见\hyperlink{MySettings}{我的设置}。该功能会覆盖你原有的blender设置（启动文件和偏好设置），请详细了解所涉及的设置项后再确认是否使用该功能。目前该功能仅支持拥有英伟达显卡的win平台（默认路径安装），其他系统平台或者其他安装路径的用户使用该功能可能会有报错。\footnote{因为涉及到blender主题文件路径和Cycles引擎渲染设备的选择，暂不支持全平台任意路径安装的情况。}
+        \item 加载初始设置按钮：加载初始的偏好设置和启动文件，即重置blender，还原成初次安装时的状态。
+    \end{enumerate}
     \item 用户偏好设置按钮（快捷键Ctrl+Alt+U）：打开用户偏好设置窗口。
 \end{enumerate}
 
@@ -161,42 +161,42 @@
 \hypertarget{MySettings}{}
 \begin{enumerate}
     \item 偏好设置部分：
-          \begin{enumerate}
-              \item 界面>分辨率缩放到1.3
-              \item 主题> Blender Light
-              \item 插件>启用插件Node Wrangler、Cell Fracture、Auto Tile Size、Development: Icon Viewer
-              \item 视图切换>启用「围绕选择物体选择」和「缩放至鼠标位置」
-              \item 键位映射>启用「Pie Menu on Drag」和「Extra Shading Pie Menu Items」
-              \item 系统
-                    \begin{enumerate}
-                        \item Cycles渲染设备> CUDA
-                        \item 声音>音频设备> SDL
-                    \end{enumerate}
-              \item 报错\&加载>启用「压缩文件」、关闭「自动保存」
-              \item 文件路径
-                    \begin{enumerate}
-                        \item 纹理：H:\textbackslash Textures\textbackslash
-                        \item 临时文件：E:\textbackslash Temp\textbackslash
-                        \item 渲染输出：E:\textbackslash Process\textbackslash
-                        \item 渲染缓存：E:\textbackslash Temp\textbackslash
-                    \end{enumerate}
-          \end{enumerate}
+    \begin{enumerate}
+        \item 界面>分辨率缩放到1.3
+        \item 主题> Blender Light
+        \item 插件>启用插件Node Wrangler、Cell Fracture、Auto Tile Size、Development: Icon Viewer
+        \item 视图切换>启用「围绕选择物体选择」和「缩放至鼠标位置」
+        \item 键位映射>启用「Pie Menu on Drag」和「Extra Shading Pie Menu Items」
+        \item 系统
+        \begin{enumerate}
+            \item Cycles渲染设备> CUDA
+            \item 声音>音频设备> SDL
+        \end{enumerate}
+        \item 报错\&加载>启用「压缩文件」、关闭「自动保存」
+        \item 文件路径
+        \begin{enumerate}
+            \item 纹理：H:\textbackslash Textures\textbackslash
+            \item 临时文件：E:\textbackslash Temp\textbackslash
+            \item 渲染输出：E:\textbackslash Process\textbackslash
+            \item 渲染缓存：E:\textbackslash Temp\textbackslash
+        \end{enumerate}
+    \end{enumerate}
     \item 启动文件部分（注意：使用「我的设置」功能，会同时将以下设置保存进启动文件）：
-          \begin{enumerate}
-              \item 属性编辑器
-                    \begin{enumerate}
-                        \item 渲染属性
-                              \begin{enumerate}
-                                  \item 渲染引擎> Cycles
-                                  \item 设备> GPU计算
-                                  \item 采样>启用「自适应采样」
-                                  \item 性能> Auto Tile Size > Target Tile Size > 256
-                                  \item 性能>线程>多线程模式>固定
-                                  \item 性能>线程>线程> 6
-                              \end{enumerate}
-                        \item 输出属性>输出路径：E:\textbackslash Process\textbackslash
-                    \end{enumerate}
-          \end{enumerate}
+    \begin{enumerate}
+        \item 属性编辑器
+        \begin{enumerate}
+            \item 渲染属性
+            \begin{enumerate}
+                \item 渲染引擎> Cycles
+                \item 设备> GPU计算
+                \item 采样>启用「自适应采样」
+                \item 性能> Auto Tile Size > Target Tile Size > 256
+                \item 性能>线程>多线程模式>固定
+                \item 性能>线程>线程> 6
+            \end{enumerate}
+            \item 输出属性>输出路径：E:\textbackslash Process\textbackslash
+        \end{enumerate}
+    \end{enumerate}
     \item 状态栏>启用「场景统计数据」「系统内存」「显存」
 \end{enumerate}
 
@@ -226,25 +226,25 @@
     \label{更新历史}
     \begin{tabular}{|*{2}{c|}m{305pt}|}
         \hline
-        版本      & 更新日期  & \multicolumn{1}{c|}{更新内容}                                                       \\
+        版本 & 更新日期 & \multicolumn{1}{c|}{更新内容} \\
         \hline
-        v0.8      & 2021/8/30 & 支持切换更多语言；支持完整翻译插件UI；为某些功能添加交互提示（信息框，确认框等）……  \\
+        v0.8 & 2021/8/30 & 支持切换更多语言；支持完整翻译插件UI；为某些功能添加交互提示（信息框，确认框等）…… \\
         \hline
-        v0.7      & 2021/7/11 & 我的偏好设置支持blender v2.93；重写property代码                                     \\
+        v0.7 & 2021/7/11 & 我的偏好设置支持blender v2.93；重写property代码 \\
         \hline
-        v0.6      & 2021/3/10 & 添加布尔值按钮-新数据翻译；支持快捷键；代码重构，插件翻译重构……                     \\
+        v0.6 & 2021/3/10 & 添加布尔值按钮-新数据翻译；支持快捷键；代码重构，插件翻译重构…… \\
         \hline
-        v0.5      & 2020/12/8 & 支持blender v2.91；支持从.zip文件安装插件……                                         \\
+        v0.5 & 2020/12/8 & 支持blender v2.91；支持从.zip文件安装插件…… \\
         \hline
-        v0.5-beta & 2020/9/20 & 添加菜单用以选择UI提示方案                                                          \\
+        v0.5-beta & 2020/9/20 & 添加菜单用以选择UI提示方案 \\
         \hline
-        v0.4      & 2020/8/3  & 代码项目重命名为ToggleLanguage；按钮UI放置于最右端；添加新按钮以快速查看preferences \\
+        v0.4 & 2020/8/3 & 代码项目重命名为ToggleLanguage；按钮UI放置于最右端；添加新按钮以快速查看preferences \\
         \hline
-        v0.3      & 2020/6/5  & 更新至blender 2.83 API；修改部分类名；添加文档链接；修改完善许可说明                \\
+        v0.3 & 2020/6/5 & 更新至blender 2.83 API；修改部分类名；添加文档链接；修改完善许可说明 \\
         \hline
-        v0.2      & 2020/5/21 & 清除未使用属性的报错                                                                \\
+        v0.2 & 2020/5/21 & 清除未使用属性的报错 \\
         \hline
-        v0.1      & 2020/5/12 & 完成基础的功能设计「一键切换」                                                      \\
+        v0.1 & 2020/5/12 & 完成基础的功能设计「一键切换」 \\
         \hline
     \end{tabular}
 \end{table}
