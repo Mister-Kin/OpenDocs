@@ -11,12 +11,11 @@ Language: EN [CN][ReadmeCN]
 [LaTeX Template Version]: https://img.shields.io/github/v/release/Mister-Kin/OpenDocs?include_prereleases&color=blue
 
 ## Introduction
-A repository for my personal writing, learning notes and translated documents.
+A open document repository for posts of my personal blog.
 
-> ⛛ An all-inclusive document repository (maybe(ಡωಡ)).
+*Note: My blog should have corresponding post of document project, but all documents will update firstly on the Github.*
 
 ## Table of Contents
-- [Background](#Background)
 - [File Structure in this Repository](#File-Structure-in-this-Repository)
 - [Usage](#Usage)
   - [Get PDF E-Document](#Get-PDF-E-Document)
@@ -24,7 +23,6 @@ A repository for my personal writing, learning notes and translated documents.
 - [Category of Documents](#Category-of-Documents)
   - [Articles](#Articles)
   - [Books](#Books)
-  - [LearningNotes](#LearningNotes)
   - [Manuals](#Manuals)
   - [Translates](#Translations)
 - [A few Notes](#A-few-Notes)
@@ -33,11 +31,6 @@ A repository for my personal writing, learning notes and translated documents.
   - [Problems of Converting Formats using Pandoc](#Problems-of-Converting-Formats-using-Pandoc)
   - [Why not Markdown Macro Package](#Why-not-Markdown-Macro-Package)
 - [Author](#Author)
-
-## Background
-I involve in a lot of activities, originally thinking of making learning notes for future review. However, with the expansion of my own blog plan, the idea for ​​this repository gradually improves, slowly forming a structure that has *Books*, *Translations* and many other categories. In other words, it's just a document repository for personal learning records.
-
-*Note: My blog should have corresponding post of document project, but all documents will update firstly on the Github.*
 
 ## File Structure in this Repository
 Every single document project consists of a folder containing a PDF E-Document and its LaTeX source code, each with its own parent category. The folder's name is the project's name, and the main file's name is generally the same as the document project's name, i.e. the file name of the PDF E-Document and LaTeX source code‘s main file is the same as the folder's name.
@@ -90,7 +83,7 @@ Obtain the required LaTeX source code of the document project from the repositor
 1. Download the LaTeX source code required for your document project.
 2. Download the public resources folder 「PublicResources」.
 3. Store file correctly based on path of document directory structure (this step is not necessary if you are cloning the entire repository).
-4. Compile the source code using the Tex engine.
+4. Compile the source code using the Tex engine: xelatex -> biber -> xelatex -> xelatex.
 
 ***P.S. Install GitZip, a browser plug-in, to download a individual folder or file from the repository instead of downloading or cloning the entire repository.***
 
@@ -112,9 +105,6 @@ This category has my short documents. For a detailed list of documents, please r
 ### Books
 This category has my long document. For a detailed list of documents, please read the introduction of category. [Jump to Book Page][]
 
-### LearningNotes
-This category has my study notes. For a detailed list of documents, please read the introduction of category. [Jump to LearningNotes Page][]
-
 ### Manuals
 This category has manuals of my software. For a detailed list of documents, please read the introduction of category. [Jump to Manuals Page][]
 
@@ -124,7 +114,6 @@ This category has the documents translated by me. For a detailed list of documen
 [Jump to Document Project Category Page]: ./
 [Jump to Articles Page]: ./Articles
 [Jump to Book Page]: ./Books
-[Jump to LearningNotes Page]: ./LearningNotes
 [Jump to Manuals Page]: ./Manuals
 [Jump to Translations Page]: ./Translations
 
