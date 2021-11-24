@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{DocClass}[2021/10/09 v2.1.1 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{doc}[2021/11/24 v2.1.2 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -270,7 +270,7 @@
 % -----------------------------------------------
 % 定义插入 About 和 Copyright 页面的命令
 % 出于特殊的安全设置，\include 命令无法使用相对路径，因为需要读写权限以给 included file 写 aux 文件，而 \input 命令只需要读权限。
-\newcommand{\inputPubulicText}{\input{\the\PathPublicResources/PublicText}}
+\newcommand{\inputPubulicText}{\input{\the\PathPublicResources/public_text}}
 % 定义生成目录页的命令。
 \newcommand{\inputToc}{{\centering \tableofcontents}}
 % 定义生成参考文献的命令
@@ -404,7 +404,7 @@
 \RequirePackage{graphicx} % 支持插入图片。
 \graphicspath{{resources/images/},% 相对地址，指定文档路径下的图片路径。
                 {\the\PathPublicResources/images/}, % 相对地址，指定文档路径外的公共图片路径。
-                {\the\PathPublicResources/images/FollowMe/}, % 相对地址，指定文档路径外的公共图片路径。
+                {\the\PathPublicResources/images/follow_me/}, % 相对地址，指定文档路径外的公共图片路径。
                 }
 
 % -----------------------------------------------
