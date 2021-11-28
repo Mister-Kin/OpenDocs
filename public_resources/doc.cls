@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{doc}[2021/11/24 v2.1.2 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{doc}[2021/11/28 v2.1.3 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -474,7 +474,7 @@
     %frame=trBL, % 代码框类型，t下，r右，b下，l左，大写时为两条线。
     %frameround=fttt, % 控制代码框是否为圆角。
     frameshape={{ryrynyyyy}{yny}{yny}{ryrynyyyy}}, % 控制边框样式，上下边是每三个字母段控制一条边框。
-    backgroundcolor=\color{gray!5}, % 代码框背景颜色：5% 的灰色。
+    backgroundcolor=\color{gray!10}, % 代码框背景颜色：10% 的灰色。
     breaklines=true,% 代码过长时则换行。
     gobble=4, % 移除代码前多余的缩进，默认行头和代码的缩进距离为 0。
     aboveskip=-2pt, % 调整 listings 环境上方的垂直距离。
