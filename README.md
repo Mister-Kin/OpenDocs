@@ -13,7 +13,7 @@ Language: EN [CN][ReadmeCN]
 ## Introduction
 A open document repository for posts of my personal blog.
 
-*Note: My blog should have corresponding post of document project, but all documents will update firstly on the Github.*
+*Note: Some important blog posts (e.g. software manuals or article series summaries) are accompanied by PDFs and LaTeX source code.*
 
 ## Table of Contents
 - [File Structure in this Repository](#File-Structure-in-this-Repository)
