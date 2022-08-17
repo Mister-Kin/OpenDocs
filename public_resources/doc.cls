@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{doc}[2021/11/28 v2.1.3 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{doc}[2022/08/17 v2.1.4 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -442,14 +442,23 @@
 % -----------------------------------------------
 % 超链接和书签设定
 % -----------------------------------------------
-\RequirePackage[bookmarks=true]{hyperref} % 调用 hyperref 宏包，bookmark 参数只能在调用时指定。
-% token not allowed in a pdf string (unicode) removing xxx (token 命令). hyperref 宏包中 \texorpdfstring 命令无法解决，故不添加 pdftitle 和 pdfauthor 属性
-\hypersetup{
-    colorlinks=true, % 设置超链接文件带颜色。
-    bookmarksopen=true, % 书签展开。
-    bookmarksnumbered=true, % 书签带章节编号。
-    citecolor=red, % 设置 cite 引用颜色为红色。
-    urlcolor=red, % 设置 url 链接颜色为红色。
+\RequirePackage{etoolbox}
+\AtEndPreamble{
+    \RequirePackage[bookmarks=true]{hyperref} % 调用 hyperref 宏包，bookmark 参数只能在调用时指定。
+    %\pdfstringdefDisableCommands{\def\&{& }}
+    % 现无法解决输出&符号的命令\&，会报错token not allowed in a pdf string (unicode) removing xxx (token 命令). hyperref 宏包中 \texorpdfstring 和 \pdfstringdefDisableCommands 命令均无法解决此问题。
+    % 利用 etoolbox 工具将 hyperref 设置插入到导言区最后位置解决了 token list 编译报错的问题。
+    \hypersetup{
+        colorlinks=true, % 设置超链接文件带颜色。
+        bookmarksopen=true, % 书签展开。
+        bookmarksnumbered=true, % 书签带章节编号。
+        citecolor=red, % 设置 cite 引用颜色为红色。
+        urlcolor=red, % 设置 url 链接颜色为红色。
+        unicode=true, % Unicode 编码 pdf string
+        pdftitle={\the\DocumentTitle},
+        pdfauthor={\the\AuthorName},
+        pdfcreator={\LaTeX{} with 'doc' package} % \LaTeX{} 花括号是为了避免忽略之后的连续空格
+    }
 }
 
 % 若 print 选项启用，将超链接颜色统一输出黑色。
@@ -502,7 +511,7 @@
 
 % 浮动体的垂直距离调整（以下设置只针对正文之间的浮动体，无法应对所有排版状况，如标题之下直接就是浮动体，排版异常请手动用 vspace 调整）。
 \setlength{\intextsep}{7pt plus 1pt minus 1pt} % 该长度涉及浮动体的 h 参数。
-\RequirePackage{etoolbox}
+% 以下是 etoolbox 宏包的命令
 \AtBeginEnvironment{figure}{\vspace*{5pt}}
 \AtEndEnvironment{figure}{\vspace*{-5pt}}
 \AtEndEnvironment{table}{\vspace*{-4pt}}
