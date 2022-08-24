@@ -538,4 +538,4 @@
 \RequirePackage{xcolor} % 支持生成颜色。
 \RequirePackage[normalem]{ulem} % 支持删除线等，normalem 选项禁止 ulem 宏包重定义 \emph 命令（ulem 定义 \emph 为下划线）。
 \RequirePackage{multicol} % 支持多栏排版。
-\RequirePackage{fontawesome} % 支持 fontawesome 图标排版。
+\RequirePackage{fontawesome5} % 支持 fontawesome5 图标排版。
