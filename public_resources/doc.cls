@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{doc}[2022/08/17 v2.1.4 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{doc}[2022/11/09 v2.1.5 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -457,7 +457,7 @@
         unicode=true, % Unicode 编码 pdf string
         pdftitle={\the\DocumentTitle},
         pdfauthor={\the\AuthorName},
-        pdfcreator={\LaTeX{} with 'doc' package} % \LaTeX{} 花括号是为了避免忽略之后的连续空格
+        pdfcreator={\LaTeX{} with 'doc' class} % \LaTeX{} 花括号是为了避免忽略之后的连续空格
     }
 }
 
