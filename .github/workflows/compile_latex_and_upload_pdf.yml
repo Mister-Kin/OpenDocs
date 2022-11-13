@@ -1,0 +1,85 @@
+name: Compile LaTeX and upload PDF # Actions 名字
+
+on: # 触发条件
+  push:
+    paths:
+      - '.github/**'
+      - 'articles/**'
+      - 'latex_templates/**'
+      - 'manuals/**'
+      - 'public_resources/**'
+      - 'translations/**'
+
+env:
+  TZ: Asia/Shanghai # 一个全局变量，用以设置时区
+
+jobs:
+  compile_latex_and_upload_pdf: # job id
+    name: Compile LaTeX and upload PDF # job 名，不写默认使用 job id
+    runs-on: ubuntu-latest # 运行环境
+
+    steps:
+      - name: Checkout source files # 拉取最新的源文件
+        uses: actions/checkout@v3
+
+      - name: Setup LaTeX environment
+        uses: Mister-Kin/actions/setup-latex-action@main
+        with:
+          lanzou_cookie_id: ${{ secrets.LANZOU_COOKIE_ID }}
+          lanzou_cookie_value: ${{ secrets.LANZOU_COOKIE_VALUE }}
+
+      - name: Detect changes
+        uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            public_resources:
+              - 'public_resources/**'
+            cls_style_template:
+              - 'latex_templates/cls_style/**'
+            cls_style_light_template:
+              - 'latex_templates/cls_style_light/**'
+            free_fonts:
+              - 'articles/free_fonts/**'
+            toggle_language:
+              - 'manuals/toggle_language/**'
+
+      - name: Compile cls_style_template
+        if: ${{ (steps.filter.outputs.cls_style_template == 'true') || (steps.filter.outputs.public_resources == 'true') }}
+        uses: Mister-Kin/actions/compile-latex-and-upload-pdf@main
+        with:
+          lanzou_cookie_id: ${{ secrets.LANZOU_COOKIE_ID }}
+          lanzou_cookie_value: ${{ secrets.LANZOU_COOKIE_VALUE }}
+          lanzou_target_id: 6435536
+          latex_project_dir: latex_templates/cls_style
+          cls_file_is_in_project_dir: false
+
+      - name: Compile cls_style_light_template
+        if: steps.filter.outputs.cls_style_light_template == 'true'
+        uses: Mister-Kin/actions/compile-latex-and-upload-pdf@main
+        with:
+          lanzou_cookie_id: ${{ secrets.LANZOU_COOKIE_ID }}
+          lanzou_cookie_value: ${{ secrets.LANZOU_COOKIE_VALUE }}
+          lanzou_target_id: 6435536
+          latex_project_dir: latex_templates/cls_style_light
+          cls_file_is_in_project_dir: false
+
+      - name: Compile free_fonts
+        if: ${{ (steps.filter.outputs.free_fonts == 'true') || (steps.filter.outputs.public_resources == 'true') }}
+        uses: Mister-Kin/actions/compile-latex-and-upload-pdf@main
+        with:
+          lanzou_cookie_id: ${{ secrets.LANZOU_COOKIE_ID }}
+          lanzou_cookie_value: ${{ secrets.LANZOU_COOKIE_VALUE }}
+          lanzou_target_id: 6435542
+          latex_project_dir: articles/free_fonts
+          cls_file_is_in_project_dir: false
+
+      - name: Compile toggle_language
+        if: ${{ (steps.filter.outputs.toggle_language == 'true') || (steps.filter.outputs.public_resources == 'true') }}
+        uses: Mister-Kin/actions/compile-latex-and-upload-pdf@main
+        with:
+          lanzou_cookie_id: ${{ secrets.LANZOU_COOKIE_ID }}
+          lanzou_cookie_value: ${{ secrets.LANZOU_COOKIE_VALUE }}
+          lanzou_target_id: 3635715
+          latex_project_dir: manuals/toggle_language
+          cls_file_is_in_project_dir: false
