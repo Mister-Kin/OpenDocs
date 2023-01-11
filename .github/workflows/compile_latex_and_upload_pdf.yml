@@ -55,7 +55,7 @@ jobs:
           cls_file_is_in_project_dir: false
 
       - name: Compile cls_style_light_template
-        if: steps.filter.outputs.cls_style_light_template == 'true'
+        if: ${{ (steps.filter.outputs.cls_style_light_template == 'true') || (steps.filter.outputs.public_resources == 'true') }}
         uses: Mister-Kin/actions/compile-latex-and-upload-pdf@main
         with:
           lanzou_cookie_id: ${{ secrets.LANZOU_COOKIE_ID }}
