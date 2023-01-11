@@ -102,7 +102,7 @@
         \begin{flushright}
             \begin{tabular}{rl}
                 Created: & \hspace{-0.8em} \the\DocumentCreatedDate \\
-                Edited: & \hspace{-0.8em} \number\year/\number\month/\number\day \\
+                Edited: & \hspace{-0.8em} \number\year/\twodigits{\number\month}/\twodigits{\number\day} \\
             \end{tabular}
         \end{flushright}
         \vspace{25ex}
@@ -314,6 +314,11 @@
 % 定义样例文本 - 测试排版
 \newcommand{\sampletext}{滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。}
 \newcommand{\sampletexten}{The quick brown fox jumps over the lazy dog. }
+
+% 定义将一位数字转换成两位数字（4->04）
+\newcommand\twodigits[1]{%
+   \ifnum#1<10 0#1\else #1\fi
+}
 
 % -----------------------------------------------
 % 文档布局设定
