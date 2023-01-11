@@ -64,15 +64,15 @@ jobs:
           latex_project_dir: latex_templates/cls_style_light
           cls_file_is_in_project_dir: false
 
-      - name: Compile free_fonts
-        if: ${{ (steps.filter.outputs.free_fonts == 'true') || (steps.filter.outputs.public_resources == 'true') }}
-        uses: Mister-Kin/actions/compile-latex-and-upload-pdf@main
-        with:
-          lanzou_cookie_id: ${{ secrets.LANZOU_COOKIE_ID }}
-          lanzou_cookie_value: ${{ secrets.LANZOU_COOKIE_VALUE }}
-          lanzou_target_id: 6435542
-          latex_project_dir: articles/free_fonts
-          cls_file_is_in_project_dir: false
+      # - name: Compile free_fonts
+      #   if: ${{ (steps.filter.outputs.free_fonts == 'true') || (steps.filter.outputs.public_resources == 'true') }}
+      #   uses: Mister-Kin/actions/compile-latex-and-upload-pdf@main
+      #   with:
+      #     lanzou_cookie_id: ${{ secrets.LANZOU_COOKIE_ID }}
+      #     lanzou_cookie_value: ${{ secrets.LANZOU_COOKIE_VALUE }}
+      #     lanzou_target_id: 6435542
+      #     latex_project_dir: articles/free_fonts
+      #     cls_file_is_in_project_dir: false
 
       - name: Compile toggle_language
         if: ${{ (steps.filter.outputs.toggle_language == 'true') || (steps.filter.outputs.public_resources == 'true') }}
