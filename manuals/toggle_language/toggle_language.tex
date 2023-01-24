@@ -2,7 +2,7 @@
 
     \PathPublicResources{../../public_resources}
 
-    \DocumentTitle{「切换语言」使用手册v1.1}
+    \DocumentTitle{「切换语言」使用手册v1.3}
     \DocumentSubtitle{Blender插件}
     \DocumentCreatedDate{2020/06/05}
 
@@ -48,7 +48,7 @@
     \item 拥有切换当前UI提示级别的菜单——默认模式及开发者模式
 \end{itemize}
 
-\note{更多详细介绍请查看「\hyperlink{AddonFeatures}{插件功能}」小节内容，规划中的功能请跳转\href{https://mister-kin.github.io/roadmap/\#切换语言-Blender-插件}{蓝图规划页}查看。}
+\note{更多详细介绍请查看「\hyperlink{AddonFeatures}{插件功能}」小节内容。}
 
 \section{用法}
 \subsection{下载及安装}
@@ -110,7 +110,7 @@
             \item 默认模式：禁用「开发选项」「Python工具提示」，如图\myref{默认提示方案}所示。
             \item 开发者模式：启用「开发选项」「Python工具提示」，如图\myref{开发者提示方案}所示。
         \end{enumerate}
-        \item 翻译新建数据块的名称按钮：启用/禁用新建数据块名称的翻译功能\footnote{v1.1以上版本不再是强制接管该功能。虽然可以通过用户偏好设置来设置一个不同于插件的设置值，但在使用插件的该功能或者语言切换按钮后，插件会对该项改写修正为插件的设置值。}，默认值为禁用，如图\myref{插件的翻译名称选项}所示，其对应在偏好设置中的选项如图\myref{原始的翻译名称选项}所示。在非英语界面环境中，启用该功能可使blender新建数据块的名称为当前语言，如图\myref{翻译名称的效果}所示，新建平面的名称为「平面」，而非「plane」。
+        \item 翻译新建数据块的名称按钮：启用/禁用新建数据块名称的翻译功能\footnote{v1.1之后版本不再是强制接管该功能。虽然可以通过用户偏好设置来设置一个不同于插件的设置值，但在使用插件的该功能或者语言切换按钮后，插件会对该项改写修正为插件的设置值。}，默认值为禁用，如图\myref{插件的翻译名称选项}所示，其对应在偏好设置中的选项如图\myref{原始的翻译名称选项}所示。在非英语界面环境中，启用该功能可使blender新建数据块的名称为当前语言，如图\myref{翻译名称的效果}所示，新建平面的名称为「平面」，而非「plane」。
         \item 加载我的设置按钮：部署我个人的偏好设置。所涉及的设置选项详见\hyperlink{MySettings}{我的设置}。该功能会覆盖你原有的blender设置（启动文件和偏好设置），请详细了解所涉及的设置项后再确认是否使用该功能。\footnote{理论上支持任意系统、任意安装路径、任意显卡平台的情况，但Linux OS和MacOS比较少测试，可能会存在有bug。}
         \item 加载初始设置按钮：加载初始的偏好设置和启动文件，即重置blender，还原成初次安装blender时的状态。
     \end{enumerate}
@@ -164,7 +164,7 @@
     \end{minipage}
     \quad
     \begin{minipage}[t]{0.47\textwidth}
-        \includegraphics[scale=0.24]{translate_name_option_addon}
+        \includegraphics[scale=0.18]{translate_name_option_addon}
         \caption{插件的翻译新建数据块的名称选项}
         \label{插件的翻译名称选项}
     \end{minipage}
@@ -188,22 +188,21 @@
     \begin{enumerate}
         \item 界面>分辨率缩放到1.3
         \item 界面>编辑器>状态栏>启用「场景统计数据」「系统内存」「显存」（v2.90以上版本才有）
-        \item 主题> Blender Light
+        \item 主题> White
         \item 插件>启用插件Node Wrangler、Cell Fracture、Auto Tile Size、Development: Icon Viewer（v3.0以上版本的不含有Auto Tile Size插件）
         \item 视图切换>启用「围绕选择物体选择」和「缩放至鼠标位置」
         \item 键位映射>启用「Pie Menu on Drag」和「Extra Shading Pie Menu Items」
         \item 系统
         \begin{enumerate}
-            \item Cycles渲染设备> 有显卡设备时会自动选择启用显卡设备
+            \item Cycles渲染设备> 有显卡设备时会自动选择启用显卡设备，无显卡时设置为默认NONE（当检测到英伟达显卡时，若OPTIX可用时则优先选择。默认下仅启用显卡，不含CPU，若需要CPU和GPU混合渲染，请在\hyperlink{加载我的设置小节}{加载我的设置的设置参数}中开启）
+            \item 内存和限额>撤销次数>256
             \item 声音>音频设备> SDL（v2.83版本才有）
         \end{enumerate}
         \item 保存\&加载>启用「压缩文件」、关闭「自动保存」
         \item 文件路径
         \begin{enumerate}
             \item 纹理：H:/textures/
-            \item 临时文件：E:/temp/
-            \item 渲染输出：E:/process/
-            \item 渲染缓存：E:/temp/
+            \item 渲染输出：D:/process/
         \end{enumerate}
     \end{enumerate}
     \item 启动文件部分（注意：使用「我的设置」功能，会同时将以下设置保存进启动文件）：
@@ -213,30 +212,38 @@
             \item 渲染属性
             \begin{enumerate}
                 \item 渲染引擎> Cycles
-                \item 设备> GPU计算（有GPU设备时会自动启用）
-                \item 采样>启用「自适应采样」（v3.0以下版本才有，不含v3.0）
+                \item 设备> GPU计算（有GPU设备时会自动启用，无显卡则设置为CPU）
+                \item 采样>启用「自适应采样」（v2.9之后版本才有，包括v2.9。v3.0之后版本默认启用）
                 \item 采样>启用「自适应采样」>噪波阈值>0.1
-                \item 性能> Auto Tile Size > Target Tile Size > 256（v3.0以下版本才有，不含v3.0，v3.0以上版本的不含有Auto Tile Size插件）
+                \item 采样>最大采样>渲染设置为250，视图设置为1
+                \item 采样>降噪>通道>反照和法向
+                \item 采样>降噪>降噪器（当OPTIX可用时优先选择，v2.9系列版本设置为NLM，其余为OPEN IMAGEDENOISE，v2.83是自带的其他降噪方法）
+                \item 采样>路径引导（纯CPU渲染才有，v3.4之后版本才有，包括v3.4）
+                \item 性能> Auto Tile Size > Target Tile Size > 128（v3.0之前版本才有，不含v3.0，v3.0之后版本的不含有Auto Tile Size插件）
                 \item 性能>线程>多线程模式>固定
-                \item 性能>线程>线程> 总线程数量-2（自动检测总线程数量并计算设置，保留两个线程给系统）
+                \item 性能>线程>线程> 总线程数量-2（自动检测总线程数量并计算设置，保留两个线程给系统。例如CPU总线程为8，那么插件会设置为6）
+                \item 性能>最终渲染>持久数据
             \end{enumerate}
-            \item 输出属性>输出路径：E:/process/
+            \item 输出属性>输出路径：D:/process/
         \end{enumerate}
     \end{enumerate}
 \end{enumerate}
 
-考虑到主题和文件路径设置比较偏个性化，并且我个人的主题和文件路径设置并非适合所有人，所以我专门又开发设计了两个布尔属性值来控制是否需要主题和文件路径设置。如果你想用「加载我的设置」功能，但又不喜欢其中的主题和文件路径设置，就可以通过这两个布尔值属性值来禁用它。这两个布尔属性值位于插件偏好设置面板中，如图\myref{插件的两个布尔属性值}所示，勾选启用后，再应用「加载我的设置」功能时，插件会自动禁用对应的参数设置。
+考虑到「加载我的设置」功能比较偏个性化，并非适合所有人，所以我专门又开发设计了一些设置值来控制其中部分功能。如果你想用「加载我的设置」功能，但又不喜欢其中所有功能，就可以通过这些设置值来单独控制。这些设置值位于插件偏好设置面板中，如图\myref{加载我的设置的设置参数}所示，首先设置对应参数，再应用「加载我的设置」功能。
 
-关于「加载我的设置」的两个布尔值属性值如下：
+关于「加载我的设置」的一些设置参数如下：
+\hypertarget{加载我的设置小节}{}
 \begin{itemize}
-    \item 禁用路径设置：禁用「加载我的设置」中的路径参数设置。
-    \item 禁用主题设置：禁用「加载我的设置」中的主题参数设置。
+    \item 禁用路径设置：禁用路径参数设置（默认不启用，即不禁用）。
+    \item 禁用主题设置：禁用主题参数设置（默认不启用，即不禁用）。
+    \item 在GPU渲染设置中使用CPU：Cycles渲染设备中同时选择CPU（默认不启用，即纯GPU渲染，不含CPU设备。启用后效果是CPU和GPU混合渲染）。
+    \item 预设主题：blender主题（默认白色，当启用「禁用主题设置」后，该选项无效）
 \end{itemize}
 
 \begin{figure}[h!]
-    \includegraphics[scale=0.29]{two_bool_properties_for_loading_my_settings}
-    \caption{关于「加载我的设置」的两个布尔属性值}
-    \label{插件的两个布尔属性值}
+    \includegraphics[scale=0.29]{settings_for_loading_my_settings}
+    \caption{关于「加载我的设置」的一些设置参数}
+    \label{加载我的设置的设置参数}
 \end{figure}
 
 \subsubsection{关于使用翻译新建数据块的名称按钮的说明}
@@ -248,7 +255,7 @@
 \subsection{开发与测试环境}
 \begin{itemize}
     \item OS: Win10 v22H2 / Kali Linux 2021.3 / MacOS
-    \item Blender: v2.83 ‑ v3.3
+    \item Blender: v2.83 ‑ v3.4
 \end{itemize}
 
 \subsection{已知问题——加载初始设置按钮导致闪退}
@@ -271,6 +278,10 @@
     \hline
     \endhead
 
+    v1.3 & 2023/01/24 & 修复：optix\_exist变量引用前未分配；优化降噪设置……\\
+    \hline
+    v1.2 & 2023/01/15 & 优化「加载我的设置」功能；优化「翻译新建数据块名称」功能…… \\
+    \hline
     v1.1 & 2022/10/16 & 修复偏好设置一直被修改导致无法消星的情况；移除 keymaps.py 中的注释代码…… \\
     \hline
     v1.0 & 2022/01/12 & 移除 F6 快捷键的支持；paths 路径统一为小写格式…… \\
