@@ -2,7 +2,7 @@
 
     \PathPublicResources{../../public_resources}
 
-    \DocumentTitle{「切换语言」使用手册v1.3}
+    \DocumentTitle{「切换语言」使用手册v1.5}
     \DocumentSubtitle{Blender插件}
     \DocumentCreatedDate{2020/06/05}
 
@@ -45,7 +45,9 @@
     \item 一键切换UI语言（支持17种语言相互切换）
     \item 一键打开用户偏好设置
     \item 一键设置自定义的blender偏好设置——「加载我的设置」功能
-    \item 拥有切换当前UI提示级别的菜单——默认模式及开发者模式
+    \item 一键切换提示模式：默认模式和开发者模式（拥有切换当前UI提示级别的菜单）
+    \item 一键删除当前场景集合和物体
+    \item 一键添加视频进度条
 \end{itemize}
 
 \note{更多详细介绍请查看「\hyperlink{AddonFeatures}{插件功能}」小节内容。}
@@ -70,12 +72,12 @@
 
 \begin{figure}[h!]
     \begin{minipage}[t]{0.47\textwidth}
-        \includegraphics[scale=0.175]{installation}
+        \includegraphics[scale=0.13]{installation}
         \caption{安装方法}
     \end{minipage}
     \quad
     \begin{minipage}[t]{0.47\textwidth}
-        \includegraphics[scale=0.175]{enable_addon}
+        \includegraphics[scale=0.13]{enable_addon}
         \caption{启用插件}
         \label{启用插件}
     \end{minipage}
@@ -83,26 +85,34 @@
 
 \subsection{插件UI}
 \label{插件UI小节}
-如图\myref{插件UI}所示，启用插件后，可看见插件位于顶端菜单栏末尾处。插件UI从左往右看，有三个元素：
+如图\myref{插件UI}所示，启用插件后，可看见插件位于顶部菜单栏末尾处。插件UI从左往右看，有四个元素：
 \begin{enumerate}
-    \item 左侧是语言切换按钮。
-    \item 中间是插件的个性化设置菜单。
-    \item 右侧是用户偏好设置按钮。
+    \item 语言切换按钮
+    \item 实用工具菜单
+    \item 插件的个性化设置菜单
+    \item 用户偏好设置按钮
 \end{enumerate}
+
+\newpage
 
 \begin{figure}[h!]
     \includegraphics[scale=0.118]{ui}
-    \caption{插件UI（图示菜单已被下拉展开）}
+    \caption{插件UI}
     \label{插件UI}
 \end{figure}
 
 \subsection{插件功能}
 \hypertarget{AddonFeatures}{}
 
-\note{以下按照UI排布位置进行功能介绍。UI排布位置详见「\nameref{插件UI小节}」小节。}
+\note{以下按照UI排列位置进行功能介绍。UI排列位置详见「\nameref{插件UI小节}」小节。}
 
 \begin{enumerate}
-    \item 语言切换按钮（快捷键F5）：切换blender用户界面语言（支持17种语言相互切换）。
+    \item 语言切换按钮（快捷键F5）：在两种语言之间切换blender用户界面语言（支持17种语言相互切换）。
+    \item 实用工具菜单：一些实用工具集合
+    \begin{enumerate}
+        \item 删除所有集合和物体：清空场景，即删除当前场景中的所有集合和物体。
+        \item 添加视频进度条：在VSE的频道顶部空白区域添加视频进度条，如图\myref{视频进度条复合片段}和图\myref{视频进度条子片段}所示。视频进度条为一个复合片段，相关参数为：置于视频顶部，高度44px，透明度0.9，底部进度条颜色RGB（0.45, 0.45, 0.45），滚动进度条颜色RGB（0.255, 0.255, 0.255）。P.S. 后续会开发增设一个调整视频进度条参数的窗口。
+    \end{enumerate}
     \item 设置菜单：插件的个性化设置。
     \begin{enumerate}
         \item UI提示方案菜单：选择相应UI提示的方案。
@@ -110,8 +120,8 @@
             \item 默认模式：禁用「开发选项」「Python工具提示」，如图\myref{默认提示方案}所示。
             \item 开发者模式：启用「开发选项」「Python工具提示」，如图\myref{开发者提示方案}所示。
         \end{enumerate}
-        \item 翻译新建数据块的名称按钮：启用/禁用新建数据块名称的翻译功能\footnote{v1.1之后版本不再是强制接管该功能。虽然可以通过用户偏好设置来设置一个不同于插件的设置值，但在使用插件的该功能或者语言切换按钮后，插件会对该项改写修正为插件的设置值。}，默认值为禁用，如图\myref{插件的翻译名称选项}所示，其对应在偏好设置中的选项如图\myref{原始的翻译名称选项}所示。在非英语界面环境中，启用该功能可使blender新建数据块的名称为当前语言，如图\myref{翻译名称的效果}所示，新建平面的名称为「平面」，而非「plane」。
-        \item 加载我的设置按钮：部署我个人的偏好设置。所涉及的设置选项详见\hyperlink{MySettings}{我的设置}。该功能会覆盖你原有的blender设置（启动文件和偏好设置），请详细了解所涉及的设置项后再确认是否使用该功能。\footnote{理论上支持任意系统、任意安装路径、任意显卡平台的情况，但Linux OS和MacOS比较少测试，可能会存在有bug。}
+        \item 翻译新建数据块的名称按钮：启用/禁用新建数据块名称的翻译功能\footnote{v1.1之后版本不再是强制接管该功能。虽然可以通过用户偏好设置来设置一个不同于插件的设置值，但在使用插件的该功能或者语言切换按钮后，插件会对该项改写修正为插件的设置值。}，默认值为禁用，如图\myref{插件的翻译名称选项}所示，其对应在偏好设置中的选项如图\myref{偏好设置的的翻译名称选项}所示。在非英语界面环境中，启用该功能可使blender新建数据块的名称为当前语言，如图\myref{翻译名称的效果}所示，新建平面的名称为「平面」，而非「plane」。
+        \item 加载我的设置按钮：部署我个人的偏好设置。所涉及的设置选项详见\hyperlink{MySettings}{我的设置}。该功能默认会覆盖你原有的blender设置（启动文件和偏好设置），请详细了解所涉及的设置项后再确认是否使用该功能。\footnote{理论上支持任意系统、任意安装路径、任意显卡平台的情况，但Linux OS和Mac OS比较少测试，可能会存在有bug。}
         \item 加载初始设置按钮：加载初始的偏好设置和启动文件，即重置blender，还原成初次安装blender时的状态。
     \end{enumerate}
     \item 用户偏好设置按钮（快捷键Ctrl+Alt+U）：打开用户偏好设置窗口。
@@ -144,39 +154,53 @@
 
 \begin{figure}[h!]
     \begin{minipage}[t]{0.47\textwidth}
-        \includegraphics[scale=0.175]{default_hint}
+        \includegraphics[scale=0.058]{video_progress_bar_meta_strip}
+        \caption{视频进度条 - 复合片段}
+        \label{视频进度条复合片段}
+    \end{minipage}
+    \quad
+    \begin{minipage}[t]{0.47\textwidth}
+        \includegraphics[scale=0.058]{video_progress_bar_child_strip}
+        \caption{复合片段「视频进度条」内的子片段}
+        \label{视频进度条子片段}
+    \end{minipage}
+
+    \vspace{1ex}
+
+    \begin{minipage}[t]{0.47\textwidth}
+        \includegraphics[scale=0.13]{default_hint}
         \caption{UI提示方案菜单：默认模式}
         \label{默认提示方案}
     \end{minipage}
     \quad
     \begin{minipage}[t]{0.47\textwidth}
-        \includegraphics[scale=0.175]{developer_hint}
+        \includegraphics[scale=0.13]{developer_hint}
         \caption{UI提示方案菜单：开发者模式}
         \label{开发者提示方案}
     \end{minipage}
 
     \vspace{1ex}
 
-    \begin{minipage}[t]{0.47\textwidth}
-        \includegraphics[scale=0.176]{translate_name_option_origin}
-        \caption{原始的翻译新建数据块的名称选项}
-        \label{原始的翻译名称选项}
-    \end{minipage}
-    \quad
-    \begin{minipage}[t]{0.47\textwidth}
-        \includegraphics[scale=0.18]{translate_name_option_addon}
-        \caption{插件的翻译新建数据块的名称选项}
+    \begin{minipage}[t]{0.45\textwidth}
+        \includegraphics[scale=0.12]{translate_name_option_addon}
+        \caption{插件中的翻译新建数据块名称的选项}
         \label{插件的翻译名称选项}
     \end{minipage}
+    \quad
+    \begin{minipage}[t]{0.5\textwidth}
+        \includegraphics[scale=0.135]{translate_name_option_pref}
+        \caption{偏好设置中的翻译新建数据块名称的选项}
+        \label{偏好设置的的翻译名称选项}
+    \end{minipage}
+\end{figure}
 
-    \vspace{1ex}
+\clearpage
 
+\begin{figure}
     \includegraphics[scale=0.118]{translate_name_option_effect}
     \caption{翻译新建数据块名称的效果（图示界面语言为简中）}
     \label{翻译名称的效果}
 \end{figure}
-
-\clearpage
 
 \subsubsection{我的设置（我本人的一些blender设置参数）}
 \hypertarget{MySettings}{}
@@ -220,12 +244,14 @@
                 \item 采样>降噪>降噪器（当OPTIX可用时优先选择，v2.9系列版本设置为NLM，其余为OPEN IMAGEDENOISE，v2.83是自带的其他降噪方法）
                 \item 采样>路径引导（纯CPU渲染才有，v3.4之后版本才有，包括v3.4）
                 \item 性能> Auto Tile Size > Target Tile Size > 128（v3.0之前版本才有，不含v3.0，v3.0之后版本的不含有Auto Tile Size插件）
+                \item 性能 > 内存  > 平铺尺寸 > 4096（v3.0之后版本才有，含v3.0，v3.0之前版本的没有分块渲染功能。设定值为4096是为了避免渲染4k图像时导致分块。）
                 \item 性能>线程>多线程模式>固定
                 \item 性能>线程>线程> 总线程数量-2（自动检测总线程数量并计算设置，保留两个线程给系统。例如CPU总线程为8，那么插件会设置为6）
                 \item 性能>最终渲染>持久数据
             \end{enumerate}
             \item 输出属性>输出路径：D:/process/
         \end{enumerate}
+        \item 顶部菜单栏>文件>外部数据>自动打包资源
     \end{enumerate}
 \end{enumerate}
 
@@ -234,14 +260,15 @@
 关于「加载我的设置」的一些设置参数如下：
 \hypertarget{加载我的设置小节}{}
 \begin{itemize}
-    \item 禁用路径设置：禁用路径参数设置（默认不启用，即不禁用）。
-    \item 禁用主题设置：禁用主题参数设置（默认不启用，即不禁用）。
+    \item 禁用路径设置：禁用路径参数设置（默认不启用，即设置路径参数）。
+    \item 禁用主题设置：禁用主题参数设置（默认不启用，即设置个性化主题）。
+    \item 禁止保存启动文件：在应用「加载我的设置」时，禁止保存启动文件，因此所设置的参数不会写入启动文件中（默认不启用，即保存启动文件）。
     \item 在GPU渲染设置中使用CPU：Cycles渲染设备中同时选择CPU（默认不启用，即纯GPU渲染，不含CPU设备。启用后效果是CPU和GPU混合渲染）。
     \item 预设主题：blender主题（默认白色，当启用「禁用主题设置」后，该选项无效）
 \end{itemize}
 
 \begin{figure}[h!]
-    \includegraphics[scale=0.29]{settings_for_loading_my_settings}
+    \includegraphics[scale=0.265]{settings_for_loading_my_settings}
     \caption{关于「加载我的设置」的一些设置参数}
     \label{加载我的设置的设置参数}
 \end{figure}
@@ -254,8 +281,8 @@
 \section{开发记录}
 \subsection{开发与测试环境}
 \begin{itemize}
-    \item OS: Win10 v22H2 / Kali Linux 2021.3 / MacOS
-    \item Blender: v2.83 ‑ v3.4
+    \item OS: Win10 v22H2 / Kali Linux 2021.3 / Mac
+    \item Blender: v2.83 ‑ v3.5
 \end{itemize}
 
 \subsection{已知问题——加载初始设置按钮导致闪退}
@@ -278,6 +305,12 @@
     \hline
     \endhead
 
+    v1.5 & 2023/04/21 & 新增功能：添加视频进度条；新增功能：添加实用工具菜单…… \\
+    \hline
+    v1.4 & 2023/04/16 & 新增功能：删除所有集合和物体；新增功能：添加复选框禁用保存启动文件……\\
+    \hline
+    v1.3.1 & 2023/03/29 & 更新文档链接 \\
+    \hline
     v1.3 & 2023/01/24 & 修复：optix\_exist变量引用前未分配；优化降噪设置……\\
     \hline
     v1.2 & 2023/01/15 & 优化「加载我的设置」功能；优化「翻译新建数据块名称」功能…… \\
