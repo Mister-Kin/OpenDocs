@@ -6,7 +6,7 @@
 
 [![Texlive Version][]](https://tug.org/texlive/) [![License][]](./LICENSE_CN) [![LaTeX Template Version][]](https://github.com/Mister-Kin/OpenDocs/releases)
 
-[Texlive Version]: https://img.shields.io/badge/texlive-v2022-blue
+[Texlive Version]: https://img.shields.io/badge/texlive-v2023-blue
 [License]: https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue
 [LaTeX Template Version]: https://img.shields.io/github/v/release/Mister-Kin/OpenDocs?include_prereleases&color=blue
 
@@ -39,16 +39,24 @@
 ```
 .
 └── OpenDocs
-    └── Manuals
-        └── ToggleLanguage
+    └── manuals
+        └── toggle_language
             ├── resources
             │   ├── images
-            │   │   ├── Installation.png
-            │   │   ├── UI.png
-            │   │   └── ...
+            │   │   ├── default_hint.png
+            │   │   ├── developer_hint.png
+            │   │   ├── enable_addon.png
+            │   │   ├── installation.png
+            │   │   ├── settings_for_loading_my_settings.png
+            │   │   ├── translate_name_option_addon.png
+            │   │   ├── translate_name_option_effect.png
+            │   │   ├── translate_name_option_pref.png
+            │   │   ├── ui.png
+            │   │   ├── video_progress_bar_child_strip.png
+            │   │   └── video_progress_bar_meta_strip.png
             │   └── reference.bib
-            ├── ToggleLanguage.pdf
-            └── ToggleLanguage.tex
+            ├── toggle_language.pdf
+            └── toggle_language.tex
 ```
 
 ## 用法
