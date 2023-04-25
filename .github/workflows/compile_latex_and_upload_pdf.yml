@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Checkout source files # 拉取最新的源文件
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
 
       - name: Setup LaTeX environment
         uses: Mister-Kin/actions/setup-latex-action@main
