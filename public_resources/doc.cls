@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{doc}[2022/11/09 v2.1.5 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{doc}[2023/07/20 v2.1.6 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -82,8 +82,8 @@
 % 用以检测 Token 是否为空（该语句可以嵌套使用）
 \newif\ifToksEmpty
 \def\DetectToksEmpty#1{\edef\1{\the#1}%
-  \ifx \1\empty \ToksEmptytrue % from plain.tex: \def\empty{}
-  \else\ToksEmptyfalse \fi}
+    \ifx \1\empty \ToksEmptytrue % from plain.tex: \def\empty{}
+    \else\ToksEmptyfalse \fi}
 
 % 定义用来注释的判断语句。\ifcomment (注释内容) \fi
 % 尽量避免使用  \iftrue 和 \iffalse，因为 \iffalse（TeX 仍会检测内部是否有 \iftrue，因而可能会导致 iffalse 没有 \fi 匹配，最近原则）\fi ）
@@ -101,8 +101,8 @@
         {\zihao{5} © \the\AuthorName\ ——\ All Rights Reserved}
         \begin{flushright}
             \begin{tabular}{rl}
-                Created: & \hspace{-0.8em} \the\DocumentCreatedDate \\
-                Edited: & \hspace{-0.8em} \number\year/\twodigits{\number\month}/\twodigits{\number\day} \\
+                Created: & \hspace{-0.8em} \the\DocumentCreatedDate                                       \\
+                Edited:  & \hspace{-0.8em} \number\year/\twodigits{\number\month}/\twodigits{\number\day} \\
             \end{tabular}
         \end{flushright}
         \vspace{25ex}
@@ -125,8 +125,8 @@
                 \relax
             \else
                 \begin{tabular}{rl}
-                    Author's Email: & \hspace{-0.8em} \href{mailto:\the\AuthorEmail}{\color{black} \the\AuthorEmail} \\
-                    Author's Blog: & \hspace{-0.8em} \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog} \\
+                    Author's Email:       & \hspace{-0.8em} \href{mailto:\the\AuthorEmail}{\color{black} \the\AuthorEmail}    \\
+                    Author's Blog:        & \hspace{-0.8em} \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog}             \\
                     Author's Blog Mirror: & \hspace{-0.8em} \href{\the\AuthorBlogMirror}{\color{black} \the\AuthorBlogMirror} \\
                 \end{tabular}
             \fi
@@ -180,37 +180,37 @@
             \ifToksEmpty
                 \tikz[thick]{\draw (0,0) -- (8,0);}
 
-                \hspace{-2.8em}
+                \hspace{-5em}
                 \ifLightDoc
                     \begin{tabular}{rl}
-                        PDF链接：& \the\LinkPDFText \\
-                        LaTeX源码链接：& \the\LinkLaTeXText \\
+                        离线文档PDF链接：   & \the\LinkPDFText   \\
+                        文档LaTeX源码链接： & \the\LinkLaTeXText \\
                     \end{tabular}
                 \else
                     \begin{tabular}{rl}
-                        博文链接：& \the\LinkBlogPostText \\
-                        博文镜像链接：& \the\LinkBlogPostMirrorText \\
-                        PDF链接：& \the\LinkPDFText \\
-                        LaTeX源码链接：& \the\LinkLaTeXText \\
-                        \the\LinkVideoTextLeft & \the\LinkVideoTextRight \\
+                        博文链接：                  & \the\LinkBlogPostText       \\
+                        博文镜像链接：                & \the\LinkBlogPostMirrorText \\
+                        离线文档PDF链接：             & \the\LinkPDFText            \\
+                        文档LaTeX源码链接：           & \the\LinkLaTeXText          \\
+                        \the\LinkVideoTextLeft & \the\LinkVideoTextRight     \\
                     \end{tabular}
                 \fi
             \else
                 \tikz[thick]{\draw (0,0) -- (10.5,0);}
 
-                \hspace{4em}
+                \hspace{2em}
                 \ifLightDoc
                     \begin{tabular}{rl}
-                        PDF链接：& \the\LinkPDFText \\
-                        LaTeX源码链接：& \the\LinkLaTeXText \\
+                        离线文档PDF链接：     & \the\LinkPDFText   \\
+                        文档LaTeX源码链接： & \the\LinkLaTeXText \\
                     \end{tabular}
                 \else
                     \begin{tabular}{rl}
-                        博文链接：& \the\LinkBlogPostText \\
-                        博文镜像链接：& \the\LinkBlogPostMirrorText \\
-                        PDF链接：& \the\LinkPDFText \\
-                        LaTeX源码链接：& \the\LinkLaTeXText \\
-                        \the\LinkVideoTextLeft & \the\LinkVideoTextRight \\
+                        博文链接：                  & \the\LinkBlogPostText       \\
+                        博文镜像链接：                & \the\LinkBlogPostMirrorText \\
+                        离线文档PDF链接：                 & \the\LinkPDFText            \\
+                        文档LaTeX源码链接：             & \the\LinkLaTeXText          \\
+                        \the\LinkVideoTextLeft & \the\LinkVideoTextRight     \\
                     \end{tabular}
                 \fi
             \fi
@@ -228,14 +228,14 @@
     \renewcommand\frontmatter{%
         %\cleardoublepage % book.cls 中的原定义
         \clearpage
-    \@mainmatterfalse
-    \pagenumbering{roman}}
+        \@mainmatterfalse
+        \pagenumbering{roman}}
     % 重定义 \mainmatter 命令
     \renewcommand\mainmatter{%
         %\cleardoublepage % book.cls 中的原定义
         \clearpage
-    \@mainmattertrue
-    \pagenumbering{arabic}}
+        \@mainmattertrue
+        \pagenumbering{arabic}}
 \else
     \relax
 \fi
@@ -247,15 +247,15 @@
 % \newcommand 之后通过 \DeclareRobustCommand 声明， 可以不需要在使用前加 \protect（直接去掉 \protect 会导致编译卡住）。
 % 以 current bounding box 为坐标系时，想要基线对齐文字的垂直中部，需设置 baseline={([yshift=-0.7ex] current bounding box.center)}，-0.8ex 参数可能更佳，一个大写字母大概是 1.6ex。
 \newcommand*\circled[1]{\tikz[baseline={([yshift=-0.17ex]number.base)}]{%
-                \node[shape=circle,draw,inner sep=0.5pt,scale=0.8] (number) {#1};}}
+        \node[shape=circle,draw,inner sep=0.5pt,scale=0.8] (number) {#1};}}
 \renewcommand\thefootnote{\protect\circled{\arabic{footnote}}}
 
 % 脚注正文的设定。
 \makeatletter
 \renewcommand{\@makefntext}[1]{%
-  \noindent\@thefnmark\enskip#1 %序号和正文相隔半个汉字符的宽度，这里设置为\enskip。
-  \setlength {\hangindent}{0.8em+0.5em} % 悬挂缩进，脚注序号已经被 scale 到 0.8 倍，且 \enskip 为 0.5em。
-  \linespread{1.2}\selectfont % 脚注内容行距调整为 1.2 倍。
+    \noindent\@thefnmark\enskip#1 %序号和正文相隔半个汉字符的宽度，这里设置为\enskip。
+    \setlength {\hangindent}{0.8em+0.5em} % 悬挂缩进，脚注序号已经被 scale 到 0.8 倍，且 \enskip 为 0.5em。
+    \linespread{1.2}\selectfont % 脚注内容行距调整为 1.2 倍。
 }
 \makeatother
 
@@ -275,9 +275,9 @@
 \newcommand{\inputToc}{{\centering \tableofcontents}}
 % 定义生成参考文献的命令
 \newcommand{\inputBibliography}{\nocite{*} % 不使用 cite 也能生成参考文献。
-                                \printbibliography % 生成参考文献排版。
-                                \addcontentsline{toc}{chapter}{参考文献} % 添加参考文献进目录。
-                                }
+    \printbibliography % 生成参考文献排版。
+    \addcontentsline{toc}{chapter}{参考文献} % 添加参考文献进目录。
+}
 
 % 定义用以排版音标的命令。
 \newcommand{\ipa}[1]{{\IPAFont /#1/}}
@@ -317,7 +317,7 @@
 
 % 定义将一位数字转换成两位数字（4->04）
 \newcommand\twodigits[1]{%
-   \ifnum#1<10 0#1\else #1\fi
+    \ifnum#1<10 0#1\else #1\fi
 }
 
 % -----------------------------------------------
@@ -333,43 +333,43 @@
 \ctexset{
     part/format += \sffamily,
     chapter = {
-        format     += \zihao{3}\sffamily, % 3 号字体，无衬线字体
-        name        = {,}, % 移除标题的中文字符。
-        number      = \arabic{chapter}, % 修改编号为阿拉伯数字。
-        beforeskip  = 8pt, % 标题前的垂直间距
-        afterskip   = 20pt, % 标题后的垂直间距
-        fixskip     = true, % 抑制多余的间距
-    },
+      format     += \zihao{3}\sffamily, % 3 号字体，无衬线字体
+      name        = {,}, % 移除标题的中文字符。
+      number      = \arabic{chapter}, % 修改编号为阿拉伯数字。
+      beforeskip  = 8pt, % 标题前的垂直间距
+      afterskip   = 20pt, % 标题后的垂直间距
+      fixskip     = true, % 抑制多余的间距
+     },
     section = {
-        format     += \zihao{-3}\sffamily\raggedright,
-        beforeskip  = 20pt,
-        afterskip   = 18pt plus 1pt minus 1pt,
-        fixskip     = true,
-    },
+      format     += \zihao{-3}\sffamily\raggedright,
+      beforeskip  = 20pt,
+      afterskip   = 18pt plus 1pt minus 1pt,
+      fixskip     = true,
+     },
     subsection = {
-        format     += \zihao{4}\sffamily,
-        beforeskip  = 18pt plus 1pt minus 1pt,
-        afterskip   = 16pt plus 1pt minus 1pt,
-        fixskip     = true,
-    },
+            format     += \zihao{4}\sffamily,
+            beforeskip  = 18pt plus 1pt minus 1pt,
+            afterskip   = 16pt plus 1pt minus 1pt,
+            fixskip     = true,
+        },
     subsubsection = {
-        format     += \zihao{-4}\sffamily,
-        beforeskip  = 16pt plus 1pt minus 1pt,
-        afterskip   = 14pt plus 1pt minus 1pt,
-        fixskip     = true,
-    },
+            format     += \zihao{-4}\sffamily,
+            beforeskip  = 16pt plus 1pt minus 1pt,
+            afterskip   = 14pt plus 1pt minus 1pt,
+            fixskip     = true,
+        },
     paragraph = {
-        format     += \sffamily,
-        beforeskip  = 14pt plus 1pt minus 1pt,
-        afterskip   = 12pt plus 1pt minus 1pt,
-        fixskip     = true,
-    },
+            format     += \sffamily,
+            beforeskip  = 14pt plus 1pt minus 1pt,
+            afterskip   = 12pt plus 1pt minus 1pt,
+            fixskip     = true,
+        },
     subparagraph = {
-        format     += \sffamily,
-        beforeskip  = 12pt plus 1pt minus 1pt,
-        afterskip   = 10pt plus 1pt minus 1pt,
-        fixskip     = true,
-    }
+            format     += \sffamily,
+            beforeskip  = 12pt plus 1pt minus 1pt,
+            afterskip   = 10pt plus 1pt minus 1pt,
+            fixskip     = true,
+        }
 }
 % 修改目录排版样式。注意，tocloft 和 subfigure 宏包一起调用时，需指定 subfigure 参数。
 \RequirePackage[subfigure]{tocloft}
@@ -408,9 +408,9 @@
 % 图片设定
 \RequirePackage{graphicx} % 支持插入图片。
 \graphicspath{{resources/images/},% 相对地址，指定文档路径下的图片路径。
-                {\the\PathPublicResources/images/}, % 相对地址，指定文档路径外的公共图片路径。
-                {\the\PathPublicResources/images/follow_me/}, % 相对地址，指定文档路径外的公共图片路径。
-                }
+    {\the\PathPublicResources/images/}, % 相对地址，指定文档路径外的公共图片路径。
+    {\the\PathPublicResources/images/follow_me/}, % 相对地址，指定文档路径外的公共图片路径。
+}
 
 % -----------------------------------------------
 % 页眉页脚设定
