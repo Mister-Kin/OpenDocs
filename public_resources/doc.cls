@@ -201,15 +201,15 @@
                 \hspace{2em}
                 \ifLightDoc
                     \begin{tabular}{rl}
-                        离线文档PDF链接：     & \the\LinkPDFText   \\
+                        离线文档PDF链接：   & \the\LinkPDFText   \\
                         文档LaTeX源码链接： & \the\LinkLaTeXText \\
                     \end{tabular}
                 \else
                     \begin{tabular}{rl}
                         博文链接：                  & \the\LinkBlogPostText       \\
                         博文镜像链接：                & \the\LinkBlogPostMirrorText \\
-                        离线文档PDF链接：                 & \the\LinkPDFText            \\
-                        文档LaTeX源码链接：             & \the\LinkLaTeXText          \\
+                        离线文档PDF链接：             & \the\LinkPDFText            \\
+                        文档LaTeX源码链接：           & \the\LinkLaTeXText          \\
                         \the\LinkVideoTextLeft & \the\LinkVideoTextRight     \\
                     \end{tabular}
                 \fi
