@@ -102,7 +102,7 @@
         \begin{flushright}
             \begin{tabular}{rl}
                 Created: & \hspace{-0.8em} \the\DocumentCreatedDate                                       \\
-                Edited:  & \hspace{-0.8em} \number\year/\twodigits{\number\month}/\twodigits{\number\day} \\
+                Edited:  & \hspace{-0.8em} \number\year-\twodigits{\number\month}-\twodigits{\number\day} \\
             \end{tabular}
         \end{flushright}
         \vspace{25ex}
