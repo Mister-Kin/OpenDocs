@@ -6,7 +6,7 @@
 
 [![Texlive Version][]](https://tug.org/texlive/) [![License][]](./LICENSE_CN) [![LaTeX Template Version][]](https://github.com/Mister-Kin/OpenDocs/releases)
 
-[Texlive Version]: https://img.shields.io/badge/texlive-v2023-blue
+[Texlive Version]: https://img.shields.io/badge/texlive-v2024-blue
 [License]: https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue
 [LaTeX Template Version]: https://img.shields.io/github/v/release/Mister-Kin/OpenDocs?include_prereleases&color=blue
 
@@ -20,11 +20,6 @@
 - [用法](#用法)
   - [获取 PDF 电子文档](#获取-PDF-电子文档)
   - [由 LaTeX 源代码编译生成电子文档](#由-LaTeX-源代码编译生成电子文档)
-- [文档项目分类项](#文档项目分类项)
-  - [文章](#文章)
-  - [书籍](#书籍)
-  - [手册](#手册)
-  - [翻译](#翻译)
 - [几点说明](#几点说明)
   - [新文类的发布说明](#新文类的发布说明)
   - [工作流的多文件编译功能](#工作流的多文件编译功能)
@@ -79,13 +74,13 @@ PDF 电子文档由百度云网盘同步分享。PDF 和文件夹同名，直接
 **编译前的准备工作：**
 - 安装编译程序，例如 [TeX Live][]。
 - 安装 [Adode 思源字体][]（思源西文字体均采用 OTF 格式，思源中文字体采用 Language-specific OTFs 中的 SC 版本）。
-  - Source Serif Pro (v3.042)
-  - Source Sans Pro (v4.004)
-  - Source Code Pro (v2.038/v1.058)
-  - Source Han Serif (v1.001)
-  - Source Han Sans (v2.004)
+  - Source Sans 3 (v3.052)
+  - Source Serif 4 (v4.005)
+  - Source Code Pro (v2.042/v1.062)
+  - 思源黑体 (v2.004)
+  - 思源宋体 (v2.002)
 - 安装 [SIL 字体][]（当前 LaTeX 源码的文类使用的是 Doulos SIL 字体）
-  - Doulos SIL (v6.001)
+  - Doulos SIL (v6.200)
 
 **编译流程：**
 1. 下载文档项目所需的 LaTeX 源码。
@@ -103,27 +98,6 @@ GitZip 火狐版：[跳转安装页面][]
 [LaTeXWorkshop]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop#review-details
 [Adode 思源字体]: https://github.com/adobe-fonts
 [SIL 字体]: https://software.sil.org/fonts/
-
-## 文档项目分类项
-[跳转文档项目分类页][]
-
-### 文章
-此类别记录了小生的小篇幅著作。详细文档列表请看分类介绍。[跳转文章仓库页][]
-
-### 书籍
-此类别记录了小生的大篇幅著作。详细文档列表请看分类介绍。[跳转书籍仓库页][]
-
-### 手册
-此类别记录了小生软件作品的手册。详细文档列表请看分类介绍。[跳转手册仓库页][]
-
-### 翻译
-此类别记录了小生翻译的文档。详细文档列表请看分类介绍。[跳转翻译仓库页][]
-
-[跳转文档项目分类页]: ./
-[跳转文章仓库页]: ./Articles
-[跳转书籍仓库页]: ./Books
-[跳转手册仓库页]: ./Manuals
-[跳转翻译仓库页]: ./Translations
 
 ## 几点介绍
 ### 新文类的发布介绍
@@ -155,14 +129,15 @@ Markdown 宏包貌似不支持 TeX 命令拓展，因此暂不予考虑。并且
 
 ![搜索关注微信公众号：MisterKin](./PublicResources/images/FollowMe/WeChatOfficialAccounts.png "扫码/搜索关注公众号：MisterKin")
 
-> [博客][] · [Github][] · [微博][] · [知乎][] · [B站][] · [优酷][] · [头条][] · [油管][]
+> [博客][] · [GitHub][] · [微博][] · [知乎][] · [AcFun][] · [哔哩哔哩][] · [优酷][] · [头条][] · [油管][]
 
 [知识共享 署名—非商业性使用—相同方式共享 4.0]: ./LICENSE_CN
 [博客]: https://mister-kin.github.io
-[Github]: https://github.com/mister-kin
-[微博]: https://weibo.com/6270111192/profile?topnav=1&wvr=6&is_all=1
+[GitHub]: https://github.com/mister-kin
+[微博]: https://weibo.com/6270111192
 [知乎]: https://www.zhihu.com/people/drwu-94
-[B站]: http://space.bilibili.com/17025250?
+[哔哩哔哩]: http://space.bilibili.com/17025250?
 [优酷]: http://i.youku.com/i/UNjA3MTk5Mjgw?spm=a2hzp.8253869.0.0
-[油管]: https://www.youtube.com/channel/UCNhtdG6whC5mlRDkrhQ0wLA?view_as=public
 [头条]: https://www.toutiao.com/c/user/835254071079053/#mid=1663279303982091
+[油管]: https://www.youtube.com/@Mister-Kin
+[AcFun]: https://www.acfun.cn/u/73269306

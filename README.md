@@ -6,7 +6,7 @@ Language: EN [CN][ReadmeCN]
 
 [![Texlive Version][]](https://tug.org/texlive/) [![License][]](./LICENSE) [![LaTeX Template Version][]](https://github.com/Mister-Kin/OpenDocs/releases)
 
-[Texlive Version]: https://img.shields.io/badge/texlive-v2023-blue
+[Texlive Version]: https://img.shields.io/badge/texlive-v2024-blue
 [License]: https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue
 [LaTeX Template Version]: https://img.shields.io/github/v/release/Mister-Kin/OpenDocs?include_prereleases&color=blue
 
@@ -20,11 +20,6 @@ A open document repository for posts of my personal blog.
 - [Usage](#Usage)
   - [Get PDF E-Document](#Get-PDF-E-Document)
   - [Compile and Generate E-Document from LaTeX Source Code](#Compile-and-Generate-E-Document-from-LaTeX-Source-Code)
-- [Category of Documents](#Category-of-Documents)
-  - [Articles](#Articles)
-  - [Books](#Books)
-  - [Manuals](#Manuals)
-  - [Translates](#Translations)
 - [A few Notes](#A-few-Notes)
   - [Release Notes for New Document Class](#Release-Notes-for-New-Document-Class)
   - [Compilation Function for Multiple Files of Workflow](#Compilation-Function-for-Multiple-Files-of-Workflow)
@@ -79,13 +74,13 @@ Obtain the required LaTeX source code of the document project from the repositor
 **Preparation before Compilation:**
 - Install the compiler, e.g. [TeX Live][].
 - Install [Adobe Source Font][] (All Source Western Fonts are in OTF format, and Source Chinese Fonts are SC version of Language-specific OTFs).
-  - Source Serif Pro (v3.042)
-  - Source Sans Pro (v4.004)
-  - Source Code Pro (v2.038/v1.058)
-  - Source Han Serif (v1.001)
-  - Source Han Sans (v2.004)
+  - Source Sans 3 (v3.052)
+  - Source Serif 4 (v4.005)
+  - Source Code Pro (v2.042/v1.062)
+  - Source Han Sans SC (v2.004)
+  - Source Han Serif SC (v2.002)
 - Install [SIL Font][] (Current document class of LaTeX source code is using Doulos SIL Font)
-  - Doulos SIL (v6.001)
+  - Doulos SIL (v6.200)
 
 **Compilation Process:**
 1. Download the LaTeX source code required for your document project.
@@ -103,27 +98,6 @@ GitZip for Firefox: [Jump to Installation Page][]
 [LaTeXWorkshop]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop#review-details
 [Adobe Source Font]: https://github.com/adobe-fonts
 [SIL Font]: https://software.sil.org/fonts/
-
-## Category of Documents
-[Jump to Document Project Category Page][]
-
-### Articles
-This category has my short documents. For a detailed list of documents, please read the introduction of category. [Jump to Articles Page][]
-
-### Books
-This category has my long document. For a detailed list of documents, please read the introduction of category. [Jump to Book Page][]
-
-### Manuals
-This category has manuals of my software. For a detailed list of documents, please read the introduction of category. [Jump to Manuals Page][]
-
-### Translations
-This category has the documents translated by me. For a detailed list of documents, please see the category introduction. [Jump to Translations Page][]
-
-[Jump to Document Project Category Page]: ./
-[Jump to Articles Page]: ./Articles
-[Jump to Book Page]: ./Books
-[Jump to Manuals Page]: ./Manuals
-[Jump to Translations Page]: ./Translations
 
 ## A few Notes
 ### Release Notes for New Document Class
@@ -155,14 +129,15 @@ Authored and maintained by Mr. Kin.
 
 ![Search to Follow WeChat Official Accounts: MisterKin](./PublicResources/images/FollowMe/WeChatOfficialAccounts-En.png "Scan/Search to Follow WeChat Official Accounts: MisterKin")
 
-> [Blog][] · [Github][] · [Weibo][] · [Zhihu][] · [Bilibili][] · [Youku][] · [Headline][] · [Youtube][]
+> [Blog][] · [GitHub][] · [Weibo][] · [Zhihu][] · [AcFun][] · [Bilibili][] · [Youku][] · [Headline][] · [YouTube][]
 
 [CC BY-NC-SA 4.0]: ./LICENSE
 [Blog]: https://mister-kin.github.io
-[Github]: https://github.com/mister-kin
-[Weibo]: https://weibo.com/6270111192/profile?topnav=1&wvr=6&is_all=1
-[Zhihu]: https://www.zhihu.com/people/drwu-94
+[GitHub]: https://github.com/mister-kin
+[Weibo]: https://weibo.com/6270111192
 [Bilibili]: http://space.bilibili.com/17025250?
 [Youku]: http://i.youku.com/i/UNjA3MTk5Mjgw?spm=a2hzp.8253869.0.0
-[Youtube]: https://www.youtube.com/channel/UCNhtdG6whC5mlRDkrhQ0wLA?view_as=public
+[YouTube]: https://www.youtube.com/@Mister-Kin
 [Headline]: https://www.toutiao.com/c/user/835254071079053/#mid=1663279303982091
+[Zhihu]: https://www.zhihu.com/people/drwu-94
+[AcFun]: https://www.acfun.cn/u/73269306
