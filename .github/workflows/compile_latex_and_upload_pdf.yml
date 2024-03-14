@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout source files # 拉取最新的源文件
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
 
@@ -28,7 +28,7 @@ jobs:
         uses: Mister-Kin/actions/setup-latex-action@main
 
       - name: Detect changes
-        uses: dorny/paths-filter@v2
+        uses: dorny/paths-filter@v3
         id: filter
         with:
           filters: |
