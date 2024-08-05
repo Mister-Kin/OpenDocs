@@ -78,7 +78,7 @@ Obtain the required LaTeX source code of the document project from the repositor
   - Source Serif 4 (v4.005)
   - Source Code Pro (v2.042/v1.062)
   - Source Han Sans SC (v2.004)
-  - Source Han Serif SC (v2.002)
+  - Source Han Serif SC (v2.003)
 - Install [SIL Font][] (Current document class of LaTeX source code is using Doulos SIL Font)
   - Doulos SIL (v6.200)
 

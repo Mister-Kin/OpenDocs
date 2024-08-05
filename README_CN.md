@@ -78,7 +78,7 @@ PDF 电子文档由百度云网盘同步分享。PDF 和文件夹同名，直接
   - Source Serif 4 (v4.005)
   - Source Code Pro (v2.042/v1.062)
   - 思源黑体 (v2.004)
-  - 思源宋体 (v2.002)
+  - 思源宋体 (v2.003)
 - 安装 [SIL 字体][]（当前 LaTeX 源码的文类使用的是 Doulos SIL 字体）
   - Doulos SIL (v6.200)
 
