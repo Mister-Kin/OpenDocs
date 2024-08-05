@@ -2,12 +2,12 @@
 
     \PathPublicResources{../../public_resources}
 
-    \DocumentTitle{「切换语言」使用手册v1.6}
+    \DocumentTitle{「切换语言」使用手册v1.6.1}
     \DocumentSubtitle{Blender插件}
     \DocumentCreatedDate{2020-06-05}
 
     \LinkBlogPost{https://mister-kin.github.io/works/software-works/toggle-language}
-    \LinkBlogPostMirror{https://mister-kin.gitee.io/works/software-works/toggle-language}
+    \LinkBlogPostMirror{}
     \LinkPDF{https://github.com/Mister-Kin/OpenDocs/releases/download/latex2pdf/toggle_language.pdf}
     \LinkPDFAccessCode{}
     \LinkLaTeX{https://github.com/Mister-Kin/OpenDocs/tree/master/manuals/toggle_language}
@@ -16,7 +16,7 @@
     \AuthorName{Mr. Kin}
     \AuthorEmail{im.misterkin@gmail.com}
     \AuthorBlog{https://mister-kin.github.io}
-    \AuthorBlogMirror{https://mister-kin.gitee.io}
+    \AuthorBlogMirror{}
 
 \begin{document}
 \maketitle
@@ -53,10 +53,55 @@
 \note{更多详细介绍请查看「\hyperlink{AddonFeatures}{插件功能}」小节内容。}
 
 \section{用法}
-\subsection{下载及安装}
+若想获取插件的最新功能，请下载\href{https://github.com/Mister-Kin/ToggleLanguage/archive/refs/heads/master.zip}{项目代码master分支}的最新代码，然后参照本地安装步骤进行安装即可。
+
+\subsection{下载及安装（v4.2+）}
+\subsubsection{在线安装}
+blender v4.2之后版本（含v4.2）上线了extensions插件功能，允许从官方维护的扩展平台中直接安装扩展插件。本插件已上架官方扩展平台，可以直接搜索「toggle language」进行安装。
+
+\noindent 安装步骤：
+\begin{enumerate}
+    \item 运行Blender。
+    \item 打开「Preferences/用户偏好设置」（Menu/菜单 >Edit/编辑>Preferences/用户偏好设置）。
+    \item 选择「Get Extensions/获取扩展」选项卡。
+    \item 点击「Allow Online Access/允许在线访问」
+    \item 搜索框内输入「toggle language」
+    \item 点击「Install/安装」
+\end{enumerate}
+
+\begin{figure}[h!]
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{online_install_step12}
+        \caption{在线安装步骤1\&2}
+    \end{minipage}
+    \quad
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{online_install_step34}
+        \caption{在线安装步骤3\&4}
+    \end{minipage}
+\end{figure}
+
+\subsubsection{本地安装}
+blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前版本类似，「Get Extensions/获取扩展」和「Add‐ons/插件」选项卡均有「Install from Disk.../从磁盘安装...」的选项，如图1.3和图1.4。具体安装步骤可以参见\hyperlink{install_v283_v411}{「下载及安装（v2.83-v4.1.1）」}，从本地安装成功后，插件会自行启动。
+
+\begin{figure}[h!]
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{tab_get_extensions}
+        \caption{获取扩展选项卡}
+    \end{minipage}
+    \quad
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{tab_addon}
+        \caption{插件选项卡}
+    \end{minipage}
+\end{figure}
+
+\subsection{下载及安装（v2.83-v4.1.1）}
+\hypertarget{install_v283_v411}{}
 \subsubsection{下载步骤}
 \begin{itemize}
-    \item 插件下载地址：\href{https://github.com/Mister-Kin/ToggleLanguage/releases/latest}{点击跳转}，下载ToggleLanguage.zip文件。
+    \item 插件下载链接1：\href{https://extensions.blender.org/add-ons/toggle-language/}{官方在线扩展插件平台}，点击\lstinline|Get Add-on|下载 ToggleLanguage.zip 文件。
+    \item 插件下载链接2：\href{https://github.com/Mister-Kin/ToggleLanguage/releases/latest}{Github Release}，在\lstinline|Assets|资产中下载 ToggleLanguage.zip 文件。
     \item blender版本要求：\href{https://www.blender.org/download/}{v2.83+}
 \end{itemize}
 \note{blender v2.83默认是启用翻译功能，这也是本插件要求将v2.83作为最低版本的缘由。本插件也许在v2.83以下版本能够运行，但不推荐，因为没测试过。}
@@ -93,8 +138,6 @@
     \item 用户偏好设置按钮
 \end{enumerate}
 
-\newpage
-
 \begin{figure}[h!]
     \includegraphics[width=\linewidth]{ui}
     \caption{插件UI}
@@ -130,7 +173,7 @@
 \subsubsection{插件切换语言的设置}
 在本插件的偏好设置面板中，可以设置切换语言功能所需的语言项，如图\myref{启用插件}所示，两个语言项的默认值分别为简体中文和英语。两个语言项不分前后顺序，只要设置好两种不同语言，插件便可以在这两种语言之间切换UI界面。
 
-本插件在blender v4.0以后（含blender v4.0）支持 18 种语言\footnote{即blender v4.0以后（含blender v4.0）内置翻译语言列表中Complete和In Progress两个列表中的语言，共17种。暂不考虑加入Starting列表中的语言，因为其变动性较高，有可能被删除或者新添加。}相互切换，详见下表：
+本插件在blender v4.0以后（含blender v4.0）支持 18 种语言\footnote{即blender v4.0以后（含blender v4.0）内置翻译语言列表中Complete和In Progress两个列表中的语言，共18种。暂不考虑加入Starting列表中的语言，因为其变动性较高，有可能被删除或者新添加。}相互切换，详见下表：
 
 \begin{itemize}
     \item Simplified Chinese (简体中文)
@@ -260,12 +303,13 @@
             \begin{enumerate}
                 \item 渲染引擎> Cycles
                 \item 设备> GPU计算（有GPU设备时会自动启用，无显卡则设置为CPU）
-                \item 采样>启用「自适应采样」（v2.9之后版本才有，包括v2.9。v3.0之后版本默认启用）
+                \item 采样>启用「自适应采样」（v2.9之后版本才有，含v2.9。v3.0之后版本默认启用）
                 \item 采样>启用「自适应采样」>噪波阈值>0.1
                 \item 采样>最大采样>渲染设置为250，视图设置为1
                 \item 采样>降噪>通道>反照和法向
                 \item 采样>降噪>降噪器（当OPTIX可用时优先选择，v2.9系列版本设置为NLM，其余为OPEN IMAGEDENOISE，v2.83是自带的其他降噪方法）
-                \item 采样>路径引导（纯CPU渲染才有，v3.4之后版本才有，包括v3.4）
+                \item 采样>降噪>降噪器>OpenImageDenoise > 使用 GPU（v4.1 之后版本才有，含 v4.1）
+                \item 采样>路径引导（纯CPU渲染才有，v3.4之后版本才有，含v3.4）
                 \item 性能> Auto Tile Size > Target Tile Size > 128（v3.0之前版本才有，不含v3.0，v3.0之后版本的不含有Auto Tile Size插件）
                 \item 性能 > 内存  > 平铺尺寸 > 4096（v3.0之后版本才有，含v3.0，v3.0之前版本的没有分块渲染功能。设定值为4096是为了避免渲染4k图像时导致分块。）
                 \item 性能>线程>多线程模式>固定
@@ -301,17 +345,18 @@
 
 建议：若需要保存该功能的设置值，请保存一个工程文件\footnote{保存在启动文件也是可行的。}（.blend），该功能的设置值会保存在这个工程文件。
 
+\section{已知问题}
+\subsection{加载初始设置按钮导致闪退}
+在未保存工程文件\footnote{例如通过安装路径打开主程序的情况或者打开一个工程文件后进行修改却未保存的情况。}（.blend）的情况下，加载初始设置功能会有机率引起异常码EXCEPTION\_ACCESS\_VIOLATION，从而导致blender闪退，目前暂未查明原因。在导致blender闪退时，重置功能的代码执行的不完整，一般是成功地加载初始偏好设置并保存，而初始启动文件并未成功加载并保存。因此，在该功能导致blender闪退后，还请用户自行重置偏好设置及启动文件。
+
+建议：在使用该功能之前，请先保存一个工程文件（.blend）。
+
 \section{开发记录}
 \subsection{开发与测试环境}
 \begin{itemize}
     \item OS: Win10 v22H2 / Kali Linux 2021.3 / Mac
-    \item Blender: v2.83 ‑ v4.0.1
+    \item Blender: v2.83 ‑ v4.2
 \end{itemize}
-
-\subsection{已知问题——加载初始设置按钮导致闪退}
-在未保存工程文件\footnote{例如通过安装路径打开主程序的情况或者打开一个工程文件后进行修改却未保存的情况。}（.blend）的情况下，加载初始设置功能会有机率引起异常码EXCEPTION\_ACCESS\_VIOLATION，从而导致blender闪退，目前暂未查明原因。在导致blender闪退时，重置功能的代码执行的不完整，一般是成功地加载初始偏好设置并保存，而初始启动文件并未成功加载并保存。因此，在该功能导致blender闪退后，还请用户自行重置偏好设置及启动文件。
-
-建议：在使用该功能之前，请先保存一个工程文件（.blend）。
 
 \subsection{更新历史}
 表\myref{更新历史}记录了本插件各个版本的更新历史。
@@ -328,6 +373,8 @@
     \hline
     \endhead
 
+    v1.6.1 & 2024-07-01 & 在blender v4.1中为OpenImageDenoise启用gpu；支持blender v4.2\\
+    \hline
     v1.6 & 2023-11-19 & 修复并适配blender v4.0 \\
     \hline
     v1.5.1 & 2023/08/23 & 修复：optix\_exist 变量引用前未分配；优化：润色翻译 \\
