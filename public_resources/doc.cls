@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{doc}[2023/07/20 v2.1.6 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{doc}[2024/08/05 v2.1.7 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -124,11 +124,19 @@
             \ifLightDoc
                 \relax
             \else
-                \begin{tabular}{rl}
-                    Author's Email:       & \hspace{-0.8em} \href{mailto:\the\AuthorEmail}{\color{black} \the\AuthorEmail}    \\
-                    Author's Blog:        & \hspace{-0.8em} \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog}             \\
-                    Author's Blog Mirror: & \hspace{-0.8em} \href{\the\AuthorBlogMirror}{\color{black} \the\AuthorBlogMirror} \\
-                \end{tabular}
+                \DetectToksEmpty\AuthorBlogMirror
+                \ifToksEmpty
+                    \begin{tabular}{rl}
+                        Author's Email: & \hspace{-0.8em} \href{mailto:\the\AuthorEmail}{\color{black} \the\AuthorEmail} \\
+                        Author's Blog:  & \hspace{-0.8em} \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog}          \\
+                    \end{tabular}
+                \else
+                    \begin{tabular}{rl}
+                        Author's Email:       & \hspace{-0.8em} \href{mailto:\the\AuthorEmail}{\color{black} \the\AuthorEmail}    \\
+                        Author's Blog:        & \hspace{-0.8em} \href{\the\AuthorBlog}{\color{black} \the\AuthorBlog}             \\
+                        Author's Blog Mirror: & \hspace{-0.8em} \href{\the\AuthorBlogMirror}{\color{black} \the\AuthorBlogMirror} \\
+                    \end{tabular}
+                \fi
             \fi
 
             \DetectToksEmpty\LinkBlogPost
@@ -136,12 +144,6 @@
                 \LinkBlogPostText{链接暂空}
             \else
                 \LinkBlogPostText{\href{\the\LinkBlogPost}{\color{black} 点击跳转}}
-            \fi
-            \DetectToksEmpty\LinkBlogPostMirror
-            \ifToksEmpty
-                \LinkBlogPostMirrorText{链接暂空}
-            \else
-                \LinkBlogPostMirrorText{\href{\the\LinkBlogPostMirror}{\color{black} 点击跳转}}
             \fi
             \DetectToksEmpty\LinkPDF
             \ifToksEmpty
@@ -187,13 +189,23 @@
                         文档LaTeX源码链接： & \the\LinkLaTeXText \\
                     \end{tabular}
                 \else
-                    \begin{tabular}{rl}
-                        博文链接：                  & \the\LinkBlogPostText       \\
-                        博文镜像链接：                & \the\LinkBlogPostMirrorText \\
-                        离线文档PDF链接：             & \the\LinkPDFText            \\
-                        文档LaTeX源码链接：           & \the\LinkLaTeXText          \\
-                        \the\LinkVideoTextLeft & \the\LinkVideoTextRight     \\
-                    \end{tabular}
+                    \DetectToksEmpty\LinkBlogPostMirror
+                    \ifToksEmpty
+                        \begin{tabular}{rl}
+                            博文链接：                  & \the\LinkBlogPostText   \\
+                            离线文档PDF链接：             & \the\LinkPDFText        \\
+                            文档LaTeX源码链接：           & \the\LinkLaTeXText      \\
+                            \the\LinkVideoTextLeft & \the\LinkVideoTextRight \\
+                        \end{tabular}
+                    \else
+                        \begin{tabular}{rl}
+                            博文链接：                  & \the\LinkBlogPostText                              \\
+                            博文镜像链接：                & \href{\the\LinkBlogPostMirror}{\color{black} 点击跳转} \\
+                            离线文档PDF链接：             & \the\LinkPDFText                                   \\
+                            文档LaTeX源码链接：           & \the\LinkLaTeXText                                 \\
+                            \the\LinkVideoTextLeft & \the\LinkVideoTextRight                            \\
+                        \end{tabular}
+                    \fi
                 \fi
             \else
                 \tikz[thick]{\draw (0,0) -- (10.5,0);}
@@ -205,13 +217,23 @@
                         文档LaTeX源码链接： & \the\LinkLaTeXText \\
                     \end{tabular}
                 \else
-                    \begin{tabular}{rl}
-                        博文链接：                  & \the\LinkBlogPostText       \\
-                        博文镜像链接：                & \the\LinkBlogPostMirrorText \\
-                        离线文档PDF链接：             & \the\LinkPDFText            \\
-                        文档LaTeX源码链接：           & \the\LinkLaTeXText          \\
-                        \the\LinkVideoTextLeft & \the\LinkVideoTextRight     \\
-                    \end{tabular}
+                    \DetectToksEmpty\LinkBlogPostMirror
+                    \ifToksEmpty
+                        \begin{tabular}{rl}
+                            博文链接：                  & \the\LinkBlogPostText   \\
+                            离线文档PDF链接：             & \the\LinkPDFText        \\
+                            文档LaTeX源码链接：           & \the\LinkLaTeXText      \\
+                            \the\LinkVideoTextLeft & \the\LinkVideoTextRight \\
+                        \end{tabular}
+                    \else
+                        \begin{tabular}{rl}
+                            博文链接：                  & \the\LinkBlogPostText                              \\
+                            博文镜像链接：                & \href{\the\LinkBlogPostMirror}{\color{black} 点击跳转} \\
+                            离线文档PDF链接：             & \the\LinkPDFText                                   \\
+                            文档LaTeX源码链接：           & \the\LinkLaTeXText                                 \\
+                            \the\LinkVideoTextLeft & \the\LinkVideoTextRight                            \\
+                        \end{tabular}
+                    \fi
                 \fi
             \fi
         \end{center}
