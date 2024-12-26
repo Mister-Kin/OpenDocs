@@ -58,10 +58,31 @@
 最新代码可能会存在运行不稳定的情况，请自行选择是否使用最新版本。
 
 \subsection{下载及安装（v4.2+）}
-\subsubsection{在线安装}
-blender v4.2之后版本（含v4.2）上线了extensions插件功能，允许从官方维护的扩展平台中直接安装扩展插件。本插件已上架官方扩展平台，可以直接搜索「toggle language」进行安装。
+\subsubsection{本地安装}
+\hypertarget{local_install}{}
+blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前版本类似，「Get Extensions/获取扩展」和「Add‐ons/插件」选项卡均有「Install from Disk.../从磁盘安装...」的选项，如图1.3和图1.4。具体安装步骤可以参见\hyperlink{install_v283_v411}{「下载及安装（v2.83-v4.1.1）」}，从本地安装成功后，插件会自行启动。
 
-\noindent 安装步骤：
+\begin{figure}[h!]
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{tab_get_extensions}
+        \caption{获取扩展选项卡}
+    \end{minipage}
+    \quad
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{tab_addon}
+        \caption{插件选项卡}
+    \end{minipage}
+\end{figure}
+
+\subsubsection{在线安装}
+\note{因「\href{https://extensions.blender.org/}{Blender Extension平台}」网站管理员认为本插件存在多项功能并不符合插件名称，管理员称这不符合规范，故本人已选择删除\href{https://id.blender.org/}{Blender ID}帐号。自2024-12-26起，不再支持插件以「官方在线扩展插件平台】方式来在线安装。—— Mr. Kin，2024-12-26}
+
+\note{后续版本将会基于\href{https://github.com/Mister-Kin/ToggleLanguage/releases}{Github Rleases}开发实现支持自动检查版本和自动更新功能，敬请期待！—— Mr. Kin，2024-12-26}
+
+\sout{blender v4.2之后版本（含v4.2）上线了extensions插件功能，允许从官方维护}
+\noindent\sout{的扩展平台中直接安装扩展插件。本插件已上架官方扩展平台，可以直接搜索「toggle language」进行安装。}
+
+\noindent （该步骤已不再支持！！！）安装步骤：
 \begin{enumerate}
     \item 运行Blender。
     \item 打开「Preferences/用户偏好设置」（Menu/菜单 >Edit/编辑>Preferences/用户偏好设置）。
@@ -83,28 +104,11 @@ blender v4.2之后版本（含v4.2）上线了extensions插件功能，允许从
     \end{minipage}
 \end{figure}
 
-\subsubsection{本地安装}
-\hypertarget{local_install}{}
-blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前版本类似，「Get Extensions/获取扩展」和「Add‐ons/插件」选项卡均有「Install from Disk.../从磁盘安装...」的选项，如图1.3和图1.4。具体安装步骤可以参见\hyperlink{install_v283_v411}{「下载及安装（v2.83-v4.1.1）」}，从本地安装成功后，插件会自行启动。
-
-\begin{figure}[h!]
-    \begin{minipage}[t]{0.48\linewidth}
-        \includegraphics[width=\linewidth]{tab_get_extensions}
-        \caption{获取扩展选项卡}
-    \end{minipage}
-    \quad
-    \begin{minipage}[t]{0.48\linewidth}
-        \includegraphics[width=\linewidth]{tab_addon}
-        \caption{插件选项卡}
-    \end{minipage}
-\end{figure}
-
 \subsection{下载及安装（v2.83-v4.1.1）}
 \hypertarget{install_v283_v411}{}
 \subsubsection{下载步骤}
 \begin{itemize}
-    \item 插件下载链接1：\href{https://extensions.blender.org/add-ons/toggle-language/}{官方在线扩展插件平台}，点击\lstinline|Get Add-on|下载 ToggleLanguage.zip 文件。
-    \item 插件下载链接2：\href{https://github.com/Mister-Kin/ToggleLanguage/releases/latest}{Github Release}，在\lstinline|Assets|资产中下载 ToggleLanguage.zip 文件。
+    \item 插件下载链接：\href{https://github.com/Mister-Kin/ToggleLanguage/releases/latest}{Github Release}，在\lstinline|Assets|资产中下载 ToggleLanguage.zip 文件。
     \item blender版本要求：\href{https://www.blender.org/download/}{v2.83+}
 \end{itemize}
 \note{blender v2.83默认是启用翻译功能，这也是本插件要求将v2.83作为最低版本的缘由。本插件也许在v2.83以下版本能够运行，但不推荐，因为没测试过。}
