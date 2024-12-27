@@ -42,12 +42,14 @@
 
 \subsection{插件目前实现的功能}
 \begin{itemize}
-    \item 一键切换UI语言（支持17种语言相互切换）
-    \item 一键打开用户偏好设置
-    \item 一键设置自定义的blender偏好设置——「加载我的设置」功能
+    \item 一键切换 UI 语言（支持多种语言和快捷键）
+    \item 一键打开用户偏好设置（支持快捷键）
+    \item 插件的键位映射功能（允许自定义快捷键）
     \item 一键切换提示模式：默认模式和开发者模式（拥有切换当前UI提示级别的菜单）
     \item 一键删除当前场景集合和物体
     \item 一键添加视频进度条
+    \item 自动放置模型蓝图参考图片（TODO）
+    \item ……
 \end{itemize}
 
 \note{更多详细介绍请查看「\hyperlink{AddonFeatures}{插件功能}」小节内容。}
@@ -157,7 +159,7 @@ blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前�
 \note{以下按照UI排列位置进行功能介绍。UI排列位置详见「\nameref{插件UI小节}」小节。}
 
 \begin{enumerate}
-    \item 语言切换按钮（快捷键F5）：在两种语言之间切换blender用户界面语言（支持17种语言相互切换）。
+    \item 语言切换按钮（快捷键F5）：在两种语言之间切换blender用户界面语言（支持多种语言相互切换）。插件允许自定义该快捷键，详见「\hyperlink{AddonKeymaps}{插件的键位映射}」小节内容。
     \item 实用工具菜单：一些实用工具集合
     \begin{enumerate}
         \item 删除当前场景中所有集合和物体：清空场景，即删除当前场景中的所有集合和物体。
@@ -174,7 +176,7 @@ blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前�
         \item 加载我的Blender设置按钮：部署我个人的偏好设置。所涉及的设置选项详见\hyperlink{MySettings}{我的设置}。该功能默认会覆盖你原有的blender设置（启动文件和偏好设置），请详细了解所涉及的设置项后再确认是否使用该功能。\footnote{理论上支持任意系统、任意安装路径、任意显卡平台的情况，但Linux OS和Mac OS比较少测试，可能会存在有bug。}
         \item 加载Blender初始设置按钮：加载初始的偏好设置和启动文件，即重置blender，还原成初次安装blender时的状态。
     \end{enumerate}
-    \item 用户偏好设置按钮（快捷键Ctrl+Alt+U）：打开用户偏好设置窗口。
+    \item 用户偏好设置按钮（快捷键Ctrl+Alt+U）：打开用户偏好设置窗口。插件允许自定义该快捷键，详见「\hyperlink{AddonKeymaps}{插件的键位映射}」小节内容。
 \end{enumerate}
 
 \subsubsection{插件切换语言的设置}
@@ -276,6 +278,7 @@ blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前�
 \end{figure}
 
 \subsubsection{插件的键位映射}
+\hypertarget{AddonKeymaps}{}
 本插件的偏好设置面板中，允许修改插件的键位映射，设置方法和Blender原生的键位映射设置方法一样，如图\myref{插件的键位映射功能}所示。修改键位映射后，均会自动保存相应修改。
 
 \begin{figure}[h!]
