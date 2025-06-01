@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{doc}[2025/06/01 v2.1.8 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{doc}[2025/06/02 v2.1.9 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -322,6 +322,16 @@
         \hspace{5pt}%
         \parbox[t]{\dimexpr\linewidth-2pt-5pt}{#1}
         \par}}
+\newcommand{\quotenotecyan}[1]{{\zihao{5}\bfseries\noindent%
+        {\color{cyan}\vrule width 2pt}%
+        \hspace{5pt}%
+        \parbox[t]{\dimexpr\linewidth-2pt-5pt}{#1}
+        \par}}
+\newcommand{\quotenotered}[1]{{\zihao{5}\bfseries\noindent%
+        {\color{red}\vrule width 2pt}%
+        \hspace{5pt}%
+        \parbox[t]{\dimexpr\linewidth-2pt-5pt}{#1}
+        \par}}
 
 % 定义 myref 命令，解决当前环境下无法处理 \ref 命令前后的空格问题。
 % 已尝试过多种 patch 代码的手段，均无法实现自动添加空格，只能通过自定义新命令解决。
@@ -409,9 +419,9 @@
 
 \RequirePackage{tocbibind} % 支持添加目录本身和参考文献进目录中。
 %\RequirePackage[toc]{multitoc} % 支持排版多栏 toc 目录页，默认双栏。(小四号字体不适合双栏排版)
-% 移除 subsubsection 标题编号
-%\setcounter{tocdepth}{3} % 目录深度设定为 3。
-%\setcounter{secnumdepth}{3} % 章节编号深度设定为 3。
+% subsubsection 标题编号
+\setcounter{tocdepth}{3} % 目录深度设定为 3。
+\setcounter{secnumdepth}{3} % 章节编号深度设定为 3。
 
 % -----------------------------------------------
 % 参考文献和图片设定，及其相关路径设定。
@@ -571,3 +581,5 @@
 \RequirePackage[normalem]{ulem} % 支持删除线等，normalem 选项禁止 ulem 宏包重定义 \emph 命令（ulem 定义 \emph 为下划线）。
 \RequirePackage{multicol} % 支持多栏排版。
 \RequirePackage{fontawesome5} % 支持 fontawesome5 图标排版。
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
