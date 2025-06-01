@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{doc}[2024/08/05 v2.1.7 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{doc}[2025/06/01 v2.1.8 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -317,6 +317,11 @@
 \newcommand{\enote}[1]{{\zihao{5}\noindent\em P.S. #1 \par}}
 \newcommand{\rednote}[1]{{\zihao{5}\noindent\mycolor{red}\em 注：#1 \par}}
 \newcommand{\redenote}[1]{{\zihao{5}\noindent\mycolor{red}\em P.S. #1 \par}}
+\newcommand{\quotenote}[1]{{\zihao{5}\noindent%
+        {\color{gray}\vrule width 2pt}%
+        \hspace{5pt}%
+        \parbox[t]{\dimexpr\linewidth-2pt-5pt}{#1}
+        \par}}
 
 % 定义 myref 命令，解决当前环境下无法处理 \ref 命令前后的空格问题。
 % 已尝试过多种 patch 代码的手段，均无法实现自动添加空格，只能通过自定义新命令解决。
