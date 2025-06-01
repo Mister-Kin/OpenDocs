@@ -2,7 +2,7 @@
 
     \PathPublicResources{../../public_resources}
 
-    \DocumentTitle{「切换语言」使用手册v1.6.2}
+    \DocumentTitle{「切换语言」使用手册v1.6.3}
     \DocumentSubtitle{Blender插件}
     \DocumentCreatedDate{2020-06-05}
 
@@ -26,96 +26,97 @@
 \mainmatter
 
 % 正文
-\chapter{「切换语言」使用手册}
-\section{介绍}
+\chapter{介绍}
 一款blender插件，旨在通过一键快速、轻松地在两种语言之间切换用户界面，而非重复打开偏好设置。
 
-\subsection{背景}
+\quotenote{碎碎念：TL插件项目，本人一直断断续续抽闲暇时间开发，目前已成为我个人综合性开发验证Blender的一个插件应用，因此该插件实现的功能会比较多样化（说人话就是大杂烩(ಡωಡ)）。但TL插件最初开发的「界面语言切换」功能自Blender v2.83版本起都会一直保持兼容可用的状态，放心使用即可。—— Mr. Kin，2025-03-28}
+
+\section{背景}
 在早期进行blender手册翻译工作时，因需要校对相关UI内容，本人频繁地在中英文之间切换软件的用户界面语言。但每次繁琐地使用偏好设置进行语言切换令人苦不堪言，索性就开发一款插件以简化这操作。
 
-\subsection{面向人群}
-本插件主要面向需要频繁切换界面语言的人群，常见的有如下人群：
+\section{面向人群}
+\noindent 本插件主要面向需要频繁切换界面语言的人群，常见的有如下人群：
 \begin{itemize}
     \item 翻译者：校对相关内容。
     \item CG学习者：跟进外语教程。
 \end{itemize}
 
-\subsection{插件目前实现的功能}
+\section{插件目前实现的功能}
 \begin{itemize}
+    \item 支持的Blender版本：Blender v2.83 ‑ v4.4.3
     \item 一键切换 UI 语言（支持多种语言和快捷键）
     \item 一键打开用户偏好设置（支持快捷键）
     \item 插件的键位映射功能（允许自定义快捷键）
     \item 一键切换提示模式：默认模式和开发者模式（拥有切换当前UI提示级别的菜单）
     \item 一键删除当前场景集合和物体
     \item 一键添加视频进度条
-    \item 自动放置模型蓝图参考图片（TODO）
+    \item 自动放置模型蓝图参考图片
+    \item 自动检测插件更新情况（基于\href{https://github.com/Mister-Kin/ToggleLanguage/releases}{GitHub Rleases}）
     \item ……
 \end{itemize}
 
 \note{更多详细介绍请查看「\hyperlink{AddonFeatures}{插件功能}」小节内容。}
 
-\section{用法}
-若想获取插件的最新功能，请下载\href{https://github.com/Mister-Kin/ToggleLanguage/archive/refs/heads/master.zip}{项目代码master分支}的最新代码，然后参照\hyperlink{local_install}{本地安装}步骤进行安装即可。
+\chapter{用法}
+\quotenote{若想获取插件的最新功能，请下载\href{https://github.com/Mister-Kin/ToggleLanguage/archive/refs/heads/master.zip}{项目代码master分支}的最新代码，然后参照\hyperlink{local_install}{本地安装}步骤进行安装即可。}
+\vspace{1ex}
+\quotenote{最新代码可能会存在运行不稳定的情况，请自行选择是否使用最新版本。}
 
-最新代码可能会存在运行不稳定的情况，请自行选择是否使用最新版本。
+\section{下载及安装（Blender v4.2+）}
+\subsection{在线更新安装（Blender v4.2+）}
+\quotenotecyan{自\href{https://github.com/Mister-Kin/ToggleLanguage/releases/tag/v1.6.3}{v1.6.3}版本起，TL插件内置基于\href{https://github.com/Mister-Kin/ToggleLanguage/releases}{GitHub Rleases}的版本信息自动检查最新版本和自动下载更新的功能。—— Mr. Kin，2025-03-28}
+\vspace{1ex}
+\quotenotered{因「\href{https://extensions.blender.org/}{Blender Extension平台}」网站管理员认为本插件存在多项功能并不符合插件名称，管理员称这不符合规范，故本人已选择删除\href{https://id.blender.org/}{Blender ID}帐号。自2024-12-26起，不再支持插件以「Blender在线扩展插件平台】方式来在线安装。—— Mr. Kin，2024-12-26}
+\vspace{1ex}
 
-\subsection{下载及安装（v4.2+）}
-\subsubsection{本地安装}
+\noindent 检测更新\&安装步骤：
+\begin{enumerate}
+    \item 运行 Blender。
+    \item 点击插件的设置菜单里的「检查插件更新」按钮。
+    \item 插件自动完成版本检测或者完成更新操作。
+    \item 重启Blender（若是已经成功完成更新TL插件，则需要重启Blender程序）。
+\end{enumerate}
+
+\begin{figure}[h!]
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{check_addon_update_button}
+        \caption{点击插件的「检查插件更新」按钮}
+    \end{minipage}
+    \quad
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{update_success}
+        \caption{插件更新成功之后的弹窗提示}
+    \end{minipage}
+\end{figure}
+
+\subsection{本地安装（Blender v4.2+）}
 \hypertarget{local_install}{}
-blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前版本类似，「Get Extensions/获取扩展」和「Add‐ons/插件」选项卡均有「Install from Disk.../从磁盘安装...」的选项，如图1.3和图1.4。具体安装步骤可以参见\hyperlink{install_v283_v411}{「下载及安装（v2.83-v4.1.1）」}，从本地安装成功后，插件会自行启动。
+blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前版本类似，「Get Extensions/获取扩展」和「Add‐ons/插件」选项卡均有「Install from Disk.../从磁盘安装...」的选项，如图\myref{获取扩展选项卡}和图\myref{插件选项卡}。具体安装步骤可以参见\hyperlink{install_v283_v411}{「下载及安装（Blender v2.83-v4.1.1）」}，从本地安装成功后，插件会自行启动。
 
 \begin{figure}[h!]
     \begin{minipage}[t]{0.48\linewidth}
         \includegraphics[width=\linewidth]{tab_get_extensions}
         \caption{获取扩展选项卡}
+        \label{获取扩展选项卡}
     \end{minipage}
     \quad
     \begin{minipage}[t]{0.48\linewidth}
         \includegraphics[width=\linewidth]{tab_addon}
         \caption{插件选项卡}
+        \label{插件选项卡}
     \end{minipage}
 \end{figure}
 
-\subsubsection{在线安装}
-\note{因「\href{https://extensions.blender.org/}{Blender Extension平台}」网站管理员认为本插件存在多项功能并不符合插件名称，管理员称这不符合规范，故本人已选择删除\href{https://id.blender.org/}{Blender ID}帐号。自2024-12-26起，不再支持插件以「官方在线扩展插件平台】方式来在线安装。—— Mr. Kin，2024-12-26}
-
-\note{后续版本将会基于\href{https://github.com/Mister-Kin/ToggleLanguage/releases}{Github Rleases}开发实现支持自动检查版本和自动更新功能，敬请期待！—— Mr. Kin，2024-12-26}
-
-\sout{blender v4.2之后版本（含v4.2）上线了extensions插件功能，允许从官方维护}
-\noindent\sout{的扩展平台中直接安装扩展插件。本插件已上架官方扩展平台，可以直接搜索「toggle language」进行安装。}
-
-\noindent （该步骤已不再支持！！！）安装步骤：
-\begin{enumerate}
-    \item 运行Blender。
-    \item 打开「Preferences/用户偏好设置」（Menu/菜单 >Edit/编辑>Preferences/用户偏好设置）。
-    \item 选择「Get Extensions/获取扩展」选项卡。
-    \item 点击「Allow Online Access/允许在线访问」
-    \item 搜索框内输入「toggle language」
-    \item 点击「Install/安装」
-\end{enumerate}
-
-\begin{figure}[h!]
-    \begin{minipage}[t]{0.48\linewidth}
-        \includegraphics[width=\linewidth]{online_install_step12}
-        \caption{在线安装步骤1\&2}
-    \end{minipage}
-    \quad
-    \begin{minipage}[t]{0.48\linewidth}
-        \includegraphics[width=\linewidth]{online_install_step34}
-        \caption{在线安装步骤3\&4}
-    \end{minipage}
-\end{figure}
-
-\subsection{下载及安装（v2.83-v4.1.1）}
+\section{下载及安装（Blender v2.83-v4.1.1）}
 \hypertarget{install_v283_v411}{}
-\subsubsection{下载步骤}
+\subsection{下载步骤}
 \begin{itemize}
-    \item 插件下载链接：\href{https://github.com/Mister-Kin/ToggleLanguage/releases/latest}{Github Release}，在\lstinline|Assets|资产中下载 ToggleLanguage.zip 文件。
-    \item blender版本要求：\href{https://www.blender.org/download/}{v2.83+}
+    \item 插件下载链接：\href{https://github.com/Mister-Kin/ToggleLanguage/releases/latest}{Github Releases}，在\lstinline|Assets|资产中下载 ToggleLanguage.zip 文件。
+    \item Blender版本要求：\href{https://www.blender.org/download/}{v2.83+}
 \end{itemize}
 \note{blender v2.83默认是启用翻译功能，这也是本插件要求将v2.83作为最低版本的缘由。本插件也许在v2.83以下版本能够运行，但不推荐，因为没测试过。}
 
-\subsubsection{安装步骤}
+\subsection{安装步骤}
 \begin{enumerate}
     \item 运行Blender。
     \item 打开「Preferences/用户偏好设置」（Menu/菜单>Edit/编辑>Preferences/用户偏好设置）。
@@ -137,7 +138,8 @@ blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前�
     \end{minipage}
 \end{figure}
 
-\subsection{插件UI}
+\newpage
+\section{插件UI}
 \label{插件UI小节}
 如图\myref{插件UI}所示，启用插件后，可看见插件位于顶部菜单栏末尾处。插件UI从左往右看，有四个元素：
 \begin{enumerate}
@@ -153,146 +155,292 @@ blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前�
     \label{插件UI}
 \end{figure}
 
-\subsection{插件功能}
+\section{插件功能}
 \hypertarget{AddonFeatures}{}
+\note{以下UI功能的介绍，按照UI排列位置进行。UI排列位置详见「\nameref{插件UI小节}」小节。}
 
-\note{以下按照UI排列位置进行功能介绍。UI排列位置详见「\nameref{插件UI小节}」小节。}
-
-\begin{enumerate}
-    \item 语言切换按钮（快捷键F5）：在两种语言之间切换blender用户界面语言（支持多种语言相互切换）。插件允许自定义该快捷键，详见「\hyperlink{AddonKeymaps}{插件的键位映射}」小节内容。
-    \item 实用工具菜单：一些实用工具集合
-    \begin{enumerate}
-        \item 删除当前场景中所有集合和物体：清空场景，即删除当前场景中的所有集合和物体。
-        \item 添加视频进度条：在VSE的频道顶部空白区域添加视频进度条，如图\myref{视频进度条复合片段}和图\myref{视频进度条子片段}所示。视频进度条为一个复合片段，相关参数为：置于视频顶部，高度44px，透明度0.9，底部进度条颜色RGB（0.45, 0.45, 0.45），滚动进度条颜色RGB（0.255, 0.255, 0.255）。P.S. 后续会开发增设一个调整视频进度条参数的窗口。
-    \end{enumerate}
-    \item 设置菜单：插件的个性化设置。
-    \begin{enumerate}
-        \item UI提示方案菜单：选择相应UI提示的方案。
-        \begin{enumerate}
-            \item 默认模式：禁用「开发选项」「Python工具提示」，如图\myref{默认提示方案}所示。
-            \item 开发者模式：启用「开发选项」「Python工具提示」，如图\myref{开发者提示方案}所示。
-        \end{enumerate}
-        \item 翻译新建数据块的名称按钮：启用/禁用新建数据块名称的翻译功能\footnote{v1.1之后版本不再是强制接管该功能。虽然可以通过用户偏好设置来设置一个不同于插件的设置值，但在使用插件的该功能或者语言切换按钮后，插件会对该项改写修正为插件的设置值。}，默认值为禁用，如图\myref{插件的翻译名称选项}所示，其对应在偏好设置中的选项如图\myref{偏好设置的的翻译名称选项}所示。在非英语界面环境中，启用该功能可使blender新建数据块的名称为当前语言，如图\myref{翻译名称的效果}所示，新建平面的名称为「平面」，而非「plane」。
-        \item 加载我的Blender设置按钮：部署我个人的偏好设置。所涉及的设置选项详见\hyperlink{MySettings}{我的设置}。该功能默认会覆盖你原有的blender设置（启动文件和偏好设置），请详细了解所涉及的设置项后再确认是否使用该功能。\footnote{理论上支持任意系统、任意安装路径、任意显卡平台的情况，但Linux OS和Mac OS比较少测试，可能会存在有bug。}
-        \item 加载Blender初始设置按钮：加载初始的偏好设置和启动文件，即重置blender，还原成初次安装blender时的状态。
-    \end{enumerate}
-    \item 用户偏好设置按钮（快捷键Ctrl+Alt+U）：打开用户偏好设置窗口。插件允许自定义该快捷键，详见「\hyperlink{AddonKeymaps}{插件的键位映射}」小节内容。
-\end{enumerate}
-
-\subsubsection{插件切换语言的设置}
-在本插件的偏好设置面板中，可以设置切换语言功能所需的语言项，如图\myref{启用插件}所示，两个语言项的默认值分别为简体中文和英语。两个语言项不分前后顺序，只要设置好两种不同语言，插件便可以在这两种语言之间切换UI界面。
-
-本插件在blender v4.0以后（含blender v4.0）支持 18 种语言\footnote{即blender v4.0以后（含blender v4.0）内置翻译语言列表中Complete和In Progress两个列表中的语言，共18种。暂不考虑加入Starting列表中的语言，因为其变动性较高，有可能被删除或者新添加。}相互切换，详见下表：
-
+\subsection{语言切换}
 \begin{itemize}
-    \item Simplified Chinese (简体中文)
-    \item Traditional Chinese (繁體中文)
-    \item English (English)
-    \item Catalan (Català)
-    \item Spanish (Español)
-    \item French (Français)
-    \item Japanese (日本語)
-    \item Slovak (Slovenčina)
-    \item Czech (Čeština)
-    \item German (Deutsch)
-    \item Italian (Italiano)
-    \item Georgian (ქართული)
-    \item Korean (한국어)
-    \item Brazilian Portuguese (Português do Brasil)
-    \item Portuguese (Português)
-    \item Russian (Русский)
-    \item Ukrainian (Українська)
-    \item Vietnamese (Tiếng Việt)
+    \item 功能名称：语言切换
+    \item 快捷键：F5
+    % \item 功能介绍：在两种语言之间切换blender用户界面语言（支持多种语言相互切换）。插件允许自定义该功能的快捷键，详见「[插件的键位映射](#插件的键位映射)」小节内容。
+    \item 功能设置：在本插件的偏好设置面板中，可以设置「切换语言」功能所需的语言项，如图\myref{「语言切换」功能设置}所示，两个语言项的默认值分别为「Simplified Chinese (简体中文)」和「English (English)」。两个语言项不分前后顺序，只要设置好两种不同语言，插件便可以在这两种语言之间切换 UI 界面。
 \end{itemize}
 
-目前本插件在blender v4.0以前（不含blender v4.0）支持 17 种语言\footnote{即blender v4.0以前（不含blender v4.0）内置翻译语言列表中Complete和In Progress两个列表中的语言，共17种。暂不考虑加入Starting列表中的语言，因为其变动性较高，有可能被删除或者新添加。}相互切换，详见下表：
+\begin{figure}[h!]
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{toggle_language_button}
+        \caption{「语言切换」按钮}
+    \end{minipage}
+    \quad
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{toggle_language_button_setting}
+        \caption{「语言切换」功能设置}
+        \label{「语言切换」功能设置}
+    \end{minipage}
+\end{figure}
 
+\begin{longtable}{|c|c|}
+    \caption{「语言切换」功能支持的语言列表} \\
+    \hline
+    Blender v2.83-v3.6.x（共17种语言\footnote{即blender v4.0以前（不含blender v4.0）内置翻译语言列表中 Complete 和 In Progress 两个列表中的语言，共17种。暂不考虑加入 Starting 列表中的语言，因为其变动性较高，有可能被删除或者新添加。}） & Blender v4.0+（共18种语言\footnote{即blender v4.0以后（含blender v4.0）内置翻译语言列表中 Complete 和 In Progress 两个列表中的语言，共18种。暂不考虑加入 Starting 列表中的语言，因为其变动性较高，有可能被删除或者新添加。}）  \\
+    \hline
+    \endfirsthead
+
+    \caption{「语言切换」功能支持的语言列表（续）} \\
+    \hline
+    Blender v2.83-v3.6.x（共17种语言\footnote{即blender v4.0以前（不含blender v4.0）内置翻译语言列表中 Complete 和 In Progress 两个列表中的语言，共17种。暂不考虑加入 Starting 列表中的语言，因为其变动性较高，有可能被删除或者新添加。}） & Blender v4.0+（共18种语言\footnote{即blender v4.0以后（含blender v4.0）内置翻译语言列表中 Complete 和 In Progress 两个列表中的语言，共18种。暂不考虑加入 Starting 列表中的语言，因为其变动性较高，有可能被删除或者新添加。}） \\
+    \hline
+    \endhead
+
+    Simplified Chinese (简体中文) & Simplified Chinese (简体中文) \\
+    \hline
+    Traditional Chinese (繁體中文) & Traditional Chinese (繁體中文) \\
+    \hline
+    English (English) & English (English) \\
+    \hline
+    Spanish (Español) & Catalan (Català) \\
+    \hline
+    Japanese (日本語) & Spanish (Español) \\
+    \hline
+    Slovak (Slovenčina) & French (Français) \\
+    \hline
+    Ukrainian (Український) & Japanese (日本語) \\
+    \hline
+    Vietnamese (tiếng Việt) & Slovak (Slovenčina) \\
+    \hline
+    Arabic (ﺔﻴﺑﺮﻌﻟﺍ) & Czech (Čeština) \\
+    \hline
+    Czech (Český) & German (Deutsch) \\
+    \hline
+    German (Deutsch) & Italian (Italiano) \\
+    \hline
+    French (Français) & Georgian (ქართული) \\
+    \hline
+    Italian (Italiano) & Korean (한국어) \\
+    \hline
+    Korean (한국 언어) & (Português do Brasil) \\
+    \hline
+    Brazilian Portuguese (Português do Brasil) & Portuguese (Português) \\
+    \hline
+    Portuguese (Português) & Russian (Русский) \\
+    \hline
+    Russian (Русский) & Ukrainian (Українська) \\
+    \hline
+     & Vietnamese (Tiếng Việt) \\
+    \hline
+\end{longtable}
+
+\subsection{实用工具菜单}
 \begin{itemize}
-    \item Simplified Chinese (简体中文)
-    \item Traditional Chinese (繁體中文)
-    \item English (English)
-    \item Spanish (Español)
-    \item Japanese (日本語)
-    \item Slovak (Slovenčina)
-    \item Ukrainian (Український)
-    \item Vietnamese (tiếng Việt)
-    \item Arabic (ﺔﻴﺑﺮﻌﻟﺍ)
-    \item Czech (Český)
-    \item German (Deutsch)
-    \item French (Français)
-    \item Italian (Italiano)
-    \item Korean (한국 언어)
-    \item Brazilian Portuguese (Português do Brasil)
-    \item Portuguese (Português)
-    \item Russian (Русский)
+    \item 功能名称：实用工具菜单
+    \item 快捷键：无
+    \item 功能介绍：菜单内包含一些实用工具
+\end{itemize}
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{utilities}
+    \caption{实用工具菜单}
+\end{figure}
+
+\subsubsection{删除当前场景中所有集合和物体}
+\begin{itemize}
+    \item 功能名称：删除当前场景中所有集合和物体
+    \item 快捷键：无
+    \item 功能介绍：清空场景，即删除当前场景中的所有集合和物体，但并不会删除其他场景的数据。
+\end{itemize}
+
+\begin{figure}[h!]
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{before_dellete}
+        \caption{删除前的效果}
+    \end{minipage}
+    \quad
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{after_dellete}
+        \caption{删除后的效果}
+    \end{minipage}
+\end{figure}
+
+\subsubsection{添加视频进度条}
+\begin{itemize}
+    \item 功能名称：添加视频进度条
+    \item 快捷键：无
+    \item 功能介绍：在视频剪辑工作区（VSE工作区）的画面顶部空白区域添加视频进度条，如图\myref{视频进度条-复合片段}和图\myref{复合片段「视频进度条」内的子片段}所示。视频进度条为一个复合片段，相关参数为：置于视频顶部，高度44px，透明度0.9，底部进度条颜色RGB（0.45, 0.45, 0.45），滚动进度条颜色RGB（0.255, 0.255, 0.255）。
+    \begin{itemize}
+        \item 注意：若禁用新建数据块名称的翻译功能，该功能添加的效果片段名称为英文名称，不会翻译为当前界面语言。
+        \item P.S. 后续会开发增设一个调整视频进度条参数的窗口。
+    \end{itemize}
 \end{itemize}
 
 \begin{figure}[h!]
     \begin{minipage}[t]{0.48\linewidth}
         \includegraphics[width=\linewidth]{video_progress_bar_meta_strip}
-        \caption{视频进度条 - 复合片段}
-        \label{视频进度条复合片段}
+        \caption{视频进度条-复合片段}
+        \label{视频进度条-复合片段}
     \end{minipage}
     \quad
     \begin{minipage}[t]{0.48\linewidth}
         \includegraphics[width=\linewidth]{video_progress_bar_child_strip}
         \caption{复合片段「视频进度条」内的子片段}
-        \label{视频进度条子片段}
+        \label{复合片段「视频进度条」内的子片段}
     \end{minipage}
+\end{figure}
 
-    \vspace{1ex}
+\subsubsection{导入蓝图（参考图）}
+\begin{itemize}
+    \item 功能名称：导入蓝图（参考图）
+    \item 快捷键：无
+    \item 功能介绍：导入蓝图（参考图）到当前场景，总共支持6视图的参考图导入，即仰视图、俯视图、前视图、后视图、左视图、右视图，如图\myref{「导入蓝图（参考图）」功能}所示。所有参考图缩放基准为前视图的高度，固定显示长度为4M（4米）。
+    \begin{itemize}
+        \item 注意：在使用该功能导入参考图前，请重命名参考图文件，具体命名规则请参考下方的列表。
+    \end{itemize}
+    \item 功能设置：复选框「启用“导入蓝图”的选择」。在本插件的偏好设置面板中，可以设置「导入蓝图（参考图）」功能的选择功能，如图\myref{「导入蓝图（参考图）」功能设置}所示。默认为禁用，即导入蓝图（参考图）在Blender的3D视图中是无法被选中的。
+\end{itemize}
 
+\begin{figure}[h!]
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{import_blueprint}
+        \caption{「导入蓝图（参考图）」功能}
+        \label{「导入蓝图（参考图）」功能}
+    \end{minipage}
+    \quad
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{import_blueprint_setting}
+        \caption{「导入蓝图（参考图）」功能设置}
+        \label{「导入蓝图（参考图）」功能设置}
+    \end{minipage}
+\end{figure}
+
+\noindent \textbf{「导入蓝图（参考图）」功能支持的参考图文件格式和命名规则列表：}
+\begin{itemize}
+    \item 在导入前，请重命名参考图文件，实际添加[连接符]和[后缀]即可
+    \item 命令规则：[文件的旧文件名称]+[连接符]+[后缀]+[文件格式]
+    \begin{itemize}
+        \item 文件格式，即文件后缀名，不要求必须为小写字母，只要是符合的文件格式均支持，例如\lstinline|.png|、\lstinline|.Png|、\lstinline|.PNG|等。
+    \end{itemize}
+    \item 示例参考图文件名：
+    \begin{itemize}
+        \item 1.俯视图.png
+        \item pen-topview.png
+        \item 小刀\_left-view.jpg
+    \end{itemize}
+\end{itemize}
+
+\begin{longtable}{|*{2}{c|}m{210pt}|}
+    \caption{参考图文件格式和命名规则列表} \\
+    \hline
+    支持的参考图文件格式 & 文件名支持的连接符 & 文件名支持的后缀（中英文后缀均支持） \\
+    \hline
+    \endfirsthead
+
+    \caption{参考图文件格式和命名规则列表（续）} \\
+    \hline
+    支持的参考图文件格式 & 文件名支持的连接符 & 文件名支持的后缀（中英文后缀均支持） \\
+    \hline
+    \endhead
+
+    .png & 短杠\lstinline|-| & bottom | bottomview | bottom-view | bottom\_view |仰 | 仰视 | 仰视图\\
+    \hline
+    .jpg & 下划线\lstinline|_| & top | topview | top-view | top\_view | 俯 | 俯视 | 俯视图 | 顶 | 顶视 | 顶视图 \\
+    \hline
+    .jpeg & 一个空格\lstinline| | & front | frontview | front-view | front\_view |前 | 前视 | 前视图 \\
+    \hline
+    .jp2 & 小数点\lstinline|.| & rear | rearview | rear-view | rear\_view | 后 | 后视 | 后视图 \\
+    \hline
+    .bmp &  & left | leftview | left-view | left\_view | 左 | 左视 | 左视图 \\
+    \hline
+    .webp &  & right | rightview | right-view | right\_view | 右 | 右视 | 右视图\\
+    \hline
+\end{longtable}
+
+\subsection{设置菜单}
+\begin{itemize}
+    \item 功能名称：设置菜单
+    \item 快捷键：无
+    \item 功能介绍：插件的个性化设置
+\end{itemize}
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{setting_menu}
+    \caption{实用工具菜单}
+\end{figure}
+
+\subsubsection{UI提示方案菜单}
+\begin{itemize}
+    \item 功能名称：UI提示方案菜单
+    \item 快捷键：无
+    \item 功能介绍：菜单内含有相应UI提示的两个方案。
+\end{itemize}
+
+\noindent \textbf{「UI提示方案菜单」选项：}
+\begin{enumerate}
+    \item 默认模式：禁用「开发选项」「Python 工具提示」，如图\myref{UI 提示方案菜单：默认模式}所示。
+    \item 开发者模式：启用「开发选项」「Python 工具提示」，如图\myref{UI 提示方案菜单：开发者模式}所示。
+\end{enumerate}
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{hint_menu}
+    \caption{UI提示方案菜单}
+\end{figure}
+
+\begin{figure}[h!]
     \begin{minipage}[t]{0.48\linewidth}
         \includegraphics[width=\linewidth]{default_hint}
-        \caption{UI提示方案菜单：默认模式}
-        \label{默认提示方案}
+        \caption{UI 提示方案菜单：默认模式}
+        \label{UI 提示方案菜单：默认模式}
     \end{minipage}
     \quad
     \begin{minipage}[t]{0.48\linewidth}
         \includegraphics[width=\linewidth]{developer_hint}
-        \caption{UI提示方案菜单：开发者模式}
-        \label{开发者提示方案}
-    \end{minipage}
-
-    \vspace{1ex}
-
-    \begin{minipage}[t]{0.45\linewidth}
-        \includegraphics[width=\linewidth]{translate_name_option_addon}
-        \caption{插件中的翻译新建数据块名称的选项}
-        \label{插件的翻译名称选项}
-    \end{minipage}
-    \quad
-    \begin{minipage}[t]{0.5\linewidth}
-        \includegraphics[width=\linewidth]{translate_name_option_pref}
-        \caption{偏好设置中的翻译新建数据块名称的选项}
-        \label{偏好设置的的翻译名称选项}
+        \caption{UI 提示方案菜单：开发者模式}
+        \label{UI 提示方案菜单：开发者模式}
     \end{minipage}
 \end{figure}
 
-\clearpage
-
-\begin{figure}
-    \includegraphics[width=\linewidth]{translate_name_option_effect}
-    \caption{翻译新建数据块名称的效果（图示界面语言为简中）}
-    \label{翻译名称的效果}
-\end{figure}
-
-\subsubsection{插件的键位映射}
-\hypertarget{AddonKeymaps}{}
-本插件的偏好设置面板中，允许修改插件的键位映射，设置方法和Blender原生的键位映射设置方法一样，如图\myref{插件的键位映射功能}所示。修改键位映射后，均会自动保存相应修改。
+\subsubsection{翻译新建数据块的名称}
+\begin{itemize}
+    \item 功能名称：UI提示方案菜单
+    \item 快捷键：无
+    \item 功能介绍：启用/禁用新建数据块名称的翻译功能\footnote{v1.1之后版本的插件不再是强制接管该功能。虽然可以通过用户偏好设置来设置一个不同于插件的设置值，但在使用插件的该功能或者语言切换按钮后，插件会对该项改写修正为插件的设置值。}，默认值为禁用，如图\myref{插件中的翻译新建数据块名称的选项}所示，其对应在偏好设置中的选项如图\myref{偏好设置中的翻译新建数据块名称的选项}所示。在非英语界面环境中，启用该功能可使 blender 新建数据块的名称为当前语言，如图\myref{翻译新建数据块名称的效果（图示界面语言为简中）}所示，新建平面的名称为「平面」，而非「plane」。
+\end{itemize}
 
 \begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\linewidth]{addon_keymaps}
-    \caption{插件的键位映射功能}
-    \label{插件的键位映射功能}
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{translate_name_option_addon}
+        \caption{插件中的翻译新建数据块名称的选项}
+        \label{插件中的翻译新建数据块名称的选项}
+    \end{minipage}
+    \quad
+    \begin{minipage}[t]{0.48\linewidth}
+        \includegraphics[width=\linewidth]{translate_name_option_pref}
+        \caption{偏好设置中的翻译新建数据块名称的选项}
+        \label{偏好设置中的翻译新建数据块名称的选项}
+    \end{minipage}
 \end{figure}
 
-\subsubsection{我的Blender设置（我本人的一些blender设置参数）}
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{translate_name_option_effect}
+    \caption{翻译新建数据块名称的效果（图示界面语言为简中）}
+    \label{翻译新建数据块名称的效果（图示界面语言为简中）}
+\end{figure}
+
+\subsubsection{加载我的Blender设置}
+\begin{itemize}
+    \item 功能名称：加载我的Blender设置
+    \item 快捷键：无
+    \item 功能介绍：部署我个人的偏好设置。所涉及的设置选项详见下方\hyperlink{MySettings}{我的Blender设置（我本人的一些 blender 设置参数）}。
+    \begin{itemize}
+        \item 注意：\textbf{该功能默认会覆盖你原有的 blender 设置（启动文件和偏好设置），请详细了解所涉及的设置项后再确认是否使用该功能。}\footnote{理论上支持任意系统、任意安装路径、任意显卡平台的情况，但Linux OS和Mac OS比较少测试，可能会存在有bug。}
+    \end{itemize}
+\end{itemize}
+
+\noindent \textbf{我的Blender设置（我本人的一些blender设置参数）}
+
 \hypertarget{MySettings}{}
 开发这个功能主要是为了方便我一键设置恢复个人的偏好设置，比如更换设备使用blender时，通过下载安装本插件就可以一键恢复设置，而无需拷贝配置文件。
 
-详细的设置参数情况如下：
+\noindent 详细的设置参数情况如下：
 \begin{enumerate}
     \item 偏好设置部分：
     \begin{enumerate}
@@ -339,12 +487,13 @@ blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前�
             \item 输出属性>输出路径：D:/process/
         \end{enumerate}
         \item 顶部菜单栏>文件>外部数据>自动打包资源
+        \item 窗口活动工作区->新增「视频编辑」工作区
     \end{enumerate}
 \end{enumerate}
 
 考虑到「加载我的设置」功能比较偏个性化，并非适合所有人，所以我专门又开发设计了一些设置值来控制其中部分功能。如果你想用「加载我的设置」功能，但又不喜欢其中所有功能，就可以通过这些设置值来单独控制。这些设置值位于插件偏好设置面板中，如图\myref{加载我的设置的设置参数}所示，首先设置对应参数，再应用「加载我的设置」功能。
 
-关于「加载我的设置」的一些设置参数如下：
+\noindent 关于「加载我的设置」的一些设置参数如下：
 \hypertarget{加载我的设置小节}{}
 \begin{itemize}
     \item 禁用路径设置：禁用路径参数设置（默认不启用，即设置路径参数）。
@@ -360,25 +509,56 @@ blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前�
     \label{加载我的设置的设置参数}
 \end{figure}
 
-\subsubsection{关于使用翻译新建数据块的名称按钮的说明}
+\subsubsection{加载Blender初始设置}
+\begin{itemize}
+    \item 功能名称：加载Blender初始设置
+    \item 快捷键：无
+    \item 功能介绍：加载初始的偏好设置和启动文件，即重置 blender，还原成初次安装blender时的状态。
+\end{itemize}
+
+\subsubsection{检查插件更新}
+\begin{itemize}
+    \item 功能名称：检查插件更新
+    \item 快捷键：无
+    \item 功能介绍：检查插件更新情况。基于\href{https://github.com/Mister-Kin/ToggleLanguage/releases}{GitHub Rleases}的版本信息，插件会自动检查最新版本和自动下载更新。
+\end{itemize}
+
+\subsection{用户偏好设置}
+\begin{itemize}
+    \item 功能名称：用户偏好设置
+    \item 快捷键：无
+    \item 功能介绍：打开用户偏好设置窗口。插件允许自定义该功能的快捷键，详见「\nameref{插件的键位映射}」小节内容。
+\end{itemize}
+
+\subsection{插件的键位映射}
+\label{插件的键位映射}
+本插件的偏好设置面板中，允许修改插件的键位映射，设置方法和Blender原生的键位映射设置方法一样，如图\myref{插件的键位映射功能}所示。修改键位映射后，均会自动保存相应修改。
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{addon_keymaps}
+    \caption{插件的键位映射功能}
+    \label{插件的键位映射功能}
+\end{figure}
+
+\subsection{关于使用翻译新建数据块的名称按钮的说明}
 需要注意的是，翻译新建数据块的名称按钮设置值是无法随用户偏好设置自动保存。该功能的代码实现：其 property 属性值是注册在 bpy.types.Scene 中。因此，无法通过用户偏好设置中自动保存设置的功能进行存储。不像本插件偏好设置面板中的两种语言的属性值，后者是通过 bpy.types.AddonPreferences 类实现的，它可以通过用户偏好设置中自动保存设置的功能进行存储\footnote{实际上，在禁用用户偏好设置的自动保存设置功能后，本插件偏好设置面板中的两种语言的属性值也无法自动存储，需要保存在某一工程文件中才行。}。
 
 建议：若需要保存该功能的设置值，请保存一个工程文件\footnote{保存在启动文件也是可行的。}（.blend），该功能的设置值会保存在这个工程文件。
 
-\section{已知问题}
-\subsection{加载初始设置按钮导致闪退}
+\chapter{已知问题}
+\section{加载初始设置按钮导致闪退}
 在未保存工程文件\footnote{例如通过安装路径打开主程序的情况或者打开一个工程文件后进行修改却未保存的情况。}（.blend）的情况下，加载初始设置功能会有机率引起异常码EXCEPTION\_ACCESS\_VIOLATION，从而导致blender闪退，目前暂未查明原因。在导致blender闪退时，重置功能的代码执行的不完整，一般是成功地加载初始偏好设置并保存，而初始启动文件并未成功加载并保存。因此，在该功能导致blender闪退后，还请用户自行重置偏好设置及启动文件。
 
 建议：在使用该功能之前，请先保存一个工程文件（.blend）。
 
-\section{开发记录}
-\subsection{开发与测试环境}
+\chapter{开发记录}
+\section{开发与测试环境}
 \begin{itemize}
-    \item OS: Win11 v24H2 / Win10 v22H2 / Kali Linux 2021.3 / Mac
-    \item Blender: v2.83 ‑ v4.3.2
+    \item OS: Win11 v24H2 / Win10 v22H2 / Kali Linux 2021.3 / MacOS
+    \item Blender: v2.83 ‑ v4.4.3
 \end{itemize}
 
-\subsection{更新历史}
+\section{更新历史}
 表\myref{更新历史}记录了本插件各个版本的更新历史。
 \begin{longtable}{|*{2}{c|}m{300pt}|}
     \caption{插件的更新历史}\label{更新历史} \\
@@ -393,6 +573,8 @@ blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前�
     \hline
     \endhead
 
+    \href{https://github.com/Mister-Kin/ToggleLanguage/releases/tag/v1.6.3}{v1.6.3} & 2025-03-28 & 新增功能：导入蓝图参考图；检查插件更新；代码优化：修改个别标签文字的描述……\\
+    \hline
     \href{https://github.com/Mister-Kin/ToggleLanguage/releases/tag/v1.6.2}{v1.6.2} & 2024-12-15 & 新增功能：插件键位映射；优化：为操作器确认对话框添加更多提示信息；优化：润色部份提示文字……\\
     \hline
     \href{https://github.com/Mister-Kin/ToggleLanguage/releases/tag/v1.6.1}{v1.6.1} & 2024-07-01 & 在blender v4.1中为OpenImageDenoise启用gpu；支持blender v4.2\\
@@ -440,9 +622,9 @@ blender v4.2之后版本（含v4.2）的本地安装方式和blender v4.2之前�
 \note{更多详细的信息，请查看 \href{https://github.com/Mister-Kin/ToggleLanguage/releases}{Release Notes}。}
 
 \section{作者}
-\textbf{ToggleLanguage} © Mr. Kin, 项目代码采用 \href{https://github.com/Mister-Kin/ToggleLanguage/blob/master/LICENSE}{GNU GPL v3.0} 许可协议进行发布。
+\noindent \textbf{ToggleLanguage} © Mr. Kin, 项目代码采用 \href{https://github.com/Mister-Kin/ToggleLanguage/blob/master/LICENSE}{GNU GPL v3.0} 许可协议进行发布。
 
-由 Mr. Kin 著作并维护。
+\noindent 由 Mr. Kin 著作并维护。
 
 \inputBibliography
 \appendix
