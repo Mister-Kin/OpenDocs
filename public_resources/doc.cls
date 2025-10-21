@@ -14,7 +14,7 @@
 % 文类版本设定
 % -----------------------------------------------
 \NeedsTeXFormat{LaTeX2e} % 该文类所需的 Tex 系统版本。
-\ProvidesClass{doc}[2025/06/02 v2.1.9 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
+\ProvidesClass{doc}[2025/10/22 v2.2.0 General Document Template] % 该文类的名称、发布日期、版本序号等。（date 的写法格式为 YYYY/MM/DD，其中月和日不能写成一位。否则编译会报两个错误 Missing = inserted for \ifnum. 和 Missing number, treated as zero.）
 
 % -----------------------------------------------
 % 文类新选项设定
@@ -57,6 +57,10 @@
 \newtoks\DocumentTitle
 \newtoks\DocumentSubtitle
 \newtoks\DocumentCreatedDate
+\newtoks\DocumentCoverImage
+\newtoks\DocumentCoverImageTopMargin
+\newtoks\DocumentCoverImageBottomMargin
+\newtoks\DocumentCoverImageScale
 % 文档作者信息
 \newtoks\AuthorName
 \newtoks\AuthorEmail
@@ -105,7 +109,34 @@
                 Edited:  & \hspace{-0.8em} \number\year-\twodigits{\number\month}-\twodigits{\number\day} \\
             \end{tabular}
         \end{flushright}
-        \vspace{25ex}
+
+        \DetectToksEmpty\DocumentCoverImage
+        \ifToksEmpty
+            \vspace{25ex}
+        \else
+            \DetectToksEmpty\DocumentCoverImageTopMargin
+            \ifToksEmpty
+                \vspace{10ex}
+            \else
+                \vspace{\the\DocumentCoverImageTopMargin}
+            \fi
+            \DetectToksEmpty\DocumentCoverImageScale
+            \ifToksEmpty
+                \begin{center}
+                    \includegraphics[scale=0.2]{\the\DocumentCoverImage}
+                \end{center}
+            \else
+                \begin{center}
+                    \includegraphics[scale=\the\DocumentCoverImageScale]{\the\DocumentCoverImage}
+                \end{center}
+            \fi
+            \DetectToksEmpty\DocumentCoverImageBottomMargin
+            \ifToksEmpty
+                \vspace{5ex}
+            \else
+                \vspace{\the\DocumentCoverImageBottomMargin}
+            \fi
+        \fi
 
         \begin{center}
             {\zihao{2}\bfseries \the\DocumentTitle}
