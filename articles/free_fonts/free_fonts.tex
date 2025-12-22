@@ -1,14 +1,14 @@
-\documentclass{../../PublicResources/DocClass}
+\documentclass{../../public_resources/doc}
 
-    \PathPublicResources{../../PublicResources}
+    \PathPublicResources{../../public_resources}
 
     \DocumentTitle{免费商用字体}
     \DocumentSubtitle{}
-    \DocumentCreatedDate{2019/8/6}
+    \DocumentCreatedDate{2019-08-06}
 
     \LinkBlogPost{}
     \LinkBlogPostMirror{}
-    \LinkPDF{https://pan.baidu.com/s/1Tn7qIO0raqvNoesgT8SKow}
+    \LinkPDF{https://github.com/Mister-Kin/OpenDocs/releases/download/latex2pdf/free_fonts.pdf}
     \LinkPDFAccessCode{docs}
     \LinkLaTeX{https://github.com/Mister-Kin/OpenDocs/tree/master/Articles/FreeCommercialFonts}
     \LinkVideo{}
@@ -16,7 +16,7 @@
     \AuthorName{Mr. Kin}
     \AuthorEmail{im.misterkin@gmail.com}
     \AuthorBlog{https://mister-kin.github.io}
-    \AuthorBlogMirror{https://mister-kin.gitee.io}
+    \AuthorBlogMirror{}
 
 \begin{document}
 \maketitle
@@ -27,29 +27,6 @@
 
 % 正文
 \chapter{免费商用字体}
-\section{介绍}
-
-\section{字体的安装及更新}
-在win多用户平台上直接点击“安装”选项可能会使某些软件无法检测到该字体，例如Blender，故要“为所有用户安装”。部分软件不识别字体的中文名称，请找字族(Font Family)中对应的英文名称；若字族里无英文名称，那软件应该便会显示其中文名称。
-
-\subsection{单个字体安装}
-选择字体文件，右键点击选择“为所有用户安装”。
-
-\subsection{批量安装字体}
-选中多个字体文件（框选或者点击多选），右键点击选择“为所有用户安装”。
-
-\subsection{更新问题}
-更新替换字体时，若出现无法删除的现象，是因为占用，重启即可清除。
-
-\section{字体格式说明}
-\subsection{TTC}
-TTC字体是TrueType字体集成文件(.TTC文件)，是在一单独文件结构中包含多种字体,以便更有效地共享轮廓数据,当多种字体共享同一笔画时,TTC技术可有效地减小字体文件的大小。TTC是几个TTF合成的字库，安装后字体列表中会看到两个以上的字体。两个字体中大部分字都一样时，可以将两种字体做成一个TTC文件，常见的TTC字体，因为共享笔划数据，所以大多这个集合中的字体区别只是字符宽度不一样，以便适应不同的版面排版要求。而TTF字体则只包含一种字型。
-
-\subsection{OTF}
-OpenType也叫Type 2字体，是由Microsoft和Adobe公司开发的另外一种字体格式。它也是一种轮廓字体，比TrueType更为强大，最明显的一个好处就是可以在把PostScript字体嵌入到TrueType的软件中。并且还支持多个平台，支持很大的字符集，还有版权保护。苹果机与PC机都能很好应用的兼容字体！
-
-\subsection{TTF}
-ttf版本的字体支持内嵌到Office文件，因此比otf技术底层的版本更适合与前端办公。PC机应用较好，苹果机兼容性很差！
 
 \section{开源字体集}
 开源不等于免费。GPL具有传染性，若GLP字体不附带「GPL 字型例外」（GPL font exception）协议进行阻断，则视为传染。因此，此项目一般不收集GPL字体。若收集有GPL协议的字体，则肯定是附带GPL font exception协议。
@@ -64,11 +41,19 @@ ttf版本的字体支持内嵌到Office文件，因此比otf技术底层的版�
         \item 瀬戸フォント‑SP\dag、851 手書き雑フォント\dag：Japanese。
     \end{enumerate}
     \item 「收录版本」记录字体的版本信息，如果原作者未说明具体版本信息，则记录字体文件属性的版本号。倘若连字体文件属性的版本号也不存在，则记录字体文件发表日期。
-    \item 若字体打包中含有多格式时，如otf，ttf等，统一选择otf格式进行安装。
+    \item 若字体打包中含有多格式时，如otf，ttf等，建议统一选择otf格式进行安装。
     \item 因特殊原因需修改字体信息并重新打包的操作流程均在fontforge软件中完成。
 \end{enumerate}
 
 {
+% 自定义字体族命令
+\newCJKfontfamily\sourcehansans{思源黑体}
+\newfontfamily\sourcehansanslatin{思源黑体}
+\newCJKfontfamily\sourcehanserif{思源宋体}
+\newfontfamily\sourcehanseriflatin{思源宋体}
+\newCJKfontfamily\hkkai{Free-HK-Kai_4700-v1.02.ttf}
+\newCJKfontfamily\hkkailatin{Free-HK-Kai_4700-v1.02.ttf}
+
 \zihao{5}
 \setlength{\LTleft}{-5em}
 \begin{longtable}{|*{6}{c|}}
@@ -84,14 +69,14 @@ ttf版本的字体支持内嵌到Office文件，因此比otf技术底层的版�
     \hline
     \endhead
 
-    \multirow{3}{*}{Adobe\&Google} & \href{https://github.com/adobe-fonts/source-han-sans/releases}{思源黑体} & Source Han Sans SC & 简繁日韩|黑 & \multirow{2}{*}{SIL OFL, v1.1} & v2.004 \\
+    \multirow{3}{*}{Adobe\&Google} & \href{https://github.com/adobe-fonts/source-han-sans/releases}{\sourcehansans 思源黑体} & \sourcehansanslatin{Source Han Sans SC} & 简繁日韩|黑 & \multirow{2}{*}{SIL OFL, v1.1} & v2.005 \\
     \cline{2-4} \cline{6-6}
-    & \href{https://github.com/adobe-fonts/source-han-serif/tree/release}{思源宋体} & Source Han Serif SC & 简繁日韩|宋 & & v1.001 \\
+    & \href{https://github.com/adobe-fonts/source-han-serif/releases}{\sourcehanserif 思源宋体} & \sourcehanseriflatin{Source Han Serif SC} & 简繁日韩|宋 & & v2.003 \\
     \cline{2-6}
-    & \multicolumn{5}{l|}{注：均选用Language-specific SC版。Adobe版为思源，google版为NOTO(no toufo)。} \\
+    & \multicolumn{5}{l|}{注：均选用Language-specific SC版。Adobe版称为思源，google版称为NOTO(no toufo)。} \\
     \hline
 
-    香港自由字型 & \href{https://freehkfonts.opensource.hk/download/}{自由香港楷書 (4700字)}\textsuperscript{\dag} & Free HK Kai 4700 & 繁|楷 & CC-BY 4.0 & v1.02 \\
+    香港自由字型 & \href{https://freehkfonts.opensource.hk/download/}{\hkkai 自由香港楷書 (4700字)}\textsuperscript{\dag} & \hkkailatin{Free HK Kai 4700} & 繁|楷 & CC-BY 4.0 & v1.02 \\
     \hline
     瀬戸のぞみ & \href{https://osdn.net/projects/setofont/}{瀬戸フォント-SP}\textsuperscript{\dag} & SetoFont-SP & 简繁日|艺 & SIL OFL, v1.1 & v6.20 \\
     \hline
@@ -204,6 +189,8 @@ ttf版本的字体支持内嵌到Office文件，因此比otf技术底层的版�
     \cline{2-3}\cline{6-6}
     & \href{http://zhs.glyphwiki.org/wiki/Special:Search?search=DaigoMinteu&buttons=%E6%9F%A5%E7%9C%8B}{醍醐明朝B}\textsuperscript{\dag} & DaigoMinteuB & & & gw1982184 \\
     \hline
+    lxgw & \href{https://github.com/lxgw/LxgwWenKai/releases}{霞鹜文楷} & LXGW WenKai & 仿宋|楷体 & SIL OFL, v1.1  & v1.112\\
+    \hline
 \end{longtable}
 }
 
@@ -223,15 +210,18 @@ ttf版本的字体支持内嵌到Office文件，因此比otf技术底层的版�
     \hline
     \endhead
 
-    \multirow{3}{*}{Adobe\&Google} & \href{https://github.com/adobe-fonts/source-sans/releases}{Source Sans 3} & 无衬线 & \multirow{3}{*}{SIL OFL, v1.1} & v3.046 \\
+    \multirow{3}{*}{Adobe\&Google} & \href{https://github.com/adobe-fonts/source-sans/releases}{Source Sans 3} & 无衬线 & \multirow{3}{*}{SIL OFL, v1.1} & v3.052 \\
     \cline{2-3} \cline{5-5}
-    & \href{https://github.com/adobe-fonts/source-serif/releases}{Source Serif 4} & 衬线|罗马 & & v4.004 \\
+    & \href{https://github.com/adobe-fonts/source-serif/releases}{Source Serif 4} & 衬线|罗马 & & v4.005 \\
     \cline{2-3} \cline{5-5}
-    & \href{https://github.com/adobe-fonts/source-code-pro/releases}{Source Code Pro} & 等宽|代码 & & v2.038/v1.058 \\
+    & \href{https://github.com/adobe-fonts/source-code-pro/releases}{Source Code Pro} & 等宽|代码 & & v2.042/v1.062 \\
+    \hline
+    \cline{2-5}
+    & \multicolumn{4}{l|}{注：只安装Source Serif 4本体，不装Caption、Display、SmText、Subhead} \\
     \hline
     Phoenix Phonts & \href{https://www.fontspace.com/harry-p-font-f44342}{Harry P} & 艺|哈利波特 & Freeware & v2020/3/25 \\
     \hline
-    \multirow{2}{*}{SIL International} & \href{https://software.sil.org/doulos/download/}{Doulos SIL} & 衬线 & SIL OFL, v1.1 & v6.001 \\
+    \multirow{2}{*}{SIL International} & \href{https://software.sil.org/doulos/download/}{Doulos SIL} & 衬线 & SIL OFL, v1.1 & v7.000 \\
     \cline{2-5}
     & \multicolumn{4}{l|}{注：设计类似Times/Times New Roman，主要用于音标排版} \\
     \hline
@@ -254,6 +244,28 @@ ttf版本的字体支持内嵌到Office文件，因此比otf技术底层的版�
 \end{longtable}
 }
 
+\section{字体的安装及更新}
+在Windows系统平台上直接点击“安装”选项可能会使某些软件无法检测到该字体，例如Blender，故要“为所有用户安装”。部分软件不识别字体的中文名称，请找字族(Font Family)中对应的英文名称；若字族里无英文名称，那软件应该便会显示其中文名称。
+
+\subsection{单个字体安装}
+选择字体文件，右键点击选择“为所有用户安装”。
+
+\subsection{批量安装字体}
+选中多个字体文件（框选或者点击多选），右键点击选择“为所有用户安装”。
+
+\subsection{更新问题}
+更新替换字体时，若出现无法删除的现象，是因为占用，重启即可清除。
+
+\section{字体格式说明}
+\subsection{TTC}
+TTC字体是TrueType字体集成文件(.TTC文件)，是在一单独文件结构中包含多种字体,以便更有效地共享轮廓数据,当多种字体共享同一笔画时,TTC技术可有效地减小字体文件的大小。TTC是几个TTF合成的字库，安装后字体列表中会看到两个以上的字体。两个字体中大部分字都一样时，可以将两种字体做成一个TTC文件，常见的TTC字体，因为共享笔划数据，所以大多这个集合中的字体区别只是字符宽度不一样，以便适应不同的版面排版要求。而TTF字体则只包含一种字型。
+
+\subsection{OTF}
+OpenType也叫Type 2字体，是由Microsoft和Adobe公司开发的另外一种字体格式。它也是一种轮廓字体，比TrueType更为强大，最明显的一个好处就是可以在把PostScript字体嵌入到TrueType的软件中。并且还支持多个平台，支持很大的字符集，还有版权保护。苹果机与PC机都能很好应用的兼容字体！
+
+\subsection{TTF}
+ttf版本的字体支持内嵌到Office文件，因此比otf技术底层的版本更适合与前端办公。PC机应用较好，苹果机兼容性很差！
+
 \section{中文字体的繁体使用}
 如何使用繁体字：使用输入法输入繁体字，不要使用输入简体就可以得到繁体的字体。这类字体被称为“伪繁体”，在简繁转换上具有致命的缺陷。一些简体字与繁体字并不是一一对应的关系，而字体中编码和字形是一一对应的，所以伪繁体字库中这类简体字编码只能在多个对应的繁体字字形里选择一个来映射。使用伪繁体字库一般会出现这样的问题：输入人体部位 “头发”，得到的是错误的 “頭發” 而非正确的 “頭髮”。
 
@@ -266,17 +278,13 @@ ttf版本的字体支持内嵌到Office文件，因此比otf技术底层的版�
 \chapter{常见字体许可}
 \begin{enumerate}
     \item 商业字体：商业字体（Commercial）也就是正规的商业发行版，这种字体本应通过正规购买方式获得。
-
     \item 免费字体：免费字体（Freeware）是指用户可以无限制（包括：个人使用、商业使用）免费使用字体的版本，用户可能无法享用某些高级功能。其中有一部分免费字体通过自愿性的资助或者捐献，字体开发者从而获得补酬。
-
     \item 个人免费字体：个人免费字体是免费字体的子集，是指个人用户（不包括：商业使用）可以无限制免费使用字体的版本，用户可能无法享用某些高级功能。
-
     \item 共享字体：共享字体（Shareware）也包括试用字体（Trailware），是以“先使用后付费”的方式销售的享有版权的字体。根据共享字体作者的授权，用户可以从各种渠道免费得到它的拷贝，也可以自由传播它。用户可以先使用或试用共享字体，认为满意后再向作者付费；如果您认为它不值得您花钱购买商业授权，可以停止使用。
-
     \item 演示字体：演示字体（Demoware）是试用字体接近，但演示字体一般没有精减字形数量，但演示字体一般会在字形上打上特殊的标记或DEMO字样。
-
     \item 自由字体：自由字体（Free Software）向使用者提供没有任何限制的使用权限，遵循相关的自由软件授权协议允许任何人对该字体进行二次开发或用于商业用途，甚至有时会提供字体源代码，这种也称为开源字体（Open Source）。
-
 \end{enumerate}
+
+\chapter{TODO记录fontforge的查询font name的过程}
 
 \end{document}
