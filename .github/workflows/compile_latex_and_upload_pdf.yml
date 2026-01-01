@@ -59,18 +59,28 @@ jobs:
           cls_file_is_in_project_dir: false
           access_token: ${{ secrets.ACCESS_TOKEN }}
 
-      # - name: Compile free_fonts
-      #   if: ${{ (steps.filter.outputs.free_fonts == 'true') || (steps.filter.outputs.public_resources == 'true') }}
-      #   uses: Mister-Kin/actions/compile-latex-and-upload-pdf@main
-      #   with:
-      #     latex_project_dir: articles/free_fonts
-      #     cls_file_is_in_project_dir: false
-      #     access_token: ${{ secrets.ACCESS_TOKEN }}
-
       - name: Compile toggle_language
         if: ${{ (steps.filter.outputs.toggle_language == 'true') || (steps.filter.outputs.public_resources == 'true') }}
         uses: Mister-Kin/actions/compile-latex-and-upload-pdf@main
         with:
           latex_project_dir: manuals/toggle_language
+          cls_file_is_in_project_dir: false
+          access_token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Install fonts for compiling free_fonts
+        if: ${{ (steps.filter.outputs.free_fonts == 'true') || (steps.filter.outputs.public_resources == 'true') }}
+        uses: Mister-Kin/actions/install-fonts@main
+        with:
+          font_name: |
+            AlibabaPuHuiTi3.0
+            shetumodengxiaofangti
+            FreeHKKai4700
+            pinrushouxieti
+
+      - name: Compile free_fonts
+        if: ${{ (steps.filter.outputs.free_fonts == 'true') || (steps.filter.outputs.public_resources == 'true') }}
+        uses: Mister-Kin/actions/compile-latex-and-upload-pdf@main
+        with:
+          latex_project_dir: articles/free_fonts
           cls_file_is_in_project_dir: false
           access_token: ${{ secrets.ACCESS_TOKEN }}

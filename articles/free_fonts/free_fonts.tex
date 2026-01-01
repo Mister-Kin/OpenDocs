@@ -9,8 +9,8 @@
     \LinkBlogPost{}
     \LinkBlogPostMirror{}
     \LinkPDF{https://github.com/Mister-Kin/OpenDocs/releases/download/latex2pdf/free_fonts.pdf}
-    \LinkPDFAccessCode{docs}
-    \LinkLaTeX{https://github.com/Mister-Kin/OpenDocs/tree/master/Articles/FreeCommercialFonts}
+    \LinkPDFAccessCode{}
+    \LinkLaTeX{https://github.com/Mister-Kin/OpenDocs/tree/master/articles/free_fonts}
     \LinkVideo{}
 
     \AuthorName{Mr. Kin}
@@ -26,63 +26,58 @@
 \mainmatter
 
 % 正文
-\chapter{免费商用字体}
+\chapter{免费商用字体集}
+中文字体集请参阅表\myref{中文字体集}；英文字体集请参阅表\myref{英文字体集}。
 
-\section{开源字体集}
-开源不等于免费。GPL具有传染性，若GLP字体不附带「GPL 字型例外」（GPL font exception）协议进行阻断，则视为传染。因此，此项目一般不收集GPL字体。若收集有GPL协议的字体，则肯定是附带GPL font exception协议。
+点击「字体名称」超链接可跳转至字体的原下载页面；点击「收录版本」超链接可跳转至本人Github分发链接。
 
-完整的中文字体集和英文字体集请分别参阅表\myref{中文字体集}和表\myref{英文字体集}。
-
-\subsubsection{关于字体集表格的几点说明}
-\begin{enumerate}
-    \item 表\myref{中文字体集}中的「字体名称」指语言属性为Chinese (PRC)时的名称；「英文名称」则是指语言属性为English (US)时的名称。其中，字体名称若含有\textsuperscript{\dag}符号则表明语言属性不是Chinese (PRC)，具体请参阅以下列表：
-    \begin{enumerate}
-        \item 自由香港楷書 (4700字)\dag：Chinese(Hong Kong)。
-        \item 瀬戸フォント‑SP\dag、851 手書き雑フォント\dag：Japanese。
-    \end{enumerate}
-    \item 「收录版本」记录字体的版本信息，如果原作者未说明具体版本信息，则记录字体文件属性的版本号。倘若连字体文件属性的版本号也不存在，则记录字体文件发表日期。
-    \item 若字体打包中含有多格式时，如otf，ttf等，建议统一选择otf格式进行安装。
-    \item 因特殊原因需修改字体信息并重新打包的操作流程均在fontforge软件中完成。
-\end{enumerate}
-
-{
-% 自定义字体族命令
+\section{免费商用中文字体集}
+% 自定义中文字体族命令
 \newCJKfontfamily\sourcehansans{思源黑体}
 \newfontfamily\sourcehansanslatin{思源黑体}
 \newCJKfontfamily\sourcehanserif{思源宋体}
 \newfontfamily\sourcehanseriflatin{思源宋体}
-\newCJKfontfamily\hkkai{Free-HK-Kai_4700-v1.02.ttf}
-\newCJKfontfamily\hkkailatin{Free-HK-Kai_4700-v1.02.ttf}
-
+\newCJKfontfamily\alibabapuhuiti{AlibabaPuHuiTi-3-55-Regular.otf}[Path=./Fonts/AlibabaPuHuiTi3.0/]
+\newfontfamily\alibabapuhuitilatin{AlibabaPuHuiTi-3-55-Regular.otf}[Path=./Fonts/AlibabaPuHuiTi3.0/]
+\newCJKfontfamily\shetumodengxiaofangti{摄图摩登小方体.ttf}[Path=./Fonts/]
+\newfontfamily\shetumodengxiaofangtilatin{摄图摩登小方体.ttf}[Path=./Fonts/]
+\newCJKfontfamily\hkkai{Free-HK-Kai_4700-v1.02.ttf}[Path=./Fonts/]
+\newCJKfontfamily\hkkailatin{Free-HK-Kai_4700-v1.02.ttf}[Path=./Fonts/]
+\newCJKfontfamily\pinrushouxieti{品如手写体.ttf}[Path=./Fonts/]
+\newCJKfontfamily\pinrushouxietilatin{品如手写体.ttf}[Path=./Fonts/]
+{
 \zihao{5}
-\setlength{\LTleft}{-5em}
+\setlength{\LTleft}{-5.3em}
 \begin{longtable}{|*{6}{c|}}
     \caption{免费商用中文字体集}\label{中文字体集} \\
     \hline
-    开发者 & 字体名称 & 英文名称 & 样式 & 授权协议 & 收录版本 \\
+    开发者 & 字体中文名称 & 字体英文名称 & 样式 & 授权协议 & 收录版本 \\
     \hline
     \endfirsthead
 
     \caption{免费商用中文字体集（续）} \\
     \hline
-    开发者 & 字体名称 & 英文名称 & 样式 & 授权协议 & 收录版本 \\
+    开发者 & 字体中文名称 & 字体英文名称 & 样式 & 授权协议 & 收录版本 \\
     \hline
     \endhead
 
-    \multirow{3}{*}{Adobe\&Google} & \href{https://github.com/adobe-fonts/source-han-sans/releases}{\sourcehansans 思源黑体} & \sourcehansanslatin{Source Han Sans SC} & 简繁日韩|黑 & \multirow{2}{*}{SIL OFL, v1.1} & v2.005 \\
+    \multirow{3}{*}{Adobe\&Google} & \href{https://github.com/adobe-fonts/source-han-sans/releases}{\sourcehansans 思源黑体} & \sourcehansanslatin{Source Han Sans SC} & 简繁日韩|黑 & \multirow{2}{*}{SIL OFL, v1.1} & \href{https://github.com/Mister-Kin/OpenDocs/releases/download/fonts/SourceHanSansSC.7z}{v2.005} \\
     \cline{2-4} \cline{6-6}
-    & \href{https://github.com/adobe-fonts/source-han-serif/releases}{\sourcehanserif 思源宋体} & \sourcehanseriflatin{Source Han Serif SC} & 简繁日韩|宋 & & v2.003 \\
+    & \href{https://github.com/adobe-fonts/source-han-serif/releases}{\sourcehanserif 思源宋体} & \sourcehanseriflatin{Source Han Serif SC} & 简繁日韩|宋 & & \href{https://github.com/Mister-Kin/OpenDocs/releases/download/fonts/SourceHanSerifSC.7z}{v2.003} \\
     \cline{2-6}
-    & \multicolumn{5}{l|}{注：均选用Language-specific SC版。Adobe版称为思源，google版称为NOTO(no toufo)。} \\
+    & \multicolumn{5}{l|}{\makecell{注：均选用Language Specific OTFs Simplified Chinese版本。\\Adobe版称为思源字体，Google版称为NOTO(no toufo)字体。}} \\
     \hline
-
-    香港自由字型 & \href{https://freehkfonts.opensource.hk/download/}{\hkkai 自由香港楷書 (4700字)}\textsuperscript{\dag} & \hkkailatin{Free HK Kai 4700} & 繁|楷 & CC-BY 4.0 & v1.02 \\
+    阿里巴巴 & \href{https://www.alibabafonts.com/#/font}{\alibabapuhuiti\alibabapuhuitilatin 阿里巴巴普惠体 3.0} & \alibabapuhuitilatin{Alibaba PuHuiTi 3.0} & 简|黑 & 免费商用 & \href{https://github.com/Mister-Kin/OpenDocs/releases/download/fonts/AlibabaPuHuiTi3.0.7z}{v3.0} \\
+    \hline
+    摄图网\&iFonts & \href{https://699pic.com/subject/gongyiziti.html}{\shetumodengxiaofangti 摄图摩登小方体} & \shetumodengxiaofangtilatin{\makecell{shetumodeng\\xiaofangti}} & 简|黑|艺 & 免费商用 & \href{https://github.com/Mister-Kin/OpenDocs/releases/download/fonts/shetumodengxiaofangti.7z}{v1.000}  \\
+    \hline
+    香港自由字型 & \href{https://freehkfonts.opensource.hk/download/}{\hkkai 自由香港楷書 (4700字)}\textsuperscript{\dag} & \hkkailatin{Free HK Kai 4700} & 繁|楷 & CC-BY 4.0 & \href{https://github.com/Mister-Kin/OpenDocs/releases/download/fonts/FreeHKKai4700.7z}{v1.02} \\
+    \hline
+    林芳柽 & \href{https://www.zcool.com.cn/work/ZMjE0MjQyMDg=.html}{\pinrushouxieti 品如手写体} & \pinrushouxietilatin{品如手写体} & 简|艺 & 免费商用 & \href{https://github.com/Mister-Kin/OpenDocs/releases/download/fonts/pinrushouxieti.7z}{v1.00} \\
     \hline
     瀬戸のぞみ & \href{https://osdn.net/projects/setofont/}{瀬戸フォント-SP}\textsuperscript{\dag} & SetoFont-SP & 简繁日|艺 & SIL OFL, v1.1 & v6.20 \\
     \hline
     8:51:22 pm & \href{https://pm85122.onamae.jp/851fontpage.html}{851手書き雑フォント}\textsuperscript{\dag} & 851tegakizatsu & 简繁日韩|艺 & 免费商用 & v0.883 \\
-    \hline
-    林芳柽 & \href{https://www.zcool.com.cn/work/ZMjE0MjQyMDg=.html}{品如手写体} & 品如手写体 & 简|楷 & 免费商用 & v1.00 \\
     \hline
 
     \multirow{5}{*}{\makecell{Keynote研究所 \\ \&秋叶PPT}} & \href{https://mp.weixin.qq.com/s/iWn8SWH5ymBKmsGiHe8Yfw}{演示佛系体} & Slidefu & 简|艺 & \multirow{5}{*}{免费商用} & v1.000\\
@@ -101,7 +96,7 @@
     & \multicolumn{5}{l|}{注：原字体名称为「鸿雷板书简体（免费可商用）」，本项目将其更改为「鸿雷板书简体」。} \\
     \hline
 
-    \multirow{5}{*}{方正} & \href{http://www.foundertype.com/index.php/About/powerbus.html}{方正黑体简体} & FZHei-B01S & 简|黑 & \multirow{5}{*}{商业授权} & v6.00 \\
+    \multirow{5}{*}{方正} & \href{http://www.foundertype.com/index.php/About/powerbus.html}{方正黑体简体} & FZHei-B01S & 简|黑 & \multirow{5}{*}{\makecell{商业发布\\使用免费}} & v6.00 \\
     \cline{2-4}\cline{6-6}
     & \href{http://www.foundertype.com/index.php/About/powerbus.html}{方正书宋简体} & FZShuSong-Z01S & 简|宋 & & v5.30 \\
     \cline{2-4}\cline{6-6}
@@ -175,8 +170,6 @@
     \hline
     杨任东 & \href{https://mp.weixin.qq.com/s?__biz=MzI4ODYzMDQyNQ==&mid=2247484098&idx=1&sn=26277a349efd8935b7ab414efe4d5c51&chksm=ec3a3134db4db822ab196dd09364c3074b9f96f73c1dc041a3d80ec4c401e5ff65c24e6f8d78&mpshare=1&scene=1&srcid=0720lj9fcrYSJhHI3482vSug&key=08c415bd8530ec6a7bd72572fc007703ec542ef6cc4b2424b09a82295bbd515957f424173acc07751792421cd78571d48d070b1dd20f36b6390f0b9c2b7285c1488be4d1872d09c51c96fa587dd1e63f&ascene=1&uin=MTgyNTM0NjYxNg%3D%3D&devicetype=Windows+7&version=62060833&lang=zh_CN&pass_ticket=2GUy7Q6SAXtVjucp3UdLOZRD63QduNYNZ4sfUaTInSYEtDwFFKLxerUgqMjKfOfp}{杨任东竹石体-字重} & YRDZST-字重 & 简|手写 & 免费商用 & v1.23 \\
     \hline
-    摄图网\&iFonts & \href{https://699pic.com/subject/gongyiziti.html}{摄图摩登小方体} & \makecell{shetumodeng\\xiaofangti} & 简|黑 & 免费商用 & v1.000  \\
-    \hline
     \multirow{8}{*}{\makecell{WadaLab\\\&RareEarth}} & \href{https://zh.osdn.net/projects/jis2004/}{\makecell{和田研中丸ゴシック\\2004絵文字}}\textsuperscript{\dag} & \makecell{WadaLabChu\\MaruGo2004Emoji} & 日|圆黑 & \multirow{8}{*}{免费商用} & \multirow{8}{*}{v4.58} \\
     \cline{2-4}
     & \href{https://zh.osdn.net/projects/jis2004/}{\makecell{和田研中丸ゴシック\\2004絵文字P}}\textsuperscript{\dag} & \makecell{WadaLabChu\\MaruGo2004EmojiP} & 同上|等宽 & & \\
@@ -194,19 +187,20 @@
 \end{longtable}
 }
 
+\section{免费商用英文字体集}
 {
 \zihao{5}
-\centering
+\setlength{\LTleft}{-1.5em}
 \begin{longtable}{|*{5}{c|}}
     \caption{免费商用英文字体集}\label{英文字体集} \\
     \hline
-    开发者 & 字体名称 & 样式 & 授权协议 & 收录版本 \\
+    开发者 & 字体英文名称 & 样式 & 授权协议 & 收录版本 \\
     \hline
     \endfirsthead
 
     \caption{免费商用英文字体集（续）} \\
     \hline
-    开发者 & 字体名称 & 样式 & 授权协议 & 收录版本 \\
+    开发者 & 字体英文名称 & 样式 & 授权协议 & 收录版本 \\
     \hline
     \endhead
 
@@ -215,15 +209,14 @@
     & \href{https://github.com/adobe-fonts/source-serif/releases}{Source Serif 4} & 衬线|罗马 & & v4.005 \\
     \cline{2-3} \cline{5-5}
     & \href{https://github.com/adobe-fonts/source-code-pro/releases}{Source Code Pro} & 等宽|代码 & & v2.042/v1.062 \\
-    \hline
     \cline{2-5}
     & \multicolumn{4}{l|}{注：只安装Source Serif 4本体，不装Caption、Display、SmText、Subhead} \\
-    \hline
-    Phoenix Phonts & \href{https://www.fontspace.com/harry-p-font-f44342}{Harry P} & 艺|哈利波特 & Freeware & v2020/3/25 \\
     \hline
     \multirow{2}{*}{SIL International} & \href{https://software.sil.org/doulos/download/}{Doulos SIL} & 衬线 & SIL OFL, v1.1 & v7.000 \\
     \cline{2-5}
     & \multicolumn{4}{l|}{注：设计类似Times/Times New Roman，主要用于音标排版} \\
+    \hline
+    Phoenix Phonts & \href{https://www.fontspace.com/harry-p-font-f44342}{Harry P} & 艺|哈利波特 & Freeware & v2020/3/25 \\
     \hline
     Haley Fiege & \href{https://github.com/theleagueof/league-script-number-one}{League Script Thin} & 圆体 & SIL OFL, v1.1 & v001.001 \\
     \hline
@@ -244,47 +237,177 @@
 \end{longtable}
 }
 
-\section{字体的安装及更新}
+\chapter{关于字体集表格的阅读说明}
+\section{「字体名称」说明}
+「字体名称」：记录字体文件信息中的字体名，即CID Font Info中对应Preferred Family值或者Family值。同时字体名称文字本身包含超链接，可以点击跳转到字体的原下载页面。
+
+「字体中文名称」指Chinese (PRC)语言属性中Preferred Family值或者Family值；「字体英文名称」则是指English (US)语言属性中Preferred Family值或者Family值。
+
+其中，字体名称若含有\textsuperscript{\dag}符号则表明该字体并未包含Chinese (PRC)语言属性。这类字体对应的语言属性项值请参阅如下列表：
+\begin{enumerate}
+    \item 自由香港楷書 (4700字)\dag：Chinese(Hong Kong)。
+    \item 瀬戸フォント‑SP\dag、851 手書き雑フォント\dag：Japanese。
+\end{enumerate}
+
+\section{「样式」说明}
+「样式」：记录字体支持的语言字符集和字体显示样式。
+\begin{itemize}
+    \item 语言字符集：
+    \begin{itemize}
+        \item 「简」代表支持简体中文字符集，一般同时包含拉丁字母、希腊字母、西里尔字母、标点符号等
+        \item 「繁」代表支持繁体中文字符集
+        \item 「日」代表支持日文字符集
+        \item 「韩」代表支持韩文字符集
+    \end{itemize}
+    \item 字体显示样式
+    \begin{itemize}
+        \item 「黑」代表黑体
+        \item 「宋」代表宋体
+        \item 「楷」代表楷体
+        \item 「艺」代表艺术体或者手写体
+        \item 其他样式见名知义
+    \end{itemize}
+\end{itemize}
+
+\section{「授权协议」说明}
+「授权协议」：记录字体的授权协议。
+
+开源不等于免费。GPL具有传染性，若GPL字体不附带「GPL字型例外」（GPL font exception）协议进行阻断，则视为传染。因此，此项目一般不收集GPL字体。若收集有GPL协议的字体，则肯定是附带GPL font exception协议。
+
+\section{「收录版本」说明}
+「收录版本」：记录字体的版本信息。同时「收录版本」文字本身包含超链接，可以点击跳转到字体的\href{https://github.com/Mister-Kin/OpenDocs/releases/tag/fonts}{本人Github分发链接}。
+
+如果原作者未说明具体版本信息，则记录字体文件属性的版本号。倘若连字体文件属性的版本号也不存在，则记录字体文件发表日期。
+
+\href{https://github.com/Mister-Kin/OpenDocs/releases/tag/fonts}{本人Github分发}基本都是使用otf格式，若不存在otf格式则使用ttf格式。
+
+\section{其他说明}
+\begin{itemize}
+    \item 若字体原下载链接文件打包中含有多格式时，如otf，ttf等，建议统一选择otf格式进行安装。
+    \item 因特殊原因需修改字体信息并重新打包的操作流程均在\href{https://fontforge.org/en-US/downloads/}{FontForge}软件中完成。
+\end{itemize}
+
+\chapter{字体集排版显示效果}
+如果某些字符实际排版显示效果为方块的话，则代表该字体缺乏对应字符的字形支持。
+
+\section{中文字体集}
+\subsection{思源黑体}
+{
+\sourcehansans{\sampletext}
+
+\sourcehansanslatin{\sampletexten\sampletextnum}
+}
+
+\subsection{思源宋体}
+{
+\sourcehanserif{\sampletext}
+
+\sourcehanseriflatin{\sampletexten\sampletextnum}
+}
+
+\subsection{阿里巴巴普惠体 3.0}
+{
+\alibabapuhuiti{\sampletext}
+
+\alibabapuhuitilatin{\sampletexten\sampletextnum}
+}
+
+\subsection{摄图摩登小方体}
+{
+\shetumodengxiaofangti{\sampletext}
+
+\shetumodengxiaofangtilatin{\sampletexten\sampletextnum}
+}
+
+\subsection{自由香港楷書 (4700 字)}
+{
+\hkkai{\sampletext}
+
+\hkkailatin{\sampletexten\sampletextnum}
+}
+
+\subsection{品如手写体}
+{
+\pinrushouxieti{\sampletext}
+
+\pinrushouxietilatin{\sampletexten\sampletextnum}
+}
+
+\section{英文字体集}
+
+\chapter{字体的安装及更新}
 在Windows系统平台上直接点击“安装”选项可能会使某些软件无法检测到该字体，例如Blender，故要“为所有用户安装”。部分软件不识别字体的中文名称，请找字族(Font Family)中对应的英文名称；若字族里无英文名称，那软件应该便会显示其中文名称。
 
-\subsection{单个字体安装}
+\section{单个字体安装}
 选择字体文件，右键点击选择“为所有用户安装”。
 
-\subsection{批量安装字体}
+\section{批量安装字体}
 选中多个字体文件（框选或者点击多选），右键点击选择“为所有用户安装”。
 
-\subsection{更新问题}
+\section{更新问题}
 更新替换字体时，若出现无法删除的现象，是因为占用，重启即可清除。
 
-\section{字体格式说明}
-\subsection{TTC}
+\chapter{字体格式说明}
+\section{TTC}
 TTC字体是TrueType字体集成文件(.TTC文件)，是在一单独文件结构中包含多种字体,以便更有效地共享轮廓数据,当多种字体共享同一笔画时,TTC技术可有效地减小字体文件的大小。TTC是几个TTF合成的字库，安装后字体列表中会看到两个以上的字体。两个字体中大部分字都一样时，可以将两种字体做成一个TTC文件，常见的TTC字体，因为共享笔划数据，所以大多这个集合中的字体区别只是字符宽度不一样，以便适应不同的版面排版要求。而TTF字体则只包含一种字型。
 
-\subsection{OTF}
+\section{OTF}
 OpenType也叫Type 2字体，是由Microsoft和Adobe公司开发的另外一种字体格式。它也是一种轮廓字体，比TrueType更为强大，最明显的一个好处就是可以在把PostScript字体嵌入到TrueType的软件中。并且还支持多个平台，支持很大的字符集，还有版权保护。苹果机与PC机都能很好应用的兼容字体！
 
-\subsection{TTF}
+\section{TTF}
 ttf版本的字体支持内嵌到Office文件，因此比otf技术底层的版本更适合与前端办公。PC机应用较好，苹果机兼容性很差！
 
-\section{中文字体的繁体使用}
+\chapter{中文字体的繁体使用}
 如何使用繁体字：使用输入法输入繁体字，不要使用输入简体就可以得到繁体的字体。这类字体被称为“伪繁体”，在简繁转换上具有致命的缺陷。一些简体字与繁体字并不是一一对应的关系，而字体中编码和字形是一一对应的，所以伪繁体字库中这类简体字编码只能在多个对应的繁体字字形里选择一个来映射。使用伪繁体字库一般会出现这样的问题：输入人体部位 “头发”，得到的是错误的 “頭發” 而非正确的 “頭髮”。
 
-\section{持续收录计划}
-此项目将持续收录开源字体，但目前主要用途的字体已经收录很多，因此之后的收录方向主要为特殊字体，如篆书（目前还未收录）以及有趣的艺术字体、手写体等。
+\chapter{持续收录计划的说明}
+此项目将持续收录开源字体，但目前主要用途的字体已经收录很多，项目后期收录方向主要为特殊字体，如篆书（目前还未收录）以及有趣的艺术字体、手写体等。
 
 \inputBibliography
 \appendix
 % 附录
 \chapter{常见字体许可}
-\begin{enumerate}
+\begin{itemize}
+    \item SIL OFL：SIL Open Font License，开源字体许可协议。
+    \item GPL：GNU General Public License，GNU通用公共许可证。应用于字体时，若没有附带「GPL字型例外」（GPL font exception）协议进行阻断，则视为传染。
     \item 商业字体：商业字体（Commercial）也就是正规的商业发行版，这种字体本应通过正规购买方式获得。
     \item 免费字体：免费字体（Freeware）是指用户可以无限制（包括：个人使用、商业使用）免费使用字体的版本，用户可能无法享用某些高级功能。其中有一部分免费字体通过自愿性的资助或者捐献，字体开发者从而获得补酬。
     \item 个人免费字体：个人免费字体是免费字体的子集，是指个人用户（不包括：商业使用）可以无限制免费使用字体的版本，用户可能无法享用某些高级功能。
     \item 共享字体：共享字体（Shareware）也包括试用字体（Trailware），是以“先使用后付费”的方式销售的享有版权的字体。根据共享字体作者的授权，用户可以从各种渠道免费得到它的拷贝，也可以自由传播它。用户可以先使用或试用共享字体，认为满意后再向作者付费；如果您认为它不值得您花钱购买商业授权，可以停止使用。
     \item 演示字体：演示字体（Demoware）是试用字体接近，但演示字体一般没有精减字形数量，但演示字体一般会在字形上打上特殊的标记或DEMO字样。
     \item 自由字体：自由字体（Free Software）向使用者提供没有任何限制的使用权限，遵循相关的自由软件授权协议允许任何人对该字体进行二次开发或用于商业用途，甚至有时会提供字体源代码，这种也称为开源字体（Open Source）。
+\end{itemize}
+
+\chapter{FontForge查看字体信息的方法}
+本附录内容主要介绍如何使用FontForge查看字体信息，例如字体名称和对应语言属性。FontForge软件不能识别中文文件名，注意字体文件使用英文名称保存文件。
+\begin{enumerate}
+    \item 安装并打开\href{https://fontforge.org/en-US/downloads/}{FontForge}软件。
+    \item 选择字体文件并打开。
+    \item 菜单->CID->CID Font Info...->TTF Names->查看对应语言属性的Preferred Family值或者Family值。
+    \begin{itemize}
+        \item Chinese (PRC)语言属性代表在系统中文语言环境中显示的名称。
+        \item English (US)语言属性代表在系统英文语言环境中显示的名称。
+    \end{itemize}
 \end{enumerate}
 
-\chapter{TODO记录fontforge的查询font name的过程}
+延伸内容1：PS Names和TTF Names
+\begin{itemize}
+    \item PS Names是指PostScript Names，对应PostScript字体格式（如.otf中的CFF轮廓、.pfa、.pfb或传统的CID-keyed字体）。主要用于打印机指令、PDF嵌入、以及PostScript环境下的字体识别。字符限制非常严格，Fontname字段不能包含空格，通常只能使用ASCII字符，长度建议在63个字符以内。PS Names属性可以不定义，本人见过有些人使用FonrCreator软件创建字体时PS Names的Fontname和Family Name均为空。核心字段含义：
+    \begin{itemize}
+        \item Fontname：字体的内部ID，如MyFont-Regular
+        \item Family Name：字体所属的家族名，如MyFont
+        \item Name For Humans：字体易读名称，如MyFont Regular，该字段支持Unicode（可以写中文名）。
+        \item Weight：粗细描述，如Regular
+    \end{itemize}
+    \item TTF Names是指TrueType Names，对应的是OpenType/TrueType规范中的name表。主要用于操作系统和应用程序的字体菜单，例如Word、Photoshop的字体列表里看到的名称，大多是从这里读取的。字符限制比较宽松。支持Unicode（可以写中文名），可以包含空格。核心字段含义：
+    \begin{itemize}
+        \item Family：常规字体家族名，如MyFont
+        \item Styles (SubFamily)：字体样式，如Regular等
+        \item Fullname：字体全称，MyFont Regular
+        \item Preferred Family：在复杂的字体家族中（例如MyFont Regular和MyFont Medium），用于将所有成员归类在一起的名称
+    \end{itemize}
+\end{itemize}
+
+延伸内容2：在FontForge中，通常先填写PS Names。完成后，点击TTF Names区域，FontForge通常会根据PS Names自动生成对应的TTF条目，然后可以右键或点击添加Chinese (PRC)语言属性以支持在中文语言环境下显示中文名称。
 
 \end{document}
